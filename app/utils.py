@@ -7,7 +7,7 @@ URL_base = "https://pubchem.ncbi.nlm.nih.gov"
 # Check problems and timeout
 def get_json(url):
     for attempt in range(3): # Try 3 times to retrieve the data
-        print(f"Attempting to retrieve data from URL: {url} (Attempt {attempt + 1}/3)")
+        print(f"\nAttempting to retrieve data from URL: {url} (Attempt {attempt + 1}/3)")
         try:
             response = requests.get(url, timeout=30)
             if response.status_code == 200:
@@ -41,6 +41,7 @@ def load_index_json(filename, folder="indexes"):
     file = Path(folder) / filename
     if file.exists():
         print(f"File {filename} already exists. Loading from file.")
+        print("\n")
         return json.loads(file.read_text())
     else:
         # Give the option to the user to click download files?? THINK ABOUT IT

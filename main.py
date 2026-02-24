@@ -26,10 +26,13 @@ sections = []
 # 5. Finds the Interactions and Pathways section and retrieves the data of interactions
 out, data = app.interactions.get_all_sections(compound)
 
+# 6. Get the table externally
+rows = app.interactions.get_interactions_table(compound)
+print(len(rows))
+json_path = app.utils.save_rows_json(rows, compound, f"compound_{compound.cid}_{compound.synonyms[0]}_interactionstable.json")
+print("\nSuccessfully saved interactions table as JSON for compound: "+compound.synonyms[0])
+csv_path = app.utils.save_rows_csv(rows, compound, f"compound_{compound.cid}_{compound.synonyms[0]}_interactionstable.csv")
+print("\nSuccessfully saved interactions table as CSV for compound: "+compound.synonyms[0])
 
-# Retrieving Compound information from PubChem
-#data = app.chem.retrieve_compoundURL(compound)
-#print("Extracted tables: ", data)
-
-# : CC(C[N+](C)(C)C)OC(=O)N  
+# CC(C[N+](C)(C)C)OC(=O)N  
 # 5831 C[N+](C)(C)CCOC(=O)N.[Cl-]

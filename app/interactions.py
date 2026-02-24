@@ -53,8 +53,8 @@ def get_sections(section):
     out = [section] 
     for subsection in section.get("Section", []):
         out.extend(get_sections(subsection)) # We call recursively get_sections to get each subsection possible until there are no more subsections
-        print("\n")
-        print(subsection)
+        #print("\n")
+        #print(subsection)
     return out # returns a list of Sections inside a Record (key Sections) i guess..
    
 
@@ -78,3 +78,68 @@ def save_data(data, compound):
         print("\nNo Interactions and Pathways data to save for compound: "+compound.synonyms[0])
 
         
+# Build a SDQ query for PubChem for External Tables
+def sdq_query(collection, where, select = "*", start = 1, limit = 1000, order = "cid, asc"):
+    query = {
+        "select": select, # which columnds you want back
+        "collection": collection, # # which table to query
+        "order": [order], # sort order ("cid, asc" means sort by cid ascending)
+        "start": start, # pagination start row (1=start row)
+        "limit": limit, # how many rows to return (1000 is a safe choice)
+        "where": where, # the filter condition (example: cid must equal 5831)
+        "width": 10000000  # allow wide fields (for long text citations for example)
+    }
+    # endpoint for SDQ queries
+    url = f"{app.utils.URL_base}/sdq/sphinxql.cgi"
+    params = {
+        "infmt": "json",
+        "outfmt": "json",
+        "query": json.dumps(query)
+    }
+
+    for attempt in range(3): # Try 3 times to retrieve the data
+        print(f"\nAttempting to retrieve External Table data from URL: {url} (Attempt {attempt + 1}/3)")
+        try:
+            response = requests.get(url, params=params, timeout=30)
+            if response.status_code == 200:
+                print(f"Successfully retrieved data from URL in attempt {attempt + 1}")
+                return response.json()
+            else:
+                print(f"Request failed with status code {response.status_code}. Attempt {attempt + 1}/3")
+        # Catch any request exceptions
+        except requests.exceptions.RequestException as e:
+            print(f"Request error: {e}. Attempt {attempt + 1}/3")   
+    print("SDQ request failed after 3 attempts.")
+    return None
+
+
+def get_interactions_table(compound, page_size = 1000):
+    collection = "consolidatedcompoundtarget"
+    where = {"ands": [{"cid": str(compound.cid)}]} # the WHERE condition for the query
+
+    request = sdq_query(collection, where, start = 1, limit = min(page_size,1000))
+    out_set = request.get("SDQOutputSet", [])
+    if not out_set:
+        print("No data found in the SDQ query")
+        return []
+    
+    block = out_set[0]
+    rows = block.get("rows", []) or []
+    total = int(block.get("totalCount", len(rows)))
+
+    if len(rows) >= total:
+        return rows
+    
+    all_rows = list(rows)
+    start = 1+len(rows)
+
+    while len(all_rows) < total:
+        data = sdq_query(collection, where, start = start, limit = min(page_size,1000))
+        rows_page = data.get("SDQOutputSet", [{}])[0].get("rows", []) or []
+        if not rows_page:
+            print("No data found in the SDQ query")
+            break
+        all_rows.extend(rows_page)
+        start += len(rows_page)
+
+    return all_rows

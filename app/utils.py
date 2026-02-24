@@ -1,6 +1,7 @@
 from pathlib import Path
 import json
 import requests
+import csv
 
 URL_base = "https://pubchem.ncbi.nlm.nih.gov"
 
@@ -27,7 +28,7 @@ def get_json(url):
     return None
 
 
-# Save index JSON to file
+# Save index JSON to file GENERAL USE (no folder name, just filename with parent.mkdir)
 def save_json(index_json, filename):
     path = Path(filename) # turns the filename into a Path object
     path.parent.mkdir(parents=True, exist_ok=True) # creates the "parent" folder with the first word in the url
@@ -48,3 +49,31 @@ def load_index_json(filename, folder="indexes"):
         # TODO
         print(f"File {filename} does not exist. Please run the code to create it.")
         return None
+    
+    
+def save_rows_json (rows, compound, filename):
+    folder = f"interaction_tables_{compound.cid}"
+    Path(folder).mkdir(parents=True, exist_ok = True)
+    with open(Path(folder) / filename, "w") as f:
+        json.dump(rows, f, indent=4)
+        return str(Path(folder)/filename)
+    
+
+def save_rows_csv (rows, compound, filename):
+    folder = f"interaction_tables_{compound.cid}"
+    Path(folder).mkdir(parents=True, exist_ok = True)
+    file_path = Path(folder) / filename
+
+    if not rows:
+        print("No rows to save in CSV format for file: "+filename)
+        with open(file_path, "w", newline="") as f:
+            f.write("No data available\n")
+            return str(file_path)
+        
+    fieldnames = sorted({k for row in rows for k in row.keys()})
+    with open(file_path, "w") as f:
+        writer = csv.DictWriter(f,fieldnames=fieldnames)
+        writer.writeheader()
+        for row in rows:
+            writer.writerow(row)
+    return str(file_path)

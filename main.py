@@ -7,6 +7,7 @@ import app.utils
 # Asking for compound SMILES code
 smiles_code = input("Enter the SMILES code: ")
 compound = app.chem.retrieve_compound(smiles_code)
+
 if compound:
     print("Compound found!")
     compound_info = app.chem.compound_information(compound)
@@ -14,6 +15,7 @@ if compound:
     print(compound_info)
 else:
     print("No compound found, check the SMILES code entered again")
+    raise SystemExit(1)
 
 # 1. Creates the URL
 index_url = f"{app.utils.URL_base}/rest/pug_view/index/compound/{compound.cid}/JSON"
@@ -22,17 +24,36 @@ index_json = app.utils.get_json(index_url)
 # 3. Saves the index JSON to a file
 app.utils.save_json(index_json, f"indexes/compound_{compound.cid}_{compound.synonyms[0]}__index.json")
 # 4. Gets all sections in the index JSON
-sections = []
 # 5. Finds the Interactions and Pathways section and retrieves the data of interactions
 out, data = app.interactions.get_all_sections(compound)
 
-# 6. Get the table externally
-rows = app.interactions.get_interactions_table(compound)
-print(len(rows))
-json_path = app.utils.save_rows_json(rows, compound, f"compound_{compound.cid}_{compound.synonyms[0]}_interactionstable.json")
-print("\nSuccessfully saved interactions table as JSON for compound: "+compound.synonyms[0])
-csv_path = app.utils.save_rows_csv(rows, compound, f"compound_{compound.cid}_{compound.synonyms[0]}_interactionstable.csv")
-print("\nSuccessfully saved interactions table as CSV for compound: "+compound.synonyms[0])
+if data is None:
+    print("No interactions data for this compound")
+    raise SystemExit(0)
 
-# CC(C[N+](C)(C)C)OC(=O)N  
-# 5831 C[N+](C)(C)CCOC(=O)N.[Cl-]
+# 6. Get the tables externally
+tables = app.interactions.retrieve_externaltable(data)
+
+# 7. Download and save each table
+for subsection, table_list in tables:
+    for table_name in table_list:
+        if "=" in table_name:
+            print("Special table: ", table_name)
+            section = str(subsection)
+            continue
+        rows = app.interactions.get_interactions_table(compound, table_name)
+        print(subsection, table_name, "rows: ", len(rows))
+
+        json_path = app.utils.save_rows_json(rows, compound, f"1.{subsection}/compound_{compound.cid}_{compound.synonyms[0]}_interactionstable.json")
+        print("\nSuccessfully saved interactions table as JSON for compound: "+compound.synonyms[0])
+        csv_path = app.utils.save_rows_csv(rows, compound, f"1.{subsection}/compound_{compound.cid}_{compound.synonyms[0]}_interactionstable.csv")
+        print("\nSuccessfully saved interactions table as CSV for compound: "+compound.synonyms[0])
+
+# Bethanechol: CC(C[N+](C)(C)C)OC(=O)N  
+# Caffeine: CN1C=NC2=C1C(=O)N(C(=O)N2C)C  
+# Carbachol: C[N+](C)(C)CCOC(=O)N.[Cl-]  
+# Ethanolamine: C(CO)N  
+# Forskolin: CC(=O)O[C@H]1[C@H]([C@@H]2[C@]([C@H](CCC2(C)C)O)([C@@]3([C@@]1(O[C@@](CC3=O)(C)C=C)C)O)C)O  
+# Ginsenoside Rb1: CC(=CCC[C@@](C)([C@H]1CC[C@@]2([C@@H]1[C@@H](C[C@H]3[C@]2(CC[C@@H]4[C@@]3(CC[C@@H](C4(C)C)O[C@H]5[C@@H]([C@H]([C@@H]([C@H](O5)CO)O)O)O[C@H]6[C@@H]([C@H]([C@@H]([C@H](O6)CO)O)O)O)C)C)O)C)O[C@H]7[C@@H]([C@H]([C@@H]([C@H](O7)CO[C@H]8[C@@H]([C@H]([C@@H]([C@H](O8)CO)O)O)O)O)O)O)C  
+# Maprotiline: CNCCCC12CCC(C3=CC=CC=C31)C4=CC=CC=C24  
+# Pilocarpine: CC[C@H]1[C@H](COC1=O)CC2=CN=CN2C  

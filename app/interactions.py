@@ -77,9 +77,54 @@ def save_data(data, compound):
     else:
         print("\nNo Interactions and Pathways data to save for compound: "+compound.synonyms[0])
 
+
+def retrieve_externaltable(interactions_json):
+    index = interactions_json.get("Record", {})
+    top_sections = index.get("Section", []) or []
+
+    section = None
+
+    # Find the Interactions and Pathways section in the JSON index input
+    for header in top_sections:
+        if header.get("TOCHeading", "").lower() == "interactions and pathways":
+            section = header
+            print("Interactions and Pathways section found in JSON index.")
+            break
+    
+    if section == None:
+        print("Compound does not have interactions with anything... Check JSON")
+        return []
+    
+    print(section)
+
+    subsection = None
+    results = []
+
+    # Get subsection (ProteinBound 3D Structures, Chemical-Target Interactions or Pathways) and the ExternalTableName of each Information in each subsection (if it exists)
+    for subheader in section.get("Section", []):
+        subsection = subheader.get("TOCHeading", "")
+        externaltables = [] # external table in each subsection (ProteinBound, Chemical-Target or Pathways)
         
-# Build a SDQ query for PubChem for External Tables
-def sdq_query(collection, where, select = "*", start = 1, limit = 1000, order = "cid, asc"):
+        if subsection.lower() == "protein bound 3d structures":
+            print(f"\n Interaction subheader entered: {subsection}") 
+        elif subsection.lower() == "chemical-target interactions":
+            print(f"\n Interaction subheader entered: {subsection}")
+        elif subsection.lower() == "pathways":
+            print(f"\n Interaction subheader entered: {subsection}")
+
+        for information in subheader.get("Information", []):
+            externaltablename = information.get("Value", {}).get("ExternalTableName")
+            if externaltablename:
+                externaltables.append(externaltablename) 
+        tables = list(dict.fromkeys(externaltables)) # remove duplicates
+        
+        results.append((subsection, tables)) # add the subsection and its tables to the results list
+    
+    return results 
+
+
+# Build a SDQ query for PubChem for Chemical-Target Interactions External Tables
+def sdq_query_externaltable(collection, where, select = "*", start = 1, limit = 1000, order = "cid,asc"):
     query = {
         "select": select, # which columnds you want back
         "collection": collection, # # which table to query
@@ -113,11 +158,13 @@ def sdq_query(collection, where, select = "*", start = 1, limit = 1000, order = 
     return None
 
 
-def get_interactions_table(compound, page_size = 1000):
-    collection = "consolidatedcompoundtarget"
+def get_interactions_table(compound, collection, page_size = 1000):
     where = {"ands": [{"cid": str(compound.cid)}]} # the WHERE condition for the query
 
-    request = sdq_query(collection, where, start = 1, limit = min(page_size,1000))
+    request = sdq_query_externaltable(collection, where, start = 1, limit = min(page_size,1000))
+    if request is None:
+        return[]
+    
     out_set = request.get("SDQOutputSet", [])
     if not out_set:
         print("No data found in the SDQ query")
@@ -134,7 +181,9 @@ def get_interactions_table(compound, page_size = 1000):
     start = 1+len(rows)
 
     while len(all_rows) < total:
-        data = sdq_query(collection, where, start = start, limit = min(page_size,1000))
+        data = sdq_query_externaltable(collection, where, start = start, limit = min(page_size,1000))
+        if data is None:
+            break
         rows_page = data.get("SDQOutputSet", [{}])[0].get("rows", []) or []
         if not rows_page:
             print("No data found in the SDQ query")

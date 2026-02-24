@@ -1,0 +1,222 @@
+{
+    "Record": {
+        "RecordType": "CID",
+        "RecordNumber": 700,
+        "RecordTitle": "Ethanolamine",
+        "Section": [
+            {
+                "TOCHeading": "Interactions and Pathways",
+                "Description": "This section provides information on the biomolecular interactions of this compound with drugs, genes, proteins, etc., as well as the pathways in which this compound is involved.",
+                "Section": [
+                    {
+                        "TOCHeading": "Protein Bound 3D Structures",
+                        "Description": "Experimentally determined 3D structures of the macromolecules (e.g., proteins) that this compounds bind to.  The 3D structures in this section are from multiple sources including the RCSB Protein Data Bank (PDB), PDB in Europe (PDBe), and NCBI Structure database.",
+                        "Information": [
+                            {
+                                "ReferenceNumber": 127,
+                                "Value": {
+                                    "ExternalTableName": "pdb"
+                                }
+                            },
+                            {
+                                "ReferenceNumber": 154,
+                                "URL": "https://www.ncbi.nlm.nih.gov/structure?cmd=Link&LinkName=pccompound_structure&from_uid=700",
+                                "Value": {
+                                    "StringWithMarkup": [
+                                        {
+                                            "String": "View 43 proteins in NCBI Structure"
+                                        }
+                                    ]
+                                }
+                            }
+                        ],
+                        "Section": [
+                            {
+                                "TOCHeading": "Ligands from Protein Bound 3D Structures",
+                                "Description": "Ligands found in experimental protein-ligand co-complexes (e.g., those archived in the Protein Data Bank in Europe (PDBe)).",
+                                "URL": "https://www.ebi.ac.uk/pdbe/",
+                                "DisplayControls": {
+                                    "CreateTable": {
+                                        "FromInformationIn": "Subsections",
+                                        "NumberOfColumns": 2,
+                                        "ColumnContents": [
+                                            "Name",
+                                            "Value"
+                                        ]
+                                    },
+                                    "MoveToTop": true,
+                                    "ShowAtMost": 1
+                                },
+                                "Section": [
+                                    {
+                                        "TOCHeading": "PDBe Ligand Code",
+                                        "Description": "The ligand code for this compound used in the Protein Data Bank in Europe (PDBe).",
+                                        "Information": [
+                                            {
+                                                "ReferenceNumber": 126,
+                                                "URL": "http://www.ebi.ac.uk/pdbe-srv/pdbechem/chemicalCompound/show/ETA",
+                                                "Value": {
+                                                    "StringWithMarkup": [
+                                                        {
+                                                            "String": "ETA"
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "TOCHeading": "PDBe Conformer",
+                                        "Description": "The experimental protein-bound 3D structure of this compound in a protein-ligand co-complex archived in the Protein Data Bank in Europe (PDBe).",
+                                        "Information": [
+                                            {
+                                                "ReferenceNumber": 126,
+                                                "URL": "http://www.ebi.ac.uk/pdbe-srv/pdbechem/chemicalCompound/show/ETA",
+                                                "Value": {
+                                                    "ExternalDataURL": [
+                                                        "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/key/8194804_1"
+                                                    ],
+                                                    "MimeType": "pubchem/compound-gzip-asnb"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "Chemical-Target Interactions",
+                        "Description": "Interactions between targets and this compound",
+                        "Information": [
+                            {
+                                "ReferenceNumber": 4,
+                                "Value": {
+                                    "ExternalTableName": "consolidatedcompoundtarget"
+                                }
+                            },
+                            {
+                                "ReferenceNumber": 14,
+                                "Value": {
+                                    "ExternalTableName": "consolidatedcompoundtarget"
+                                }
+                            },
+                            {
+                                "ReferenceNumber": 19,
+                                "Value": {
+                                    "ExternalTableName": "consolidatedcompoundtarget"
+                                }
+                            },
+                            {
+                                "ReferenceNumber": 20,
+                                "Value": {
+                                    "ExternalTableName": "consolidatedcompoundtarget"
+                                }
+                            },
+                            {
+                                "ReferenceNumber": 143,
+                                "Value": {
+                                    "ExternalTableName": "consolidatedcompoundtarget"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "Pathways",
+                        "Description": "Biological pathways in which this compound is involved.",
+                        "Information": [
+                            {
+                                "ReferenceNumber": 154,
+                                "Value": {
+                                    "ExternalTableName": "collection=pathway&core=1"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Reference": [
+            {
+                "ReferenceNumber": 4,
+                "SourceName": "BindingDB",
+                "SourceID": "Compound::7973",
+                "Name": "CHEMBL104943",
+                "Description": "The Binding Database projects aims to make experimental data on the noncovalent association of molecules in solution searchable via the WWW.  The initial focus is on biomolecular systems, but data on host-guest and supramolecular systems are also important and being included over time.",
+                "URL": "https://www.bindingdb.org/rwd/bind/chemsearch/marvin/MolStructure.jsp?monomerid=7973",
+                "LicenseNote": "All data curated by BindingDB staff are provided under the Creative Commons Attribution 3.0 License (https://creativecommons.org/licenses/by/3.0/us/).",
+                "LicenseURL": "https://www.bindingdb.org/rwd/bind/info.jsp",
+                "ANID": 19616265
+            },
+            {
+                "ReferenceNumber": 14,
+                "SourceName": "Comparative Toxicogenomics Database (CTD)",
+                "SourceID": "D019856::Compound",
+                "Name": "Ethanolamine",
+                "Description": "CTD is a robust, publicly available database that aims to advance understanding about how environmental exposures affect human health.",
+                "URL": "https://ctdbase.org/detail.go?type=chem&acc=D019856",
+                "LicenseNote": "It is to be used only for research and educational purposes. Any reproduction or use for commercial purpose is prohibited without the prior express written permission of NC State University.",
+                "LicenseURL": "http://ctdbase.org/about/legal.jsp",
+                "ANID": 9025406
+            },
+            {
+                "ReferenceNumber": 19,
+                "SourceName": "Drug Gene Interaction database (DGIdb)",
+                "SourceID": "ncit:C61756",
+                "Name": "MONOETHANOLAMINE",
+                "Description": "The Drug Gene Interaction Database (DGIdb, www.dgidb.org) is a web resource that consolidates disparate data sources describing drug - gene interactions and gene druggability.",
+                "URL": "https://www.dgidb.org/drugs/ncit:C61756",
+                "LicenseNote": "The data used in DGIdb is all open access and where possible made available as raw data dumps in the downloads section.",
+                "LicenseURL": "http://www.dgidb.org/downloads",
+                "ANID": 37459596
+            },
+            {
+                "ReferenceNumber": 20,
+                "SourceName": "DrugBank",
+                "SourceID": "DB03994",
+                "Name": "Ethanolamine",
+                "Description": "The DrugBank database is a unique bioinformatics and cheminformatics resource that combines detailed drug (i.e. chemical, pharmacological and pharmaceutical) data with comprehensive drug target (i.e. sequence, structure, and pathway) information.",
+                "URL": "https://www.drugbank.ca/drugs/DB03994",
+                "LicenseNote": "Creative Common's Attribution-NonCommercial 4.0 International License (http://creativecommons.org/licenses/by-nc/4.0/legalcode)",
+                "LicenseURL": "https://www.drugbank.ca/legal/terms_of_use",
+                "ANID": 3616302
+            },
+            {
+                "ReferenceNumber": 143,
+                "SourceName": "Toxin and Toxin Target Database (T3DB)",
+                "SourceID": "Compound::T3D4769",
+                "Name": "Ethanolamine",
+                "Description": "The Toxin and Toxin Target Database (T3DB), or, soon to be referred as, the Toxic Exposome Database, is a unique bioinformatics resource that combines detailed toxin data with comprehensive toxin target information.",
+                "URL": "http://www.t3db.ca/toxins/T3D4769",
+                "LicenseNote": "T3DB is offered to the public as a freely available resource. Use and re-distribution of the data, in whole or in part, for commercial purposes requires explicit permission of the authors and explicit acknowledgment of the source material (T3DB) and the original publication.",
+                "LicenseURL": "http://www.t3db.ca/downloads",
+                "ANID": 20443862
+            },
+            {
+                "ReferenceNumber": 126,
+                "SourceName": "Protein Data Bank in Europe (PDBe)",
+                "SourceID": "ETA",
+                "Description": "The Protein Data Bank in Europe (PDBe) manages the PDB with its wwPDB partners and provides a high-quality, up-to-date and integrated resource of macromolecular structures to support basic and applied research and education across the sciences.",
+                "URL": "http://www.ebi.ac.uk/pdbe-srv/pdbechem/chemicalCompound/show/ETA",
+                "ANID": 8194804
+            },
+            {
+                "ReferenceNumber": 127,
+                "SourceName": "RCSB Protein Data Bank (RCSB PDB)",
+                "SourceID": "700",
+                "Description": "The RCSB Protein Data Bank (PDB) contains crystallographic data defining 3D shapes of proteins, nucleic acids, and complex assemblies that helps students and researchers understand all aspects of biomedicine and agriculture, from protein synthesis to health and disease.",
+                "URL": "https://www.rcsb.org/",
+                "LicenseNote": "Data files contained in the PDB archive (ftp://ftp.wwpdb.org) are free of all copyright restrictions and made fully and freely available for both non-commercial and commercial use. Users of the data should attribute the original authors of that structural data.",
+                "LicenseURL": "https://www.rcsb.org/pages/policies",
+                "ANID": 626503
+            },
+            {
+                "ReferenceNumber": 154,
+                "SourceName": "PubChem",
+                "SourceID": "PubChem",
+                "Description": "Data deposited in or computed by PubChem",
+                "URL": "https://pubchem.ncbi.nlm.nih.gov"
+            }
+        ]
+    }
+}

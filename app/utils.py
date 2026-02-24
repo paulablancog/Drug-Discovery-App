@@ -50,19 +50,21 @@ def load_index_json(filename, folder="indexes"):
         print(f"File {filename} does not exist. Please run the code to create it.")
         return None
     
-    
+
+
 def save_rows_json (rows, compound, filename):
-    folder = f"interaction_tables_{compound.cid}"
-    Path(folder).mkdir(parents=True, exist_ok = True)
-    with open(Path(folder) / filename, "w") as f:
+    path = Path(filename) # turns the filename into a Path object
+    path.parent.mkdir(parents=True, exist_ok=True) # creates the "parent" folder with the first word in the url
+    with open(path, "w") as f:
         json.dump(rows, f, indent=4)
-        return str(Path(folder)/filename)
+        return str(path)
     
 
 def save_rows_csv (rows, compound, filename):
-    folder = f"interaction_tables_{compound.cid}"
-    Path(folder).mkdir(parents=True, exist_ok = True)
-    file_path = Path(folder) / filename
+    path = Path(filename) # turns the filename into a Path object
+    path.parent.mkdir(parents=True, exist_ok=True) # creates the "parent" folder with the first word in the url
+
+    file_path = path
 
     if not rows:
         print("No rows to save in CSV format for file: "+filename)

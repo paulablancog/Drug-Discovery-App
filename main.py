@@ -35,15 +35,22 @@ if data is None:
 tables = app.interactions.retrieve_externaltable(data)
 
 # 7. Download and save each table
+where_pathways = {"ands": [{"cid": str(compound.cid)}, {"core": "1"}]}
+
 for subsection, table_list in tables:
     for table_name in table_list:
-        if "=" in table_name:
-            print("Special table: ", table_name)
-            section = str(subsection)
-            continue
-        rows = app.interactions.get_interactions_table(compound, table_name)
-        print(subsection, table_name, "rows: ", len(rows))
+        subsection_1 = (subsection or "").lower()
+        # -- SPECIAL FOR PATHWAYS TABLES --
+        if subsection_1 == "pathways" and "collection=" in table_name:
+            print("Special pathways table: ", table_name)
+            rows = app.interactions.get_interactions_table(compound, "pathway", where = where_pathways, order="pathwayid,asc")   
+            print(subsection, "pathways", "rows: ", len(rows))
+        # -- NORMAL SDQ EXTERNAL TABLES -- 
+        else: 
+            rows = app.interactions.get_interactions_table(compound, table_name,order="cid,asc")
+            print(subsection, table_name, "rows: ", len(rows))
 
+        # -- SAVING INTERACTION TABLES IN SEPARATED SUBSECTIONS FOLDERS --
         json_path = app.utils.save_rows_json(rows, compound, f"1.{subsection}/compound_{compound.cid}_{compound.synonyms[0]}_interactionstable.json")
         print("\nSuccessfully saved interactions table as JSON for compound: "+compound.synonyms[0])
         csv_path = app.utils.save_rows_csv(rows, compound, f"1.{subsection}/compound_{compound.cid}_{compound.synonyms[0]}_interactionstable.csv")

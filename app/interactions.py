@@ -4,6 +4,7 @@ import requests
 from urllib.parse import quote
 from pathlib import Path
 import json
+import app.utils
 import os
 import csv
 import app.chem
@@ -125,10 +126,17 @@ def retrieve_externaltable(interactions_json):
 
 # Build a SDQ query for PubChem for Chemical-Target Interactions External Tables
 def sdq_query_externaltable(collection, where, select = "*", start = 1, limit = 1000, order = "cid,asc"):
+    if order is None:
+        order_list = []
+    elif isinstance(order, str):
+        order_list = [order]
+    else: 
+        order_list = list(order)
+    
     query = {
         "select": select, # which columnds you want back
         "collection": collection, # # which table to query
-        "order": [order], # sort order ("cid, asc" means sort by cid ascending)
+        "order": order_list, # sort order ("cid, asc" means sort by cid ascending)
         "start": start, # pagination start row (1=start row)
         "limit": limit, # how many rows to return (1000 is a safe choice)
         "where": where, # the filter condition (example: cid must equal 5831)
@@ -158,10 +166,11 @@ def sdq_query_externaltable(collection, where, select = "*", start = 1, limit = 
     return None
 
 
-def get_interactions_table(compound, collection, page_size = 1000):
-    where = {"ands": [{"cid": str(compound.cid)}]} # the WHERE condition for the query
-
-    request = sdq_query_externaltable(collection, where, start = 1, limit = min(page_size,1000))
+def get_interactions_table(compound, collection, page_size = 1000, where = None, order="cid,asc"):
+    if where is None:
+        where = {"ands": [{"cid": str(compound.cid)}]} # default where clause if not provided
+    
+    request = sdq_query_externaltable(collection, where, start = 1, limit = min(page_size,1000), order=order)
     if request is None:
         return[]
     

@@ -46,8 +46,11 @@ for subsection, table_list in tables:
             rows = app.interactions.get_interactions_table(compound, "pathway", where = where_pathways, order="pathwayid,asc")   
             print(subsection, "pathways", "rows: ", len(rows))
         # -- NORMAL SDQ EXTERNAL TABLES -- 
+        elif subsection_1 == "protein bound 3d structures": 
+            rows = app.interactions.get_interactions_table(compound, table_name,order="pdbid,asc")
+            print(subsection, table_name, "rows: ", len(rows))
         else: 
-            rows = app.interactions.get_interactions_table(compound, table_name,order="cid,asc")
+            rows = app.interactions.get_interactions_table(compound, table_name,order="geneid,asc")
             print(subsection, table_name, "rows: ", len(rows))
 
         # -- SAVING INTERACTION TABLES IN SEPARATED SUBSECTIONS FOLDERS --
@@ -55,6 +58,8 @@ for subsection, table_list in tables:
         print("\nSuccessfully saved interactions table as JSON for compound: "+compound.synonyms[0])
         csv_path = app.utils.save_rows_csv(rows, compound, f"1.{subsection}/compound_{compound.cid}_{compound.synonyms[0]}_interactionstable.csv")
         print("\nSuccessfully saved interactions table as CSV for compound: "+compound.synonyms[0])
+
+
 
 # Bethanechol: CC(C[N+](C)(C)C)OC(=O)N  
 # Caffeine: CN1C=NC2=C1C(=O)N(C(=O)N2C)C  

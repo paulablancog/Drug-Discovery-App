@@ -4,6 +4,7 @@ import app.chem
 import app.interactions
 import app.utils
 import app.proteins
+import app.pathways
 
 # Asking for compound SMILES code
 smiles_code = input("Enter the SMILES code: ")
@@ -42,12 +43,12 @@ for subsection, table_list in tables:
     for table_name in table_list:
         subsection_1 = (subsection or "").lower()
         # -- SPECIAL FOR PATHWAYS TABLES --
-        if subsection_1 == "pathways" and "collection=" in table_name:
+        if subsection_1 == "pathways":
             print("Special pathways table: ", table_name)
             rows = app.interactions.get_interactions_table(compound, "pathway", where = where_pathways, order="pathwayid,asc")   
             print(subsection, "pathways", "rows: ", len(rows))
         # -- NORMAL SDQ EXTERNAL TABLES -- 
-        else: 
+        elif subsection_1 == "chemical-target interactions": 
             rows = app.interactions.get_interactions_table(compound, table_name,order="geneid,asc")
             print(subsection, table_name, "rows: ", len(rows))
 
@@ -58,10 +59,11 @@ for subsection, table_list in tables:
         print("\nSuccessfully saved interactions table as CSV for compound: "+compound.synonyms[0])
 
 # -- RETRIEVE PROTEINS IN INTERACTIONS (PROTEIN COUNT) --
-app.proteins.retrieve_proteins(compound)
+app.proteins.retrieve_targets_1(compound)
 
 # -- RETRIEVE THE PATHWAY (PATHWAYS COUNT) --
-app.interactions.retrieve_pathways(compound)
+app.pathways.retrieve_pathways(compound)
+
 # -- RETRIEVE PATHWAY PROTEINS (PROTEIN COUNT INSIDE A PATHWAY) --
 #app.interactions.retrieve_pathway_proteins(compound)
 

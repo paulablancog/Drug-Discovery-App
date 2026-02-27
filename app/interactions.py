@@ -1,13 +1,10 @@
 import pandas as pd
 import pubchempy as pcp
 import requests 
-from urllib.parse import quote
 from pathlib import Path
 import json
 import app.utils
-import os
-import csv
-import app.chem
+
 
 # PIPELINE to retrieve interactions and pathways of a compound given its cid
 
@@ -201,20 +198,3 @@ def get_interactions_table(compound, collection, page_size = 1000, where = None,
         start += len(rows_page)
 
     return all_rows
-
-
-def retrieve_pathways(compound):
-    # Retrieve the Pathways json
-    rows = app.utils.load_json(f"compound_{compound.cid}_{compound.synonyms[0]}_interactionstable.json", "1.Pathways")
-    if rows is None:
-        print("No Interactions JSON retrieved")
-        return None
-
-    # Retrieve Pathways set in compound
-    pathways_set = set() # create a set of pathways for the compound
-    for row in rows:
-        if isinstance(row,dict):
-            pathway_id = row.get("pathwayid")
-            pathways_set.add(pathway_id)
-    print(f"Successfully retrieved Pathway IDs for {compound}")
-    return print(pathways_set)

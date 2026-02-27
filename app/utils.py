@@ -87,14 +87,19 @@ def save_json(json_file, filename, folder):
 def create_file(filename, folder):
     Path(folder).mkdir(parents=True, exist_ok=True)
     path = Path(folder) / f"{filename}.txt"
-    with open (path, "x") as f:
-        pass
+
+    if path.exists():
+            print("File already exists, loading from cache...")
+            return str(path)
+
+    path.touch() # Creates an empty path
     return str(path)
 
 # Open an existing file and write on it
 def write_file(filename, folder, list):
     path = Path(folder) / f"{filename}.txt"
-    with open (path, "a") as f: # append to add information to the file without overwritting
-        f.write(list)
+    text = "\n".join("" if x is None else str(x) for x in list) # TODO cambiar esto??
+    with open (path, "w") as f: # append to add information to the file without overwritting
+        f.write(text)
 
 

@@ -14,10 +14,6 @@ def get_json(url):
             if response.status_code == 200:
                 print(f"Successfully retrieved data from URL in attempt {attempt + 1}")
                 print("Printing index JSON...")
-                print("\n")
-                print("Top keys: ", list(response.json().keys()))
-                print("Record keys: ", list(response.json()["Record"].keys()))
-                print("Number of top sections: ", len(response.json()["Record"].get("Section", [])))
                 return response.json()
             else:
                 print(f"Request failed with status code {response.status_code}. Attempt {attempt + 1}/3")
@@ -28,22 +24,22 @@ def get_json(url):
     return None
 
 
-# Save index JSON to file GENERAL USE (no folder name, just filename with parent.mkdir)
-def save_json(index_json, filename):
-    path = Path(filename) # turns the filename into a Path object
-    path.parent.mkdir(parents=True, exist_ok=True) # creates the "parent" folder with the first word in the url
-    path.write_text(json.dumps(index_json, indent=4)) # writes the JSON data to the file with indentation for readability
+# Save JSON to file GENERAL USE
+def save_json(json_file, filename, folder):
+    Path(folder).mkdir(parents=True, exist_ok=True)
+    path = Path(folder) / filename
+    path.write_text(json.dumps(json_file, indent=4)) # writes the JSON data to the file with indentation for readability
     return str(path)
 
 
 # Find if the file exists and return it
-def load_index_json(filename, folder="indexes"):
+def load_json(filename, folder):
     Path(folder).mkdir(parents=True, exist_ok=True) # creates the folder if it doesn't exist
-    file = Path(folder) / filename
-    if file.exists():
-        print(f"File {filename} already exists. Loading from file.")
+    path = Path(folder) / filename
+    if path.exists():
+        print(f"File {path} already exists. Loading from file.")
         print("\n")
-        return json.loads(file.read_text())
+        return json.loads(path.read_text())
     else:
         # Give the option to the user to click download files?? THINK ABOUT IT
         # TODO
@@ -79,3 +75,26 @@ def save_rows_csv (rows, compound, filename):
         for row in rows:
             writer.writerow(row)
     return str(file_path)
+
+# Save JSON to file GENERAL USE
+def save_json(json_file, filename, folder):
+    Path(folder).mkdir(parents=True, exist_ok=True)
+    path = Path(folder) / filename
+    path.write_text(json.dumps(json_file, indent=4)) # writes the JSON data to the file with indentation for readability
+    return str(path)
+
+# Create a file
+def create_file(filename, folder):
+    Path(folder).mkdir(parents=True, exist_ok=True)
+    path = Path(folder) / f"{filename}.txt"
+    with open (path, "x") as f:
+        pass
+    return str(path)
+
+# Open an existing file and write on it
+def write_file(filename, folder, list):
+    path = Path(folder) / f"{filename}.txt"
+    with open (path, "a") as f: # append to add information to the file without overwritting
+        f.write(list)
+
+

@@ -3,6 +3,7 @@ import pandas as pd
 import app.chem
 import app.interactions
 import app.utils
+import app.proteins
 
 # Asking for compound SMILES code
 smiles_code = input("Enter the SMILES code: ")
@@ -22,7 +23,7 @@ index_url = f"{app.utils.URL_base}/rest/pug_view/index/compound/{compound.cid}/J
 # 2. Retrieves the index JSON
 index_json = app.utils.get_json(index_url)
 # 3. Saves the index JSON to a file
-app.utils.save_json(index_json, f"indexes/compound_{compound.cid}_{compound.synonyms[0]}__index.json")
+app.utils.save_json(index_json, f"compound_{compound.cid}_{compound.synonyms[0]}__index.json", "indexes")
 # 4. Gets all sections in the index JSON
 # 5. Finds the Interactions and Pathways section and retrieves the data of interactions
 out, data = app.interactions.get_all_sections(compound)
@@ -46,9 +47,6 @@ for subsection, table_list in tables:
             rows = app.interactions.get_interactions_table(compound, "pathway", where = where_pathways, order="pathwayid,asc")   
             print(subsection, "pathways", "rows: ", len(rows))
         # -- NORMAL SDQ EXTERNAL TABLES -- 
-        elif subsection_1 == "protein bound 3d structures": 
-            rows = app.interactions.get_interactions_table(compound, table_name,order="pdbid,asc")
-            print(subsection, table_name, "rows: ", len(rows))
         else: 
             rows = app.interactions.get_interactions_table(compound, table_name,order="geneid,asc")
             print(subsection, table_name, "rows: ", len(rows))
@@ -59,7 +57,13 @@ for subsection, table_list in tables:
         csv_path = app.utils.save_rows_csv(rows, compound, f"1.{subsection}/compound_{compound.cid}_{compound.synonyms[0]}_interactionstable.csv")
         print("\nSuccessfully saved interactions table as CSV for compound: "+compound.synonyms[0])
 
+# -- RETRIEVE PROTEINS IN INTERACTIONS (PROTEIN COUNT) --
+app.proteins.retrieve_proteins(compound)
 
+# -- RETRIEVE THE PATHWAY (PATHWAYS COUNT) --
+app.interactions.retrieve_pathways(compound)
+# -- RETRIEVE PATHWAY PROTEINS (PROTEIN COUNT INSIDE A PATHWAY) --
+#app.interactions.retrieve_pathway_proteins(compound)
 
 # Bethanechol: CC(C[N+](C)(C)C)OC(=O)N  
 # Caffeine: CN1C=NC2=C1C(=O)N(C(=O)N2C)C  

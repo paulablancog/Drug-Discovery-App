@@ -1,0 +1,7 @@
+A1Z9E0	Bb in a boxcar, isoform B 
+P54352	Ethanolamine kinase
+Q2PDP3	Uncharacterized protein, isoform E 
+Q7K4C7	LD46058p 
+Q86PD6	Phosphoethanolamine cytidylyltransferase, isoform D
+Q9VCE0	Phosphatidylserine decarboxylase proenzyme, mitochondrial 
+Q9VPD3	Phosphatidylserine synthase

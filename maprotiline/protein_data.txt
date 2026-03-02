@@ -1,0 +1,78 @@
+Alpha-1D adrenergic receptor
+Alpha-1D adrenergic receptor
+Alpha-1 adrenergic receptor
+Alpha-1 adrenergic receptor
+Alpha-1B adrenergic receptor
+Alpha-1A adrenergic receptor
+Alpha-1 adrenergic receptor
+Alpha-1A adrenergic receptor
+Alpha-1A adrenergic receptor
+Alpha-2A adrenergic receptor
+Alpha-2A adrenergic receptor
+Alpha-2 adrenergic receptor
+Alpha-2B adrenergic receptor
+Alpha-2 adrenergic receptor
+Alpha-2B adrenergic receptor
+Alpha-2 adrenergic receptor
+Alpha-2C adrenergic receptor
+Alpha-2C adrenergic receptor
+Aldehyde oxidase
+Voltage-dependent N-type calcium channel subunit alpha-1B
+Muscarinic acetylcholine receptor M1
+Muscarinic acetylcholine receptor M1
+Muscarinic acetylcholine receptor M1
+Muscarinic acetylcholine receptor M2
+Muscarinic acetylcholine receptor M2
+Muscarinic acetylcholine receptor M2
+Muscarinic acetylcholine receptor M3
+Muscarinic acetylcholine receptor M3
+Muscarinic acetylcholine receptor M3
+Muscarinic acetylcholine receptor M4
+Muscarinic acetylcholine receptor M4
+Muscarinic acetylcholine receptor M4
+Muscarinic acetylcholine receptor M5
+Muscarinic acetylcholine receptor M5
+Muscarinic acetylcholine receptor M5
+Cytochrome P450 1A2
+Cytochrome P450 2D6
+Cytochrome P450 3A4
+D(1A) dopamine receptor
+D(2) dopamine receptor
+D(2) dopamine receptor
+D(2) dopamine receptor
+D(3) dopamine receptor
+D(1B) dopamine receptor
+Histamine H1 receptor
+Histamine H1 receptor
+Histamine H1 receptor
+Histamine H2 receptor
+5-hydroxytryptamine receptor 2A
+5-hydroxytryptamine receptor 2A
+5-hydroxytryptamine receptor 2A
+5-hydroxytryptamine receptor 2B
+5-hydroxytryptamine receptor 2C
+5-hydroxytryptamine receptor 2C
+5-hydroxytryptamine receptor 2C
+5-hydroxytryptamine receptor 6
+5-hydroxytryptamine receptor 7
+5-hydroxytryptamine receptor 7
+Amine oxidase [flavin-containing] B
+Alpha-1-acid glycoprotein 1
+Sodium-dependent noradrenaline transporter
+Sodium-dependent noradrenaline transporter
+Sodium-dependent noradrenaline transporter
+Norepinephrine transporter (NET)
+NET
+Sodium-dependent noradrenaline transporter
+Sodium-dependent dopamine transporter
+Sodium-dependent dopamine transporter
+Sodium-dependent serotonin transporter
+Sodium-dependent serotonin transporter
+ATP-binding cassette sub-family G member 2
+Kir3.4
+G protein-activated inward rectifier potassium channel 2
+Kir3.2
+Alpha-1A adrenergic receptor
+Transient receptor potential cation channel subfamily M member 3
+TRPM3
+Alpha-1B adrenergic receptor

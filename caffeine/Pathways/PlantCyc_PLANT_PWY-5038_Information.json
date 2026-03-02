@@ -1,0 +1,227 @@
+{
+    "Record": {
+        "RecordType": "Pathway",
+        "RecordAccession": "PWY-5038",
+        "RecordTitle": "caffeine biosynthesis II (via paraxanthine)",
+        "RecordExternalURL": "https://pmn.plantcyc.org/pathway?orgid=PLANT&id=PWY-5038",
+        "Section": [
+            {
+                "TOCHeading": "Identity",
+                "Description": "Information describing the identity of this pathway, including the data source and external identifier.",
+                "Section": [
+                    {
+                        "TOCHeading": "Source",
+                        "Description": "Data source from which this pathway record was derived.",
+                        "DisplayControls": {
+                            "MoveToTop": true
+                        },
+                        "Information": [
+                            {
+                                "ReferenceNumber": 1,
+                                "URL": "https://plantcyc.org/",
+                                "Value": {
+                                    "StringWithMarkup": [
+                                        {
+                                            "String": "PlantCyc"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "External ID",
+                        "Description": "The identifier used for this pathway by the external data source.",
+                        "Information": [
+                            {
+                                "ReferenceNumber": 1,
+                                "URL": "https://pmn.plantcyc.org/pathway?orgid=PLANT&id=PWY-5038",
+                                "Value": {
+                                    "StringWithMarkup": [
+                                        {
+                                            "String": "PWY-5038"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Pathway Information",
+                "Description": "General information about this pathway.",
+                "DisplayControls": {
+                    "HideThisSection": true
+                },
+                "Section": [
+                    {
+                        "TOCHeading": "Taxonomic Scope",
+                        "Description": "Indicates if the pathway is organism-specific or conserved.",
+                        "DisplayControls": {
+                            "MoveToTop": true
+                        },
+                        "Information": [
+                            {
+                                "ReferenceNumber": 1,
+                                "Value": {
+                                    "StringWithMarkup": [
+                                        {
+                                            "String": "conserved"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "Category",
+                        "Description": "Descriptive category of this pathway (e.g., signaling, metabolic, disease).",
+                        "DisplayControls": {
+                            "MoveToTop": true
+                        },
+                        "Information": [
+                            {
+                                "ReferenceNumber": 1,
+                                "Value": {
+                                    "StringWithMarkup": [
+                                        {
+                                            "String": "pathway"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "Create Date",
+                        "Description": "Date when this pathway record was created. For more information on various dates for PubChem records, visit the PubChem Record Dates help page.",
+                        "URL": "https://pubchem.ncbi.nlm.nih.gov/docs/record-dates",
+                        "DisplayControls": {
+                            "MoveToTop": true
+                        },
+                        "Information": [
+                            {
+                                "ReferenceNumber": 2,
+                                "Value": {
+                                    "StringWithMarkup": [
+                                        {
+                                            "String": "2019-05-31"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "Modify Date",
+                        "Description": "Date when this pathway record was last modified. For more information on various dates for PubChem records, visit the PubChem Record Dates help page.",
+                        "URL": "https://pubchem.ncbi.nlm.nih.gov/docs/record-dates",
+                        "DisplayControls": {
+                            "MoveToTop": true
+                        },
+                        "Information": [
+                            {
+                                "ReferenceNumber": 2,
+                                "Value": {
+                                    "StringWithMarkup": [
+                                        {
+                                            "String": "2026-02-01"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "Record Description",
+                        "Description": "Textual summary about this pathway",
+                        "DisplayControls": {
+                            "MoveToTop": true
+                        },
+                        "Information": [
+                            {
+                                "ReferenceNumber": 1,
+                                "Value": {
+                                    "StringWithMarkup": [
+                                        {
+                                            "String": "Evidence from tracer studies in tea indicates that an alternative caffeine\nbiosynthesis pathway via paraxanthine exists in addition to the major pathwayPWY-5037.\nPartially purification and subsequent characterization of a tea\nN-methyltransferase showed that 7-methylxanthine is metabolized to theobromine\nas well as paraxanthine. However its conversion to theobromine is at a 10-fold\nfaster rate than its conversion to paraxanthine. Because of this preferential\nconversion of 7-methylxansine to theobromine, the depicted caffeine\nbiosynthesis via paraxanthine is a minor route[Kato96].  Caffeine synthases\ncharacterized from both tea and coffee showed effective conversion of\nparaxanthine to caffeine[10984041][10364410][12746542][12527364].",
+                                            "Markup": [
+                                                {
+                                                    "Start": 152,
+                                                    "Length": 8,
+                                                    "URL": "/pathway/PlantCyc:PLANT_PWY-5037"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Interactions",
+                "Description": "Specific interactions between biochemicals involved in this pathway.",
+                "Information": [
+                    {
+                        "ReferenceNumber": 1,
+                        "Value": {
+                            "ExternalTableName": "collection=pathwayreaction&view=concise_pathway"
+                        }
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Chemicals",
+                "Description": "Chemicals involved in this pathway.",
+                "Information": [
+                    {
+                        "ReferenceNumber": 1,
+                        "Value": {
+                            "ExternalTableName": "pcget_pathway_chemical"
+                        }
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Literature",
+                "Description": "Scientific articles associated with this pathway, provided by the data source.",
+                "Section": [
+                    {
+                        "TOCHeading": "Consolidated References",
+                        "Description": "The consolidated references include literature data from all sources including Reactome, WikiPathways, PharmGKB, PathBank, LIPID MAPS, etc.",
+                        "URL": "https://pubchem.ncbi.nlm.nih.gov/docs/literature",
+                        "Information": [
+                            {
+                                "ReferenceNumber": 1,
+                                "Value": {
+                                    "ExternalTableName": "literature"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Reference": [
+            {
+                "ReferenceNumber": 1,
+                "SourceName": "PlantCyc",
+                "SourceID": "PWY-5038",
+                "Description": "The Plant Metabolic Network (PMN) currently houses one multi-species reference database called PlantCyc and 100 species/taxon-specific databases",
+                "URL": "https://pmn.plantcyc.org/pathway?orgid=PLANT&id=PWY-5038",
+                "LicenseNote": "The PlantCyc databases may be used, royalty-free, for any and all purposes worldwide.",
+                "LicenseURL": "https://plantcyc.org/downloads/license-agreement"
+            },
+            {
+                "ReferenceNumber": 2,
+                "SourceName": "PubChem",
+                "SourceID": "PubChem",
+                "Description": "Data deposited in or computed by PubChem",
+                "URL": "https://pubchem.ncbi.nlm.nih.gov"
+            }
+        ]
+    }
+}

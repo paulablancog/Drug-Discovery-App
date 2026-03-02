@@ -1,0 +1,382 @@
+{
+    "Record": {
+        "RecordType": "Pathway",
+        "RecordAccession": "PWY-6412",
+        "RecordTitle": "ginsenoside degradation II",
+        "RecordExternalURL": "https://biocyc.org/pathway?orgid=META&id=PWY-6412",
+        "Section": [
+            {
+                "TOCHeading": "Identity",
+                "Description": "Information describing the identity of this pathway, including the data source and external identifier.",
+                "Section": [
+                    {
+                        "TOCHeading": "Source",
+                        "Description": "Data source from which this pathway record was derived.",
+                        "DisplayControls": {
+                            "MoveToTop": true
+                        },
+                        "Information": [
+                            {
+                                "ReferenceNumber": 1,
+                                "URL": "https://biocyc.org/",
+                                "Value": {
+                                    "StringWithMarkup": [
+                                        {
+                                            "String": "BioCyc"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "External ID",
+                        "Description": "The identifier used for this pathway by the external data source.",
+                        "Information": [
+                            {
+                                "ReferenceNumber": 1,
+                                "URL": "https://biocyc.org/pathway?orgid=META&id=PWY-6412",
+                                "Value": {
+                                    "StringWithMarkup": [
+                                        {
+                                            "String": "PWY-6412"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Pathway Information",
+                "Description": "General information about this pathway.",
+                "DisplayControls": {
+                    "HideThisSection": true
+                },
+                "Section": [
+                    {
+                        "TOCHeading": "Taxonomic Scope",
+                        "Description": "Indicates if the pathway is organism-specific or conserved.",
+                        "DisplayControls": {
+                            "MoveToTop": true
+                        },
+                        "Information": [
+                            {
+                                "ReferenceNumber": 1,
+                                "Value": {
+                                    "StringWithMarkup": [
+                                        {
+                                            "String": "conserved"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "Category",
+                        "Description": "Descriptive category of this pathway (e.g., signaling, metabolic, disease).",
+                        "DisplayControls": {
+                            "MoveToTop": true
+                        },
+                        "Information": [
+                            {
+                                "ReferenceNumber": 1,
+                                "Value": {
+                                    "StringWithMarkup": [
+                                        {
+                                            "String": "pathway"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "Create Date",
+                        "Description": "Date when this pathway record was created. For more information on various dates for PubChem records, visit the PubChem Record Dates help page.",
+                        "URL": "https://pubchem.ncbi.nlm.nih.gov/docs/record-dates",
+                        "DisplayControls": {
+                            "MoveToTop": true
+                        },
+                        "Information": [
+                            {
+                                "ReferenceNumber": 2,
+                                "Value": {
+                                    "StringWithMarkup": [
+                                        {
+                                            "String": "2019-01-17"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "Modify Date",
+                        "Description": "Date when this pathway record was last modified. For more information on various dates for PubChem records, visit the PubChem Record Dates help page.",
+                        "URL": "https://pubchem.ncbi.nlm.nih.gov/docs/record-dates",
+                        "DisplayControls": {
+                            "MoveToTop": true
+                        },
+                        "Information": [
+                            {
+                                "ReferenceNumber": 2,
+                                "Value": {
+                                    "StringWithMarkup": [
+                                        {
+                                            "String": "2022-05-18"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "Record Description",
+                        "Description": "Textual summary about this pathway",
+                        "DisplayControls": {
+                            "MoveToTop": true
+                        },
+                        "Information": [
+                            {
+                                "ReferenceNumber": 1,
+                                "Value": {
+                                    "StringWithMarkup": [
+                                        {
+                                            "String": "Ginsenosides or panaxosides are a class of steroid glycosides and triterpene saponins found exclusively in the plant genus TAX-4053. They are the principal components responsible for the pharmaceutical activities of ginseng.\n\nGinsenosides are composed of an aglycone and sugar moieties. Based on the structure of their aglycones, ginsenosides have been categorized into three broad types; Protopanaxadiol-type-ginsenosides (PPD), which contain hydroxyl groups at positions 3 and 20, Protopanaxatriol-type-ginsenosides (PPT), which contain hydroxyl groups at positions 3, 6 and 20, and Oleanonic-acid-type-ginsenosides.\n\nAlthough ginsenosides only have three kinds of aglycones, more than 60 kinds of ginsenosides have been identified by now due to the variability in the type of sugar moieties, their number, and the carbon positions they link to.\n\nThe biological activity of ginsenoside increases with the decrease of the number of the sugar moieties. All of the ginsenosides found in large quantities in wild ginseng (known as major ginsenosides) are heavily glycosylated, while the more active less-glycosylated ginsenosides are found in much smalller quantities (and are commonly referred to as the\nminor ginsenosides). Following oral intake of ginseng, the large low-solubility and poor-permeability major ginsenosides cannot be absorbed by the human body directly [Su06], and are deglycosylated into smaller forms in the gastrointestinal tract by intestinal bacteria and/or digestive enzymes [PMID: 8923812].\n\nGlycosidase enzymes that can convert the major ginsenosides to minor ginsenosides are not common and are of commercial interest.\n\nCPD-12102 has been isolated as a minor constituent from the root of TAX-4054 [PMID: 14751305], the root of Ginseng radix [PMID: 9527441] and the fruits of TAX-4054 [PMID: 8216805]. CPD-12102 is a saponin with a lower amount of sugar chains. This type of ginsenosides are known to be more effective as cancer drugs [PMID: 12583159]. CPD-12102 is cytoprotective, relaxing vasculature by inducing nitric oxide synthase in response to NITRIC-OXIDE production [PMID: 14534150].\nThe compound has been evaluated extensively as an anti cancer drug [PMID: 9527441]. Its inhibitory effect on lung metastasis of mouse lymphoma has been demonstrated [15733388 ]. The antiproliferative effects of CPD-12102 on proteins in colon cancer cells using a proteomic approach has been demonstrated [PMID: 19352032].\n\nAbout This Pathway\n\nAlthough CPD-12102 is a promising pharmacological agent, its industrial production is difficult. It has been synthesized mainly by acid and heat treatment of tissue, with low yields. Alternative methods of its production via microbial degradation pathways in microbes are being actively explored, particularlyamong microbes found in the rhizosphere of ginseng roots. TAX-51671 GS514 [PMID: 17764709] and the fungus TAX-40383 [PMID: 18256474] contain the enzyme EC-3.2.1.187, which is required for the conversion of CPD-9250 to CPD-12102. The enzyme removes the glucosyl groups from C20 in two steps, via the intermediate CPD-9249.\n\nThis pathway differs from PWY-6411 as it does not form CPD-12100.",
+                                            "Markup": [
+                                                {
+                                                    "Start": 0,
+                                                    "Length": 12,
+                                                    "URL": "https://biocyc.org/pathway?orgid=META&id=Ginsenosides"
+                                                },
+                                                {
+                                                    "Start": 123,
+                                                    "Length": 8,
+                                                    "URL": "https://biocyc.org/pathway?orgid=META&id=TAX-4053"
+                                                },
+                                                {
+                                                    "Start": 389,
+                                                    "Length": 33,
+                                                    "URL": "https://biocyc.org/pathway?orgid=META&id=Protopanaxadiol-type-ginsenosides"
+                                                },
+                                                {
+                                                    "Start": 483,
+                                                    "Length": 34,
+                                                    "URL": "https://biocyc.org/pathway?orgid=META&id=Protopanaxatriol-type-ginsenosides"
+                                                },
+                                                {
+                                                    "Start": 585,
+                                                    "Length": 32,
+                                                    "URL": "https://biocyc.org/pathway?orgid=META&id=Oleanonic-acid-type-ginsenosides"
+                                                },
+                                                {
+                                                    "Start": 1499,
+                                                    "Length": 13,
+                                                    "URL": "https://www.ncbi.nlm.nih.gov/pubmed/8923812"
+                                                },
+                                                {
+                                                    "Start": 1646,
+                                                    "Length": 9,
+                                                    "URL": "https://biocyc.org/pathway?orgid=META&id=CPD-12102"
+                                                },
+                                                {
+                                                    "Start": 1714,
+                                                    "Length": 8,
+                                                    "URL": "https://biocyc.org/pathway?orgid=META&id=TAX-4054"
+                                                },
+                                                {
+                                                    "Start": 1724,
+                                                    "Length": 14,
+                                                    "URL": "https://www.ncbi.nlm.nih.gov/pubmed/14751305"
+                                                },
+                                                {
+                                                    "Start": 1768,
+                                                    "Length": 13,
+                                                    "URL": "https://www.ncbi.nlm.nih.gov/pubmed/9527441"
+                                                },
+                                                {
+                                                    "Start": 1801,
+                                                    "Length": 8,
+                                                    "URL": "https://biocyc.org/pathway?orgid=META&id=TAX-4054"
+                                                },
+                                                {
+                                                    "Start": 1811,
+                                                    "Length": 13,
+                                                    "URL": "https://www.ncbi.nlm.nih.gov/pubmed/8216805"
+                                                },
+                                                {
+                                                    "Start": 1827,
+                                                    "Length": 9,
+                                                    "URL": "https://biocyc.org/pathway?orgid=META&id=CPD-12102"
+                                                },
+                                                {
+                                                    "Start": 1961,
+                                                    "Length": 14,
+                                                    "URL": "https://www.ncbi.nlm.nih.gov/pubmed/12583159"
+                                                },
+                                                {
+                                                    "Start": 1978,
+                                                    "Length": 9,
+                                                    "URL": "https://biocyc.org/pathway?orgid=META&id=CPD-12102"
+                                                },
+                                                {
+                                                    "Start": 2077,
+                                                    "Length": 12,
+                                                    "URL": "https://biocyc.org/pathway?orgid=META&id=NITRIC-OXIDE"
+                                                },
+                                                {
+                                                    "Start": 2102,
+                                                    "Length": 14,
+                                                    "URL": "https://www.ncbi.nlm.nih.gov/pubmed/14534150"
+                                                },
+                                                {
+                                                    "Start": 2187,
+                                                    "Length": 13,
+                                                    "URL": "https://www.ncbi.nlm.nih.gov/pubmed/9527441"
+                                                },
+                                                {
+                                                    "Start": 2330,
+                                                    "Length": 9,
+                                                    "URL": "https://biocyc.org/pathway?orgid=META&id=CPD-12102"
+                                                },
+                                                {
+                                                    "Start": 2424,
+                                                    "Length": 14,
+                                                    "URL": "https://www.ncbi.nlm.nih.gov/pubmed/19352032"
+                                                },
+                                                {
+                                                    "Start": 2442,
+                                                    "Length": 18,
+                                                    "Type": "Bold"
+                                                },
+                                                {
+                                                    "Start": 2471,
+                                                    "Length": 9,
+                                                    "URL": "https://biocyc.org/pathway?orgid=META&id=CPD-12102"
+                                                },
+                                                {
+                                                    "Start": 2829,
+                                                    "Length": 9,
+                                                    "URL": "https://biocyc.org/pathway?orgid=META&id=TAX-51671"
+                                                },
+                                                {
+                                                    "Start": 2846,
+                                                    "Length": 14,
+                                                    "URL": "https://www.ncbi.nlm.nih.gov/pubmed/17764709"
+                                                },
+                                                {
+                                                    "Start": 2877,
+                                                    "Length": 9,
+                                                    "URL": "https://biocyc.org/pathway?orgid=META&id=TAX-40383"
+                                                },
+                                                {
+                                                    "Start": 2888,
+                                                    "Length": 14,
+                                                    "URL": "https://www.ncbi.nlm.nih.gov/pubmed/18256474"
+                                                },
+                                                {
+                                                    "Start": 2923,
+                                                    "Length": 12,
+                                                    "URL": "https://biocyc.org/pathway?orgid=META&id=EC-3.2.1.187"
+                                                },
+                                                {
+                                                    "Start": 2977,
+                                                    "Length": 8,
+                                                    "URL": "https://biocyc.org/pathway?orgid=META&id=CPD-9250"
+                                                },
+                                                {
+                                                    "Start": 2989,
+                                                    "Length": 9,
+                                                    "URL": "https://biocyc.org/pathway?orgid=META&id=CPD-12102"
+                                                },
+                                                {
+                                                    "Start": 3083,
+                                                    "Length": 8,
+                                                    "URL": "https://biocyc.org/pathway?orgid=META&id=CPD-9249"
+                                                },
+                                                {
+                                                    "Start": 3120,
+                                                    "Length": 8,
+                                                    "URL": "/pathway/BioCyc:META_PWY-6411"
+                                                },
+                                                {
+                                                    "Start": 3149,
+                                                    "Length": 9,
+                                                    "URL": "https://biocyc.org/pathway?orgid=META&id=CPD-12100"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Interactions",
+                "Description": "Specific interactions between biochemicals involved in this pathway.",
+                "Information": [
+                    {
+                        "ReferenceNumber": 1,
+                        "Value": {
+                            "ExternalTableName": "collection=pathwayreaction&view=concise_pathway"
+                        }
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Chemicals",
+                "Description": "Chemicals involved in this pathway.",
+                "Information": [
+                    {
+                        "ReferenceNumber": 1,
+                        "Value": {
+                            "ExternalTableName": "pcget_pathway_chemical"
+                        }
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Literature",
+                "Description": "Scientific articles associated with this pathway, provided by the data source.",
+                "Section": [
+                    {
+                        "TOCHeading": "Consolidated References",
+                        "Description": "The consolidated references include literature data from all sources including Reactome, WikiPathways, PharmGKB, PathBank, LIPID MAPS, etc.",
+                        "URL": "https://pubchem.ncbi.nlm.nih.gov/docs/literature",
+                        "Information": [
+                            {
+                                "ReferenceNumber": 1,
+                                "Value": {
+                                    "ExternalTableName": "literature"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Reference": [
+            {
+                "ReferenceNumber": 1,
+                "SourceName": "BioCyc",
+                "SourceID": "PWY-6412",
+                "Description": "BioCyc integrates sequenced genomes with predicted metabolic pathways for thousands of organisms and provides extensive bioinformatics tools.",
+                "URL": "https://biocyc.org/pathway?orgid=META&id=PWY-6412",
+                "LicenseNote": "Includes BioCyc pathway/genome databases under license from SRI International",
+                "LicenseURL": "https://bioinformatics.ai.sri.com/ptools/licensing/all-reg.shtml"
+            },
+            {
+                "ReferenceNumber": 2,
+                "SourceName": "PubChem",
+                "SourceID": "PubChem",
+                "Description": "Data deposited in or computed by PubChem",
+                "URL": "https://pubchem.ncbi.nlm.nih.gov"
+            }
+        ]
+    }
+}

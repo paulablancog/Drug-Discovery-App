@@ -27,3 +27,7 @@ def retrieve_targets_1(compound):
     
     print(f"Saved proteins of {compound} to {filename}")
     return filename
+
+
+protein_filename = "protein_data.txt"
+

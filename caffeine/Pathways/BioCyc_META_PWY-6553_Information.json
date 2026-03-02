@@ -1,0 +1,237 @@
+{
+    "Record": {
+        "RecordType": "Pathway",
+        "RecordAccession": "PWY-6553",
+        "RecordTitle": "caffeine degradation II",
+        "RecordExternalURL": "https://biocyc.org/pathway?orgid=META&id=PWY-6553",
+        "Section": [
+            {
+                "TOCHeading": "Identity",
+                "Description": "Information describing the identity of this pathway, including the data source and external identifier.",
+                "Section": [
+                    {
+                        "TOCHeading": "Source",
+                        "Description": "Data source from which this pathway record was derived.",
+                        "DisplayControls": {
+                            "MoveToTop": true
+                        },
+                        "Information": [
+                            {
+                                "ReferenceNumber": 1,
+                                "URL": "https://biocyc.org/",
+                                "Value": {
+                                    "StringWithMarkup": [
+                                        {
+                                            "String": "BioCyc"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "External ID",
+                        "Description": "The identifier used for this pathway by the external data source.",
+                        "Information": [
+                            {
+                                "ReferenceNumber": 1,
+                                "URL": "https://biocyc.org/pathway?orgid=META&id=PWY-6553",
+                                "Value": {
+                                    "StringWithMarkup": [
+                                        {
+                                            "String": "PWY-6553"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Pathway Information",
+                "Description": "General information about this pathway.",
+                "DisplayControls": {
+                    "HideThisSection": true
+                },
+                "Section": [
+                    {
+                        "TOCHeading": "Taxonomic Scope",
+                        "Description": "Indicates if the pathway is organism-specific or conserved.",
+                        "DisplayControls": {
+                            "MoveToTop": true
+                        },
+                        "Information": [
+                            {
+                                "ReferenceNumber": 1,
+                                "Value": {
+                                    "StringWithMarkup": [
+                                        {
+                                            "String": "conserved"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "Category",
+                        "Description": "Descriptive category of this pathway (e.g., signaling, metabolic, disease).",
+                        "DisplayControls": {
+                            "MoveToTop": true
+                        },
+                        "Information": [
+                            {
+                                "ReferenceNumber": 1,
+                                "Value": {
+                                    "StringWithMarkup": [
+                                        {
+                                            "String": "pathway"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "Create Date",
+                        "Description": "Date when this pathway record was created. For more information on various dates for PubChem records, visit the PubChem Record Dates help page.",
+                        "URL": "https://pubchem.ncbi.nlm.nih.gov/docs/record-dates",
+                        "DisplayControls": {
+                            "MoveToTop": true
+                        },
+                        "Information": [
+                            {
+                                "ReferenceNumber": 2,
+                                "Value": {
+                                    "StringWithMarkup": [
+                                        {
+                                            "String": "2019-01-17"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "Modify Date",
+                        "Description": "Date when this pathway record was last modified. For more information on various dates for PubChem records, visit the PubChem Record Dates help page.",
+                        "URL": "https://pubchem.ncbi.nlm.nih.gov/docs/record-dates",
+                        "DisplayControls": {
+                            "MoveToTop": true
+                        },
+                        "Information": [
+                            {
+                                "ReferenceNumber": 2,
+                                "Value": {
+                                    "StringWithMarkup": [
+                                        {
+                                            "String": "2022-05-18"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "Record Description",
+                        "Description": "Textual summary about this pathway",
+                        "DisplayControls": {
+                            "MoveToTop": true
+                        },
+                        "Information": [
+                            {
+                                "ReferenceNumber": 1,
+                                "Value": {
+                                    "StringWithMarkup": [
+                                        {
+                                            "String": " General Background\n\nCaffeine is found in several plant species including coffea, tea and cacao. The contents of caffeine vary greatly from cultivar to cultivar, tissue to tissue, and from different developmental stages. One mechanism that plants use to control caffeine level is by balancing between caffeine biosynthesis and degradation. The main caffeine degradation pathway has been proposed to proceed via theophylline and 3-methylxanthine involving three sequential de-methylation steps (PWY-6552), and caffeine is eventually degraded to CO2 and NH3. In addition, minor species-specific degradation pathways have also been proposed. All the proposed pathways were based on radio-tracer studies (reviewed in [18068204][14977550]). No enzyme activity has been detected or characterized to date. \n\n\nAbout This Pathway\n\nIn several tea and coffea species, caffeine is degraded to liberine (O(2),1,9-trimethylurate), a pathway involves an initial oxidation reaction followed by several methyltransfer reactions.",
+                                            "Markup": [
+                                                {
+                                                    "Start": 0,
+                                                    "Length": 19,
+                                                    "Type": "Bold"
+                                                },
+                                                {
+                                                    "Start": 494,
+                                                    "Length": 8,
+                                                    "URL": "/pathway/BioCyc:META_PWY-6552"
+                                                },
+                                                {
+                                                    "Start": 802,
+                                                    "Length": 18,
+                                                    "Type": "Bold"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Interactions",
+                "Description": "Specific interactions between biochemicals involved in this pathway.",
+                "Information": [
+                    {
+                        "ReferenceNumber": 1,
+                        "Value": {
+                            "ExternalTableName": "collection=pathwayreaction&view=concise_pathway"
+                        }
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Chemicals",
+                "Description": "Chemicals involved in this pathway.",
+                "Information": [
+                    {
+                        "ReferenceNumber": 1,
+                        "Value": {
+                            "ExternalTableName": "pcget_pathway_chemical"
+                        }
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Literature",
+                "Description": "Scientific articles associated with this pathway, provided by the data source.",
+                "Section": [
+                    {
+                        "TOCHeading": "Consolidated References",
+                        "Description": "The consolidated references include literature data from all sources including Reactome, WikiPathways, PharmGKB, PathBank, LIPID MAPS, etc.",
+                        "URL": "https://pubchem.ncbi.nlm.nih.gov/docs/literature",
+                        "Information": [
+                            {
+                                "ReferenceNumber": 1,
+                                "Value": {
+                                    "ExternalTableName": "literature"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Reference": [
+            {
+                "ReferenceNumber": 1,
+                "SourceName": "BioCyc",
+                "SourceID": "PWY-6553",
+                "Description": "BioCyc integrates sequenced genomes with predicted metabolic pathways for thousands of organisms and provides extensive bioinformatics tools.",
+                "URL": "https://biocyc.org/pathway?orgid=META&id=PWY-6553",
+                "LicenseNote": "Includes BioCyc pathway/genome databases under license from SRI International",
+                "LicenseURL": "https://bioinformatics.ai.sri.com/ptools/licensing/all-reg.shtml"
+            },
+            {
+                "ReferenceNumber": 2,
+                "SourceName": "PubChem",
+                "SourceID": "PubChem",
+                "Description": "Data deposited in or computed by PubChem",
+                "URL": "https://pubchem.ncbi.nlm.nih.gov"
+            }
+        ]
+    }
+}

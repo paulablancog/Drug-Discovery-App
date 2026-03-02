@@ -1,0 +1,252 @@
+{
+    "Record": {
+        "RecordType": "Pathway",
+        "RecordAccession": "PWY-5037",
+        "RecordTitle": "caffeine biosynthesis I",
+        "RecordExternalURL": "https://biocyc.org/pathway?orgid=META&id=PWY-5037",
+        "Section": [
+            {
+                "TOCHeading": "Identity",
+                "Description": "Information describing the identity of this pathway, including the data source and external identifier.",
+                "Section": [
+                    {
+                        "TOCHeading": "Source",
+                        "Description": "Data source from which this pathway record was derived.",
+                        "DisplayControls": {
+                            "MoveToTop": true
+                        },
+                        "Information": [
+                            {
+                                "ReferenceNumber": 1,
+                                "URL": "https://biocyc.org/",
+                                "Value": {
+                                    "StringWithMarkup": [
+                                        {
+                                            "String": "BioCyc"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "External ID",
+                        "Description": "The identifier used for this pathway by the external data source.",
+                        "Information": [
+                            {
+                                "ReferenceNumber": 1,
+                                "URL": "https://biocyc.org/pathway?orgid=META&id=PWY-5037",
+                                "Value": {
+                                    "StringWithMarkup": [
+                                        {
+                                            "String": "PWY-5037"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Pathway Information",
+                "Description": "General information about this pathway.",
+                "DisplayControls": {
+                    "HideThisSection": true
+                },
+                "Section": [
+                    {
+                        "TOCHeading": "Taxonomic Scope",
+                        "Description": "Indicates if the pathway is organism-specific or conserved.",
+                        "DisplayControls": {
+                            "MoveToTop": true
+                        },
+                        "Information": [
+                            {
+                                "ReferenceNumber": 1,
+                                "Value": {
+                                    "StringWithMarkup": [
+                                        {
+                                            "String": "conserved"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "Category",
+                        "Description": "Descriptive category of this pathway (e.g., signaling, metabolic, disease).",
+                        "DisplayControls": {
+                            "MoveToTop": true
+                        },
+                        "Information": [
+                            {
+                                "ReferenceNumber": 1,
+                                "Value": {
+                                    "StringWithMarkup": [
+                                        {
+                                            "String": "pathway"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "Create Date",
+                        "Description": "Date when this pathway record was created. For more information on various dates for PubChem records, visit the PubChem Record Dates help page.",
+                        "URL": "https://pubchem.ncbi.nlm.nih.gov/docs/record-dates",
+                        "DisplayControls": {
+                            "MoveToTop": true
+                        },
+                        "Information": [
+                            {
+                                "ReferenceNumber": 2,
+                                "Value": {
+                                    "StringWithMarkup": [
+                                        {
+                                            "String": "2019-01-17"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "Modify Date",
+                        "Description": "Date when this pathway record was last modified. For more information on various dates for PubChem records, visit the PubChem Record Dates help page.",
+                        "URL": "https://pubchem.ncbi.nlm.nih.gov/docs/record-dates",
+                        "DisplayControls": {
+                            "MoveToTop": true
+                        },
+                        "Information": [
+                            {
+                                "ReferenceNumber": 2,
+                                "Value": {
+                                    "StringWithMarkup": [
+                                        {
+                                            "String": "2022-05-18"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "Record Description",
+                        "Description": "Textual summary about this pathway",
+                        "DisplayControls": {
+                            "MoveToTop": true
+                        },
+                        "Information": [
+                            {
+                                "ReferenceNumber": 1,
+                                "Value": {
+                                    "StringWithMarkup": [
+                                        {
+                                            "String": "Caffeine, 1,3,7-trimethylxanthine, is one of the best known purine alkaloids and also the most abundant one in nature, followed by theobromine, the immediate precursor of caffeine (3,7-dimethylxanthine) [PMID: 14977593]. Caffeine presents \nin high concentrations in many coffea plants and tea plants. It can accumulate up to 2% dry weight in seeds and young expanding leaves of Coffea arabica, and up to 3% dry weight in young leaves of tea (TAX-4442). The exact physiological role of endogenous purine alkaloids in plants is undetermined. Their hypothetic roles include being a defense chemical where high concentrations of caffeine accumulated in young leaves, fruits and flower buds help protect these soft tissues from predators, or being an autotoxic chemical where caffeine released from seed coats into the soil inhibits germination of other seeds. However there is little evidence supports the hypothesis.\n\nThe depicted pathway herein illustrates the major route of caffeine biosynthesis, from xanthosine. It involves three SAM-dependent N-methyltransferase activities, namely xanthosine N-methyltransferase, 7-methylxanthine N-methyltransferase, and theobromine N-methyltransferase. 7-methylxanthosine synthase of coffee was shown have the specific xanthosine N-methyltransferase activity. It specifically converts xanthosine to 7-methylxanthosine (the first methylation step). XMP is not an effective substrate. Theobromine synthase has also been characterized from coffee which has the specific 7-methylxanthine N-methyltransferase activity. It converts 7-methylxanthine to theobromine (the second methylation step). Caffeine synthase has been characterized from both coffee and tea. Caffeine synthase is a dual function enzyme. It has both the 7-methylxanthine N-methyltransferase and the theobromine N-methyltransferase activities. It converts 7-methylxanthine to theobromine and theobromine to caffeine, the second and the third methylation steps. Immature fruits are the major sites of caffeine biosynthesis in coffee plants, where high levels of transcripts of genes encoding the three methyltransferation activities are also found [PMID: 12746542].  \n\nFree purine nucleotides are the major resources of xanthosine. Xanthosine is derived from salvage of adenine and guanine nucleotides (see PWY-6607). Newly synthesized IMP from de novo purine biosynthesis, and adenosine released from the SAM cycle (see PWY-5041) may also be converted to xanthosine and enter the caffeine biosynthesis pathway.  \n\nIn addition to the major route, caffeine may also be synthesized via a few minor routes such as from 7-methylxanthine via paraxanthine (see PWY-5038).",
+                                            "Markup": [
+                                                {
+                                                    "Start": 204,
+                                                    "Length": 14,
+                                                    "URL": "https://www.ncbi.nlm.nih.gov/pubmed/14977593"
+                                                },
+                                                {
+                                                    "Start": 442,
+                                                    "Length": 8,
+                                                    "URL": "https://biocyc.org/pathway?orgid=META&id=TAX-4442"
+                                                },
+                                                {
+                                                    "Start": 2149,
+                                                    "Length": 14,
+                                                    "URL": "https://www.ncbi.nlm.nih.gov/pubmed/12746542"
+                                                },
+                                                {
+                                                    "Start": 2307,
+                                                    "Length": 8,
+                                                    "URL": "/pathway/BioCyc:META_PWY-6607"
+                                                },
+                                                {
+                                                    "Start": 2421,
+                                                    "Length": 8,
+                                                    "URL": "/pathway/BioCyc:META_PWY-5041"
+                                                },
+                                                {
+                                                    "Start": 2655,
+                                                    "Length": 8,
+                                                    "URL": "/pathway/BioCyc:META_PWY-5038"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Interactions",
+                "Description": "Specific interactions between biochemicals involved in this pathway.",
+                "Information": [
+                    {
+                        "ReferenceNumber": 1,
+                        "Value": {
+                            "ExternalTableName": "collection=pathwayreaction&view=concise_pathway"
+                        }
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Chemicals",
+                "Description": "Chemicals involved in this pathway.",
+                "Information": [
+                    {
+                        "ReferenceNumber": 1,
+                        "Value": {
+                            "ExternalTableName": "pcget_pathway_chemical"
+                        }
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Literature",
+                "Description": "Scientific articles associated with this pathway, provided by the data source.",
+                "Section": [
+                    {
+                        "TOCHeading": "Consolidated References",
+                        "Description": "The consolidated references include literature data from all sources including Reactome, WikiPathways, PharmGKB, PathBank, LIPID MAPS, etc.",
+                        "URL": "https://pubchem.ncbi.nlm.nih.gov/docs/literature",
+                        "Information": [
+                            {
+                                "ReferenceNumber": 1,
+                                "Value": {
+                                    "ExternalTableName": "literature"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Reference": [
+            {
+                "ReferenceNumber": 1,
+                "SourceName": "BioCyc",
+                "SourceID": "PWY-5037",
+                "Description": "BioCyc integrates sequenced genomes with predicted metabolic pathways for thousands of organisms and provides extensive bioinformatics tools.",
+                "URL": "https://biocyc.org/pathway?orgid=META&id=PWY-5037",
+                "LicenseNote": "Includes BioCyc pathway/genome databases under license from SRI International",
+                "LicenseURL": "https://bioinformatics.ai.sri.com/ptools/licensing/all-reg.shtml"
+            },
+            {
+                "ReferenceNumber": 2,
+                "SourceName": "PubChem",
+                "SourceID": "PubChem",
+                "Description": "Data deposited in or computed by PubChem",
+                "URL": "https://pubchem.ncbi.nlm.nih.gov"
+            }
+        ]
+    }
+}

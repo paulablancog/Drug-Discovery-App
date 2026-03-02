@@ -5,7 +5,7 @@
         "RecordTitle": "Ginsenoside Rb1",
         "Information": [
             {
-                "ReferenceNumber": 74,
+                "ReferenceNumber": 75,
                 "Value": {
                     "StringWithMarkup": [
                         {
@@ -258,7 +258,7 @@
                 }
             },
             {
-                "ReferenceNumber": 74,
+                "ReferenceNumber": 75,
                 "Reference": [
                     "Computed by PubChem 2.2 (PubChem release 2025.09.15)"
                 ],
@@ -271,7 +271,7 @@
                 }
             },
             {
-                "ReferenceNumber": 74,
+                "ReferenceNumber": 75,
                 "Reference": [
                     "Computed by PubChem 2.2 (PubChem release 2025.09.15)"
                 ],
@@ -285,7 +285,7 @@
                 }
             },
             {
-                "ReferenceNumber": 74,
+                "ReferenceNumber": 75,
                 "Reference": [
                     "Computed by InChI 1.07.4 (PubChem release 2025.09.15)"
                 ],
@@ -309,15 +309,15 @@
                 }
             },
             {
-                "ReferenceNumber": 74,
+                "ReferenceNumber": 75,
                 "Value": {
                     "DateISO8601": [
-                        "2026-02-21"
+                        "2026-02-28"
                     ]
                 }
             },
             {
-                "ReferenceNumber": 74,
+                "ReferenceNumber": 75,
                 "Value": {
                     "DateISO8601": [
                         "2006-10-25"
@@ -522,6 +522,9 @@
                             },
                             {
                                 "TOCHeading": "Nikkaji Number"
+                            },
+                            {
+                                "TOCHeading": "Open Targets"
                             },
                             {
                                 "TOCHeading": "Wikidata"
@@ -842,7 +845,7 @@
         ],
         "Reference": [
             {
-                "ReferenceNumber": 74,
+                "ReferenceNumber": 75,
                 "SourceName": "PubChem",
                 "SourceID": "PubChem",
                 "Description": "Data deposited in or computed by PubChem",

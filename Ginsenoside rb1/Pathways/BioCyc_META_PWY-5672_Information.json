@@ -1,0 +1,284 @@
+{
+    "Record": {
+        "RecordType": "Pathway",
+        "RecordAccession": "PWY-5672",
+        "RecordTitle": "ginsenosides biosynthesis",
+        "RecordExternalURL": "https://biocyc.org/pathway?orgid=META&id=PWY-5672",
+        "Section": [
+            {
+                "TOCHeading": "Identity",
+                "Description": "Information describing the identity of this pathway, including the data source and external identifier.",
+                "Section": [
+                    {
+                        "TOCHeading": "Source",
+                        "Description": "Data source from which this pathway record was derived.",
+                        "DisplayControls": {
+                            "MoveToTop": true
+                        },
+                        "Information": [
+                            {
+                                "ReferenceNumber": 1,
+                                "URL": "https://biocyc.org/",
+                                "Value": {
+                                    "StringWithMarkup": [
+                                        {
+                                            "String": "BioCyc"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "External ID",
+                        "Description": "The identifier used for this pathway by the external data source.",
+                        "Information": [
+                            {
+                                "ReferenceNumber": 1,
+                                "URL": "https://biocyc.org/pathway?orgid=META&id=PWY-5672",
+                                "Value": {
+                                    "StringWithMarkup": [
+                                        {
+                                            "String": "PWY-5672"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Pathway Information",
+                "Description": "General information about this pathway.",
+                "DisplayControls": {
+                    "HideThisSection": true
+                },
+                "Section": [
+                    {
+                        "TOCHeading": "Taxonomic Scope",
+                        "Description": "Indicates if the pathway is organism-specific or conserved.",
+                        "DisplayControls": {
+                            "MoveToTop": true
+                        },
+                        "Information": [
+                            {
+                                "ReferenceNumber": 1,
+                                "Value": {
+                                    "StringWithMarkup": [
+                                        {
+                                            "String": "conserved"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "Category",
+                        "Description": "Descriptive category of this pathway (e.g., signaling, metabolic, disease).",
+                        "DisplayControls": {
+                            "MoveToTop": true
+                        },
+                        "Information": [
+                            {
+                                "ReferenceNumber": 1,
+                                "Value": {
+                                    "StringWithMarkup": [
+                                        {
+                                            "String": "pathway"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "Create Date",
+                        "Description": "Date when this pathway record was created. For more information on various dates for PubChem records, visit the PubChem Record Dates help page.",
+                        "URL": "https://pubchem.ncbi.nlm.nih.gov/docs/record-dates",
+                        "DisplayControls": {
+                            "MoveToTop": true
+                        },
+                        "Information": [
+                            {
+                                "ReferenceNumber": 2,
+                                "Value": {
+                                    "StringWithMarkup": [
+                                        {
+                                            "String": "2019-01-17"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "Modify Date",
+                        "Description": "Date when this pathway record was last modified. For more information on various dates for PubChem records, visit the PubChem Record Dates help page.",
+                        "URL": "https://pubchem.ncbi.nlm.nih.gov/docs/record-dates",
+                        "DisplayControls": {
+                            "MoveToTop": true
+                        },
+                        "Information": [
+                            {
+                                "ReferenceNumber": 2,
+                                "Value": {
+                                    "StringWithMarkup": [
+                                        {
+                                            "String": "2022-05-18"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "Record Description",
+                        "Description": "Textual summary about this pathway",
+                        "DisplayControls": {
+                            "MoveToTop": true
+                        },
+                        "Information": [
+                            {
+                                "ReferenceNumber": 1,
+                                "Value": {
+                                    "StringWithMarkup": [
+                                        {
+                                            "String": "Ginsenosides or panaxosides are a class of steroid glycosides and triterpene saponins found exclusively in the plant genus TAX-4053 (ginseng). They are the principal components responsible for the pharmaceutical activities of ginseng.\n\nGinsenosides are composed of an aglycone and sugar moieties. Based on the structure of their aglycones, ginsenosides have been categorized into three broad types; Protopanaxadiol-type-ginsenosides (PPD), which contain hydroxyl groups at positions 3 and 20, Protopanaxatriol-type-ginsenosides (PPT), which contain hydroxyl groups at positions 3, 6 and 20, and Oleanonic-acid-type-ginsenosides.\n\nAlthough ginsenosides only have three kinds of aglycones, more than 60 kinds of ginsenosides have been identified by now due to the variability in the type of sugar moieties, their number, and the carbon positions they link to.\n\nThe pharmacological activities of various ginsenosides include cardio-protective, immuno-modulatory, anti-fatigue, antitumour and hepato-protective effects [Yue05]. Ginsenosides are produced in the roots of TAX-4054 [LUO05], and various types of ginsenosides accumulate as the plant ages [PMID: 15356323].\n\nThe different ginsenoside backbones are synthesized by different forms of cyclization of EPOXYSQUALENE, catalyzed by specific enzymes [PMID: 15356323]. The triterpene backbones then undergo various modifications, such as oxidation, substitution, and glycosylation to give the characteristic ginsenosides.\n\nThe chemical synthesis of ginsenosides has not been feasible. Recent discoveries of the enzymes involved lead the way to biosynthesis using recombinant technology [PMID: 26032089].",
+                                            "Markup": [
+                                                {
+                                                    "Start": 0,
+                                                    "Length": 12,
+                                                    "URL": "https://biocyc.org/pathway?orgid=META&id=Ginsenosides"
+                                                },
+                                                {
+                                                    "Start": 123,
+                                                    "Length": 8,
+                                                    "URL": "https://biocyc.org/pathway?orgid=META&id=TAX-4053"
+                                                },
+                                                {
+                                                    "Start": 399,
+                                                    "Length": 33,
+                                                    "URL": "https://biocyc.org/pathway?orgid=META&id=Protopanaxadiol-type-ginsenosides"
+                                                },
+                                                {
+                                                    "Start": 493,
+                                                    "Length": 34,
+                                                    "URL": "https://biocyc.org/pathway?orgid=META&id=Protopanaxatriol-type-ginsenosides"
+                                                },
+                                                {
+                                                    "Start": 595,
+                                                    "Length": 32,
+                                                    "URL": "https://biocyc.org/pathway?orgid=META&id=Oleanonic-acid-type-ginsenosides"
+                                                },
+                                                {
+                                                    "Start": 1066,
+                                                    "Length": 8,
+                                                    "URL": "https://biocyc.org/pathway?orgid=META&id=TAX-4054"
+                                                },
+                                                {
+                                                    "Start": 1148,
+                                                    "Length": 14,
+                                                    "URL": "https://www.ncbi.nlm.nih.gov/pubmed/15356323"
+                                                },
+                                                {
+                                                    "Start": 1255,
+                                                    "Length": 13,
+                                                    "URL": "https://biocyc.org/pathway?orgid=META&id=EPOXYSQUALENE"
+                                                },
+                                                {
+                                                    "Start": 1301,
+                                                    "Length": 14,
+                                                    "URL": "https://www.ncbi.nlm.nih.gov/pubmed/15356323"
+                                                },
+                                                {
+                                                    "Start": 1636,
+                                                    "Length": 14,
+                                                    "URL": "https://www.ncbi.nlm.nih.gov/pubmed/26032089"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Interactions",
+                "Description": "Specific interactions between biochemicals involved in this pathway.",
+                "Information": [
+                    {
+                        "ReferenceNumber": 1,
+                        "Value": {
+                            "ExternalTableName": "collection=pathwayreaction&view=concise_pathway"
+                        }
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Chemicals",
+                "Description": "Chemicals involved in this pathway.",
+                "Information": [
+                    {
+                        "ReferenceNumber": 1,
+                        "Value": {
+                            "ExternalTableName": "pcget_pathway_chemical"
+                        }
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Proteins",
+                "Description": "Proteins involved in this pathway.",
+                "Information": [
+                    {
+                        "ReferenceNumber": 1,
+                        "Value": {
+                            "ExternalTableName": "pcget_pathway_protein"
+                        }
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Literature",
+                "Description": "Scientific articles associated with this pathway, provided by the data source.",
+                "Section": [
+                    {
+                        "TOCHeading": "Consolidated References",
+                        "Description": "The consolidated references include literature data from all sources including Reactome, WikiPathways, PharmGKB, PathBank, LIPID MAPS, etc.",
+                        "URL": "https://pubchem.ncbi.nlm.nih.gov/docs/literature",
+                        "Information": [
+                            {
+                                "ReferenceNumber": 1,
+                                "Value": {
+                                    "ExternalTableName": "literature"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Reference": [
+            {
+                "ReferenceNumber": 1,
+                "SourceName": "BioCyc",
+                "SourceID": "PWY-5672",
+                "Description": "BioCyc integrates sequenced genomes with predicted metabolic pathways for thousands of organisms and provides extensive bioinformatics tools.",
+                "URL": "https://biocyc.org/pathway?orgid=META&id=PWY-5672",
+                "LicenseNote": "Includes BioCyc pathway/genome databases under license from SRI International",
+                "LicenseURL": "https://bioinformatics.ai.sri.com/ptools/licensing/all-reg.shtml"
+            },
+            {
+                "ReferenceNumber": 2,
+                "SourceName": "PubChem",
+                "SourceID": "PubChem",
+                "Description": "Data deposited in or computed by PubChem",
+                "URL": "https://pubchem.ncbi.nlm.nih.gov"
+            }
+        ]
+    }
+}

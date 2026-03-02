@@ -1,0 +1,32 @@
+O00116	Alkyldihydroxyacetonephosphate synthase, peroxisomal
+O00329	Phosphatidylinositol 4,5-bisphosphate 3-kinase catalytic subunit delta isoform
+O14735	CDP-diacylglycerol--inositol 3-phosphatidyltransferase
+O15228	Dihydroxyacetone phosphate acyltransferase
+O95674	Phosphatidate cytidylyltransferase 2
+P14555	Phospholipase A2, membrane associated
+P17898	Cholinephosphotransferase 1
+P21695	Glycerol-3-phosphate dehydrogenase [NAD(+)], cytoplasmic
+P32189	Glycerol kinase
+P40471	NADPH-dependent 1-acyldihydroxyacetone phosphate reductase
+P42336	Phosphatidylinositol 4,5-bisphosphate 3-kinase catalytic subunit alpha isoform
+P42338	Phosphatidylinositol 4,5-bisphosphate 3-kinase catalytic subunit beta isoform
+P48651	Phosphatidylserine synthase 1
+P48736	Phosphatidylinositol 4,5-bisphosphate 3-kinase catalytic subunit gamma isoform
+Q14693	Phosphatidate phosphatase LPIN1
+Q32NB8	CDP-diacylglycerol--glycerol-3-phosphate 3-phosphatidyltransferase, mitochondrial
+Q53EU6	Glycerol-3-phosphate acyltransferase 3
+Q6NUI2	Glycerol-3-phosphate acyltransferase 2, mitochondrial
+Q86UL3	Glycerol-3-phosphate acyltransferase 4
+Q86VF5	2-acylglycerol O-acyltransferase 3
+Q8NFU5	Inositol polyphosphate multikinase
+Q8WUD6	Cholinephosphotransferase 1
+Q8WUK0	Phosphatidylglycerophosphatase and protein-tyrosine phosphatase 1
+Q92539	Phosphatidate phosphatase LPIN2
+Q99447	Ethanolamine-phosphate cytidylyltransferase
+Q99755	Phosphatidylinositol 4-phosphate 5-kinase type-1 alpha
+Q9BTU6	Phosphatidylinositol 4-kinase type 2-alpha
+Q9HCL2	Glycerol-3-phosphate acyltransferase 1, mitochondrial
+Q9UBM1	Phosphatidylethanolamine N-methyltransferase
+Q9UJA2	Cardiolipin synthase (CMP-forming)
+Q9Y259	Choline/ethanolamine kinase
+Q9Y6K0	Choline/ethanolaminephosphotransferase 1

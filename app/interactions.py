@@ -132,7 +132,7 @@ def sdq_query_externaltable(collection, where, select = "*", start = 1, limit = 
     
     query = {
         "select": select, # which columnds you want back
-        "collection": collection, # # which table to query
+        "collection": collection, # which table to query
         "order": order_list, # sort order ("cid, asc" means sort by cid ascending)
         "start": start, # pagination start row (1=start row)
         "limit": limit, # how many rows to return (1000 is a safe choice)
@@ -170,6 +170,7 @@ def get_interactions_table(compound, collection, page_size = 1000, where = None,
     request = sdq_query_externaltable(collection, where, start = 1, limit = min(page_size,1000), order=order)
     if request is None:
         return[]
+    
     
     out_set = request.get("SDQOutputSet", [])
     if not out_set:

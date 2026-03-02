@@ -38,6 +38,7 @@ tables = app.interactions.retrieve_externaltable(data)
 
 # 7. Download and save each table
 where_pathways = {"ands": [{"cid": str(compound.cid)}, {"core": "1"}]}
+rows = None
 
 for subsection, table_list in tables:
     for table_name in table_list:
@@ -65,7 +66,7 @@ app.proteins.retrieve_targets_1(compound)
 app.pathways.retrieve_pathways(compound)
 
 # -- RETRIEVE PATHWAY PROTEINS (PROTEIN COUNT INSIDE A PATHWAY) --
-#app.interactions.retrieve_pathway_proteins(compound)
+#app.pathways.retrieve_proteins_from_pathway(compound)
 
 # Bethanechol: CC(C[N+](C)(C)C)OC(=O)N  
 # Caffeine: CN1C=NC2=C1C(=O)N(C(=O)N2C)C  

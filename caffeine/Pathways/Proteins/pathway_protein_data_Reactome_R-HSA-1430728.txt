@@ -1,0 +1,1532 @@
+A0JLT2	Mediator of RNA polymerase II transcription subunit 19
+A0PJW6	Transmembrane protein 223
+A1L188	NADH dehydrogenase [ubiquinone] 1 alpha subcomplex assembly factor 8
+A1L3X0	Very long chain fatty acid elongase 7
+A2RU49	Hydroxylysine kinase
+A5D6W6	Fat storage-inducing transmembrane protein 1
+A5YM72	Carnosine synthase 1
+A6NDG6	Glycerol-3-phosphate phosphatase
+A6NFY7	Succinate dehydrogenase assembly factor 1, mitochondrial
+A6NGU5	Putative glutathione hydrolase 3 proenzyme
+A6NNW6	Enolase 4
+A8MUP2	Citrate synthase-lysine N-methyltransferase CSKMT, mitochondrial
+A8MV81	HIG1 domain family member 1C
+A8MXV4	Acyl-coenzyme A diphosphatase NUDT19
+A9YTQ3	Aryl hydrocarbon receptor repressor
+C9JRZ8	Aldo-keto reductase family 1 member B15
+O00116	Alkyldihydroxyacetonephosphate synthase, peroxisomal
+O00142	Thymidine kinase 2, mitochondrial
+O00170	AH receptor-interacting protein
+O00204-1	SULT2B1-1
+O00204-2	SULT2B1-2
+O00217	NADH dehydrogenase [ubiquinone] iron-sulfur protein 8, mitochondrial
+O00327	Basic helix-loop-helix ARNT-like protein 1
+O00329	Phosphatidylinositol 4,5-bisphosphate 3-kinase catalytic subunit delta isoform
+O00330	Pyruvate dehydrogenase protein X component, mitochondrial
+O00338	Sulfotransferase 1C2
+O00401	Actin nucleation-promoting factor WASL
+O00443	Phosphatidylinositol 4-phosphate 3-kinase C2 domain-containing subunit alpha
+O00445	Synaptotagmin-5
+O00459	Phosphatidylinositol 3-kinase regulatory subunit beta
+O00462	Beta-mannosidase
+O00483	Cytochrome c oxidase subunit FA4
+O00519	Fatty-acid amide hydrolase 1
+O00555	Voltage-dependent P/Q-type calcium channel subunit alpha-1A
+O00746	Nucleoside diphosphate kinase D, mitochondrial
+O00754	Lysosomal alpha-mannosidase
+O00757	Fructose-1,6-bisphosphatase isozyme 2
+O00763	Acetyl-CoA carboxylase 2
+O00764	Pyridoxal kinase
+O00767	Stearoyl-CoA desaturase
+O14494	Phospholipid phosphatase 1
+O14521	Succinate dehydrogenase [ubiquinone] cytochrome b small subunit, mitochondrial
+O14556	Glyceraldehyde-3-phosphate dehydrogenase, testis-specific
+O14561	Acyl carrier protein, mitochondrial
+O14638	Ectonucleotide pyrophosphatase/phosphodiesterase family member 3
+O14678	Lysosomal cobalamin transporter ABCD4
+O14684	Prostaglandin E synthase
+O14734	Acyl-coenzyme A thioesterase 8
+O14735	CDP-diacylglycerol--inositol 3-phosphatidyltransferase
+O14792	Heparan sulfate glucosamine 3-O-sulfotransferase 1
+O14832	Phytanoyl-CoA dioxygenase, peroxisomal
+O14841	5-oxoprolinase
+O14842	Free fatty acid receptor 1
+O14874	Branched-chain alpha-ketoacid dehydrogenase kinase
+O14880	Glutathione S-transferase 3, mitochondrial
+O14949	Cytochrome b-c1 complex subunit 8
+O14957	Cytochrome b-c1 complex subunit 10
+O14975	Long-chain fatty acid transport protein 2
+O14977	Antizyme inhibitor 1
+O15067	Phosphoribosylformylglycinamidine synthase
+O15121	Sphingolipid delta(4)-desaturase DES1
+O15217	Glutathione S-transferase A4
+O15228	Dihydroxyacetone phosphate acyltransferase
+O15229	Kynurenine 3-monooxygenase
+O15239	NADH dehydrogenase [ubiquinone] 1 alpha subcomplex subunit 1
+O15254	Peroxisomal acyl-coenzyme A oxidase 3
+O15269	Serine palmitoyltransferase 1
+O15270	Serine palmitoyltransferase 2
+O15296	Polyunsaturated fatty acid lipoxygenase ALOX15B
+O15379	Histone deacetylase 3
+O15382	Branched-chain-amino-acid aminotransferase, mitochondrial
+O15438	ATP-binding cassette sub-family C member 3
+O15440	ATP-binding cassette sub-family C member 5
+O15466	Alpha-2,8-sialyltransferase 8E
+O15488	Glycogenin-2
+O15496	Group 10 secretory phospholipase A2
+O15504	Nucleoporin NUP42
+O15516	Circadian locomoter output cycles protein kaput
+O15528	25-hydroxyvitamin D-1 alpha hydroxylase, mitochondrial
+O43169	Cytochrome b5 type B
+O43175	D-3-phosphoglycerate dehydrogenase
+O43181	NADH dehydrogenase [ubiquinone] iron-sulfur protein 4, mitochondrial
+O43272	Proline dehydrogenase 1, mitochondrial
+O43286	Beta-1,4-galactosyltransferase 5
+O43324	Eukaryotic translation elongation factor 1 epsilon-1
+O43462	Membrane-bound transcription factor site-2 protease
+O43488	Aflatoxin B1 aldehyde reductase member 2
+O43513	Mediator of RNA polymerase II transcription subunit 7
+O43598	5-hydroxymethyl-dUMP N-hydrolase
+O43674	NADH dehydrogenase [ubiquinone] 1 beta subcomplex subunit 5, mitochondrial
+O43676	NADH dehydrogenase [ubiquinone] 1 beta subcomplex subunit 3
+O43677	NADH dehydrogenase [ubiquinone] 1 subunit C1, mitochondrial
+O43678	NADH dehydrogenase [ubiquinone] 1 alpha subcomplex subunit 2
+O43704	Sulfotransferase 1B1
+O43708	Maleylacetoacetate isomerase
+O43741	5'-AMP-activated protein kinase subunit beta-2
+O43772	Mitochondrial carnitine/acylcarnitine carrier protein
+O43808	Peroxisomal membrane protein PMP34
+O43819	Cytochrome c oxidase assembly factor SCO2
+O43826	Glucose-6-phosphate exchanger SLC37A4
+O43837	Isocitrate dehydrogenase [NAD] subunit beta, mitochondrial
+O43865	S-adenosylhomocysteine hydrolase-like protein 1
+O43909	Exostosin-like 3
+O43916	Carbohydrate sulfotransferase 1
+O43920	NADH dehydrogenase [ubiquinone] iron-sulfur protein 5
+O60240	Perilipin-1
+O60244	Mediator of RNA polymerase II transcription subunit 14
+O60427	Acyl-CoA (8-3)-desaturase
+O60494	Cubilin
+O60512	Beta-1,4-galactosyltransferase 3
+O60513	Beta-1,4-galactosyltransferase 4
+O60543	Lipid transferase CIDEA
+O60656	UDP-glucuronosyltransferase 1A9
+O60664	Perilipin-3
+O60701	UDP-glucose 6-dehydrogenase
+O60733	85/88 kDa calcium-independent phospholipase A2
+O60760	Hematopoietic prostaglandin D synthase
+O60825	6-phosphofructo-2-kinase/fructose-2,6-bisphosphatase 2
+O60907	F-box-like/WD repeat-containing protein TBL1X
+O60909	Beta-1,4-galactosyltransferase 2
+O75027	Iron-sulfur clusters transporter ABCB7, mitochondrial
+O75038	1-phosphatidylinositol 4,5-bisphosphate phosphodiesterase eta-2
+O75063	Glycosaminoglycan xylosylkinase
+O75106	Amine oxidase [copper-containing] 2
+O75191	Xylulose kinase
+O75192	Peroxisomal membrane protein 11A
+O75208	Ubiquinone biosynthesis protein COQ9, mitochondrial
+O75223	Gamma-glutamylcyclotransferase
+O75251	NADH dehydrogenase [ubiquinone] iron-sulfur protein 7, mitochondrial
+O75306	NADH dehydrogenase [ubiquinone] iron-sulfur protein 2, mitochondrial
+O75342	Arachidonate 12-lipoxygenase, 12R-type
+O75354	Ectonucleoside triphosphate diphosphohydrolase 6
+O75355	Ectonucleoside triphosphate diphosphohydrolase 3
+O75356	Nucleoside diphosphate phosphatase ENTPD5
+O75376	Nuclear receptor corepressor 1
+O75380	NADH dehydrogenase [ubiquinone] iron-sulfur protein 6, mitochondrial
+O75390	Citrate synthase, mitochondrial
+O75438	NADH dehydrogenase [ubiquinone] 1 beta subcomplex subunit 1
+O75448	Mediator of RNA polymerase II transcription subunit 24
+O75489	NADH dehydrogenase [ubiquinone] iron-sulfur protein 3, mitochondrial
+O75509	Tumor necrosis factor receptor superfamily member 21
+O75521-2	Enoyl-CoA delta isomerase 2, isoform 2
+O75586	Mediator of RNA polymerase II transcription subunit 6
+O75608	Acyl-protein thioesterase 1
+O75694	Nuclear pore complex protein Nup155
+O75746	Electrogenic aspartate/glutamate antiporter SLC25A12, mitochondrial
+O75752	UDP-GalNAc:beta-1,3-N-acetylgalactosaminyltransferase 1
+O75828	Carbonyl reductase [NADPH] 3
+O75845	Lathosterol oxidase
+O75874	Isocitrate dehydrogenase [NADP] cytoplasmic
+O75880	Cytochrome c oxidase assembly factor SCO1
+O75891	Cytosolic 10-formyltetrahydrofolate dehydrogenase
+O75897	Sulfotransferase 1C4
+O75907	Diacylglycerol O-acyltransferase 1
+O75936	Gamma-butyrobetaine dioxygenase
+O75947	ATP synthase peripheral stalk subunit d, mitochondrial
+O75964	ATP synthase F(0) complex subunit g, mitochondrial
+O76062	Delta(14)-sterol reductase TM7SF2
+O76071	Probable cytosolic iron-sulfur protein assembly protein CIAO1
+O76082	Organic cation/carnitine transporter 2
+O94760	N(G),N(G)-dimethylarginine dimethylaminohydrolase 1
+O94766	Galactosylgalactosylxylosylprotein 3-beta-glucuronosyltransferase 3
+O94830	Triacylglycerol hydrolase DDHD2
+O94923	D-glucuronyl C5-epimerase
+O94925	Glutaminase kidney isoform, mitochondrial
+O94956-3	SLCO2B1-3
+O95050	Indolethylamine N-methyltransferase
+O95139	NADH dehydrogenase [ubiquinone] 1 beta subcomplex subunit 6
+O95153	Peripheral-type benzodiazepine receptor-associated protein 1
+O95154	Aldo-keto reductase family 7 member A3
+O95167	NADH dehydrogenase [ubiquinone] 1 alpha subcomplex subunit 3
+O95168	NADH dehydrogenase [ubiquinone] 1 beta subcomplex subunit 4
+O95169	NADH dehydrogenase [ubiquinone] 1 beta subcomplex subunit 8, mitochondrial
+O95178	NADH dehydrogenase [ubiquinone] 1 beta subcomplex subunit 2, mitochondrial
+O95182	NADH dehydrogenase [ubiquinone] 1 alpha subcomplex subunit 7
+O95202	Mitochondrial proton/calcium exchanger protein
+O95237	Lecithin retinol acyltransferase
+O95248	Myotubularin-related protein 5
+O95278	Laforin
+O95298	NADH dehydrogenase [ubiquinone] 1 subunit C2
+O95299	NADH dehydrogenase [ubiquinone] 1 alpha subcomplex subunit 10, mitochondrial
+O95336	6-phosphogluconolactonase
+O95342	Bile salt export pump
+O95396	Adenylyltransferase and sulfurtransferase MOCS3
+O95398	Rap guanine nucleotide exchange factor 3
+O95402	Mediator of RNA polymerase II transcription subunit 26
+O95445	Apolipoprotein M
+O95470	Sphingosine-1-phosphate lyase 1
+O95477	Phospholipid-transporting ATPase ABCA1
+O95544	NAD kinase
+O95563	Mitochondrial pyruvate carrier 2
+O95571	Persulfide dioxygenase ETHE1, mitochondrial
+O95674	Phosphatidate cytidylyltransferase 2
+O95749	Geranylgeranyl pyrophosphate synthase
+O95822-2	MLYCD
+O95861	3'(2'),5'-bisphosphate nucleotidase 1
+O95864	Acyl-CoA 6-desaturase
+O95954	Formimidoyltransferase-cyclodeaminase
+O95989	Diphosphoinositol polyphosphate phosphohydrolase 1
+O95992	Cholesterol 25-hydroxylase
+O96000	NADH dehydrogenase [ubiquinone] 1 beta subcomplex subunit 10
+O96007	Molybdopterin synthase catalytic subunit
+O96024	Beta-1,3-galactosyltransferase 4
+O96033	Molybdopterin synthase sulfur carrier subunit
+P00156	Cytochrome b
+P00167	Cytochrome b5
+P00325	All-trans-retinol dehydrogenase [NAD(+)] ADH1B
+P00326	Alcohol dehydrogenase 1C
+P00338	L-lactate dehydrogenase A chain
+P00352	Aldehyde dehydrogenase 1A1
+P00374	Dihydrofolate reductase
+P00387	NADH-cytochrome b5 reductase 3
+P00390-2	GR
+P00395	Cytochrome c oxidase subunit 1
+P00403	Cytochrome c oxidase subunit 2
+P00414	Cytochrome c oxidase subunit 3
+P00439	Phenylalanine-4-hydroxylase
+P00480	Ornithine transcarbamylase, mitochondrial
+P00491	Purine nucleoside phosphorylase
+P00492	Hypoxanthine-guanine phosphoribosyltransferase
+P00505	Aspartate aminotransferase, mitochondrial
+P00558	Phosphoglycerate kinase 1
+P00709	Alpha-lactalbumin
+P00813	Adenosine deaminase
+P00846	ATP synthase F(0) complex subunit a
+P00915	Carbonic anhydrase 1
+P00918	Carbonic anhydrase 2
+P00966	Argininosuccinate synthase
+P01019	Angiotensinogen
+P01130	Low-density lipoprotein receptor
+P01189	Pro-opiomelanocortin
+P01215	Glycoprotein hormones alpha chain
+P01222	Thyrotropin subunit beta
+P01229	Lutropin subunit beta
+P01275	Pro-glucagon
+P01308	Insulin
+P02647	Apolipoprotein A-I
+P02649	Apolipoprotein E
+P02652	Apolipoprotein A-II
+P02655	Apolipoprotein C-II
+P02656	Apolipoprotein C-III
+P02753	Retinol-binding protein 4
+P02766	Transthyretin
+P02768	Albumin
+P02774	Vitamin D-binding protein
+P03886	NADH-ubiquinone oxidoreductase chain 1
+P03891	NADH-ubiquinone oxidoreductase chain 2
+P03897	NADH-ubiquinone oxidoreductase chain 3
+P03905	NADH-ubiquinone oxidoreductase chain 4
+P03915	NADH-ubiquinone oxidoreductase chain 5
+P03923	NADH-ubiquinone oxidoreductase chain 6
+P03928	ATP synthase F(0) complex subunit 8
+P04035-1	HMDH_HUMAN
+P04054	Phospholipase A2
+P04062	Lysosomal acid glucosylceramidase
+P04075	Fructose-bisphosphate aldolase A
+P04114	Apolipoprotein B-100
+P04118	Colipase
+P04181	Ornithine aminotransferase, mitochondrial
+P04183	Thymidine kinase, cytosolic
+P04406	Glyceraldehyde-3-phosphate dehydrogenase
+P04424	Argininosuccinate lyase
+P04637	Cellular tumor antigen p53
+P04798	Cytochrome P450 1A1
+P04818	Thymidylate synthase
+P05062	Fructose-bisphosphate aldolase B
+P05089	Arginase-1
+P05091	Aldehyde dehydrogenase, mitochondrial
+P05093	Steroid 17-alpha-hydroxylase/17,20 lyase
+P05108	Cholesterol side-chain cleavage enzyme, mitochondrial
+P05165	Propionyl-CoA carboxylase alpha chain, mitochondrial
+P05166	Propionyl-CoA carboxylase beta chain, mitochondrial
+P05177	Cytochrome P450 1A2
+P05181	Cytochrome P450 2E1
+P06132	Uroporphyrinogen decarboxylase
+P06280	Alpha-galactosidase A
+P06576	ATP synthase F(1) complex subunit beta, mitochondrial
+P06727	Apolipoprotein A-IV
+P06732	Creatine kinase M-type
+P06733	Alpha-enolase
+P06737	Glycogen phosphorylase, liver form
+P06744	Glucose-6-phosphate isomerase
+P07099	Epoxide hydrolase 1
+P07101	Tyrosine 3-monooxygenase
+P07148	Fatty acid-binding protein, liver
+P07195	L-lactate dehydrogenase B chain
+P07202	Thyroid peroxidase
+P07205	Phosphoglycerate kinase 2
+P07327	Alcohol dehydrogenase 1A
+P07451	Carbonic anhydrase 3
+P07602	Prosaposin
+P07711	Procathepsin L
+P07738	Bisphosphoglycerate mutase
+P07741	Adenine phosphoribosyltransferase
+P07814	Bifunctional glutamate/proline--tRNA ligase
+P07864	L-lactate dehydrogenase C chain
+P07900	Heat shock protein HSP 90-alpha
+P07902	Galactose-1-phosphate uridylyltransferase
+P07919	Cytochrome b-c1 complex subunit 6, mitochondrial
+P07954	Fumarate hydratase, mitochondrial
+P08047	Transcription factor Sp1
+P08185	Corticosteroid-binding globulin
+P08195	Amino acid transporter heavy chain SLC3A2
+P08236	Beta-glucuronidase
+P08237	ATP-dependent 6-phosphofructokinase, muscle type
+P08238	Heat shock protein HSP 90-beta
+P08243	Asparagine synthetase [glutamine-hydrolyzing]
+P08263	Glutathione S-transferase A1
+P08319	All-trans-retinol dehydrogenase [NAD(+)] ADH4
+P08397	Porphobilinogen deaminase
+P08574	Cytochrome c1, heme protein, mitochondrial
+P08684	Cytochrome P450 3A4
+P08686	Steroid 21-hydroxylase
+P08842	Steryl-sulfatase
+P09104	Gamma-enolase
+P09110	3-ketoacyl-CoA thiolase, peroxisomal
+P09172	Dopamine beta-hydroxylase
+P09210	Glutathione S-transferase A2
+P09211	Glutathione S-transferase P
+P09417	Dihydropteridine reductase
+P09455	Retinol-binding protein 1
+P09467	Fructose-1,6-bisphosphatase 1
+P09488	Glutathione S-transferase Mu 1
+P09622	Dihydrolipoyl dehydrogenase, mitochondrial
+P09669	Cytochrome c oxidase subunit 6C
+P09917	Polyunsaturated fatty acid 5-lipoxygenase
+P09923	Intestinal-type alkaline phosphatase
+P09960	Leukotriene A-4 hydrolase
+P09972	Fructose-bisphosphate aldolase C
+P0C024	Peroxisomal coenzyme A diphosphatase NUDT7
+P0CG29	Glutathione S-transferase theta-2
+P0CG30	Glutathione S-transferase theta-2B
+P0DJ07	Protein PET100 homolog, mitochondrial
+P0DKB6	Mitochondrial pyruvate carrier 1-like protein
+P0DMM9	Sulfotransferase 1A3
+P0DMN0	Sulfotransferase 1A4
+P0DP23	Calmodulin-1
+P10109	Adrenodoxin, mitochondrial
+P10515	Dihydrolipoyllysine-residue acetyltransferase component of pyruvate dehydrogenase complex, mitochondrial
+P10599	Thioredoxin
+P10606	Cytochrome c oxidase subunit 5B, mitochondrial
+P10620	Microsomal glutathione S-transferase 1
+P10746	Uroporphyrinogen-III synthase
+P10768	S-formylglutathione hydrolase
+P11086	Phenylethanolamine N-methyltransferase
+P11166	Solute carrier family 2, facilitated glucose transporter member 1
+P11168	Solute carrier family 2, facilitated glucose transporter member 2
+P11172	Uridine 5'-monophosphate synthase
+P11177	Pyruvate dehydrogenase E1 component subunit beta, mitochondrial
+P11182	Lipoamide acyltransferase component of branched-chain alpha-keto acid dehydrogenase complex, mitochondrial
+P11216	Glycogen phosphorylase, brain form
+P11217	Glycogen phosphorylase, muscle form
+P11245	Arylamine N-acetyltransferase 2
+P11310	Medium-chain specific acyl-CoA dehydrogenase, mitochondrial
+P11413	Glucose-6-phosphate 1-dehydrogenase
+P11473	Vitamin D3 receptor
+P11474	Steroid hormone receptor ERR1
+P11498	Pyruvate carboxylase, mitochondrial
+P11511	Aromatase
+P11586	C-1-tetrahydrofolate synthase, cytoplasmic
+P11766	Alcohol dehydrogenase class-3
+P11908	Ribose-phosphate pyrophosphokinase 2
+P11926	Ornithine decarboxylase
+P12235	ADP/ATP translocase 1
+P12268	Inosine-5'-monophosphate dehydrogenase 2
+P12270	Nucleoprotein TPR
+P12277	Creatine kinase B-type
+P12532	Creatine kinase U-type, mitochondrial
+P12694	2-oxoisovalerate dehydrogenase subunit alpha, mitochondrial
+P13196	5-aminolevulinate synthase, non-specific, mitochondrial
+P13686	Tartrate-resistant acid phosphatase type 5
+P13716	Delta-aminolevulinic acid dehydratase
+P13804	Electron transfer flavoprotein subunit alpha, mitochondrial
+P13807	Glycogen [starch] synthase, muscle
+P13929	Beta-enolase
+P14060	3 beta-hydroxysteroid dehydrogenase/Delta 5-->4-isomerase type 1
+P14061	17-beta-hydroxysteroid dehydrogenase type 1
+P14207	Folate receptor beta
+P14324	Farnesyl pyrophosphate synthase
+P14550	Aldo-keto reductase family 1 member A1
+P14555	Phospholipase A2, membrane associated
+P14618-1	PKM isozyme M2
+P14618-2	PKM isoform 2
+P14679	Tyrosinase
+P14868	Aspartate--tRNA ligase, cytoplasmic
+P14902	Indoleamine 2,3-dioxygenase 1
+P14920	D-amino-acid oxidase
+P14927	Cytochrome b-c1 complex subunit 7
+P15090	Fatty acid-binding protein, adipocyte
+P15104	Glutamine synthetase
+P15121	Aldo-keto reductase family 1 member B1
+P15259	Phosphoglycerate mutase 2
+P15289	Arylsulfatase A
+P15291	Beta-1,4-galactosyltransferase 1
+P15428	15-hydroxyprostaglandin dehydrogenase [NAD(+)]
+P15531	Nucleoside diphosphate kinase A
+P15559	NAD(P)H dehydrogenase [quinone] 1
+P15586	N-acetylglucosamine-6-sulfatase
+P15735	Phosphorylase b kinase gamma catalytic chain, liver/testis isoform
+P15848	Arylsulfatase B
+P15954	Cytochrome c oxidase subunit 7C, mitochondrial
+P16050	Polyunsaturated fatty acid lipoxygenase ALOX15
+P16083	Ribosyldihydronicotinamide dehydrogenase [quinone]
+P16118	6-phosphofructo-2-kinase/fructose-2,6-bisphosphatase 1
+P16152	Carbonyl reductase [NADPH] 1
+P16219	Short-chain specific acyl-CoA dehydrogenase, mitochondrial
+P16233	Pancreatic triacylglycerol lipase
+P16260	Mitochondrial coenzyme A transporter SLC25A16
+P16435	NADPH--cytochrome P450 reductase
+P16442	Histo-blood group ABO system transferase
+P16444	Dipeptidase 1
+P16671	Platelet glycoprotein 4
+P16885	1-phosphatidylinositol 4,5-bisphosphate phosphodiesterase gamma-2
+P16930	Fumarylacetoacetase
+P17174	Aspartate aminotransferase, cytoplasmic
+P17252	Protein kinase C alpha type
+P17405	Sphingomyelin phosphodiesterase
+P17540	Creatine kinase S-type, mitochondrial
+P17568	NADH dehydrogenase [ubiquinone] 1 beta subcomplex subunit 7
+P17643	5,6-dihydroxyindole-2-carboxylic acid oxidase
+P17707	S-adenosylmethionine decarboxylase proenzyme
+P17735	Tyrosine aminotransferase
+P17812	CTP synthase 1
+P17858	ATP-dependent 6-phosphofructokinase, liver type
+P17900	Ganglioside GM2 activator
+P18054	Polyunsaturated fatty acid lipoxygenase ALOX12
+P18074	General transcription and DNA repair factor IIH helicase subunit XPD
+P18405	3-oxo-5-alpha-steroid 4-dehydrogenase 1
+P18440	Arylamine N-acetyltransferase 1
+P18577	Blood group Rh(CE) polypeptide
+P18669	Phosphoglycerate mutase 1
+P18827	Syndecan-1
+P18859	ATP synthase peripheral stalk subunit F6, mitochondrial
+P19099	Cytochrome P450 11B2, mitochondrial
+P19113	Histidine decarboxylase
+P19174	1-phosphatidylinositol 4,5-bisphosphate phosphodiesterase gamma-1
+P19404	NADH dehydrogenase [ubiquinone] flavoprotein 2, mitochondrial
+P19440	Glutathione hydrolase 1 proenzyme
+P19526	Galactoside alpha-(1,2)-fucosyltransferase 1
+P19623	Spermidine synthase
+P19634	Sodium/hydrogen exchanger 1
+P19793	Retinoic acid receptor RXR-alpha
+P19801	Diamine oxidase [copper-containing]
+P19971	Thymidine phosphorylase
+P20061	Transcobalamin-1
+P20062	Transcobalamin-2
+P20132	L-serine dehydratase/L-threonine deaminase
+P20292	Arachidonate 5-lipoxygenase-activating protein
+P20309	Muscarinic acetylcholine receptor M3
+P20338	Ras-related protein Rab-4A
+P20339	Ras-related protein Rab-5A
+P20645	Cation-dependent mannose-6-phosphate receptor
+P20674	Cytochrome c oxidase subunit 5A, mitochondrial
+P20711	Aromatic-L-amino-acid decarboxylase
+P20839	Inosine-5'-monophosphate dehydrogenase 1
+P21108	Ribose-phosphate pyrophosphokinase 3
+P21217	3-galactosyl-N-acetylglucosaminide 4-alpha-L-fucosyltransferase FUT3
+P21266	Glutathione S-transferase Mu 3
+P21397	Amine oxidase [flavin-containing] A
+P21399	Cytoplasmic aconitate hydratase
+P21439	Phosphatidylcholine translocator ABCB4
+P21549	Alanine--glyoxylate aminotransferase
+P21589	5'-nucleotidase
+P21673	Diamine acetyltransferase 1
+P21695	Glycerol-3-phosphate dehydrogenase [NAD(+)], cytoplasmic
+P21796	Non-selective voltage-gated ion channel VDAC1
+P21912	Succinate dehydrogenase [ubiquinone] iron-sulfur subunit, mitochondrial
+P21953	2-oxoisovalerate dehydrogenase subunit beta, mitochondrial
+P21964	Catechol O-methyltransferase
+P22033	Methylmalonyl-CoA mutase, mitochondrial
+P22059	Oxysterol-binding protein 1
+P22102	Trifunctional purine biosynthetic protein adenosine-3
+P22234	Bifunctional phosphoribosylaminoimidazole carboxylase/phosphoribosylaminoimidazole succinocarboxamide synthetase
+P22303	Acetylcholinesterase
+P22304	Iduronate 2-sulfatase
+P22307	Sterol carrier protein 2
+P22307-1	SCPx
+P22309	UDP-glucuronosyltransferase 1A1
+P22310	UDP-glucuronosyltransferase 1A4
+P22392	Nucleoside diphosphate kinase B
+P22413	Ectonucleotide pyrophosphatase/phosphodiesterase family member 1
+P22557	5-aminolevulinate synthase, erythroid-specific, mitochondrial
+P22570	NADPH:adrenodoxin oxidoreductase, mitochondrial
+P22680	Cytochrome P450 7A1
+P22695	Cytochrome b-c1 complex subunit 2, mitochondrial
+P22748	Carbonic anhydrase 4
+P22760	Arylacetamide deacetylase
+P22830	Ferrochelatase, mitochondrial
+P23109	AMP deaminase 1
+P23219	Prostaglandin G/H synthase 1
+P23280	Carbonic anhydrase 6
+P23378	Glycine dehydrogenase (decarboxylating), mitochondrial
+P23434	Glycine cleavage system H protein, mitochondrial
+P23511	Nuclear transcription factor Y subunit alpha
+P23526	Adenosylhomocysteinase
+P23677	Inositol-trisphosphate 3-kinase A
+P23786	Carnitine O-palmitoyltransferase 2, mitochondrial
+P23919	Thymidylate kinase
+P23921	Ribonucleoside-diphosphate reductase large subunit
+P24298	Alanine aminotransferase 1
+P24311	Cytochrome c oxidase subunit 7B, mitochondrial
+P24539	ATP synthase peripheral stalk subunit b, mitochondrial
+P24557	Thromboxane-A synthase
+P24588	A-kinase anchor protein 5
+P24752	Acetyl-CoA acetyltransferase, mitochondrial
+P24863	Cyclin-C
+P25208	Nuclear transcription factor Y subunit beta
+P25325	3-mercaptopyruvate sulfurtransferase
+P25705	ATP synthase F(1) complex subunit alpha, mitochondrial
+P25874	Mitochondrial brown fat uncoupling protein 1
+P26439	3 beta-hydroxysteroid dehydrogenase/Delta 5-->4-isomerase type 2
+P26440	Isovaleryl-CoA dehydrogenase, mitochondrial
+P27144	Adenylate kinase 4, mitochondrial
+P27169	Serum paraoxonase/arylesterase 1
+P27338	Amine oxidase [flavin-containing] B
+P27352	Cobalamin binding intrinsic factor
+P27469	G0/G1 switch protein 2
+P27707	Deoxycytidine kinase
+P27708	Multifunctional protein CAD
+P27986	Phosphatidylinositol 3-kinase regulatory subunit alpha
+P27987	Inositol-trisphosphate 3-kinase B
+P28161	Glutathione S-transferase Mu 2
+P28329	Choline O-acetyltransferase
+P28330	Long-chain specific acyl-CoA dehydrogenase, mitochondrial
+P28331	NADH-ubiquinone oxidoreductase 75 kDa subunit, mitochondrial
+P28332	Alcohol dehydrogenase 6
+P28340	DNA polymerase delta catalytic subunit
+P28907	ADP-ribosyl cyclase/cyclic ADP-ribose hydrolase 1
+P29401	Transketolase
+P29474	Nitric oxide synthase 3
+P29966	Myristoylated alanine-rich C-kinase substrate
+P30038	Delta-1-pyrroline-5-carboxylate dehydrogenase, mitochondrial
+P30047	GTP cyclohydrolase 1 feedback regulatory protein
+P30049	ATP synthase F(1) complex subunit delta, mitochondrial
+P30084	Enoyl-CoA hydratase, mitochondrial
+P30536	Translocator protein
+P30566	Adenylosuccinate lyase
+P30613-1	PKLR isozyme R
+P30613-2	PKLR isozyme L
+P30711	Glutathione S-transferase theta-1
+P30793	GTP cyclohydrolase 1
+P30837	Aldehyde dehydrogenase X, mitochondrial
+P30838	Aldehyde dehydrogenase, dimeric NADP-preferring
+P31040	Succinate dehydrogenase [ubiquinone] flavoprotein subunit, mitochondrial
+P31153	S-adenosylmethionine synthase isoform type-2
+P31213	3-oxo-5-alpha-steroid 4-dehydrogenase 2
+P31327	Carbamoyl-phosphate synthase [ammonia], mitochondrial
+P31350	Ribonucleoside-diphosphate reductase subunit M2
+P31513	Flavin-containing monooxygenase 3
+P31749	RAC-alpha serine/threonine-protein kinase
+P31930	Cytochrome b-c1 complex subunit 1, mitochondrial
+P31937	3-hydroxyisobutyrate dehydrogenase, mitochondrial
+P31939	Bifunctional purine biosynthesis protein ATIC
+P32320	Cytidine deaminase
+P32321	Deoxycytidylate deaminase
+P32322	Pyrroline-5-carboxylate reductase 1, mitochondrial
+P32754	4-hydroxyphenylpyruvate dioxygenase
+P32929	Cystathionine gamma-lyase
+P33121	Long-chain-fatty-acid--CoA ligase 1
+P33316-2	dUTP pyrophosphatase
+P33527	Multidrug resistance-associated protein 1
+P33897	ATP-binding cassette sub-family D member 1
+P34059	N-acetylgalactosamine-6-sulfatase
+P34896	Serine hydroxymethyltransferase, cytosolic
+P34897	Serine hydroxymethyltransferase, mitochondrial
+P34913	Bifunctional epoxide hydrolase 2
+P35218	Carbonic anhydrase 5A, mitochondrial
+P35270	Sepiapterin reductase
+P35354	Prostaglandin G/H synthase 2
+P35398	Nuclear receptor ROR-alpha
+P35475	Alpha-L-iduronidase
+P35520	Cystathionine beta-synthase
+P35557	Hexokinase-4
+P35558	Phosphoenolpyruvate carboxykinase, cytosolic [GTP]
+P35573	Glycogen debranching enzyme
+P35575	Glucose-6-phosphatase catalytic subunit 1
+P35658	Nuclear pore complex protein Nup214
+P35754	Glutaredoxin-1
+P35790	Choline kinase alpha
+P35869	Aryl hydrocarbon receptor
+P35914	Hydroxymethylglutaryl-CoA lyase, mitochondrial
+P36269	Glutathione hydrolase 5 proenzyme
+P36542	ATP synthase F(1) complex subunit gamma, mitochondrial
+P36551	Oxygen-dependent coproporphyrinogen-III oxidase, mitochondrial
+P36639-1	NUDT1-1
+P36639-2	NUDT1-2
+P36639-3	NUDT1-3
+P36639-4	NUDT1-4
+P36871	Phosphoglucomutase-1
+P36957	Dihydrolipoyllysine-residue succinyltransferase component of 2-oxoglutarate dehydrogenase complex, mitochondrial
+P36959	GMP reductase 1
+P36969-2	GPX4-2
+P37059	17-beta-hydroxysteroid dehydrogenase type 2
+P37198	Nuclear pore glycoprotein p62
+P37268	Squalene synthase
+P37837	Transaldolase
+P38117	Electron transfer flavoprotein subunit beta
+P38567	Hyaluronidase PH-20
+P38646	Stress-70 protein, mitochondrial
+P39877	Phospholipase A2 group V
+P40126	L-dopachrome tautomerase
+P40261	Nicotinamide N-methyltransferase
+P40394	All-trans-retinol dehydrogenase [NAD(+)] ADH7
+P40925	Malate dehydrogenase, cytoplasmic
+P40926	Malate dehydrogenase, mitochondrial
+P40939	Trifunctional enzyme subunit alpha, mitochondrial
+P41222	Prostaglandin-H2 D-isomerase
+P41247	Patatin-like phospholipase domain-containing protein 4
+P41252	Isoleucine--tRNA ligase, cytoplasmic
+P41440	Reduced folate transporter
+P42126	Enoyl-CoA delta isomerase 1, mitochondrial
+P42330	Aldo-keto reductase family 1 member C3
+P42336	Phosphatidylinositol 4,5-bisphosphate 3-kinase catalytic subunit alpha isoform
+P42338	Phosphatidylinositol 4,5-bisphosphate 3-kinase catalytic subunit beta isoform
+P42357	Histidine ammonia-lyase
+P42765	3-ketoacyl-CoA thiolase, mitochondrial
+P42898	Methylenetetrahydrofolate reductase (NADPH)
+P43155	Carnitine O-acetyltransferase
+P43166	Carbonic anhydrase 7
+P43220	Glucagon-like peptide 1 receptor
+P43251	Biotinidase
+P43304	Glycerol-3-phosphate dehydrogenase, mitochondrial
+P43353	Aldehyde dehydrogenase family 3 member B1
+P43490	Nicotinamide phosphoribosyltransferase
+P45381	Aspartoacylase
+P45954	Short/branched chain specific acyl-CoA dehydrogenase, mitochondrial
+P46019	Phosphorylase b kinase regulatory subunit alpha, liver isoform
+P46020	Phosphorylase b kinase regulatory subunit alpha, skeletal muscle isoform
+P46439	Glutathione S-transferase Mu 5
+P46597	Acetylserotonin O-methyltransferase
+P46721	Solute carrier organic anion transporter family member 1A2
+P46926	Glucosamine-6-phosphate deaminase 1
+P46940	Ras GTPase-activating-like protein IQGAP1
+P46952	3-hydroxyanthranilate 3,4-dioxygenase
+P46976	Glycogenin-1
+P47712	Cytosolic phospholipase A2
+P47871	Glucagon receptor
+P47897	Glutamine--tRNA ligase
+P47985	Cytochrome b-c1 complex subunit Rieske, mitochondrial
+P47989	Xanthine dehydrogenase/oxidase
+P48047	ATP synthase peripheral stalk subunit OSCP, mitochondrial
+P48060	Glioma pathogenesis-related protein 1
+P48163	NADP-dependent malic enzyme
+P48426	Phosphatidylinositol 5-phosphate 4-kinase type-2 alpha
+P48448	Aldehyde dehydrogenase family 3 member B2
+P48449	Lanosterol synthase
+P48506	Glutamate--cysteine ligase catalytic subunit
+P48507	Glutamate--cysteine ligase regulatory subunit
+P48637	Glutathione synthetase
+P48651	Phosphatidylserine synthase 1
+P48728	Aminomethyltransferase, mitochondrial
+P48735	Isocitrate dehydrogenase [NADP], mitochondrial
+P48736	Phosphatidylinositol 4,5-bisphosphate 3-kinase catalytic subunit gamma isoform
+P48739	Phosphatidylinositol transfer protein beta isoform
+P48775	Tryptophan 2,3-dioxygenase
+P49137	MAP kinase-activated protein kinase 2
+P49189	4-trimethylaminobutyraldehyde dehydrogenase
+P49247	Ribose-5-phosphate isomerase
+P49327	Fatty acid synthase
+P49336	Cyclin-dependent kinase 8
+P49419	Alpha-aminoadipic semialdehyde dehydrogenase
+P49441	Inositol polyphosphate 1-phosphatase
+P49585	Choline-phosphate cytidylyltransferase A
+P49591	Serine--tRNA ligase, cytoplasmic
+P49638	Alpha-tocopherol transfer protein
+P49675	Steroidogenic acute regulatory protein, mitochondrial
+P49748	Very long-chain acyl-CoA dehydrogenase, mitochondrial
+P49790	Nuclear pore complex protein Nup153
+P49792	E3 SUMO-protein ligase RanBP2
+P49821	NADH dehydrogenase [ubiquinone] flavoprotein 1, mitochondrial
+P49888	Sulfotransferase 1E1
+P49895	Type I iodothyronine deiodinase
+P49902	Cytosolic purine 5'-nucleotidase
+P49914	5-formyltetrahydrofolate cyclo-ligase
+P49915	GMP synthase [glutamine-hydrolyzing]
+P49961	Ectonucleoside triphosphate diphosphohydrolase 1
+P50053	Ketohexokinase
+P50120	Retinol-binding protein 2
+P50135	Histamine N-methyltransferase
+P50213	Isocitrate dehydrogenase [NAD] subunit alpha, mitochondrial
+P50225	Sulfotransferase 1A1
+P50226	Sulfotransferase 1A2
+P50336	Protoporphyrinogen oxidase
+P50416	Carnitine O-palmitoyltransferase 1, liver isoform
+P50440	Glycine amidinotransferase, mitochondrial
+P50570	Dynamin-2
+P50747	Biotin--protein ligase
+P50897	Palmitoyl-protein thioesterase 1
+P51161	Gastrotropin
+P51178	1-phosphatidylinositol 4,5-bisphosphate phosphodiesterase delta-1
+P51553	Isocitrate dehydrogenase [NAD] subunit gamma, mitochondrial
+P51570	Galactokinase
+P51580	Thiopurine S-methyltransferase
+P51648-1	FALDH-N
+P51648-2	FALDH-V
+P51659	Peroxisomal multifunctional enzyme type 2
+P51687	Sulfite oxidase, mitochondrial
+P51688	N-sulphoglucosamine sulphohydrolase
+P51813	Cytoplasmic tyrosine-protein kinase BMX
+P51857	Aldo-keto reductase family 1 member D1
+P51970	NADH dehydrogenase [ubiquinone] 1 alpha subcomplex subunit 8
+P52209	6-phosphogluconate dehydrogenase, decarboxylating
+P52758	2-iminobutanoate/2-iminopropanoate deaminase
+P52788	Spermine synthase
+P52948-5	NUP98-5
+P53384	Cytosolic Fe-S cluster assembly factor NUBP1
+P53396	ATP-citrate synthase
+P53597	Succinate--CoA ligase [ADP/GDP-forming] subunit alpha, mitochondrial
+P53602	Diphosphomevalonate decarboxylase
+P53701	Holocytochrome c-type synthase
+P54136	Arginine--tRNA ligase, cytoplasmic
+P54646	5'-AMP-activated protein kinase catalytic subunit alpha-2
+P54687	Branched-chain-amino-acid aminotransferase, cytosolic
+P54802	Alpha-N-acetylglucosaminidase
+P54803	Galactocerebrosidase
+P54819	Adenylate kinase 2, mitochondrial
+P54840	Glycogen [starch] synthase, liver
+P54868	Hydroxymethylglutaryl-CoA synthase, mitochondrial
+P54886-1	P5CS long
+P54886-2	ALDH18A1-2
+P55073	Thyroxine 5-deiodinase
+P55084	Trifunctional enzyme subunit beta, mitochondrial
+P55263	Adenosine kinase
+P55735	Protein SEC13 homolog
+P55809	Succinyl-CoA:3-ketoacid coenzyme A transferase 1, mitochondrial
+P56134	ATP synthase F(0) complex subunit f, mitochondrial
+P56181	NADH dehydrogenase [ubiquinone] flavoprotein 3, mitochondrial
+P56192	Methionine--tRNA ligase, cytoplasmic
+P56378	ATP synthase F(0) complex subunit j, mitochondrial
+P56381	ATP synthase F(1) complex subunit epsilon, mitochondrial
+P56385	ATP synthase F(0) complex subunit e, mitochondrial
+P56556	NADH dehydrogenase [ubiquinone] 1 alpha subcomplex subunit 6
+P56937	3-keto-steroid reductase/17-beta-hydroxysteroid dehydrogenase 7
+P57740	Nuclear pore complex protein Nup107
+P57772	Selenocysteine-specific elongation factor
+P60174	Triosephosphate isomerase
+P60484	Phosphatidylinositol 3,4,5-trisphosphate 3-phosphatase and dual-specificity protein phosphatase PTEN
+P60880	Synaptosomal-associated protein 25
+P60891	Ribose-phosphate pyrophosphokinase 1
+P61106	Ras-related protein Rab-14
+P61204	ADP-ribosylation factor 3
+P61457	Pterin-4-alpha-carbinolamine dehydratase
+P61764	Syntaxin-binding protein 1
+P61956	Small ubiquitin-related modifier 2
+P62826	GTP-binding nuclear protein Ran
+P62834	Ras-related protein Rap-1A
+P63027	Vesicle-associated membrane protein 2
+P63279	SUMO-conjugating enzyme UBC9
+P67870	Casein kinase II subunit beta
+P78330	Phosphoserine phosphatase
+P78356	Phosphatidylinositol 5-phosphate 4-kinase type-2 beta
+P78368	Casein kinase I isoform gamma-2
+P78406	mRNA export factor RAE1
+P78417	Glutathione S-transferase omega-1
+P78540	Arginase-2, mitochondrial
+P82909	Alpha-ketoglutarate dehydrogenase component 4
+P84077	ADP-ribosylation factor 1
+P86397	Hydroxyacyl-thioester dehydratase type 2, mitochondrial
+P98164	Low-density lipoprotein receptor-related protein 2
+P99999	Cytochrome c
+Q00722	1-phosphatidylinositol 4,5-bisphosphate phosphodiesterase beta-2
+Q00796	Sorbitol dehydrogenase
+Q00973	Beta-1,4 N-acetylgalactosaminyltransferase 1
+Q01432	AMP deaminase 3
+Q01433	AMP deaminase 2
+Q01581	Hydroxymethylglutaryl-CoA synthase, cytoplasmic
+Q01650	Large neutral amino acids transporter small subunit 1
+Q01668	Voltage-dependent L-type calcium channel subunit alpha-1D
+Q01740	Flavin-containing monooxygenase 1
+Q01813	ATP-dependent 6-phosphofructokinase, platelet type
+Q01970	1-phosphatidylinositol 4,5-bisphosphate phosphodiesterase beta-3
+Q02127	Dihydroorotate dehydrogenase (quinone), mitochondrial
+Q02161	Blood group Rh(D) polypeptide
+Q02252	Methylmalonate-semialdehyde/malonate-semialdehyde dehydrogenase [acylating], mitochondrial
+Q02318	Sterol 26-hydroxylase, mitochondrial
+Q02338	D-beta-hydroxybutyrate dehydrogenase, mitochondrial
+Q02928	Cytochrome P450 4A11
+Q02978	Mitochondrial 2-oxoglutarate/malate carrier protein
+Q03013	Glutathione S-transferase Mu 4
+Q03135	Caveolin-1
+Q03154	Aminoacylase-1
+Q03181	Peroxisome proliferator-activated receptor delta
+Q03393	6-pyruvoyl tetrahydrobiopterin synthase
+Q03426	Mevalonate kinase
+Q04446	1,4-alpha-glucan-branching enzyme
+Q04671	P protein
+Q04760	Lactoylglutathione lyase
+Q05469	Hormone-sensitive lipase
+Q05932-1	FOLC_HUMAN
+Q05932-2	FOLC_HUMAN
+Q06136	3-ketodihydrosphingosine reductase
+Q06203	Amidophosphoribosyltransferase
+Q06278	Aldehyde oxidase
+Q06520	Sulfotransferase 2A1
+Q07869	Peroxisome proliferator-activated receptor alpha
+Q07973	1,25-dihydroxyvitamin D(3) 24-hydroxylase, mitochondrial
+Q08426	Peroxisomal bifunctional enzyme
+Q08623	Pseudouridine-5'-phosphatase
+Q08AM6	Protein VAC14 homolog
+Q09428	ATP-binding cassette sub-family C member 8
+Q09472	Histone acetyltransferase p300
+Q10588	ADP-ribosyl cyclase/cyclic ADP-ribose hydrolase 2
+Q10981	Galactoside alpha-(1,2)-fucosyltransferase 2
+Q11203	CMP-N-acetylneuraminate-beta-1,4-galactoside alpha-2,3-sialyltransferase
+Q12769	Nuclear pore complex protein Nup160
+Q12770	Sterol regulatory element-binding protein cleavage-activating protein
+Q12882	Dihydropyrimidine dehydrogenase [NADP(+)]
+Q12887	Protoheme IX farnesyltransferase, mitochondrial
+Q12891	Hyaluronidase-2
+Q12904	Aminoacyl tRNA synthase complex-interacting multifunctional protein 1
+Q12908	Ileal sodium/bile acid cotransporter
+Q12923	Tyrosine-protein phosphatase non-receptor type 13
+Q12931	Heat shock protein 75 kDa, mitochondrial
+Q13018	Secretory phospholipase A2 receptor
+Q13057	Bifunctional coenzyme A synthase
+Q13085	Acetyl-CoA carboxylase 1
+Q13126	S-methyl-5'-thioadenosine phosphorylase
+Q13155	Aminoacyl tRNA synthase complex-interacting multifunctional protein 2
+Q13227	G protein pathway suppressor 2
+Q13237	cGMP-dependent protein kinase 2
+Q13423	NAD(P) transhydrogenase, mitochondrial
+Q13496	Myotubularin
+Q13503	Mediator of RNA polymerase II transcription subunit 21
+Q13510	Acid ceramidase
+Q13572	Inositol-tetrakisphosphate 1-kinase
+Q13614	Phosphatidylinositol-3,5-bisphosphate 3-phosphatase MTMR2
+Q13822	Autotaxin
+Q13825	Methylglutaconyl-CoA hydratase, mitochondrial
+Q13907	Isopentenyl-diphosphate Delta-isomerase 1
+Q13936	Voltage-dependent L-type calcium channel subunit alpha-1C
+Q13952	Nuclear transcription factor Y subunit gamma
+Q14032	Bile acid-CoA:amino acid N-acyltransferase
+Q14061	Cytochrome c oxidase copper chaperone
+Q14117	Dihydropyrimidinase
+Q14192	Four and a half LIM domains protein 2
+Q14353	Guanidinoacetate N-methyltransferase
+Q14376	UDP-glucose 4-epimerase
+Q14397	Glucokinase regulatory protein
+Q14534	Squalene monooxygenase
+Q14571	Inositol 1,4,5-trisphosphate-gated calcium channel ITPR2
+Q14573	Inositol 1,4,5-trisphosphate-gated calcium channel ITPR3
+Q14643	Inositol 1,4,5-trisphosphate-gated calcium channel ITPR1
+Q14654	ATP-sensitive inward rectifier potassium channel 11
+Q14693	Phosphatidate phosphatase LPIN1
+Q14703	Membrane-bound transcription factor site-1 protease
+Q14738	Serine/threonine-protein phosphatase 2A 56 kDa regulatory subunit delta isoform
+Q14739	Delta(14)-sterol reductase LBR
+Q14749	Glycine N-methyltransferase
+Q14894	Ketimine reductase mu-crystallin
+Q14914	Prostaglandin reductase 1
+Q14973	Hepatic sodium/bile acid cotransporter
+Q14974	Importin subunit beta-1
+Q15046	Lysine--tRNA ligase
+Q15067-1	ACOX1-1
+Q15067-2	ACOX1-2
+Q15070	Mitochondrial inner membrane protein OXA1L
+Q15118	[Pyruvate dehydrogenase (acetyl-transferring)] kinase isozyme 1, mitochondrial
+Q15119	[Pyruvate dehydrogenase (acetyl-transferring)] kinase isozyme 2, mitochondrial
+Q15120	[Pyruvate dehydrogenase (acetyl-transferring)] kinase isozyme 3, mitochondrial
+Q15125	3-beta-hydroxysteroid-Delta(8),Delta(7)-isomerase
+Q15126	Phosphomevalonate kinase
+Q15147	1-phosphatidylinositol 4,5-bisphosphate phosphodiesterase beta-4
+Q15165	Serum paraoxonase/arylesterase 2
+Q15166	Serum paraoxonase/lactonase 3
+Q15181	Inorganic pyrophosphatase
+Q15185	Prostaglandin E synthase 3
+Q15274	Nicotinate-nucleotide pyrophosphorylase [carboxylating]
+Q15327	Ankyrin repeat domain-containing protein 1
+Q15392	Delta(24)-sterol reductase
+Q15436	Protein transport protein Sec23A
+Q15526	Surfeit locus protein 1
+Q15528	Mediator of RNA polymerase II transcription subunit 22
+Q15596	Nuclear receptor coactivator 2
+Q15648	Mediator of RNA polymerase II transcription subunit 1
+Q15738	Sterol-4-alpha-carboxylate 3-dehydrogenase, decarboxylating
+Q15788	Nuclear receptor coactivator 1
+Q15800	Methylsterol monooxygenase 1
+Q15831	Serine/threonine-protein kinase STK11
+Q15848	Adiponectin
+Q15878	Voltage-dependent R-type calcium channel subunit alpha-1E
+Q16134	Electron transfer flavoprotein-ubiquinone oxidoreductase, mitochondrial
+Q16394	Exostosin-1
+Q16595	Frataxin, mitochondrial
+Q16613	Serotonin N-acetyltransferase
+Q16623	Syntaxin-1A
+Q16635	Tafazzin
+Q16654	[Pyruvate dehydrogenase (acetyl-transferring)] kinase isozyme 4, mitochondrial
+Q16656	Nuclear respiratory factor 1
+Q16678	Cytochrome P450 1B1
+Q16696	Cytochrome P450 2A13
+Q16698	2,4-dienoyl-CoA reductase [(3E)-enoyl-CoA-producing], mitochondrial
+Q16718	NADH dehydrogenase [ubiquinone] 1 alpha subcomplex subunit 5
+Q16719	Kynureninase
+Q16739	Ceramide glucosyltransferase
+Q16762	Thiosulfate sulfurtransferase
+Q16772	Glutathione S-transferase A3
+Q16773	Kynurenine--oxoglutarate transaminase 1
+Q16774	Guanylate kinase
+Q16775-2	GLO2_HUMAN
+Q16790	Carbonic anhydrase 9
+Q16795	NADH dehydrogenase [ubiquinone] 1 alpha subcomplex subunit 9, mitochondrial
+Q16816	Phosphorylase b kinase gamma catalytic chain, skeletal muscle/heart isoform
+Q16822	Phosphoenolpyruvate carboxykinase [GTP], mitochondrial
+Q16836	Hydroxyacyl-coenzyme A dehydrogenase, mitochondrial
+Q16850	Lanosterol 14-alpha demethylase
+Q16851	UTP--glucose-1-phosphate uridylyltransferase
+Q16853	Amine oxidase [copper-containing] 3
+Q16854	Deoxyguanosine kinase, mitochondrial
+Q16873	Leukotriene C4 synthase
+Q16875	6-phosphofructo-2-kinase/fructose-2,6-bisphosphatase 3
+Q16877	6-phosphofructo-2-kinase/fructose-2,6-bisphosphatase 4
+Q16878	Cysteine dioxygenase type 1
+Q16880	2-hydroxyacylsphingosine 1-beta-galactosyltransferase
+Q16881	Thioredoxin reductase 1, cytoplasmic
+Q1HG43	Dual oxidase maturation factor 1
+Q1HG44	Dual oxidase maturation factor 2
+Q32NB8	CDP-diacylglycerol--glycerol-3-phosphate 3-phosphatidyltransferase, mitochondrial
+Q330K2	NADH dehydrogenase (ubiquinone) complex I, assembly factor 6
+Q3LIE5	Manganese-dependent ADP-ribose/CDP-alcohol diphosphatase
+Q3LXA3	Triokinase/FMN cyclase
+Q3SY69	Mitochondrial 10-formyltetrahydrofolate dehydrogenase
+Q49B96	Cytochrome c oxidase assembly protein COX19
+Q4G0N4	NAD kinase 2, mitochondrial
+Q4G176	Malonate--CoA ligase ACSF3, mitochondrial
+Q4KWH8	1-phosphatidylinositol 4,5-bisphosphate phosphodiesterase eta-1
+Q53H12	Acylglycerol kinase, mitochondrial
+Q53H76	Phospholipase A1 member A
+Q53H96	Pyrroline-5-carboxylate reductase 3
+Q53S58	Transmembrane protein 177
+Q58HT5	Acyl-CoA wax alcohol acyltransferase 1
+Q5EBL8	PDZ domain-containing protein 11
+Q5HYK3	2-methoxy-6-polyprenyl-1,4-benzoquinol methylase, mitochondrial
+Q5K4L6	Long-chain fatty acid transport protein 3
+Q5MY95	Ectonucleoside triphosphate diphosphohydrolase 8
+Q5QJU3	Alkaline ceramidase 2
+Q5RI15	Cytochrome c oxidase assembly protein COX20, mitochondrial
+Q5SGD2	Protein phosphatase 1L
+Q5SRE5	Nucleoporin NUP188
+Q5SW96	Low density lipoprotein receptor adapter protein 1
+Q5T2R2	All trans-polyprenyl-diphosphate synthase PDSS1
+Q5TEU4	Arginine-hydroxylase NDUFAF5, mitochondrial
+Q5U5X0	Complex III assembly factor LYRM7
+Q5UE93	Phosphoinositide 3-kinase regulatory subunit 6
+Q5VT66	Mitochondrial amidoxime-reducing component 1
+Q5VUM1	Succinate dehydrogenase assembly factor 4, mitochondrial
+Q5VYX0	Renalase
+Q63HM1	Kynurenine formamidase
+Q69YU5	Ubiquinol-cytochrome c reductase complex assembly factor 6
+Q6DHV7	N6-Methyl-AMP deaminase
+Q6DKK2	Tetratricopeptide repeat protein 19, mitochondrial
+Q6E213	Acyl-CoA wax alcohol acyltransferase 2
+Q6FI81	Anamorsin
+Q6GMR7	Fatty-acid amide hydrolase 2
+Q6GTS8	N-fatty-acyl-amino acid synthase/hydrolase PM20D1
+Q6IA69	Glutamine-dependent NAD(+) synthetase
+Q6IAN0	Peroxisomal reductase activating PPAR-gamma
+Q6IMI4	Sulfotransferase 6B1
+Q6JQN1	Acyl-CoA dehydrogenase family member 10
+Q6NT55	Ultra-long-chain fatty acid omega-hydroxylase
+Q6NUM9	All-trans-retinol 13,14-reductase
+Q6NVY1	3-hydroxyisobutyryl-CoA hydrolase, mitochondrial
+Q6P1J6	Phospholipase B1, membrane-associated
+Q6P2C8	Mediator of RNA polymerase II transcription subunit 27
+Q6P4A7	Sideroflexin-4
+Q6P4F2	Ferredoxin-2, mitochondrial
+Q6P531	Glutathione hydrolase 6
+Q6P587	Oxaloacetate tautomerase FAHD1, mitochondrial
+Q6PCB7	Long-chain fatty acid transport protein 1
+Q6PCE3	Glucose 1,6-bisphosphate synthase
+Q6PHW0	Iodotyrosine deiodinase 1
+Q6PKC3	Thioredoxin domain-containing protein 11
+Q6Q788	Apolipoprotein A-V
+Q6QHC5	Sphingolipid delta(4)-desaturase/C4-monooxygenase DES2
+Q6QHF9	Peroxisomal N(1)-acetyl-spermine/spermidine oxidase
+Q6UB35	Monofunctional C1-tetrahydrofolate synthase, mitochondrial
+Q6UW78	Ubiquinol-cytochrome-c reductase complex assembly factor 3
+Q6UWP7	Lysocardiolipin acyltransferase 1
+Q6UWR7	Glycerophosphocholine cholinephosphodiesterase ENPP6
+Q6UWS5	Protein PET117 homolog, mitochondrial
+Q6UWV6	Ectonucleotide pyrophosphatase/phosphodiesterase family member 7
+Q6UWW8	Carboxylesterase 3
+Q6V0L0	Cytochrome P450 26C1
+Q6VVB1	E3 ubiquitin-protein ligase NHLRC1
+Q6VVX0	Vitamin D 25-hydroxylase
+Q6XQN6	Nicotinate phosphoribosyltransferase
+Q6YBV0	Neutral amino acid uniporter 4
+Q6YP21	Kynurenine--oxoglutarate transaminase 3
+Q6ZMR3	L-lactate dehydrogenase A-like 6A
+Q6ZNB7	Alkylglycerol monooxygenase
+Q6ZPD8	Diacylglycerol O-acyltransferase 2-like protein 6
+Q6ZQW0	Indoleamine 2,3-dioxygenase 2
+Q6ZQY3	Acidic amino acid decarboxylase GADL1
+Q6ZV29	Patatin-like phospholipase domain-containing protein 7
+Q6ZVK8-1	NUDT18-1
+Q6ZWL3	Cytochrome P450 4V2
+Q709F0	Acyl-CoA dehydrogenase family member 11
+Q71F56	Mediator of RNA polymerase II transcription subunit 13-like
+Q71SY5	Mediator of RNA polymerase II transcription subunit 25
+Q76EJ3	Nucleotide sugar transporter SLC35D2
+Q7KZN9	Heme A synthase COX15
+Q7L266	Isoaspartyl peptidase/L-asparaginase
+Q7L4E1	Mitoguardin 2
+Q7L592	Protein arginine methyltransferase NDUFAF7, mitochondrial
+Q7L5A8	Fatty acid 2-hydroxylase
+Q7L5L3	Lysophospholipase D GDPD3
+Q7L5Y9	E3 ubiquitin-protein transferase MAEA
+Q7LFX5	Carbohydrate sulfotransferase 15
+Q7LG56	Ribonucleoside-diphosphate reductase subunit M2 B
+Q7LGA3	Heparan sulfate 2-O-sulfotransferase 1
+Q7RTV2	Glutathione S-transferase A5
+Q7Z3B4	Nucleoporin p54
+Q7Z449	Cytochrome P450 2U1
+Q7Z4W1	L-xylulose reductase
+Q7Z5P4	17-beta-hydroxysteroid dehydrogenase 13
+Q7Z6Z6	Patatin-like phospholipase domain-containing protein 5
+Q7Z7K0	COX assembly mitochondrial protein homolog
+Q86SK9	Stearoyl-CoA desaturase 5
+Q86SX6	Glutaredoxin-related protein 5, mitochondrial
+Q86T03	Type 1 phosphatidylinositol 4,5-bisphosphate 4-phosphatase
+Q86U10	60 kDa lysophospholipase
+Q86U28	Iron-sulfur cluster assembly 2 homolog, mitochondrial
+Q86UL3	Glycerol-3-phosphate acyltransferase 4
+Q86UW1	Organic solute transporter subunit alpha
+Q86UW2	Organic solute transporter subunit beta
+Q86V21	Acetoacetyl-CoA synthetase
+Q86V24	Adiponectin receptor protein 2
+Q86VD7	Mitochondrial coenzyme A transporter SLC25A42
+Q86VZ5	Phosphatidylcholine:ceramide cholinephosphotransferase 1
+Q86WA6	Serine hydrolase BPHL
+Q86WA9	Sodium-independent sulfate anion transporter
+Q86WG5	Myotubularin-related protein 13
+Q86WW8	Cytochrome c oxidase assembly factor 5
+Q86X67	NAD(P)H pyrophosphatase NUDT13, mitochondrial
+Q86XE5	4-hydroxy-2-oxoglutarate aldolase, mitochondrial
+Q86XF0	Dihydrofolate reductase 2, mitochondrial
+Q86Y39	NADH dehydrogenase [ubiquinone] 1 alpha subcomplex subunit 11
+Q86YH6	All trans-polyprenyl-diphosphate synthase PDSS2
+Q86YN6	Peroxisome proliferator-activated receptor gamma coactivator 1-beta
+Q86YW0	1-phosphatidylinositol 4,5-bisphosphate phosphodiesterase zeta-1
+Q8IUR7	Armadillo repeat-containing protein 8
+Q8IUX1	Complex I assembly factor TMEM126B, mitochondrial
+Q8IUZ5	5-phosphohydroxy-L-lysine phospho-lyase
+Q8IV16	Glycosylphosphatidylinositol-anchored high density lipoprotein-binding protein 1
+Q8IV42	L-seryl-tRNA(Sec) kinase
+Q8IVF5	Rho guanine nucleotide exchange factor TIAM2
+Q8IVH4	Methylmalonic aciduria type A protein, mitochondrial
+Q8IVI9	Nostrin
+Q8IVQ6	Palmitoyltransferase ZDHHC21
+Q8IVS2	Malonyl-CoA-acyl carrier protein transacylase, mitochondrial
+Q8IVS8	Glycerate kinase
+Q8IVV7	Glucose-induced degradation protein 4 homolog
+Q8IW45	ATP-dependent (S)-NAD(P)H-hydrate dehydratase
+Q8IWL3	Iron-sulfur cluster co-chaperone protein HscB
+Q8IWW8	Hydroxyacid-oxoacid transhydrogenase, mitochondrial
+Q8IY17	Patatin-like phospholipase domain-containing protein 6
+Q8IY26	Polyisoprenoid diphosphate/phosphate phosphohydrolase PLPP6
+Q8N0U8	Vitamin K epoxide reductase complex subunit 1-like protein 1
+Q8N159	N-acetylglutamate synthase, mitochondrial
+Q8N183	NADH dehydrogenase [ubiquinone] 1 alpha subcomplex assembly factor 2
+Q8N1F7	Nuclear pore complex protein Nup93
+Q8N1Q1	Carbonic anhydrase 13
+Q8N2A8	Mitochondrial cardiolipin hydrolase
+Q8N2W9	E3 SUMO-protein ligase PIAS4
+Q8N335	Glycerol-3-phosphate dehydrogenase 1-like protein
+Q8N3E9	1-phosphatidylinositol 4,5-bisphosphate phosphodiesterase delta-3
+Q8N3J5	Protein phosphatase Mn(2+)-dependent 1K
+Q8N465	D-2-hydroxyglutarate dehydrogenase, mitochondrial
+Q8N490-2	MR-1S
+Q8N4J0	Carnosine N-methyltransferase
+Q8N4T8	3-oxoacyl-[acyl-carrier-protein] reductase
+Q8N5G0	Small integral membrane protein 20
+Q8N5Z0	Kynurenine/alpha-aminoadipate aminotransferase, mitochondrial
+Q8N661	Lysoplasmalogenase TMEM86B
+Q8N695	Sodium-coupled monocarboxylate transporter 1
+Q8N6M3	Acyl-coenzyme A diphosphatase FITM2
+Q8N8N7	Prostaglandin reductase 2
+Q8N8Q8	Cytochrome c oxidase assembly protein COX18, mitochondrial
+Q8N9F0	N-acetylaspartate synthetase
+Q8N9F7	Lysophospholipase D GDPD1
+Q8NA29	Sodium-dependent lysophosphatidylcholine symporter 1
+Q8NAN2	Mitoguardin 1
+Q8NBJ7	Inactive C-alpha-formylglycine-generating enzyme 2
+Q8NBK3	Formylglycine-generating enzyme
+Q8NBQ5	Estradiol 17-beta-dehydrogenase 11
+Q8NBZ7	UDP-glucuronic acid decarboxylase 1
+Q8NCC3	Lysosomal phospholipase A and acyltransferase
+Q8NCH0	Carbohydrate sulfotransferase 14
+Q8NCW5	NAD(P)H-hydrate epimerase
+Q8NE62	Choline dehydrogenase, mitochondrial
+Q8NEL9	Phospholipase DDHD1
+Q8NF37	Lysophosphatidylcholine acyltransferase 1
+Q8NFF5	Bifunctional FAD diphosphatase/FAD synthase
+Q8NFH3	Nucleoporin Nup43
+Q8NFH4	Nucleoporin Nup37
+Q8NFH5	Nucleoporin NUP35
+Q8NFP7	Diphosphoinositol polyphosphate phosphohydrolase 3-alpha
+Q8NFU3	Thiosulfate:glutathione sulfurtransferase
+Q8NFU5	Inositol polyphosphate multikinase
+Q8NHP1	Aflatoxin B1 aldehyde reductase member 4
+Q8NHU3	Phosphatidylcholine:ceramide cholinephosphotransferase 2
+Q8NHY0	Beta-1,4 N-acetylgalactosaminyltransferase 2
+Q8TB37	Iron-sulfur cluster transfer protein NUBPL
+Q8TB40	(Lyso)-N-acylphosphatidylethanolamine lipase
+Q8TB92	3-hydroxy-3-methylglutaryl-CoA lyase, cytoplasmic
+Q8TBF2	Prostamide/prostaglandin F synthase
+Q8TBG4	Ethanolamine-phosphate phospho-lyase
+Q8TBX8	Phosphatidylinositol 5-phosphate 4-kinase type-2 gamma
+Q8TC12	Retinol dehydrogenase 11
+Q8TCD5	5'(3')-deoxyribonucleotidase, cytosolic type
+Q8TCT0	Ceramide kinase
+Q8TCT1	Phosphoethanolamine/phosphocholine phosphatase
+Q8TD30-1	PXLP-K341-GPT2-1
+Q8TDN7	Alkaline ceramidase 1
+Q8TDQ7	Glucosamine-6-phosphate deaminase 2
+Q8TDX5	2-amino-3-carboxymuconate-6-semialdehyde decarboxylase
+Q8TE99	2-phosphoxylose phosphatase 1
+Q8TEM1	Nuclear pore membrane glycoprotein 210
+Q8VNV4	Beta-galactosidase 
+Q8WTR4	Glycerophosphodiester phosphodiesterase domain-containing protein 5
+Q8WTS1	1-acylglycerol-3-phosphate O-acyltransferase ABHD5
+Q8WU67	Phospholipase ABHD3
+Q8WUD6	Cholinephosphotransferase 1
+Q8WUJ3	Cell migration-inducing and hyaluronan-binding protein
+Q8WUK0	Phosphatidylglycerophosphatase and protein-tyrosine phosphatase 1
+Q8WUM0	Nuclear pore complex protein Nup133
+Q8WV74	Mitochondrial coenzyme A diphosphatase NUDT8
+Q8WVC6	Dephospho-CoA kinase domain-containing protein
+Q8WVI0	Ubiquinol-cytochrome c reductase complex assembly factor 5
+Q8WVX9	Fatty acyl-CoA reductase 1
+Q8WWI5	Choline transporter-like protein 1
+Q8WWM9	Cytoglobin
+Q8WWQ2	Inactive heparanase-2
+Q8WYR1	Phosphoinositide 3-kinase regulatory subunit 5
+Q8WZA2	Rap guanine nucleotide exchange factor 4
+Q92506	(3R)-3-hydroxyacyl-CoA dehydrogenase
+Q92523	Carnitine O-palmitoyltransferase 1, muscle isoform
+Q92539	Phosphatidate phosphatase LPIN2
+Q92562	Polyphosphoinositide phosphatase
+Q92569	Phosphatidylinositol 3-kinase regulatory subunit gamma
+Q92621	Nuclear pore complex protein Nup205
+Q92748	Thyroid hormone-inducible hepatic protein
+Q92793	CREB-binding protein
+Q92813	Type II iodothyronine deiodinase
+Q92887	ATP-binding cassette sub-family C member 2
+Q92903	Phosphatidate cytidylyltransferase 1
+Q92911	Sodium/iodide cotransporter
+Q92947	Glutaryl-CoA dehydrogenase, mitochondrial
+Q93063	Exostosin-2
+Q93074	Mediator of RNA polymerase II transcription subunit 12
+Q93088	Betaine--homocysteine S-methyltransferase 1
+Q93099	Homogentisate 1,2-dioxygenase
+Q93100	Phosphorylase b kinase regulatory subunit beta
+Q969G6	Riboflavin kinase
+Q969X2	Alpha-N-acetylgalactosaminide alpha-2,6-sialyltransferase 6
+Q969Z3	Mitochondrial amidoxime reducing component 2
+Q96A54	Adiponectin receptor protein 1
+Q96A70	Antizyme inhibitor 2
+Q96AQ7	Lipid transferase CIDEC
+Q96B77	Transmembrane protein 186
+Q96BZ4	5'-3' exonuclease PLD4
+Q96C23	Galactose mutarotase
+Q96C36	Pyrroline-5-carboxylate reductase 2
+Q96CD2	Phosphopantothenoylcysteine decarboxylase
+Q96CM8	Medium-chain acyl-CoA ligase ACSF2, mitochondrial
+Q96CU9	FAD-dependent oxidoreductase domain-containing protein 1
+Q96DE0	U8 snoRNA-decapping enzyme
+Q96DG6	Carboxymethylenebutenolidase homolog
+Q96DU7	Inositol-trisphosphate 3-kinase C
+Q96EE3-1	SEH1L-1
+Q96EE3-2	SEH1L-2
+Q96EF0	Phosphatidylinositol-3,5-bisphosphate 3-phosphatase MTMR8
+Q96EK7	Constitutive coactivator of peroxisome proliferator-activated receptor gamma
+Q96EN8	Molybdenum cofactor sulfurase
+Q96EY8	Corrinoid adenosyltransferase MMAB
+Q96G03	Phosphopentomutase
+Q96G25	Mediator of RNA polymerase II transcription subunit 8
+Q96G61	Diphosphoinositol polyphosphate phosphohydrolase 3-beta
+Q96GA7	Serine dehydratase-like
+Q96GE9	Distal membrane-arm assembly complex protein 1
+Q96GX9	Methylthioribulose-1-phosphate dehydratase
+Q96H78	Solute carrier family 25 member 44
+Q96H96	4-hydroxybenzoate polyprenyltransferase, mitochondrial
+Q96HD9	N-acyl-aromatic-L-amino acid amidohydrolase (carboxylate-forming)
+Q96HR3	Mediator of RNA polymerase II transcription subunit 30
+Q96HS1-1	PGAM5L
+Q96I15	Selenocysteine lyase
+Q96I23	Protein preY, mitochondrial
+Q96I36	Cytochrome c oxidase assembly protein COX14
+Q96I99	Succinate--CoA ligase [GDP-forming] subunit beta, mitochondrial
+Q96IR7	4-hydroxyphenylpyruvate dioxygenase-like protein
+Q96IU4	Putative protein-lysine deacylase ABHD14B
+Q96IX5	ATP synthase F(0) complex subunit k, mitochondrial
+Q96JD6	1,5-anhydro-D-fructose reductase
+Q96K12	Fatty acyl-CoA reductase 2
+Q96KP4	Cytosolic non-specific dipeptidase
+Q96L58	Beta-1,3-galactosyltransferase 6
+Q96LT4	Sphingomyelin synthase-related protein 1
+Q96N66	Membrane-bound acylglycerophosphatidylinositol O-acyltransferase MBOAT7
+Q96N76	Urocanate hydratase
+Q96NT5	Proton-coupled folate transporter
+Q96NU7	Probable imidazolonepropionase
+Q96P26	Cytosolic 5'-nucleotidase 1B
+Q96PD7	Diacylglycerol O-acyltransferase 2
+Q96PE7	Methylmalonyl-CoA epimerase, mitochondrial
+Q96PY6	Serine/threonine-protein kinase Nek1
+Q96QG7	Myotubularin-related protein 9
+Q96RI1	Bile acid receptor
+Q96RN5	Mediator of RNA polymerase II transcription subunit 15
+Q96RQ3	Methylcrotonoyl-CoA carboxylase subunit alpha, mitochondrial
+Q96RQ9	L-amino-acid oxidase
+Q96RU7	Tribbles homolog 3
+Q96S59	Ran-binding protein 9
+Q96SQ9	Cytochrome P450 2S1
+Q96SZ5	2-aminoethanethiol dioxygenase
+Q96T21	Selenocysteine insertion sequence-binding protein 2
+Q96T51	RUN and FYVE domain-containing protein 1
+Q96T66	Nicotinamide/nicotinic acid mononucleotide adenylyltransferase 3
+Q96T76	MMS19 nucleotide excision repair protein homolog
+Q99424	Peroxisomal acyl-coenzyme A oxidase 2
+Q99447	Ethanolamine-phosphate cytidylyltransferase
+Q99489	D-aspartate oxidase
+Q99518	Flavin-containing monooxygenase 2
+Q99538	Legumain
+Q99541	Perilipin-2
+Q99567	Nuclear pore complex protein Nup88
+Q99611	Selenide, water dikinase 2
+Q99643	Succinate dehydrogenase cytochrome b560 subunit, mitochondrial
+Q99653	Calcineurin B homologous protein 1
+Q99685	Monoglyceride lipase
+Q99707	Methionine synthase
+Q99714	3-hydroxyacyl-CoA dehydrogenase type-2
+Q99735	Microsomal glutathione S-transferase 2
+Q99743	Neuronal PAS domain-containing protein 2
+Q99757	Thioredoxin, mitochondrial
+Q99766	ATP synthase subunit s, mitochondrial
+Q99798	Aconitate hydratase, mitochondrial
+Q99943	1-acyl-sn-glycerol-3-phosphate acyltransferase alpha
+Q99999	Galactosylceramide sulfotransferase
+Q9BPX1	L-fucose dehydrogenase
+Q9BQ95	Evolutionarily conserved signaling intermediate in Toll pathway, mitochondrial
+Q9BQB6	Vitamin K epoxide reductase complex subunit 1
+Q9BQG2	NAD-capped RNA hydrolase NUDT12
+Q9BQK8	Phosphatidate phosphatase LPIN3
+Q9BQT8	Mitochondrial 2-oxodicarboxylate carrier
+Q9BR01	Sulfotransferase 4A1
+Q9BR61	Acyl-CoA-binding domain-containing protein 6
+Q9BRC7	1-phosphatidylinositol 4,5-bisphosphate phosphodiesterase delta-4
+Q9BRR6	ADP-dependent glucokinase
+Q9BRT2	Ubiquinol-cytochrome c reductase complex assembly factor 2
+Q9BSE5	Guanidino acid hydrolase, mitochondrial
+Q9BSH4	Translational activator of cytochrome c oxidase 1
+Q9BTT4	Mediator of RNA polymerase II transcription subunit 10
+Q9BTX1	Nucleoporin NDC1
+Q9BU02	Thiamine-triphosphatase
+Q9BU61	NADH dehydrogenase [ubiquinone] 1 alpha subcomplex assembly factor 3
+Q9BUE0	Mediator of RNA polymerase II transcription subunit 18
+Q9BUE6	Iron-sulfur cluster assembly 1 homolog, mitochondrial
+Q9BUM1	Glucose-6-phosphatase 3
+Q9BUT1	Dehydrogenase/reductase SDR family member 6
+Q9BUV8	GEL complex subunit OPTI
+Q9BV20	Methylthioribose-1-phosphate isomerase
+Q9BV57	Acireductone dioxygenase
+Q9BV79	Enoyl-[acyl-carrier-protein] reductase, mitochondrial
+Q9BVG9	Phosphatidylserine synthase 2
+Q9BVV7	Mitochondrial import inner membrane translocase subunit Tim21
+Q9BW27	Nuclear pore complex protein Nup85
+Q9BW72	HIG1 domain family member 2A, mitochondrial
+Q9BW91-1	NUDT9-1
+Q9BWD1	Acetyl-CoA acetyltransferase, cytosolic
+Q9BWU1	Cyclin-dependent kinase 19
+Q9BX63	Fanconi anemia group J protein
+Q9BXI3	Cytosolic 5'-nucleotidase 1A
+Q9BXJ7	Protein amnionless
+Q9BY32	Inosine triphosphate pyrophosphatase
+Q9BY49	Peroxisomal trans-2-enoyl-CoA reductase
+Q9BY76	Angiopoietin-related protein 4
+Q9BYC2	Succinyl-CoA:3-ketoacid coenzyme A transferase 2, mitochondrial
+Q9BYG0	Lactosylceramide 1,3-N-acetyl-beta-D-glucosaminyltransferase
+Q9BYJ1	Hydroperoxide isomerase ALOXE3
+Q9BYK8	3'-5' exoribonuclease HELZ2
+Q9BYV1	Alanine--glyoxylate aminotransferase 2, mitochondrial
+Q9BYV7	Carotenoid-cleaving dioxygenase, mitochondrial
+Q9BYZ2	L-lactate dehydrogenase A-like 6B
+Q9BZ23	Pantothenate kinase 2, mitochondrial
+Q9BZK7	F-box-like/WD repeat-containing protein TBL1XR1
+Q9BZM1	Group XIIA secretory phospholipase A2
+Q9BZM2	Group IIF secretory phospholipase A2
+Q9BZQ4	Nicotinamide/nicotinic acid mononucleotide adenylyltransferase 2
+Q9BZX2	Uridine-cytidine kinase 2
+Q9C0D9	Ethanolaminephosphotransferase 1
+Q9C0I1	Myotubularin-related protein 12
+Q9GZT4	Serine racemase
+Q9GZY4	Cytochrome c oxidase assembly factor 1 homolog
+Q9H008	Phospholysine phosphohistidine inorganic pyrophosphate phosphatase
+Q9H061	Transmembrane protein 126A
+Q9H0P0-4	NT5C3-4
+Q9H1K1-1	ISCU_HUMAN
+Q9H1U9	Mitochondrial nicotinamide adenine dinucleotide transporter SLC25A51
+Q9H204	Mediator of RNA polymerase II transcription subunit 28
+Q9H227	Cytosolic beta-glucosidase
+Q9H2C2	Protein ARV1
+Q9H2D1	Solute carrier family 25 member 32
+Q9H2F3	3 beta-hydroxysteroid dehydrogenase type 7
+Q9H2M3	S-methylmethionine--homocysteine S-methyltransferase BHMT2
+Q9H2U2	Inorganic pyrophosphatase 2, mitochondrial
+Q9H3L0	Cobalamin trafficking protein CblD
+Q9H3S4	Thiamine pyrophosphokinase 1
+Q9H477	Ribokinase
+Q9H4A9	Dipeptidase 2
+Q9H4Y5	Glutathione S-transferase omega-2
+Q9H5J4	Very long chain fatty acid elongase 6
+Q9H6Q4	Cytosolic iron-sulfur assembly component 3
+Q9H6R3	Acyl-CoA synthetase short-chain family member 3, mitochondrial
+Q9H773	dCTP pyrophosphatase 1
+Q9H7D7	WD repeat-containing protein 26
+Q9H845	Complex I assembly factor ACAD9, mitochondrial
+Q9H8P0	Polyprenal reductase
+Q9H8X2	Inositol-pentakisphosphate 2-kinase
+Q9H944	Mediator of RNA polymerase II transcription subunit 20
+Q9H9P8	L-2-hydroxyglutarate dehydrogenase, mitochondrial
+Q9HA47	Uridine-cytidine kinase 1
+Q9HAB8	Phosphopantothenate--cysteine ligase
+Q9HAN9	Nicotinamide/nicotinic acid mononucleotide adenylyltransferase 1
+Q9HAW8	UDP-glucuronosyltransferase 1A10
+Q9HAY6	Beta,beta-carotene 15,15'-dioxygenase
+Q9HB19	Pleckstrin homology domain-containing family A member 2
+Q9HB21	Pleckstrin homology domain-containing family A member 1
+Q9HB55	Cytochrome P450 3A43
+Q9HBK9	Arsenite methyltransferase
+Q9HBL8	NmrA-like family domain-containing protein 1
+Q9HC21	Mitochondrial thiamine pyrophosphate carrier
+Q9HCC0	Methylcrotonoyl-CoA carboxylase beta chain, mitochondrial
+Q9HCG7	Non-lysosomal glucosylceramidase
+Q9HCL2	Glycerol-3-phosphate acyltransferase 1, mitochondrial
+Q9HD34	LYR motif-containing protein 4
+Q9HD40	O-phosphoseryl-tRNA(Sec) selenium transferase
+Q9NP71	Carbohydrate-responsive element-binding protein
+Q9NPA3	Mid1-interacting protein 1
+Q9NPB1	5'(3')-deoxyribonucleotidase, mitochondrial
+Q9NPB8	Glycerophosphocholine phosphodiesterase GPCPD1
+Q9NPC4	Lactosylceramide 4-alpha-galactosyltransferase
+Q9NPD5	Solute carrier organic anion transporter family member 1B3
+Q9NPF0	CD320 antigen
+Q9NPH0	Lysophosphatidic acid phosphatase type 6
+Q9NPH2	Inositol-3-phosphate synthase 1
+Q9NPI5	Nicotinamide riboside kinase 2
+Q9NPJ6	Mediator of RNA polymerase II transcription subunit 4
+Q9NPL8	Complex I assembly factor TIMMDC1, mitochondrial
+Q9NPZ5	Galactosylgalactosylxylosylprotein 3-beta-glucuronosyltransferase 2
+Q9NQ66	1-phosphatidylinositol 4,5-bisphosphate phosphodiesterase beta-1
+Q9NQR9	Glucose-6-phosphatase 2
+Q9NQX3	Gephyrin
+Q9NQZ5	StAR-related lipid transfer protein 7, mitochondrial
+Q9NQZ7	Ectonucleoside triphosphate diphosphohydrolase 7
+Q9NR19	Acetyl-coenzyme A synthetase, cytoplasmic
+Q9NR77	Peroxisomal membrane protein 2
+Q9NRA0	Sphingosine kinase 2
+Q9NRA2	Sialin
+Q9NRD9	Dual oxidase 1
+Q9NRF8	CTP synthase 2
+Q9NRG9	Aladin
+Q9NRN7	L-aminoadipate-semialdehyde dehydrogenase-phosphopantetheinyl transferase
+Q9NRP4	Succinate dehydrogenase assembly factor 3, mitochondrial
+Q9NSY2	StAR-related lipid transfer protein 5
+Q9NTG7	NAD-dependent protein deacetylase sirtuin-3, mitochondrial
+Q9NTJ4	Alpha-mannosidase 2C1
+Q9NTJ5	Phosphatidylinositol-3-phosphatase SAC1
+Q9NTN3	Nucleotide sugar transporter SLC35D1
+Q9NU23	LYR motif-containing protein 2
+Q9NUB1	Acetyl-coenzyme A synthetase 2-like, mitochondrial
+Q9NUI1	Peroxisomal 2,4-dienoyl-CoA reductase [(3E)-enoyl-CoA-producing]
+Q9NUJ1	Palmitoyl-protein thioesterase ABHD10, mitochondrial
+Q9NUN5	Lysosomal cobalamin transport escort protein LMBD1
+Q9NUN7	Alkaline ceramidase 3
+Q9NUQ2	1-acyl-sn-glycerol-3-phosphate acyltransferase epsilon
+Q9NUV7	Serine palmitoyltransferase 3
+Q9NUZ1	Acyl-coenzyme A oxidase-like protein
+Q9NV23	S-acyl fatty acid synthase thioesterase, medium chain
+Q9NV35	Nucleotide triphosphate diphosphatase NUDT15
+Q9NVA1	Ubiquinol-cytochrome c reductase complex assembly factor 1
+Q9NVC6	Mediator of RNA polymerase II transcription subunit 17
+Q9NVE7	4'-phosphopantetheine phosphatase
+Q9NVH6	Trimethyllysine dioxygenase, mitochondrial
+Q9NVS9	Pyridoxine-5'-phosphate oxidase
+Q9NW81	Distal membrane-arm assembly complex protein 2
+Q9NWA0	Mediator of RNA polymerase II transcription subunit 9
+Q9NWM0-3	SMOX_HUMAN
+Q9NWU2	Glucose-induced degradation protein 8 homolog
+Q9NWW6	Nicotinamide riboside kinase 1
+Q9NWZ5	Uridine-cytidine kinase-like 1
+Q9NX14	NADH dehydrogenase [ubiquinone] 1 beta subcomplex subunit 11, mitochondrial
+Q9NX18	Succinate dehydrogenase assembly factor 2, mitochondrial
+Q9NX62	Golgi-resident adenosine 3',5'-bisphosphate 3'-phosphatase
+Q9NX70	Mediator of RNA polymerase II transcription subunit 29
+Q9NXA8	NAD-dependent protein deacylase sirtuin-5, mitochondrial
+Q9NXB9	Very long chain fatty acid elongase 2
+Q9NXD2	Myotubularin-related protein 10
+Q9NXE4	Sphingomyelin phosphodiesterase 4
+Q9NY47	Voltage-dependent calcium channel subunit alpha-2/delta-2
+Q9NYA1	Sphingosine kinase 1
+Q9NYL5	24-hydroxycholesterol 7-alpha-hydroxylase
+Q9NYQ3	2-Hydroxyacid oxidase 2
+Q9NZ20	Group 3 secretory phospholipase A2
+Q9NZ53	Podocalyxin-like protein 2
+Q9NZ71	Regulator of telomere elongation helicase 1
+Q9NZB8-1	MOCS1B
+Q9NZB8-5	MOCS1A
+Q9NZC3	Glycerophosphodiester phosphodiesterase 1
+Q9NZI5	Grainyhead-like protein 1 homolog
+Q9NZJ6	Ubiquinone biosynthesis O-methyltransferase, mitochondrial
+Q9NZJ9	Diphosphoinositol polyphosphate phosphohydrolase 2
+Q9NZK7	Group IIE secretory phospholipase A2
+Q9NZL6	Ral guanine nucleotide dissociation stimulator-like 1
+Q9NZL9	Methionine adenosyltransferase 2 subunit beta
+Q9P032	NADH dehydrogenase [ubiquinone] 1 alpha subcomplex assembly factor 4
+Q9P086	Mediator of RNA polymerase II transcription subunit 11
+Q9P0J0	NADH dehydrogenase [ubiquinone] 1 alpha subcomplex subunit 13
+Q9P0S2	Cytochrome c oxidase assembly protein COX16 homolog, mitochondrial
+Q9P0Z9	Peroxisomal sarcosine oxidase
+Q9P212	1-phosphatidylinositol 4,5-bisphosphate phosphodiesterase epsilon-1
+Q9P2J5	Leucine--tRNA ligase, cytoplasmic
+Q9P2R7	Succinate--CoA ligase [ADP-forming] subunit beta, mitochondrial
+Q9P2T1	GMP reductase 2
+Q9P2W7	Galactosylgalactosylxylosylprotein 3-beta-glucuronosyltransferase 1
+Q9UBF8	Phosphatidylinositol 4-kinase beta
+Q9UBK2	Peroxisome proliferator-activated receptor gamma coactivator 1-alpha
+Q9UBK8	Methionine synthase reductase
+Q9UBM1	Phosphatidylethanolamine N-methyltransferase
+Q9UBM7	7-dehydrocholesterol reductase
+Q9UBQ6	Exostosin-like 2
+Q9UBQ7	Glyoxylate reductase/hydroxypyruvate reductase
+Q9UBR1	Beta-ureidopropionase
+Q9UBV7	Beta-1,4-galactosyltransferase 7
+Q9UBX3	Mitochondrial dicarboxylate carrier
+Q9UBX8	Beta-1,4-galactosyltransferase 6
+Q9UDR5	Alpha-aminoadipic semialdehyde synthase, mitochondrial
+Q9UDW1	Cytochrome b-c1 complex subunit 9
+Q9UF12	Hydroxyproline dehydrogenase
+Q9UG56	Phosphatidylserine decarboxylase proenzyme, mitochondrial
+Q9UGB7	Inositol oxygenase
+Q9UGJ0	5'-AMP-activated protein kinase subunit gamma-2
+Q9UH92	Max-like protein X
+Q9UHB4	NADPH-dependent diflavin oxidoreductase 1
+Q9UHJ6	Sedoheptulokinase
+Q9UHK6	Alpha-methylacyl-CoA racemase
+Q9UHV7	Mediator of RNA polymerase II transcription subunit 13
+Q9UHY7	Enolase-phosphatase E1
+Q9UI09	NADH dehydrogenase [ubiquinone] 1 alpha subcomplex subunit 12
+Q9UI17	Dimethylglycine dehydrogenase, mitochondrial
+Q9UI30	Multifunctional methyltransferase subunit TRM112-like protein
+Q9UI32	Glutaminase liver isoform, mitochondrial
+Q9UJ14	Glutathione hydrolase 7
+Q9UJ83	2-hydroxyacyl-CoA lyase 1
+Q9UJA2	Cardiolipin synthase (CMP-forming)
+Q9UJM8	2-Hydroxyacid oxidase 1
+Q9UJS0	Electrogenic aspartate/glutamate antiporter SLC25A13, mitochondrial
+Q9UKG9	Peroxisomal carnitine O-octanoyltransferase
+Q9UKK9	ADP-sugar pyrophosphatase
+Q9UKL6	Phosphatidylcholine transfer protein
+Q9UKU7	Isobutyryl-CoA dehydrogenase, mitochondrial
+Q9UKX7	Nuclear pore complex protein Nup50
+Q9UL12	Sarcosine dehydrogenase, mitochondrial
+Q9UL63	Muskelin
+Q9ULK4	Mediator of RNA polymerase II transcription subunit 23
+Q9ULX7	Carbonic anhydrase 14
+Q9UMR5	Lysosomal thioesterase PPT2
+Q9UMX9	Membrane-associated transporter protein
+Q9UNK4	Group IID secretory phospholipase A2
+Q9UNP4	Lactosylceramide alpha-2,3-sialyltransferase
+Q9UNQ0	Broad substrate specificity ATP-binding cassette transporter ABCG2
+Q9UNU6	7-alpha-hydroxycholest-4-en-3-one 12-alpha-hydroxylase
+Q9UNW1	Multiple inositol polyphosphate phosphatase 1
+Q9UP65	Cytosolic phospholipase A2 gamma
+Q9UQ49	Sialidase-3
+Q9UQK1	Protein phosphatase 1 regulatory subunit 3C
+Q9Y216	Phosphatidylinositol-3-phosphate phosphatase MTMR7
+Q9Y217	Phosphatidylinositol-3,5-bisphosphate 3-phosphatase MTMR6
+Q9Y226	Solute carrier family 22 member 13
+Q9Y227	Ectonucleoside triphosphate diphosphohydrolase 4
+Q9Y241	HIG1 domain family member 1A, mitochondrial
+Q9Y251	Heparanase
+Q9Y259	Choline/ethanolamine kinase
+Q9Y276	Mitochondrial chaperone BCS1
+Q9Y289	Sodium-dependent multivitamin transporter
+Q9Y2C2	Uronyl 2-sulfotransferase
+Q9Y2D0	Carbonic anhydrase 5B, mitochondrial
+Q9Y2E5	Epididymis-specific alpha-mannosidase
+Q9Y2H2	Phosphatidylinositide 4-phosphatase SAC2
+Q9Y2I7	1-phosphatidylinositol 3-phosphate 5-kinase
+Q9Y2P5	Long-chain fatty acid transport protein 5
+Q9Y2Q3	Glutathione S-transferase kappa 1
+Q9Y2R0	Cytochrome c oxidase assembly factor 3 homolog, mitochondrial
+Q9Y2S2	Lambda-crystallin homolog
+Q9Y2T3	Guanine deaminase
+Q9Y2W1	Thyroid hormone receptor-associated protein 3
+Q9Y2X0	Mediator of RNA polymerase II transcription subunit 16
+Q9Y2Z9	Ubiquinone biosynthesis monooxygenase COQ6, mitochondrial
+Q9Y314	Nitric oxide synthase-interacting protein
+Q9Y315	Deoxyribose-phosphate aldolase
+Q9Y365	START domain-containing protein 10
+Q9Y375	Complex I intermediate-associated protein 30, mitochondrial
+Q9Y3A0	Ubiquinone biosynthesis protein COQ4 homolog, mitochondrial
+Q9Y3C7	Mediator of RNA polymerase II transcription subunit 31
+Q9Y3D0	Cytosolic iron-sulfur assembly component 2B
+Q9Y3D8	Adenylate kinase isoenzyme 6
+Q9Y3R4	Sialidase-2
+Q9Y3Z3	Deoxynucleoside triphosphate triphosphohydrolase SAMHD1
+Q9Y4U1	Cyanocobalamin reductase / alkylcobalamin dealkylase
+Q9Y5K3	Choline-phosphate cytidylyltransferase B
+Q9Y5L2	Hypoxia-inducible lipid droplet-associated protein
+Q9Y5L3	Ectonucleoside triphosphate diphosphohydrolase 2
+Q9Y5N5	Methyltransferase HEMK2
+Q9Y5P4-2	CERT1-2
+Q9Y5U8	Mitochondrial pyruvate carrier 1
+Q9Y5Y0-1	FLVCR1a
+Q9Y5Y0-2	FLVCR1-2
+Q9Y5Y2	Cytosolic Fe-S cluster assembly factor NUBP2
+Q9Y5Z9	UbiA prenyltransferase domain-containing protein 1
+Q9Y600	Cysteine sulfinic acid decarboxylase
+Q9Y617	Phosphoserine aminotransferase
+Q9Y697-1	NFS1_HUMAN
+Q9Y697-2	NSF1 isoform 2
+Q9Y6A2	Cholesterol 24-hydroxylase
+Q9Y6B6	Small COPII coat GTPase SAR1B
+Q9Y6E7	NAD-dependent protein lipoamidase sirtuin-4, mitochondrial
+Q9Y6K0	Choline/ethanolaminephosphotransferase 1
+Q9Y6L6	Solute carrier organic anion transporter family member 1B1
+Q9Y6M9	NADH dehydrogenase [ubiquinone] 1 beta subcomplex subunit 9
+Q9Y6N1	Cytochrome c oxidase assembly protein COX11, mitochondrial
+Q9Y6N5	Sulfide:quinone oxidoreductase, mitochondrial
+Q9Y6Q9	Nuclear receptor coactivator 3
+Q9Y6X9	ATPase MORC2

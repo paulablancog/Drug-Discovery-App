@@ -1,0 +1,5 @@
+P35790	Choline kinase alpha
+P48651	Phosphatidylserine synthase 1
+Q99447	Ethanolamine-phosphate cytidylyltransferase
+Q9UG56	Phosphatidylserine decarboxylase proenzyme, mitochondrial
+Q9Y6K0	Choline/ethanolaminephosphotransferase 1

@@ -1,0 +1,30 @@
+AADAC
+AAMP
+AANAT
+AARS1
+AAVS1
+CHRM1
+Muscarinic acetylcholine receptor M1
+Muscarinic acetylcholine receptor M1
+CHRM1
+Muscarinic acetylcholine receptor M1
+M1 receptor
+Muscarinic acetylcholine receptor M2
+M2 receptor
+Muscarinic acetylcholine receptor M2
+Muscarinic acetylcholine receptor M2
+Muscarinic acetylcholine receptor M3
+Muscarinic acetylcholine receptor M3
+M3 receptor
+Muscarinic acetylcholine receptor M3
+Muscarinic acetylcholine receptor M4
+M4 receptor
+Muscarinic acetylcholine receptor M4
+Muscarinic acetylcholine receptor M4
+M5 receptor
+Muscarinic acetylcholine receptor M5
+CHRM5
+Muscarinic acetylcholine receptor M5 (CHRM5)
+M1 receptor
+Muscarinic acetylcholine receptor
+Muscarinic receptor 2

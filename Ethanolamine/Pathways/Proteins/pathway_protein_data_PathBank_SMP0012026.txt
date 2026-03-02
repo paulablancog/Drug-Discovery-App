@@ -1,0 +1,4 @@
+Q9FR44	Phosphoethanolamine N-methyltransferase 1
+Q9FZ62	Inorganic pyrophosphatase 2
+Q9M9H6	Probable choline kinase 1
+Q9MA74	Serine decarboxylase

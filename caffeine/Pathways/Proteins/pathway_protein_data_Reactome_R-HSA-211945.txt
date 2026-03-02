@@ -1,0 +1,70 @@
+A9YTQ3	Aryl hydrocarbon receptor repressor
+O00170	AH receptor-interacting protein
+O15528	25-hydroxyvitamin D-1 alpha hydroxylase, mitochondrial
+O43169	Cytochrome b5 type B
+O75106	Amine oxidase [copper-containing] 2
+O75828	Carbonyl reductase [NADPH] 3
+P00325	All-trans-retinol dehydrogenase [NAD(+)] ADH1B
+P00326	Alcohol dehydrogenase 1C
+P00352	Aldehyde dehydrogenase 1A1
+P00387	NADH-cytochrome b5 reductase 3
+P01189	Pro-opiomelanocortin
+P04798	Cytochrome P450 1A1
+P05091	Aldehyde dehydrogenase, mitochondrial
+P05108	Cholesterol side-chain cleavage enzyme, mitochondrial
+P05177	Cytochrome P450 1A2
+P07099	Epoxide hydrolase 1
+P07327	Alcohol dehydrogenase 1A
+P08238	Heat shock protein HSP 90-beta
+P08319	All-trans-retinol dehydrogenase [NAD(+)] ADH4
+P08684	Cytochrome P450 3A4
+P08686	Steroid 21-hydroxylase
+P11511	Aromatase
+P11766	Alcohol dehydrogenase class-3
+P16083	Ribosyldihydronicotinamide dehydrogenase [quinone]
+P16435	NADPH--cytochrome P450 reductase
+P19099	Cytochrome P450 11B2, mitochondrial
+P19793	Retinoic acid receptor RXR-alpha
+P19801	Diamine oxidase [copper-containing]
+P21397	Amine oxidase [flavin-containing] A
+P22570	NADPH:adrenodoxin oxidoreductase, mitochondrial
+P22760	Arylacetamide deacetylase
+P23219	Prostaglandin G/H synthase 1
+P24557	Thromboxane-A synthase
+P27338	Amine oxidase [flavin-containing] B
+P28332	Alcohol dehydrogenase 6
+P30837	Aldehyde dehydrogenase X, mitochondrial
+P30838	Aldehyde dehydrogenase, dimeric NADP-preferring
+P31513	Flavin-containing monooxygenase 3
+P35869	Aryl hydrocarbon receptor
+P40394	All-trans-retinol dehydrogenase [NAD(+)] ADH7
+Q01740	Flavin-containing monooxygenase 1
+Q02318	Sterol 26-hydroxylase, mitochondrial
+Q07973	1,25-dihydroxyvitamin D(3) 24-hydroxylase, mitochondrial
+Q15185	Prostaglandin E synthase 3
+Q15596	Nuclear receptor coactivator 2
+Q15788	Nuclear receptor coactivator 1
+Q16678	Cytochrome P450 1B1
+Q16850	Lanosterol 14-alpha demethylase
+Q16853	Amine oxidase [copper-containing] 3
+Q5VT66	Mitochondrial amidoxime-reducing component 1
+Q6NT55	Ultra-long-chain fatty acid omega-hydroxylase
+Q6QHF9	Peroxisomal N(1)-acetyl-spermine/spermidine oxidase
+Q6UWW8	Carboxylesterase 3
+Q6V0L0	Cytochrome P450 26C1
+Q6VVX0	Vitamin D 25-hydroxylase
+Q6ZWL3	Cytochrome P450 4V2
+Q7Z449	Cytochrome P450 2U1
+Q86WA6	Serine hydrolase BPHL
+Q969Z3	Mitochondrial amidoxime reducing component 2
+Q96DG6	Carboxymethylenebutenolidase homolog
+Q96RI1	Bile acid receptor
+Q96SQ9	Cytochrome P450 2S1
+Q99518	Flavin-containing monooxygenase 2
+Q9HB55	Cytochrome P450 3A43
+Q9NR19	Acetyl-coenzyme A synthetase, cytoplasmic
+Q9NUB1	Acetyl-coenzyme A synthetase 2-like, mitochondrial
+Q9NWM0-3	SMOX_HUMAN
+Q9NYL5	24-hydroxycholesterol 7-alpha-hydroxylase
+Q9UNU6	7-alpha-hydroxycholest-4-en-3-one 12-alpha-hydroxylase
+Q9Y6A2	Cholesterol 24-hydroxylase

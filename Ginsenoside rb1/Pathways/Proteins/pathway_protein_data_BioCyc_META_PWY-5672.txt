@@ -1,0 +1,10 @@
+A0A0A6ZFR4	UDP-glucosyltransferase 74AE2
+A0A0A6ZFY4	UDP-glucosyltransferase 29
+A0A0A7HB61	UDP-glycosyltransferase 71A27
+A0A0K0PVM5	UDP-glycosyltransferase 101
+A0A0K0PVW1	UDP-glycosyltransferase 100
+H2DH16	Dammarenediol 12-hydroxylase
+I7C6E8	Beta-amyrin 28-monooxygenase
+I7CT85	Protopanaxadiol 6-hydroxylase
+O82140	Beta-amyrin synthase 1
+Q08IT1	Dammarenediol II synthase

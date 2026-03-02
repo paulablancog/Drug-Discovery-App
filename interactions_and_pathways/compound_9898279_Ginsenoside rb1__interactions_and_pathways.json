@@ -31,7 +31,7 @@
                         "Description": "Biological pathways in which this compound is involved.",
                         "Information": [
                             {
-                                "ReferenceNumber": 74,
+                                "ReferenceNumber": 75,
                                 "Value": {
                                     "ExternalTableName": "collection=pathway&core=1"
                                 }
@@ -65,7 +65,7 @@
                 "ANID": 3621401
             },
             {
-                "ReferenceNumber": 74,
+                "ReferenceNumber": 75,
                 "SourceName": "PubChem",
                 "SourceID": "PubChem",
                 "Description": "Data deposited in or computed by PubChem",

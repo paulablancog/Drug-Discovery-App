@@ -1,0 +1,274 @@
+{
+    "Record": {
+        "RecordType": "Pathway",
+        "RecordAccession": "PWY-5672",
+        "RecordTitle": "ginsenosides biosynthesis",
+        "RecordExternalURL": "https://pmn.plantcyc.org/pathway?orgid=PLANT&id=PWY-5672",
+        "Section": [
+            {
+                "TOCHeading": "Identity",
+                "Description": "Information describing the identity of this pathway, including the data source and external identifier.",
+                "Section": [
+                    {
+                        "TOCHeading": "Source",
+                        "Description": "Data source from which this pathway record was derived.",
+                        "DisplayControls": {
+                            "MoveToTop": true
+                        },
+                        "Information": [
+                            {
+                                "ReferenceNumber": 1,
+                                "URL": "https://plantcyc.org/",
+                                "Value": {
+                                    "StringWithMarkup": [
+                                        {
+                                            "String": "PlantCyc"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "External ID",
+                        "Description": "The identifier used for this pathway by the external data source.",
+                        "Information": [
+                            {
+                                "ReferenceNumber": 1,
+                                "URL": "https://pmn.plantcyc.org/pathway?orgid=PLANT&id=PWY-5672",
+                                "Value": {
+                                    "StringWithMarkup": [
+                                        {
+                                            "String": "PWY-5672"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Pathway Information",
+                "Description": "General information about this pathway.",
+                "DisplayControls": {
+                    "HideThisSection": true
+                },
+                "Section": [
+                    {
+                        "TOCHeading": "Taxonomic Scope",
+                        "Description": "Indicates if the pathway is organism-specific or conserved.",
+                        "DisplayControls": {
+                            "MoveToTop": true
+                        },
+                        "Information": [
+                            {
+                                "ReferenceNumber": 1,
+                                "Value": {
+                                    "StringWithMarkup": [
+                                        {
+                                            "String": "conserved"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "Category",
+                        "Description": "Descriptive category of this pathway (e.g., signaling, metabolic, disease).",
+                        "DisplayControls": {
+                            "MoveToTop": true
+                        },
+                        "Information": [
+                            {
+                                "ReferenceNumber": 1,
+                                "Value": {
+                                    "StringWithMarkup": [
+                                        {
+                                            "String": "pathway"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "Create Date",
+                        "Description": "Date when this pathway record was created. For more information on various dates for PubChem records, visit the PubChem Record Dates help page.",
+                        "URL": "https://pubchem.ncbi.nlm.nih.gov/docs/record-dates",
+                        "DisplayControls": {
+                            "MoveToTop": true
+                        },
+                        "Information": [
+                            {
+                                "ReferenceNumber": 2,
+                                "Value": {
+                                    "StringWithMarkup": [
+                                        {
+                                            "String": "2019-05-31"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "Modify Date",
+                        "Description": "Date when this pathway record was last modified. For more information on various dates for PubChem records, visit the PubChem Record Dates help page.",
+                        "URL": "https://pubchem.ncbi.nlm.nih.gov/docs/record-dates",
+                        "DisplayControls": {
+                            "MoveToTop": true
+                        },
+                        "Information": [
+                            {
+                                "ReferenceNumber": 2,
+                                "Value": {
+                                    "StringWithMarkup": [
+                                        {
+                                            "String": "2026-02-01"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "Record Description",
+                        "Description": "Textual summary about this pathway",
+                        "DisplayControls": {
+                            "MoveToTop": true
+                        },
+                        "Information": [
+                            {
+                                "ReferenceNumber": 1,
+                                "Value": {
+                                    "StringWithMarkup": [
+                                        {
+                                            "String": "Ginseng is the famous oriental medicinal herb Panax sps used as a drug since ancient times. The \nactive ingredients in ginseng are glycosylated triterpene saponins called ginsenosides [PMID: 12920566]. \nMore than 30 kinds of ginseosides are known and based on the aglycone skeleton they are classified into \ntwo groups; the dammarenediol-type and oleanane-type [PMID: 16962103]. The Ginsenosides differ from \none another only by the type of sugar moieties, their number, their sites of attachment and the number of \nhydroxyl groups [Yue05] but the biological activities of the ginsenosides differ extensively. \n\nThe pharmacological activities of various ginsenosides include cardio-protective, immuno-modulatory, \nanti-fatigue, antitumour and hepato-protective effects [Yue05]. The roots of Panax ginseng contain \nthe triterpene saponins and undergoe specfic developmental changes to function as an organ that \nsynthesizes the ginsenosides [LUO05]. The various types of ginsenosides accumulate with age \n[PMID: 15356323]. \n\nThe chemical synthesis of ginsenosides has not been been feasible and little is known about the genes \nand biochemical pathways. The ginsenoside backbones are synthesized from the \nPOLYISOPRENSYN-PWY by cyclization of  EPOXYSQUALENE \n[PMID: 15356323]. The cyclization leads to a branch point of sterol and triterpene pathways. \nBased on the aglycone backbone they are classified into 3 types: protopanaxdiol-type, \nprotopanaxtriol-type, and oleanane-type saponins [PMID: 12920566]. The triterpene backbone \nundergoes various modifications, such as oxidation, substitution, and glycosylation to give the \ncharacteristic ginsenosides.",
+                                            "Markup": [
+                                                {
+                                                    "Start": 46,
+                                                    "Length": 9,
+                                                    "Type": "Italics"
+                                                },
+                                                {
+                                                    "Start": 185,
+                                                    "Length": 14,
+                                                    "URL": "https://www.ncbi.nlm.nih.gov/pubmed/12920566"
+                                                },
+                                                {
+                                                    "Start": 362,
+                                                    "Length": 14,
+                                                    "URL": "https://www.ncbi.nlm.nih.gov/pubmed/16962103"
+                                                },
+                                                {
+                                                    "Start": 1005,
+                                                    "Length": 14,
+                                                    "URL": "https://www.ncbi.nlm.nih.gov/pubmed/15356323"
+                                                },
+                                                {
+                                                    "Start": 1205,
+                                                    "Length": 18,
+                                                    "URL": "https://pmn.plantcyc.org/pathway?orgid=PLANT&id=POLYISOPRENSYN-PWY"
+                                                },
+                                                {
+                                                    "Start": 1243,
+                                                    "Length": 13,
+                                                    "URL": "https://pmn.plantcyc.org/pathway?orgid=PLANT&id=EPOXYSQUALENE"
+                                                },
+                                                {
+                                                    "Start": 1259,
+                                                    "Length": 14,
+                                                    "URL": "https://www.ncbi.nlm.nih.gov/pubmed/15356323"
+                                                },
+                                                {
+                                                    "Start": 1489,
+                                                    "Length": 14,
+                                                    "URL": "https://www.ncbi.nlm.nih.gov/pubmed/12920566"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Interactions",
+                "Description": "Specific interactions between biochemicals involved in this pathway.",
+                "Information": [
+                    {
+                        "ReferenceNumber": 1,
+                        "Value": {
+                            "ExternalTableName": "collection=pathwayreaction&view=concise_pathway"
+                        }
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Chemicals",
+                "Description": "Chemicals involved in this pathway.",
+                "Information": [
+                    {
+                        "ReferenceNumber": 1,
+                        "Value": {
+                            "ExternalTableName": "pcget_pathway_chemical"
+                        }
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Proteins",
+                "Description": "Proteins involved in this pathway.",
+                "Information": [
+                    {
+                        "ReferenceNumber": 1,
+                        "Value": {
+                            "ExternalTableName": "pcget_pathway_protein"
+                        }
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Literature",
+                "Description": "Scientific articles associated with this pathway, provided by the data source.",
+                "Section": [
+                    {
+                        "TOCHeading": "Consolidated References",
+                        "Description": "The consolidated references include literature data from all sources including Reactome, WikiPathways, PharmGKB, PathBank, LIPID MAPS, etc.",
+                        "URL": "https://pubchem.ncbi.nlm.nih.gov/docs/literature",
+                        "Information": [
+                            {
+                                "ReferenceNumber": 1,
+                                "Value": {
+                                    "ExternalTableName": "literature"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Reference": [
+            {
+                "ReferenceNumber": 1,
+                "SourceName": "PlantCyc",
+                "SourceID": "PWY-5672",
+                "Description": "The Plant Metabolic Network (PMN) currently houses one multi-species reference database called PlantCyc and 100 species/taxon-specific databases",
+                "URL": "https://pmn.plantcyc.org/pathway?orgid=PLANT&id=PWY-5672",
+                "LicenseNote": "The PlantCyc databases may be used, royalty-free, for any and all purposes worldwide.",
+                "LicenseURL": "https://plantcyc.org/downloads/license-agreement"
+            },
+            {
+                "ReferenceNumber": 2,
+                "SourceName": "PubChem",
+                "SourceID": "PubChem",
+                "Description": "Data deposited in or computed by PubChem",
+                "URL": "https://pubchem.ncbi.nlm.nih.gov"
+            }
+        ]
+    }
+}

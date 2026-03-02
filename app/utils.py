@@ -13,7 +13,7 @@ def get_json(url):
             response = requests.get(url, timeout=30)
             if response.status_code == 200:
                 print(f"Successfully retrieved data from URL in attempt {attempt + 1}")
-                print("Printing index JSON...")
+                print("Printing JSON...")
                 return response.json()
             else:
                 print(f"Request failed with status code {response.status_code}. Attempt {attempt + 1}/3")
@@ -31,6 +31,10 @@ def save_json(json_file, filename, folder):
     path.write_text(json.dumps(json_file, indent=4)) # writes the JSON data to the file with indentation for readability
     return str(path)
 
+def make_subfolder(parent_folder, child_folder):
+    path = Path(parent_folder) / child_folder
+    path.mkdir(parents=True, exist_ok=True)
+    return str(path)
 
 # Find if the file exists and return it
 def load_json(filename, folder):
@@ -64,12 +68,12 @@ def save_rows_csv (rows, compound, filename):
 
     if not rows:
         print("No rows to save in CSV format for file: "+filename)
-        with open(file_path, "w", newline="") as f:
+        with open(file_path, "w", newline="", encoding="utf-8-sig") as f:
             f.write("No data available\n")
             return str(file_path)
         
     fieldnames = sorted({k for row in rows for k in row.keys()})
-    with open(file_path, "w") as f:
+    with open(file_path, "w", newline = "", encoding = "utf-8-sig") as f:
         writer = csv.DictWriter(f,fieldnames=fieldnames)
         writer.writeheader()
         for row in rows:
@@ -96,10 +100,16 @@ def create_file(filename, folder):
     return str(path)
 
 # Open an existing file and write on it
-def write_file(filename, folder, list):
+def write_file(filename, folder, lines):
     path = Path(folder) / f"{filename}.txt"
-    text = "\n".join("" if x is None else str(x) for x in list) # TODO cambiar esto??
+    text = "\n".join("" if x is None else str(x) for x in lines) + "\n" # TODO cambiar esto??
     with open (path, "w") as f: # append to add information to the file without overwritting
         f.write(text)
 
+# Reads a txt file and returns the line read
+def read_file(filename, folder):
+    path = Path(folder) / f"{filename}.txt"
+    with open (path, "r") as f:
+        line = f.readline()
+    return line
 

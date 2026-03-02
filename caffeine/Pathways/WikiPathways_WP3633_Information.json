@@ -1,0 +1,273 @@
+{
+    "Record": {
+        "RecordType": "Pathway",
+        "RecordAccession": "WP3633",
+        "RecordTitle": "Caffeine and theobromine metabolism",
+        "RecordExternalURL": "https://classic.wikipathways.org/index.php/Pathway:WP3633",
+        "Section": [
+            {
+                "TOCHeading": "Identity",
+                "Description": "Information describing the identity of this pathway, including the data source and external identifier.",
+                "Section": [
+                    {
+                        "TOCHeading": "Source",
+                        "Description": "Data source from which this pathway record was derived.",
+                        "DisplayControls": {
+                            "MoveToTop": true
+                        },
+                        "Information": [
+                            {
+                                "ReferenceNumber": 1,
+                                "URL": "https://www.wikipathways.org",
+                                "Value": {
+                                    "StringWithMarkup": [
+                                        {
+                                            "String": "WikiPathways"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "External ID",
+                        "Description": "The identifier used for this pathway by the external data source.",
+                        "Information": [
+                            {
+                                "ReferenceNumber": 1,
+                                "URL": "https://classic.wikipathways.org/index.php/Pathway:WP3633",
+                                "Value": {
+                                    "StringWithMarkup": [
+                                        {
+                                            "String": "WP3633"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Pathway Information",
+                "Description": "General information about this pathway.",
+                "DisplayControls": {
+                    "HideThisSection": true
+                },
+                "Section": [
+                    {
+                        "TOCHeading": "Taxonomic Scope",
+                        "Description": "Indicates if the pathway is organism-specific or conserved.",
+                        "DisplayControls": {
+                            "MoveToTop": true
+                        },
+                        "Information": [
+                            {
+                                "ReferenceNumber": 1,
+                                "Value": {
+                                    "StringWithMarkup": [
+                                        {
+                                            "String": "organism_specific"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "Taxonomy",
+                        "Description": "Source organism of this pathway.",
+                        "DisplayControls": {
+                            "MoveToTop": true
+                        },
+                        "Information": [
+                            {
+                                "ReferenceNumber": 1,
+                                "URL": "https://pubchem.ncbi.nlm.nih.gov/taxonomy/9606",
+                                "Value": {
+                                    "StringWithMarkup": [
+                                        {
+                                            "String": "Homo sapiens (human)"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "Create Date",
+                        "Description": "Date when this pathway record was created. For more information on various dates for PubChem records, visit the PubChem Record Dates help page.",
+                        "URL": "https://pubchem.ncbi.nlm.nih.gov/docs/record-dates",
+                        "DisplayControls": {
+                            "MoveToTop": true
+                        },
+                        "Information": [
+                            {
+                                "ReferenceNumber": 2,
+                                "Value": {
+                                    "StringWithMarkup": [
+                                        {
+                                            "String": "2019-01-29"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "Modify Date",
+                        "Description": "Date when this pathway record was last modified. For more information on various dates for PubChem records, visit the PubChem Record Dates help page.",
+                        "URL": "https://pubchem.ncbi.nlm.nih.gov/docs/record-dates",
+                        "DisplayControls": {
+                            "MoveToTop": true
+                        },
+                        "Information": [
+                            {
+                                "ReferenceNumber": 2,
+                                "Value": {
+                                    "StringWithMarkup": [
+                                        {
+                                            "String": "2023-09-01"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "Record Description",
+                        "Description": "Textual summary about this pathway",
+                        "DisplayControls": {
+                            "MoveToTop": true
+                        },
+                        "Information": [
+                            {
+                                "ReferenceNumber": 1,
+                                "Value": {
+                                    "StringWithMarkup": [
+                                        {
+                                            "String": "Metabolism pathway of two compounds commonly found in human samples: caffeine and theobromine."
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Diagram",
+                "Description": "Schematic overview of this pathway.  Clicking this diagram directs to the corresponding pathway record in the data source.",
+                "Information": [
+                    {
+                        "ReferenceNumber": 3,
+                        "URL": "https://www.wikipathways.org/index.php/Pathway:WP3633",
+                        "Value": {
+                            "ExternalDataURL": [
+                                "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/key/8184210_1"
+                            ],
+                            "MimeType": "image/svg+xml"
+                        }
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Interactions",
+                "Description": "Specific interactions between biochemicals involved in this pathway.",
+                "Information": [
+                    {
+                        "ReferenceNumber": 1,
+                        "Value": {
+                            "ExternalTableName": "collection=pathwayreaction&view=concise_pathway"
+                        }
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Chemicals",
+                "Description": "Chemicals involved in this pathway.",
+                "Information": [
+                    {
+                        "ReferenceNumber": 1,
+                        "Value": {
+                            "ExternalTableName": "pcget_pathway_chemical"
+                        }
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Genes",
+                "Description": "Genes involved in this pathway.",
+                "Information": [
+                    {
+                        "ReferenceNumber": 1,
+                        "Value": {
+                            "ExternalTableName": "pcget_pathway_gene"
+                        }
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Related Pathways",
+                "Description": "Related pathway records in PubChem (e.g. linked pathways).",
+                "Section": [
+                    {
+                        "TOCHeading": "Linked Pathways",
+                        "Description": "Linked pathways provided by original source. Available link types are conserved, linked, subset, and superset. \"Conserved\" means the linked pathway is conserved in evolution for the current one. \"Linked\" means the linked pathway and the current one are connected to each other in a larger network. \"Superset\" means the linked pathway contains the current one. \"Subset\" means linked pathway is contained within the current one.",
+                        "Information": [
+                            {
+                                "ReferenceNumber": 1,
+                                "Value": {
+                                    "ExternalTableName": "pcget_pathway_linked"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Literature",
+                "Description": "Scientific articles associated with this pathway, provided by the data source.",
+                "Section": [
+                    {
+                        "TOCHeading": "Consolidated References",
+                        "Description": "The consolidated references include literature data from all sources including Reactome, WikiPathways, PharmGKB, PathBank, LIPID MAPS, etc.",
+                        "URL": "https://pubchem.ncbi.nlm.nih.gov/docs/literature",
+                        "Information": [
+                            {
+                                "ReferenceNumber": 1,
+                                "Value": {
+                                    "ExternalTableName": "literature"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Reference": [
+            {
+                "ReferenceNumber": 1,
+                "SourceName": "WikiPathways",
+                "SourceID": "WP3633",
+                "Description": "WikiPathways is a database of biological pathways maintained by and for the scientific community.",
+                "URL": "https://classic.wikipathways.org/index.php/Pathway:WP3633"
+            },
+            {
+                "ReferenceNumber": 2,
+                "SourceName": "PubChem",
+                "SourceID": "PubChem",
+                "Description": "Data deposited in or computed by PubChem",
+                "URL": "https://pubchem.ncbi.nlm.nih.gov"
+            },
+            {
+                "ReferenceNumber": 3,
+                "SourceName": "WikiPathways",
+                "SourceID": "WP3633",
+                "Description": "WikiPathways is an open, collaborative platform dedicated to the curation of biological pathways.",
+                "URL": "https://www.wikipathways.org/index.php/Pathway:WP3633",
+                "ANID": 8184210
+            }
+        ]
+    }
+}

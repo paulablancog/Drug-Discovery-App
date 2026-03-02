@@ -1,0 +1,366 @@
+{
+    "Record": {
+        "RecordType": "Pathway",
+        "RecordAccession": "R-HSA-211859",
+        "RecordTitle": "Biological oxidations",
+        "RecordExternalURL": "https://reactome.org/content/detail/R-HSA-211859",
+        "Section": [
+            {
+                "TOCHeading": "Identity",
+                "Description": "Information describing the identity of this pathway, including the data source and external identifier.",
+                "Section": [
+                    {
+                        "TOCHeading": "Source",
+                        "Description": "Data source from which this pathway record was derived.",
+                        "DisplayControls": {
+                            "MoveToTop": true
+                        },
+                        "Information": [
+                            {
+                                "ReferenceNumber": 1,
+                                "URL": "https://www.reactome.org",
+                                "Value": {
+                                    "StringWithMarkup": [
+                                        {
+                                            "String": "Reactome"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "External ID",
+                        "Description": "The identifier used for this pathway by the external data source.",
+                        "Information": [
+                            {
+                                "ReferenceNumber": 1,
+                                "URL": "https://reactome.org/content/detail/R-HSA-211859",
+                                "Value": {
+                                    "StringWithMarkup": [
+                                        {
+                                            "String": "R-HSA-211859"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Pathway Information",
+                "Description": "General information about this pathway.",
+                "DisplayControls": {
+                    "HideThisSection": true
+                },
+                "Section": [
+                    {
+                        "TOCHeading": "Taxonomic Scope",
+                        "Description": "Indicates if the pathway is organism-specific or conserved.",
+                        "DisplayControls": {
+                            "MoveToTop": true
+                        },
+                        "Information": [
+                            {
+                                "ReferenceNumber": 1,
+                                "Value": {
+                                    "StringWithMarkup": [
+                                        {
+                                            "String": "organism_specific"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "Taxonomy",
+                        "Description": "Source organism of this pathway.",
+                        "DisplayControls": {
+                            "MoveToTop": true
+                        },
+                        "Information": [
+                            {
+                                "ReferenceNumber": 1,
+                                "URL": "https://pubchem.ncbi.nlm.nih.gov/taxonomy/9606",
+                                "Value": {
+                                    "StringWithMarkup": [
+                                        {
+                                            "String": "Homo sapiens (human)"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "Category",
+                        "Description": "Descriptive category of this pathway (e.g., signaling, metabolic, disease).",
+                        "DisplayControls": {
+                            "MoveToTop": true
+                        },
+                        "Information": [
+                            {
+                                "ReferenceNumber": 1,
+                                "Value": {
+                                    "StringWithMarkup": [
+                                        {
+                                            "String": "pathway"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "Create Date",
+                        "Description": "Date when this pathway record was created. For more information on various dates for PubChem records, visit the PubChem Record Dates help page.",
+                        "URL": "https://pubchem.ncbi.nlm.nih.gov/docs/record-dates",
+                        "DisplayControls": {
+                            "MoveToTop": true
+                        },
+                        "Information": [
+                            {
+                                "ReferenceNumber": 2,
+                                "Value": {
+                                    "StringWithMarkup": [
+                                        {
+                                            "String": "2019-01-17"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "Modify Date",
+                        "Description": "Date when this pathway record was last modified. For more information on various dates for PubChem records, visit the PubChem Record Dates help page.",
+                        "URL": "https://pubchem.ncbi.nlm.nih.gov/docs/record-dates",
+                        "DisplayControls": {
+                            "MoveToTop": true
+                        },
+                        "Information": [
+                            {
+                                "ReferenceNumber": 2,
+                                "Value": {
+                                    "StringWithMarkup": [
+                                        {
+                                            "String": "2025-12-30"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "Record Description",
+                        "Description": "Textual summary about this pathway",
+                        "DisplayControls": {
+                            "MoveToTop": true
+                        },
+                        "Information": [
+                            {
+                                "ReferenceNumber": 1,
+                                "Value": {
+                                    "StringWithMarkup": [
+                                        {
+                                            "String": "All organisms are constantly exposed to foreign chemicals every day. These can be man-made (drugs, industrial chemicals) or natural (alkaloids, toxins from plants and animals). Uptake is usually via ingestion but inhalation and transdermal routes are also common. The very nature of many chemicals that make them suitable for uptake by these routes, in other words their lipophilicty (favours fat solubility) is also the main reason organisms have developed mechanisms that convert them to hydrophilic (favours water solubility) compounds which are readily excreted via bile and urine. Otherwise, lipophilic chemicals would accumulate in the body and overwhelm defense mechanisms. This process is called biotransformation and is catalyzed by enzymes mainly in the liver of higher organisms but a number of other organs have considerable ability to process xenobiotica such as kidneys, gut and lungs. As well as xenobiotics, many endogenous compounds are commonly eliminated by this process. This mechanism is of ancient origin and a major factor for its development in animals is plants. Most animals are plant eaters and thus are subject to a huge variety of chemical compounds which plants produce to stop themselves being eaten. This complex set of enzymes have several features which make them ideal for biotransformation; (1) metabolites of the parent chemical are usually made more water soluble so it favours rapid excretion via bile and urine (2) the enzymes possess broad and overlapping specificity to be able to deal with newly exposed chemicals (3) metabolites of the parent generally don't have adverse biological effects. In the real world however, all these criteria have exceptions. Many chemicals are transformed into reactive metabolites. In pharmacology, the metabolites of some parent drugs exert the desired pharmacological effect but in the case of polycyclic aromatic hydrocarbons (PAHs), which can undergo epoxidation, it results in the formation of an electrophile which can attack proteins and DNA. Metabolism of xenobiotica occurs in several steps called Phase 1 (functionalization) and Phase 2 (conjugation). To improve water solubility, a functional group is added to or exposed on the chemical in one or more steps (Phase 1) to which hydrophilic conjugating species can be added (Phase 2). Functional groups can either be electrophilic (epoxides, carbonyl groups) or nucleophilic (hydroxyls, amino and sulfhydryl groups, carboxylic  groups) (see picture). Once chemicals undergo functionalization, the electrophilic or nucleophilic species can be detrimental to biological systems. Electrophiles can react with electron-rich macromolecules such as proteins, DNA and RNA by covalent interaction whilst nucleophiles have the potential to interact with biological receptors. That's why conjugation is so important as it mops up these potentially reactive species. Many chemicals, when exposed to certain metabolizing enzymes can induce those  enzymes, a process called enzyme induction. The effect of this is that these chemicals accelerate their own biotransformation and excretion. The reverse is also true where some chemicals cause enzyme inhibition. Some other factors that alter enzyme levels are sex, age and genetic predisposition. Between species, there can be considerable differences in biotransformation ability which is a problem faced by drug researchers interpreting toxicological results to humans.",
+                                            "Markup": [
+                                                {
+                                                    "Start": 704,
+                                                    "Length": 17,
+                                                    "Type": "Bold"
+                                                },
+                                                {
+                                                    "Start": 704,
+                                                    "Length": 17,
+                                                    "Type": "Italics"
+                                                },
+                                                {
+                                                    "Start": 1327,
+                                                    "Length": 123,
+                                                    "Type": "Italics"
+                                                },
+                                                {
+                                                    "Start": 1328,
+                                                    "Length": 1,
+                                                    "Type": "Bold"
+                                                },
+                                                {
+                                                    "Start": 1451,
+                                                    "Length": 105,
+                                                    "Type": "Italics"
+                                                },
+                                                {
+                                                    "Start": 1452,
+                                                    "Length": 1,
+                                                    "Type": "Bold"
+                                                },
+                                                {
+                                                    "Start": 1557,
+                                                    "Length": 78,
+                                                    "Type": "Italics"
+                                                },
+                                                {
+                                                    "Start": 1558,
+                                                    "Length": 1,
+                                                    "Type": "Bold"
+                                                },
+                                                {
+                                                    "Start": 2082,
+                                                    "Length": 27,
+                                                    "Type": "Italics"
+                                                },
+                                                {
+                                                    "Start": 2082,
+                                                    "Length": 27,
+                                                    "Type": "Bold"
+                                                },
+                                                {
+                                                    "Start": 2114,
+                                                    "Length": 21,
+                                                    "Type": "Italics"
+                                                },
+                                                {
+                                                    "Start": 2114,
+                                                    "Length": 21,
+                                                    "Type": "Bold"
+                                                },
+                                                {
+                                                    "Start": 2471,
+                                                    "Length": 13,
+                                                    "Type": "Italics"
+                                                },
+                                                {
+                                                    "Start": 2996,
+                                                    "Length": 16,
+                                                    "Type": "Italics"
+                                                },
+                                                {
+                                                    "Start": 2996,
+                                                    "Length": 16,
+                                                    "Type": "Bold"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Diagram",
+                "Description": "Schematic overview of this pathway.  Clicking this diagram directs to the corresponding pathway record in the data source.",
+                "Information": [
+                    {
+                        "ReferenceNumber": 3,
+                        "URL": "https://reactome.org/PathwayBrowser/#/R-HSA-211859",
+                        "Value": {
+                            "ExternalDataURL": [
+                                "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/key/8182069_1"
+                            ],
+                            "MimeType": "image/svg+xml"
+                        }
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Interactions",
+                "Description": "Specific interactions between biochemicals involved in this pathway.",
+                "Information": [
+                    {
+                        "ReferenceNumber": 1,
+                        "Value": {
+                            "ExternalTableName": "collection=pathwayreaction&view=concise_pathway"
+                        }
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Chemicals",
+                "Description": "Chemicals involved in this pathway.",
+                "Information": [
+                    {
+                        "ReferenceNumber": 1,
+                        "Value": {
+                            "ExternalTableName": "pcget_pathway_chemical"
+                        }
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Proteins",
+                "Description": "Proteins involved in this pathway.",
+                "Information": [
+                    {
+                        "ReferenceNumber": 1,
+                        "Value": {
+                            "ExternalTableName": "pcget_pathway_protein"
+                        }
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Genes",
+                "Description": "Genes involved in this pathway.",
+                "Information": [
+                    {
+                        "ReferenceNumber": 1,
+                        "Value": {
+                            "ExternalTableName": "pcget_pathway_gene"
+                        }
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Related Pathways",
+                "Description": "Related pathway records in PubChem (e.g. linked pathways).",
+                "Section": [
+                    {
+                        "TOCHeading": "Linked Pathways",
+                        "Description": "Linked pathways provided by original source. Available link types are conserved, linked, subset, and superset. \"Conserved\" means the linked pathway is conserved in evolution for the current one. \"Linked\" means the linked pathway and the current one are connected to each other in a larger network. \"Superset\" means the linked pathway contains the current one. \"Subset\" means linked pathway is contained within the current one.",
+                        "Information": [
+                            {
+                                "ReferenceNumber": 1,
+                                "Value": {
+                                    "ExternalTableName": "pcget_pathway_linked"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Reference": [
+            {
+                "ReferenceNumber": 1,
+                "SourceName": "Reactome",
+                "SourceID": "R-HSA-211859",
+                "Description": "REACTOME is an open-source, open access, manually curated and peer-reviewed pathway database.",
+                "URL": "https://reactome.org/content/detail/R-HSA-211859",
+                "LicenseNote": "Reactome is an open source and open access resource, available to anyone and covered by two Creative Commons licenses: the terms of the Creative Commons Public Domain (CC0) License apply to all Reactome annotation files, e.g. identifier mapping data, specialized data files, and interaction data derived from Reactome; the terms of the Creative Commons Attribution 4.0 International (CC BY 4.0) License apply to all software and code, e.g. relating to the functionality of the reactome.org, derived websites and webservices, the Curator Tool, the Functional Interaction application, SQL and Graph Database data dumps, and Pathway Illustrations (Enhanced High-Level Diagrams), Icon Library, Art and Branding Materials.",
+                "LicenseURL": "https://reactome.org/license"
+            },
+            {
+                "ReferenceNumber": 2,
+                "SourceName": "PubChem",
+                "SourceID": "PubChem",
+                "Description": "Data deposited in or computed by PubChem",
+                "URL": "https://pubchem.ncbi.nlm.nih.gov"
+            },
+            {
+                "ReferenceNumber": 3,
+                "SourceName": "Reactome",
+                "SourceID": "R-HSA-211859",
+                "Description": "Reactome is an open-source, open access, manually curated and peer-reviewed pathway database. The cornerstone of Reactome is a freely available, open source relational database of signaling and metabolic molecules and their relations organized into biological pathways and processes.",
+                "URL": "https://reactome.org/content/detail/R-HSA-211859",
+                "LicenseNote": "Reactome is an open source and open access resource, available to anyone and covered by two Creative Commons licenses: the terms of the Creative Commons Public Domain (CC0) License apply to all Reactome annotation files, e.g. identifier mapping data, specialized data files, and interaction data derived from Reactome; the terms of the Creative Commons Attribution 4.0 International (CC BY 4.0) License apply to all software and code, e.g. relating to the functionality of the reactome.org, derived websites and webservices, the Curator Tool, the Functional Interaction application, SQL and Graph Database data dumps, and Pathway Illustrations (Enhanced High-Level Diagrams), Icon Library, Art and Branding Materials.",
+                "LicenseURL": "https://reactome.org/license",
+                "ANID": 8182069
+            }
+        ]
+    }
+}

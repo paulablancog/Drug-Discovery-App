@@ -1,0 +1,448 @@
+{
+    "Record": {
+        "RecordType": "Pathway",
+        "RecordAccession": "R-HSA-211897",
+        "RecordTitle": "Cytochrome P450 - arranged by substrate type",
+        "RecordExternalURL": "https://reactome.org/content/detail/R-HSA-211897",
+        "Section": [
+            {
+                "TOCHeading": "Identity",
+                "Description": "Information describing the identity of this pathway, including the data source and external identifier.",
+                "Section": [
+                    {
+                        "TOCHeading": "Source",
+                        "Description": "Data source from which this pathway record was derived.",
+                        "DisplayControls": {
+                            "MoveToTop": true
+                        },
+                        "Information": [
+                            {
+                                "ReferenceNumber": 1,
+                                "URL": "https://www.reactome.org",
+                                "Value": {
+                                    "StringWithMarkup": [
+                                        {
+                                            "String": "Reactome"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "External ID",
+                        "Description": "The identifier used for this pathway by the external data source.",
+                        "Information": [
+                            {
+                                "ReferenceNumber": 1,
+                                "URL": "https://reactome.org/content/detail/R-HSA-211897",
+                                "Value": {
+                                    "StringWithMarkup": [
+                                        {
+                                            "String": "R-HSA-211897"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Pathway Information",
+                "Description": "General information about this pathway.",
+                "DisplayControls": {
+                    "HideThisSection": true
+                },
+                "Section": [
+                    {
+                        "TOCHeading": "Taxonomic Scope",
+                        "Description": "Indicates if the pathway is organism-specific or conserved.",
+                        "DisplayControls": {
+                            "MoveToTop": true
+                        },
+                        "Information": [
+                            {
+                                "ReferenceNumber": 1,
+                                "Value": {
+                                    "StringWithMarkup": [
+                                        {
+                                            "String": "organism_specific"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "Taxonomy",
+                        "Description": "Source organism of this pathway.",
+                        "DisplayControls": {
+                            "MoveToTop": true
+                        },
+                        "Information": [
+                            {
+                                "ReferenceNumber": 1,
+                                "URL": "https://pubchem.ncbi.nlm.nih.gov/taxonomy/9606",
+                                "Value": {
+                                    "StringWithMarkup": [
+                                        {
+                                            "String": "Homo sapiens (human)"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "Category",
+                        "Description": "Descriptive category of this pathway (e.g., signaling, metabolic, disease).",
+                        "DisplayControls": {
+                            "MoveToTop": true
+                        },
+                        "Information": [
+                            {
+                                "ReferenceNumber": 1,
+                                "Value": {
+                                    "StringWithMarkup": [
+                                        {
+                                            "String": "pathway"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "Create Date",
+                        "Description": "Date when this pathway record was created. For more information on various dates for PubChem records, visit the PubChem Record Dates help page.",
+                        "URL": "https://pubchem.ncbi.nlm.nih.gov/docs/record-dates",
+                        "DisplayControls": {
+                            "MoveToTop": true
+                        },
+                        "Information": [
+                            {
+                                "ReferenceNumber": 2,
+                                "Value": {
+                                    "StringWithMarkup": [
+                                        {
+                                            "String": "2019-01-17"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "Modify Date",
+                        "Description": "Date when this pathway record was last modified. For more information on various dates for PubChem records, visit the PubChem Record Dates help page.",
+                        "URL": "https://pubchem.ncbi.nlm.nih.gov/docs/record-dates",
+                        "DisplayControls": {
+                            "MoveToTop": true
+                        },
+                        "Information": [
+                            {
+                                "ReferenceNumber": 2,
+                                "Value": {
+                                    "StringWithMarkup": [
+                                        {
+                                            "String": "2025-12-30"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "Record Description",
+                        "Description": "Textual summary about this pathway",
+                        "DisplayControls": {
+                            "MoveToTop": true
+                        },
+                        "Information": [
+                            {
+                                "ReferenceNumber": 1,
+                                "Value": {
+                                    "StringWithMarkup": [
+                                        {
+                                            "String": "The P450 isozyme system is the major phase 1 biotransforming system in man, accounting for more than 90% of drug biotransformations. This system has huge catalytic versatility and a broad substrate specificity, acting upon xenobiotica and endogenous compounds. It is also called the mixed-function oxidase system,  the P450 monooxygenases and the heme-thiolate protein system. All P450 enzymes are a group of heme-containing isozymes which are located on the membrane of the smooth endoplasmic reticulum. They can be found in all tissues of the human body but are most concentrated in the liver. The name \"cytochrome P450\" (CYP) is derived from the spectral absorbance maximum at 450nm when carbon monoxide binds to CYP in its reduced (ferrous, Fe2+) state. The basic reaction catalyzed by CYP is mono-oxygenation, that is the transfer of one oxygen atom from molecular oxygen to a substrate. The other oxygen atom is reduced to water during the reaction with the equivalents coming from the cofactor NADPH. The basic reaction is; RH (substrate) + O2 + NADPH + H+ = ROH (product) + H2O + NADP+ The end results of this reaction can be (N-)hydroxylation, epoxidation, heteroatom (N-, S-) oxygenation, heteroatom (N-, S-, O-) dealkylation, ester cleavage, isomerization, dehydrogenation, replacement by oxygen or even reduction under anaerobic conditions. The metabolites produced from these reactions can either be mere intermediates which have relatively little reactivity towards cellular sysytems and are readily conjugated, or, they can be disruptive to cellular systems. Indeed, inert compounds need to be prepared for conjugation and thus the formation of potentially reactive metabolites is in most cases unavoidable. There are 57 human CYPs (in 18 families and 42 subfamilies), mostly concentrated in the endoplasmic reticulum of liver cells although many tissues have them to some extent (Nelson DR et al, 2004). CYPs are grouped into 14 families according to their sequence similarity. Generally, enzymes in the same family share 40% sequence similarity and 55% within a subfamily. Nomenclature of P450s is as follows. CYP (to represent cytochrome P450 superfamily), followed by an arabic number for the family, a capital letter for the subfamily and finally a second arabic number to denote the isoenzyme. An example is CYP1A1 which is the first enzyme in subfamily A of cytochrome P450 family 1. The majority of the enzymes are present in the CYP1-4 families. CYP1-3 are primarily concerned with xenobiotic biotransformation whereas the other CYPs deal primarily with endogenous compounds. The CYP section is structured by the typical substrate they act upon. Of the 57 human CYPs, 7 encode mitochondrial enzymes, all involved in sterol biosynthesis. Of the remaining 50 microsomal enzymes, 20 act upon endogenous compounds, 15 on xenobiotics and 15 are the so-called \"orphan enzymes\" with no substrate identified. The P450 catalytic cycle (picture) shows the steps involved when a substrate binds to the enzyme. (1) The normal state of a P450 with the iron in its ferric [Fe3+] state. (2) The substrate binds to the enzyme. (3) The enzyme is reduced to the ferrous [Fe2+] state by the addition of an electron from NADPH cytochrome P450 reductase. The bound substrate facilitates this process. (4,5) Molecular oxygen binds and forms an Fe2+OOH complex with the addition of a proton and a second donation of an electron from either NADPH cytochrome P450 reductase or cytochrome b5. A second proton cleaves the Fe2+OOH complex to form water. (6) An unstable [FeO]3+ complex donates its oxygen to the substrate (7). The oxidised substrate is released and the enzyme returns to its initial state (1).",
+                                            "Markup": [
+                                                {
+                                                    "Start": 409,
+                                                    "Length": 24,
+                                                    "Type": "Italics"
+                                                },
+                                                {
+                                                    "Start": 409,
+                                                    "Length": 24,
+                                                    "Type": "Bold"
+                                                },
+                                                {
+                                                    "Start": 747,
+                                                    "Length": 2,
+                                                    "Type": "Superscript"
+                                                },
+                                                {
+                                                    "Start": 797,
+                                                    "Length": 16,
+                                                    "Type": "Italics"
+                                                },
+                                                {
+                                                    "Start": 797,
+                                                    "Length": 16,
+                                                    "Type": "Bold"
+                                                },
+                                                {
+                                                    "Start": 1030,
+                                                    "Length": 64,
+                                                    "Type": "Bold"
+                                                },
+                                                {
+                                                    "Start": 1049,
+                                                    "Length": 1,
+                                                    "Type": "Subscript"
+                                                },
+                                                {
+                                                    "Start": 1062,
+                                                    "Length": 1,
+                                                    "Type": "Superscript"
+                                                },
+                                                {
+                                                    "Start": 1083,
+                                                    "Length": 1,
+                                                    "Type": "Subscript"
+                                                },
+                                                {
+                                                    "Start": 1092,
+                                                    "Length": 1,
+                                                    "Type": "Superscript"
+                                                },
+                                                {
+                                                    "Start": 2950,
+                                                    "Length": 9,
+                                                    "Type": "Italics"
+                                                },
+                                                {
+                                                    "Start": 3085,
+                                                    "Length": 2,
+                                                    "Type": "Superscript"
+                                                },
+                                                {
+                                                    "Start": 3179,
+                                                    "Length": 2,
+                                                    "Type": "Superscript"
+                                                },
+                                                {
+                                                    "Start": 3348,
+                                                    "Length": 2,
+                                                    "Type": "Superscript"
+                                                },
+                                                {
+                                                    "Start": 3521,
+                                                    "Length": 2,
+                                                    "Type": "Superscript"
+                                                },
+                                                {
+                                                    "Start": 3571,
+                                                    "Length": 2,
+                                                    "Type": "Superscript"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Interactions",
+                "Description": "Specific interactions between biochemicals involved in this pathway.",
+                "Information": [
+                    {
+                        "ReferenceNumber": 1,
+                        "Value": {
+                            "ExternalTableName": "collection=pathwayreaction&view=concise_pathway"
+                        }
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Chemicals",
+                "Description": "Chemicals involved in this pathway.",
+                "Information": [
+                    {
+                        "ReferenceNumber": 1,
+                        "Value": {
+                            "ExternalTableName": "pcget_pathway_chemical"
+                        }
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Proteins",
+                "Description": "Proteins involved in this pathway.",
+                "Information": [
+                    {
+                        "ReferenceNumber": 1,
+                        "Value": {
+                            "ExternalTableName": "pcget_pathway_protein"
+                        }
+                    }
+                ],
+                "Section": [
+                    {
+                        "TOCHeading": "GlycoProteins",
+                        "Description": "Glycoproteins involved in this pathway.",
+                        "DisplayControls": {
+                            "CreateTable": {
+                                "FromInformationIn": "ThisSection",
+                                "NumberOfColumns": 2,
+                                "ColumnsFromNamedLists": {
+                                    "Name": [
+                                        "PubChem Protein",
+                                        "GlycoProtein"
+                                    ],
+                                    "UseNamesAsColumnHeadings": true
+                                }
+                            }
+                        },
+                        "Information": [
+                            {
+                                "ReferenceNumber": 3,
+                                "Name": "PubChem Protein",
+                                "Value": {
+                                    "StringWithMarkup": [
+                                        {
+                                            "String": "NADPH--cytochrome P450 reductase",
+                                            "Markup": [
+                                                {
+                                                    "Start": 0,
+                                                    "Length": 32,
+                                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/protein/P16435"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "ReferenceNumber": 3,
+                                "Name": "GlycoProtein",
+                                "Value": {
+                                    "StringWithMarkup": [
+                                        {
+                                            "String": "P16435",
+                                            "Markup": [
+                                                {
+                                                    "Start": 0,
+                                                    "Length": 6,
+                                                    "URL": "https://glycosmos.org/glycoproteins/show/uniprot/P16435"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Genes",
+                "Description": "Genes involved in this pathway.",
+                "Information": [
+                    {
+                        "ReferenceNumber": 1,
+                        "Value": {
+                            "ExternalTableName": "pcget_pathway_gene"
+                        }
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Related Pathways",
+                "Description": "Related pathway records in PubChem (e.g. linked pathways).",
+                "Section": [
+                    {
+                        "TOCHeading": "Linked Pathways",
+                        "Description": "Linked pathways provided by original source. Available link types are conserved, linked, subset, and superset. \"Conserved\" means the linked pathway is conserved in evolution for the current one. \"Linked\" means the linked pathway and the current one are connected to each other in a larger network. \"Superset\" means the linked pathway contains the current one. \"Subset\" means linked pathway is contained within the current one.",
+                        "Information": [
+                            {
+                                "ReferenceNumber": 1,
+                                "Value": {
+                                    "ExternalTableName": "pcget_pathway_linked"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "GlycoPathways",
+                        "Description": "Pathways that involve glycoproteins.",
+                        "Information": [
+                            {
+                                "ReferenceNumber": 3,
+                                "URL": "https://glycosmos.org/pathways/show/R-HSA-211897",
+                                "Value": {
+                                    "StringWithMarkup": [
+                                        {
+                                            "String": "Cytochrome P450 - arranged by substrate type"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Literature",
+                "Description": "Scientific articles associated with this pathway, provided by the data source.",
+                "Section": [
+                    {
+                        "TOCHeading": "Consolidated References",
+                        "Description": "The consolidated references include literature data from all sources including Reactome, WikiPathways, PharmGKB, PathBank, LIPID MAPS, etc.",
+                        "URL": "https://pubchem.ncbi.nlm.nih.gov/docs/literature",
+                        "Information": [
+                            {
+                                "ReferenceNumber": 1,
+                                "Value": {
+                                    "ExternalTableName": "literature"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Reference": [
+            {
+                "ReferenceNumber": 1,
+                "SourceName": "Reactome",
+                "SourceID": "R-HSA-211897",
+                "Description": "REACTOME is an open-source, open access, manually curated and peer-reviewed pathway database.",
+                "URL": "https://reactome.org/content/detail/R-HSA-211897",
+                "LicenseNote": "Reactome is an open source and open access resource, available to anyone and covered by two Creative Commons licenses: the terms of the Creative Commons Public Domain (CC0) License apply to all Reactome annotation files, e.g. identifier mapping data, specialized data files, and interaction data derived from Reactome; the terms of the Creative Commons Attribution 4.0 International (CC BY 4.0) License apply to all software and code, e.g. relating to the functionality of the reactome.org, derived websites and webservices, the Curator Tool, the Functional Interaction application, SQL and Graph Database data dumps, and Pathway Illustrations (Enhanced High-Level Diagrams), Icon Library, Art and Branding Materials.",
+                "LicenseURL": "https://reactome.org/license"
+            },
+            {
+                "ReferenceNumber": 2,
+                "SourceName": "PubChem",
+                "SourceID": "PubChem",
+                "Description": "Data deposited in or computed by PubChem",
+                "URL": "https://pubchem.ncbi.nlm.nih.gov"
+            },
+            {
+                "ReferenceNumber": 3,
+                "SourceName": "GlyCosmos Glycoscience Portal",
+                "SourceID": "Pathway::R-HSA-211897",
+                "Description": "The GlyCosmos Portal is a Web portal aiming to integrate the glycosciences with the life sciences. It consists of Standards, Repositories and Data Resources, providing information about genes, proteins, lipids, pathways and diseases related to glycans.",
+                "URL": "https://glycosmos.org/pathways/show/R-HSA-211897",
+                "LicenseNote": "All copyrightable parts of the datasets in GlyCosmos are under the Creative Commons Attribution (CC BY 4.0) License.",
+                "LicenseURL": "https://glycosmos.org/license",
+                "ANID": 38876960
+            }
+        ]
+    }
+}

@@ -108,8 +108,12 @@ def write_file(filename, folder, lines):
 
 # Reads a txt file and returns the line read
 def read_file(filename, folder):
-    path = Path(folder) / f"{filename}.txt"
-    with open (path, "r") as f:
+    path = Path(folder) / f"{filename}"
+    with open (path, "r", encoding="utf-8") as f:
         line = f.readline()
     return line
 
+def read_file_lines(filename, folder):
+    path = Path(folder) / filename
+    with open(path, "r", encoding = "utf-8") as f:
+        return f.read().splitlines()

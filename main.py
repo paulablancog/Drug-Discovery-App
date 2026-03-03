@@ -65,6 +65,32 @@ app.proteins.retrieve_targets_1(compound)
 # -- RETRIEVE THE PATHWAY (PATHWAYS COUNT) --
 app.pathways.retrieve_pathways(compound)
 
+# -- REtRIEVE protein_data OF EACH COMPOUND IN A DATAFRAME
+compounds = ["bethanechol", "caffeine", "carbachol", "Ethanolamine", "forskolin", "Ginsenoside rb1", "maprotiline", "pilocarpine"]
+dfs = []
+
+for compound in compounds:
+    dfs.append(app.proteins.normalize_protein("protein_data.txt", compound))
+
+df_all = pd.concat(dfs, ignore_index=True)
+df_all.to_csv("targets_normalized.csv", index=False)
+print("CSV Done for targets")
+
+df_mapped, df_map = app.proteins.read_target_proteins("targets_normalized.csv")
+df_mapped.to_csv("targets_mapped.csv", index=False)
+df_map.to_csv("mygene_mapping.csv", index=False)
+
+summary = app.proteins.results_summary_count(df_mapped)
+summary.to_csv("targets_summart.csv", index=False)
+
+# Just for testing!!!
+print("Wrote:")
+print("- targets_mapped.csv")
+print("- mygene_mapping.csv")
+print("- targets_summary.csv")
+print("\nTop 20 targets:")
+print(summary.head(20).to_string(index=False))
+
 # -- RETRIEVE PATHWAY PROTEINS (PROTEIN COUNT INSIDE A PATHWAY) --
 #app.pathways.retrieve_proteins_from_pathway(compound)
 

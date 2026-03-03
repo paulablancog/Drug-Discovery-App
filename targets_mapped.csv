@@ -122,7 +122,7 @@ caffeine,Adenosine receptor A2b,adenosine receptor a2b,False,ADORA2B,,False,ADOR
 caffeine,ADORA2B,ADORA2B,True,,,,ADORA2B
 caffeine,Adenosine receptor A3,adenosine receptor a3,False,ADORA3,,False,ADORA3
 caffeine,Adenosine receptor A3,adenosine receptor a3,False,ADORA3,,False,ADORA3
-caffeine,A3 receptor,a3 receptor,False,ADORA3,,False,ADORA3
+caffeine,A3 receptor,a3 receptor,False,EPHA3,,False,EPHA3
 caffeine,Adenosine receptor A3,adenosine receptor a3,False,ADORA3,,False,ADORA3
 caffeine,ADORA3,ADORA3,True,,,,ADORA3
 caffeine,PARP1,PARP1,True,,,,PARP1
@@ -1578,7 +1578,7 @@ caffeine,KCTD14,KCTD14,True,,,,KCTD14
 caffeine,KDM3A,KDM3A,True,,,,KDM3A
 caffeine,KDM5C,KDM5C,True,,,,KDM5C
 caffeine,KHDRBS1,KHDRBS1,True,,,,KHDRBS1
-caffeine,A3 receptor,a3 receptor,False,ADORA3,,False,ADORA3
+caffeine,A3 receptor,a3 receptor,False,EPHA3,,False,EPHA3
 caffeine,KIAA0232,KIAA0232,True,,,,KIAA0232
 caffeine,KIAA0930,KIAA0930,True,,,,KIAA0930
 caffeine,KIAA1671,KIAA1671,True,,,,KIAA1671
@@ -1660,7 +1660,7 @@ caffeine,GSK3A,GSK3A,True,,,,GSK3A
 caffeine,GSR,GSR,True,,,,GSR
 caffeine,XRN2,XRN2,True,,,,XRN2
 caffeine,YBX3,YBX3,True,,,,YBX3
-caffeine,A3 receptor,a3 receptor,False,ADORA3,,False,ADORA3
+caffeine,A3 receptor,a3 receptor,False,EPHA3,,False,EPHA3
 caffeine,A2B receptor,a2b receptor,False,ADORA2B,,False,ADORA2B
 caffeine,GSTD7,GSTD7,True,,,,GSTD7
 caffeine,GSTO1,GSTO1,True,,,,GSTO1
@@ -1971,7 +1971,7 @@ caffeine,MAP1LC3B,MAP1LC3B,True,,,,MAP1LC3B
 caffeine,MAP3K1,MAP3K1,True,,,,MAP3K1
 caffeine,MAP3K20,MAP3K20,True,,,,MAP3K20
 caffeine,VDR,VDR,True,,,,VDR
-caffeine,A3 receptor,a3 receptor,False,ADORA3,,False,ADORA3
+caffeine,A3 receptor,a3 receptor,False,EPHA3,,False,EPHA3
 caffeine,A2B receptor,a2b receptor,False,ADORA2B,,False,ADORA2B
 caffeine,MAP4K2,MAP4K2,True,,,,MAP4K2
 caffeine,MAP7D2,MAP7D2,True,,,,MAP7D2
@@ -4593,7 +4593,7 @@ forskolin,AR,AR,True,,,,AR
 forskolin,Cystic fibrosis transmembrane conductance regulator,cystic fibrosis transmembrane conductance regulator,False,,,True,cystic fibrosis transmembrane conductance regulator
 forskolin,CREB-binding protein,creb binding protein,False,,,True,creb binding protein
 forskolin,Cytochrome P450 19A1,cytochrome p450 19a1,False,,,True,cytochrome p450 19a1
-forskolin,Estrogen receptor,estrogen receptor,False,ESR1,,False,ESR1
+forskolin,Estrogen receptor,estrogen receptor,False,ESR2,,False,ESR2
 forskolin,GLP1R,GLP1R,True,,,,GLP1R
 forskolin,Guanine nucleotide-binding protein G(s) subunit alpha isoforms short,guanine nucleotide binding protein g subunit alpha isoforms short,False,,,True,guanine nucleotide binding protein g subunit alpha isoforms short
 forskolin,Guanine nucleotide-binding protein G(s) subunit alpha isoforms short,guanine nucleotide binding protein g subunit alpha isoforms short,False,,,True,guanine nucleotide binding protein g subunit alpha isoforms short

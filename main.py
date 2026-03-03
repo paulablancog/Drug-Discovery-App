@@ -61,35 +61,42 @@ for subsection, table_list in tables:
 
 # -- RETRIEVE PROTEINS IN INTERACTIONS (PROTEIN COUNT) --
 app.proteins.retrieve_targets_1(compound)
+app.proteins.translate_geneid_to_protein("paulablglez@gmail.com","protein_data.txt", compound)
 
 # -- RETRIEVE THE PATHWAY (PATHWAYS COUNT) --
-app.pathways.retrieve_pathways(compound)
+#app.pathways.retrieve_pathways(compound)
 
-# -- REtRIEVE protein_data OF EACH COMPOUND IN A DATAFRAME
-compounds = ["bethanechol", "caffeine", "carbachol", "Ethanolamine", "forskolin", "Ginsenoside rb1", "maprotiline", "pilocarpine"]
-dfs = []
+# -- REtRIEVE protein_data OF EACH COMPOUND IN A DATAFRAME (without Enthanolamine)
+compounds = ["bethanechol", "caffeine", "carbachol", "forskolin", "Ginsenoside rb1", "maprotiline", "pilocarpine"]
+"""dfs_proteins = []
 
 for compound in compounds:
-    dfs.append(app.proteins.normalize_protein("protein_data.txt", compound))
+    dfs_proteins.append(app.proteins.normalize_protein("protein_data.txt", compound))
 
-df_all = pd.concat(dfs, ignore_index=True)
-df_all.to_csv("targets_normalized.csv", index=False)
+df_all_proteins = pd.concat(dfs_proteins, ignore_index=True)
+df_all_proteins.to_csv("targets_normalized.csv", index=False)
 print("CSV Done for targets")
 
 df_mapped, df_map = app.proteins.read_target_proteins("targets_normalized.csv")
 df_mapped.to_csv("targets_mapped.csv", index=False)
 df_map.to_csv("mygene_mapping.csv", index=False)
 
-summary = app.proteins.results_summary_count(df_mapped)
-summary.to_csv("targets_summart.csv", index=False)
+summary_proteins = app.proteins.results_summary_count(df_mapped)
+summary_proteins.to_csv("targets_summart.csv", index=False) """
 
-# Just for testing!!!
-print("Wrote:")
-print("- targets_mapped.csv")
-print("- mygene_mapping.csv")
-print("- targets_summary.csv")
-print("\nTop 20 targets:")
-print(summary.head(20).to_string(index=False))
+"""# -- RETRIEVE pathway_data OF ALL COMPOUNDS AND COMPARE IT
+dfs_pathways = []
+for c in compounds:
+    dfs_pathways.append(app.pathways.read_all_pathways("pathways_data.txt", c))
+
+df_all_pathways = pd.concat(dfs_pathways, ignore_index=True)
+df_all_pathways.to_csv("pathways_csv", index=False)
+print("Wrote CSV for pathways")
+
+summary_pathways = app.pathways.map_pathways(df_all_pathways)
+summary_pathways.to_csv("pathways_summary.csv", index=False)
+print("Done mapping pathways")"""
+
 
 # -- RETRIEVE PATHWAY PROTEINS (PROTEIN COUNT INSIDE A PATHWAY) --
 #app.pathways.retrieve_proteins_from_pathway(compound)

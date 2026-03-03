@@ -25,8 +25,8 @@ def retrieve_pathways(compound):
     pathways_list = list() 
     for row in rows:
         if isinstance(row,dict): # is row a dictionary object? -> rows should be a list of dictionaries (.get() only exists in dictionaries)
-            pathway_id = row.get("pathwayid")
-            pathways_list.append(pathway_id)
+            pathway_name = row.get("name")
+            pathways_list.append(pathway_name)
     pathways_clean_list = list(filter(None, pathways_list))
     print("Successfully retrieved Pathway IDs")
 
@@ -166,3 +166,36 @@ def retrieve_targets2(safe_pwacc, compound, json):
         print(f"Saved proteins of {compound} to {filename}")
         return filename
 
+
+def read_all_pathways(pathwaystxt, compound):
+    folder = compound
+    path = Path(folder) / pathwaystxt
+
+    if not path.exists():
+        print("Skipping compound, no paths")
+        return pd.DataFrame(columns=["compound", "pathway_id"])
+
+    lines = app.utils.read_file_lines(pathwaystxt, folder)
+    pathway_list = []
+
+    for p in lines:
+        p = p.strip()
+        if not p:
+            continue
+        pathway_list.append({"compound": compound, "pathway_id": p})
+    
+    return pd.DataFrame(pathway_list)
+
+def map_pathways(df_pathways):
+    summary = (
+        df_pathways.groupby("pathway_id")
+            .agg(
+                total_count=("pathway_id", "size"),
+                n_compounds=("compound", "nunique"),
+                compounds=("compound", lambda x: ";".join(sorted(set(x)))),
+            )
+            .reset_index()
+            .sort_values(["total_count", "n_compounds"], ascending=[False, False])
+    )
+
+    return summary

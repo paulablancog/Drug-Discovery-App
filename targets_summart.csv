@@ -16,7 +16,6 @@ IGF1,12,2,Ginsenoside rb1;caffeine
 CDKN1A,12,1,caffeine
 CHRM4,11,3,bethanechol;maprotiline;pilocarpine
 CHRM5,11,3,bethanechol;maprotiline;pilocarpine
-ADORA3,11,1,caffeine
 CHEK1,10,1,caffeine
 RYR1,10,1,caffeine
 SCARB1,10,1,caffeine
@@ -29,6 +28,7 @@ HMGCR,8,1,caffeine
 APOB,7,2,Ethanolamine;caffeine
 SQSTM1,7,2,Ginsenoside rb1;caffeine
 ACHE,7,1,caffeine
+ADORA3,7,1,caffeine
 CDK1,7,1,caffeine
 HMGCS1,7,1,caffeine
 NAT2,7,1,caffeine
@@ -84,6 +84,7 @@ DNAJA1,4,1,caffeine
 DNMT1,4,1,caffeine
 DNMT3A,4,1,caffeine
 DNMT3B,4,1,caffeine
+EPHA3,4,1,caffeine
 GAPDH,4,1,caffeine
 GCLC,4,1,caffeine
 GJA1,4,1,caffeine
@@ -180,7 +181,6 @@ AOX1,2,2,caffeine;maprotiline
 APOE,2,2,Ethanolamine;caffeine
 ATP6V1B2,2,2,Ginsenoside rb1;caffeine
 CTSD,2,2,Ginsenoside rb1;caffeine
-ESR1,2,2,Ethanolamine;forskolin
 MAPK15,2,2,caffeine;forskolin
 MAPK7,2,2,caffeine;forskolin
 PGR,2,2,Ginsenoside rb1;caffeine
@@ -1209,6 +1209,8 @@ ESCO2,1,1,caffeine
 ESD,1,1,caffeine
 ESF1,1,1,caffeine
 ESPN,1,1,caffeine
+ESR1,1,1,Ethanolamine
+ESR2,1,1,forskolin
 ESRRA,1,1,caffeine
 ESS2,1,1,caffeine
 ETFA,1,1,caffeine

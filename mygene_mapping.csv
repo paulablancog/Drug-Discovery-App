@@ -21,7 +21,7 @@ adenosine a2a receptor,ADORA2A,,False
 adenosine receptor a2b,ADORA2B,,False
 a2b receptor,ADORA2B,,False
 adenosine receptor a3,ADORA3,,False
-a3 receptor,ADORA3,,False
+a3 receptor,EPHA3,,False
 serine protein kinase atm,,,True
 serine threonine protein kinase atr,,,True
 carbonic anhydrase 1,CA1,,False
@@ -115,7 +115,7 @@ androgen receptor,AR,,False
 cystic fibrosis transmembrane conductance regulator,,,True
 creb binding protein,,,True
 cytochrome p450 19a1,,,True
-estrogen receptor,ESR1,,False
+estrogen receptor,ESR2,,False
 guanine nucleotide binding protein g subunit alpha isoforms short,,,True
 hepatocyte nuclear factor 4 alpha,HNF4A,,False
 calcium activated potassium channel subunit alpha 1,,,True

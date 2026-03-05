@@ -1,16 +1,16 @@
-Aryl hydrocarbon receptor
-Annexin A3
-Annexin A3
-APOB
-APOE
-SARDH
-EGF
-ESR1
-FGF1
-PNLIPRP2
-Nuclear receptor ROR-gamma
-PEX11A
-NAD-dependent protein deacetylase sirtuin-2
-CELF3A
-Glutaminyl-peptide cyclotransferase
-HMGCRA
+196
+306
+306
+338
+348
+1757
+1950
+2099
+2246
+5408
+6097
+8800
+22933
+57922
+70536
+559054

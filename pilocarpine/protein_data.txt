@@ -1,35 +1,35 @@
-Muscarinic acetylcholine receptor M1
-M1 receptor
-Muscarinic acetylcholine receptor M1
-Muscarinic acetylcholine receptor M1
-Muscarinic acetylcholine receptor M1
-M2 receptor
-Muscarinic acetylcholine receptor M2
-Muscarinic acetylcholine receptor M2
-Muscarinic acetylcholine receptor M2
-Muscarinic acetylcholine receptor M3
-M3 receptor
-Muscarinic acetylcholine receptor M3
-Muscarinic acetylcholine receptor M3
-Muscarinic acetylcholine receptor M3
-Muscarinic acetylcholine receptor M4
-Muscarinic acetylcholine receptor M4
-M4 receptor
-Muscarinic acetylcholine receptor M4
-Muscarinic acetylcholine receptor M5
-Muscarinic acetylcholine receptor M5 (CHRM5)
-Muscarinic acetylcholine receptor M5
-M5 receptor
-Cytochrome P450 2A6
-Cytochrome P450 3A4
-Serum paraoxonase/arylesterase 1
-Muscarinic acetylcholine receptor M1
-Muscarinic acetylcholine receptor
-Muscarinic acetylcholine receptor
-Muscarinic acetylcholine receptor
-M1 receptor
-Muscarinic acetylcholine receptor M1
-Muscarinic acetylcholine receptor DM1
-Muscarinic acetylcholine receptor
-Muscarinic acetylcholine receptor M2
-Muscarinic acetylcholine receptor
+1128
+1128
+1128
+1128
+1128
+1129
+1129
+1129
+1129
+1131
+1131
+1131
+1131
+1131
+1132
+1132
+1132
+1132
+1133
+1133
+1133
+1133
+1548
+1576
+5444
+12669
+24260
+25111
+25229
+25229
+25229
+37892
+53949
+81645
+81645

@@ -6,6 +6,8 @@ import mygene
 import pandas as pd
 import pubchempy as pcp
 from Bio import Entrez
+import requests
+import time
 
 # -- MANUAL DICTIONARY FOR PROTEIN-GENES
 """OVERRIDES = {
@@ -29,70 +31,20 @@ from Bio import Entrez
 }
 """
 
+def chunk_list(items,size):
+    for i in range(0,len(items), size):
+        yield items[i:i + size]
 
-def get_entrez_gene_summary(
-    gene_name, email, organism="human", max_gene_ids=100
-):
-    """Returns the 'Summary' contents for provided input
-    gene from the Entrez Gene database. All gene IDs 
-    returned for input gene_name will have their docsum
-    summaries 'fetched'.
-    
-    Args:
-        gene_name (string): Official (HGNC) gene name 
-           (e.g., 'KAT2A')
-        email (string): Required email for making requests
-        organism (string, optional): defaults to human. 
-           Filters results only to match organism. Set to None
-           to return all organism unfiltered.
-        max_gene_ids (int, optional): Sets the number of Gene
-           ID results to return (absolute max allowed is 10K).
-        
-    Returns:
-        dict: Summaries for all gene IDs associated with 
-           gene_name (where: keys → [orgn][gene name],
-                      values → gene summary)
-    """
+# -- MY METHOD
+def translate_geneid_to_protein(email, protein_data, compound, api_key=None, batch_size=200):
     Entrez.email = email
+    if api_key:
+        Entrez.api_key = api_key
 
-    query = (
-        f"{gene_name}[Gene Name]"
-        if not organism
-        else f"({gene_name}[Gene Name]) AND {organism}[Organism]"
-    )
-    handle = Entrez.esearch(db="gene", term=query, retmax=max_gene_ids)
-    record = Entrez.read(handle)
-    handle.close()
+    # Retries
+    Entrez.max_tries = 5
+    Entrez.sleep_between_tries = 20
 
-    gene_summaries = defaultdict(dict)
-    gene_ids = record["IdList"]
-
-    print(
-        f"{len(gene_ids)} gene IDs returned associated with gene {gene_name}."
-    )
-    for gene_id in gene_ids:
-        print(f"\tRetrieving summary for {gene_id}...")
-        handle = Entrez.efetch(db="gene", id=gene_id, rettype="docsum")
-        gene_dict = xmltodict.parse(
-            "".join([x.decode(encoding="utf-8") for x in handle.readlines()]),
-            dict_constructor=dict,
-        )
-        gene_docsum = gene_dict["eSummaryResult"]["DocumentSummarySet"][
-            "DocumentSummary"
-        ]
-        name = gene_docsum.get("Name")
-        summary = gene_docsum.get("Summary")
-        gene_organism = gene_docsum.get("Organism")["CommonName"]
-        gene_summaries[gene_organism][name] = summary
-        handle.close()
-        time.sleep(0.34)  # Requests to NCBI are rate limited to 3 per second
-
-    return gene_summaries
-
-
-
-def translate_geneid_to_protein(email, protein_data, compound):
-    Entrez.email = email
     folder = compound.synonyms[0]
     path = Path(folder) / protein_data
 
@@ -107,125 +59,159 @@ def translate_geneid_to_protein(email, protein_data, compound):
         print(f"[warn] {compound}: no numeric GeneIDs found in {protein_data}")
         return pd.DataFrame(columns=["compound", "geneid", "symbol", "description"])
     
+    for batch in chunk_list(lines, batch_size):
+        ids= ",".join(batch)
+        try:
+            handle = Entrez.esummary(db="gene", id = ids, retmode="xml")
+            records = Entrez.read(handle)
+            handle.close()
+        except Exception as e:
+            print("Failed batching")
+            continue
 
-    for geneid in lines:
-        handle = Entrez.esummary(db="gene", id = geneid, retmode="xml")
-        records = Entrez.read(handle)
-        print(handle)
-        print(records)
-        handle.close()
-        for rec in records:
-            gid = str(rec["Id"])
-            print(gid)
-            symbol = str(rec.get("NomenclatureSymbol") or rec.get("Name") or ""),
-            description = str(rec.get("Description" or ""))
+        documents = records["DocumentSummarySet"]["DocumentSummary"]
+
+        for rec in documents:
+            gid = str(rec.attributes.get("uid", ""))
+            #print(gid)
+            symbol = str(rec.get("NomenclatureSymbol") or rec.get("Name") or "").upper()
+            description = str(rec.get("Description") or "")
             
             protein_list.append({
-                "compound": compound,
+                "compound": compound.synonyms[0],
                 "geneid": gid,
                 "description": description,
                 "symbol": symbol,
             })
+            #small pause
+            time.sleep(0.2)
 
     out = pd.DataFrame(protein_list)
-    print(out)
     return out
 
+UniProt_url = "https://rest.uniprot.org"
+
+# -- MAP GENEID TO UNIPROTKB ACCESSION CODES (1128 -> P11229)
+def get_idmapping_db(db_name):
+# Look in Uniprot ID-mapping database code GeneID and UniProtKB
+    req = requests.get(f"{UniProt_url}/configure/idmapping/fields", timeout=30).json()
+    for group in req.get("groups", []):
+        for item in group.get("items", []):
+            if item.get("displayName") == db_name:
+                return item["name"]
+    raise ValueError(f"Could not find mapping database with displayName:{db_name!r}") #TODO what does the r! mean?
+
+def input_idmapping_dbs(from_db, to_db, gene_list):
+# Tell UniProt to do the translation process with both GeneID db and UniProtKB db with the gene_ids list
+    data = {"from": from_db, "to":to_db, "ids": ",".join(map(str,gene_list))}
+    req = requests.post(f"{UniProt_url}/idmapping/run", data = data, timeout=60)
+    req.raise_for_status()
+    return req.json()["jobId"] # not the result but the response of the process of translation
+
+def wait_for_job(jobId, repeats = 2):
+# Loop with sleep + timeout until the job is FINISHED 
+    t = time.time()
+    timeout=450
+    while True:
+        req = requests.get(f"{UniProt_url}/idmapping/status/{jobId}", timeout=30, allow_redirects=False)
+        req.raise_for_status()
+        print(req)
+        
+        if req.status_code == 303:
+            print("Job finished!")
+            return
+
+        json = req.json()
+        
+        status = json.get("jobStatus") or json.get("status") #TODO: check this field
+        
+        if status in ("FINISHED", "DONE"):
+            return
+        if status in ("FAILED", "ERROR"):
+            raise RuntimeError(f"UniProt mapping job failed: {json}")
+        if time.time() - t > timeout:
+            raise TimeoutError(f"UniProt mapping job timed out after {timeout} seconds")
+        
+        time.sleep(repeats)
 
 
-def translate_geneid_to_proteins(email: str, protein_data: str, compound: str, sleep_s: float = 0.34):
-    """
-    Reads GeneIDs from {compound}/{protein_data} and maps them via NCBI Gene esummary.
-    Returns a DataFrame: compound, geneid, symbol, description
-    """
-    Entrez.email = email
+# TODO: que es el codigo del link
+def download_results(jobId):
+# Retrieve the JSON results and download them
+    url = f"{UniProt_url}/idmapping/results/{jobId}"
+    params = {"format": "json"}
+    out = {}
 
-    folder = compound
-    path = Path(folder) / protein_data
+    while url:
+        req = requests.get(url, params, timeout=60)
+        req.raise_for_status()
+        json = req.json()
+        print(json)
+    # Now let's download the resulting table with the accession code
+        for row in json.get("results", []):
+            geneid=str(row.get("from")).strip()
+            accession = row.get("to")
+            if not geneid or not accession:
+                continue
+
+            out.setdefault(geneid,[])
+            if accession not in out[geneid]:
+                out[geneid].append(accession)
+        params = None
+
+        link = req.headers.get("Link")
+        next_url = None
+        if link:
+            m = re.search(r'<([^>]+)>;\s*rel="next"', link)
+            if m:
+                next_url = m.group(1)
+        url = next_url
+    return out
+
+def P_accession(accessions):
+    if not accessions:
+        return None
+    for a in accessions:
+        if str(a).startswith("P"):
+            return a
+    return accessions[0]
+
+def map_genes_to_uniprot(filename, compound):
+    folder = compound.synonyms[0]
+    path = Path(folder) / filename
 
     if not path.exists():
-        print(f"[skip] {compound}: no {protein_data}")
-        return pd.DataFrame(columns=["compound", "geneid", "symbol", "description"])
+        print("Skipping compound, no GeneID file found")
+        return pd.DataFrame(columns=["geneid", "uniprot_accession", "uniprot_accessions"])
 
-    # read file lines
-    lines = path.read_text(encoding="utf-8", errors="ignore").splitlines()
-    gene_ids = [str(x).strip() for x in lines if str(x).strip().isdigit()]
+    lines = app.utils.read_file_lines(filename, folder)
 
-    if not gene_ids:
-        print(f"[warn] {compound}: no numeric GeneIDs found in {protein_data}")
-        return pd.DataFrame(columns=["compound", "geneid", "symbol", "description"])
+    if not lines:
+        print(f"[warn] {compound}: no numeric GeneIDs found in {filename}")
+        return pd.DataFrame(columns=["compound", "uniprot_accession", "uniprot_accessions"])
+    
+    #TODO mirar esta linea interesante
+    geneids = [str(x).strip() for x in lines if str(x).strip()]
 
-    # chunk requests
-    chunk_size = 200
+    from_db = get_idmapping_db("GeneID")
+    to_db = get_idmapping_db("UniProtKB")
+
+    jobId = input_idmapping_dbs(from_db, to_db, geneids)
+    wait_for_job(jobId)
+
+    results = download_results(jobId)
+
     rows = []
-
-    for i in range(0, len(gene_ids), chunk_size):
-        chunk = gene_ids[i:i+chunk_size]
-
-        handle = Entrez.esummary(db="gene", id=",".join(chunk), retmode="xml")
-        data = Entrez.read(handle)
-        handle.close()
-
-        docs = data["DocumentSummarySet"]["DocumentSummary"]
-        for rec in docs:
-            gid = str(rec["Id"])
-            symbol = str(rec.get("NomenclatureSymbol") or rec.get("Name") or "")
-            desc = str(rec.get("Description") or "")
-            rows.append({
-                "compound": compound,
-                "geneid": gid,
-                "symbol": symbol,
-                "description": desc,
-            })
-
-        time.sleep(sleep_s)
-
+    for gene in geneids:
+        accessions = results.get(str(gene), [])
+        reviewed_acc = P_accession(accessions)
+        rows.append({
+            "geneid": str(gene),
+            "uniprot_accession": reviewed_acc,
+            "uniprot_accessions": ";".join(accessions) if accessions else None,
+        })
     return pd.DataFrame(rows)
 
-def translate_geneid_to_protein(protein_data: str, compound: str):
-    folder = compound
-    path = Path(folder) / protein_data
-
-    if not path.exists():
-        print(f"[skip] {compound}: no {protein_data}")
-        return None
-
-    gene_ids = path.read_text(encoding="utf-8", errors="ignore").splitlines()
-    mapping = geneids_to_symbols(gene_ids)
-
-    # build rows
-    rows = []
-    for gid in gene_ids:
-        gid = str(gid).strip()
-        if not gid:
-            continue
-        rec = mapping.get(gid, {})
-        rows.append({
-            "compound": compound,
-            "geneid": gid,
-            "symbol": rec.get("symbol"),
-            "description": rec.get("description"),
-            "name": rec.get("name"),
-        })
-
-    return rows
-
-Entrez.email = "your_email@example.com"
-
-def geneid_to_protein_ids(gene_id: str) -> list[str]:
-    """
-    Returns linked protein record IDs from NCBI protein database.
-    """
-    h = Entrez.elink(dbfrom="gene", db="protein", id=str(gene_id))
-    linkset = Entrez.read(h)
-    h.close()
-
-    protein_ids = []
-    for ls in linkset:
-        for linkdb in ls.get("LinkSetDb", []):
-            if linkdb.get("LinkName") == "gene_protein":
-                protein_ids.extend([l["Id"] for l in linkdb.get("Link", [])])
-    return protein_ids
 
 # Appear in main so that the user can fetch the proteins in the interactions of the compound?
 def retrieve_targets_1(compound):
@@ -252,8 +238,6 @@ def retrieve_targets_1(compound):
     
     print(f"Saved proteins of {compound} to {filename}")
     return filename
-
-
 
 
 def normalize_protein(proteintxt, compound):
@@ -342,16 +326,36 @@ def read_target_proteins (targets_pathway):
 
 
 #omg what does this do
-def results_summary_count(df_mapped):
-    summary = (
-        df_mapped.groupby("canonical_target")
-            .agg(
-                total_count=("canonical_target", "size"),
-                n_compounds=("compound", "nunique"),
-                compounds=("compound", lambda x: ";".join(sorted(set(x)))),
-            )
-            .reset_index()
-            .sort_values(["total_count", "n_compounds"], ascending=[False, False])
+def results_summary_count(csv_files):
+    dfs = []
+
+    for file in csv_files:
+        df = pd.read_csv(file)
+
+        df["compound"] = df["compound"].astype(str).str.strip()
+        df["geneid"] = df["geneid"].astype(str).str.strip()
+        df["symbol"] = df["symbol"].astype(str).str.strip()
+        df["uniprot_accession"] = df["uniprot_accession"].astype(str).str.strip()
+
+        df = df[df["uniprot_accession"].notna()]
+        df = df[df["uniprot_accession"] != ""]
+        df = df[df["uniprot_accession"].str.lower() != "nan"]
+
+        dfs.append(df)
+    if not dfs:
+        return pd.DataFrame(columns=["uniprot_accession", "total_count", "n_compounds", "compounds", "symbol", "geneid"
+        ])
+    
+    all_df = pd.concat(dfs, ignore_index=True)
+
+    summary =(
+        all_df.groupby("uniprot_accession").agg(
+            total_count = ("uniprot_accession", "size"),
+            n_compounds = ("compound", "nunique"),
+            compounds = ("compound", lambda x: ";".join(sorted(set(x)))),
+            symbol = ("symbol", lambda x: ";".join(sorted(set(x)))),
+            geneid = ("geneid", lambda x: ";".join(sorted(set(x)))),
+        ).reset_index().sort_values(["total_count"], ascending = [False])
     )
 
     return summary

@@ -60,14 +60,33 @@ for subsection, table_list in tables:
         print("\nSuccessfully saved interactions table as CSV for compound: "+compound.synonyms[0])
 
 # -- RETRIEVE PROTEINS IN INTERACTIONS (PROTEIN COUNT) --
+# 1) Write protein_data.txt with geneids
 app.proteins.retrieve_targets_1(compound)
-app.proteins.translate_geneid_to_protein("paulablglez@gmail.com","protein_data.txt", compound)
+
+# 2) NCBI: geneid -> symbol + description
+email = "paulablglez@gmail.com"
+out = app.proteins.translate_geneid_to_protein(email,"protein_data.txt", compound)
+
+# 3) UniProt: geneid -> uniprot accession
+df_map = app.proteins.map_genes_to_uniprot("protein_data.txt", compound)
+
+# 4) Merge both data Frames and save
+out_nodups = out.drop_duplicates(subset=["geneid"])
+out2 = out_nodups.merge(df_map, on="geneid", how="left")
+out2.to_csv(f"{compound.synonyms[0]}_geneid_symbols_uniprot.csv", index=False)
 
 # -- RETRIEVE THE PATHWAY (PATHWAYS COUNT) --
 #app.pathways.retrieve_pathways(compound)
 
-# -- REtRIEVE protein_data OF EACH COMPOUND IN A DATAFRAME (without Enthanolamine)
+# -- RETRIEVE protein_data OF EACH COMPOUND IN A DATAFRAME (without Enthanolamine)
 compounds = ["bethanechol", "caffeine", "carbachol", "forskolin", "Ginsenoside rb1", "maprotiline", "pilocarpine"]
+csv_files = [f"{compound}_geneid_symbols_uniprot.csv" for compound in compounds]
+summary = app.proteins.results_summary_count(csv_files)
+summary.to_csv("Protein_Mapping_Interactions_withcaffeine", index = False)
+print(summary.head(20))
+
+
+
 """dfs_proteins = []
 
 for compound in compounds:

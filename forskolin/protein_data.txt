@@ -1,59 +1,59 @@
-Adenylate cyclase type 1
-Adenylate cyclase type 2 (ADCY2)
-Adenylate cyclase type 2
-Adenylate cyclase type 2
-Adenylate cyclase type 2
-Adenylate cyclase type 3
-Adenylate cyclase type 5
-Adenylate cyclase type 5
-Adenylate cyclase type 5
-Adenylate cyclase type 6
-Adenylate cyclase type 7
-Adenylate cyclase type 8
-Adenylate cyclase type 9
-NR0B1
-AHR
-Androgen receptor
-AR
-Cystic fibrosis transmembrane conductance regulator
-CREB-binding protein
-Cytochrome P450 19A1
-Estrogen receptor
-GLP1R
-Guanine nucleotide-binding protein G(s) subunit alpha isoforms short
-Guanine nucleotide-binding protein G(s) subunit alpha isoforms short
-Hepatocyte nuclear factor 4-alpha
-Calcium-activated potassium channel subunit alpha-1
-Calcium-activated potassium channel subunit beta-1
-Small conductance calcium-activated potassium channel protein 1
-Small conductance calcium-activated potassium channel protein 2
-Small conductance calcium-activated potassium channel protein 3
-Intermediate conductance calcium-activated potassium channel protein 4
-Mucin-2
-Plasminogen activator inhibitor 1
-ATP-dependent translocase ABCB1
-Peroxisome proliferator-activated receptor delta
-Peroxisome proliferator-activated receptor gamma
-Mitogen-activated protein kinase 1
-Mitogen-activated protein kinase 3
-Mitogen-activated protein kinase 4
-Mitogen-activated protein kinase 6
-Mitogen-activated protein kinase 7
-Nuclear receptor ROR-beta
-Retinoic acid receptor RXR-beta
-Oxysterols receptor LXR-beta
-Vitamin D3 receptor
-Nuclear receptor subfamily 1 group I member 2
-NR1I2
-Bile acid receptor
-Calcium-activated potassium channel subunit beta-2
-Cyclic AMP-responsive element-binding protein 3
-Calcium-activated potassium channel subunit beta-3
-Calcium-activated potassium channel subunit beta-4
-HDAC7
-Adenylate cyclase type 10
-RXFP1
-ATPase family AAA domain-containing protein 5
-RXFP2
-Adenylate cyclase type 4
-Mitogen-activated protein kinase 15
+107
+108
+108
+108
+108
+109
+111
+111
+111
+112
+113
+114
+115
+190
+196
+367
+367
+1080
+1387
+1588
+2099
+2740
+2778
+2778
+3172
+3778
+3779
+3780
+3781
+3782
+3783
+4583
+5054
+5243
+5467
+5468
+5594
+5595
+5596
+5597
+5598
+6096
+6257
+7376
+7421
+8856
+8856
+9971
+10242
+10488
+27094
+27345
+51564
+55811
+59350
+79915
+122042
+196883
+225689

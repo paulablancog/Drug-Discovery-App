@@ -3,3 +3,4 @@
 pubchempy
 pandas
 requests
+biopython

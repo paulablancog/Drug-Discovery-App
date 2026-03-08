@@ -5,6 +5,7 @@ import app.interactions
 import app.utils
 import app.proteins
 import app.pathways
+from pathlib import Path
 
 # Asking for compound SMILES code
 smiles_code = input("Enter the SMILES code: ")
@@ -64,27 +65,38 @@ for subsection, table_list in tables:
 app.proteins.retrieve_targets_1(compound)
 
 # 2) NCBI: geneid -> symbol + description
-email = "paulablglez@gmail.com"
-out = app.proteins.translate_geneid_to_protein(email,"protein_data.txt", compound)
+#email = "paulablglez@gmail.com"
+#out = app.proteins.translate_geneid_to_protein(email,"protein_data.txt", compound)
 
 # 3) UniProt: geneid -> uniprot accession
-df_map = app.proteins.map_genes_to_uniprot("protein_data.txt", compound)
+#df_map = app.proteins.map_genes_to_uniprot("protein_data.txt", compound)
 
 # 4) Merge both data Frames and save
-out_nodups = out.drop_duplicates(subset=["geneid"])
-out2 = out_nodups.merge(df_map, on="geneid", how="left")
-out2.to_csv(f"{compound.synonyms[0]}_geneid_symbols_uniprot.csv", index=False)
+#out_nodups = out.drop_duplicates(subset=["geneid"])
+#out2 = out_nodups.merge(df_map, on="geneid", how="left")
+#out2.to_csv(f"{compound.synonyms[0]}_geneid_symbols_uniprot.csv", index=False)
 
 # -- RETRIEVE THE PATHWAY (PATHWAYS COUNT) --
-#app.pathways.retrieve_pathways(compound)
+df_proteinspathways = app.pathways.retrieve_pathways(compound)
+df_proteinspathways.to_csv(f"{compound}_Proteins_pathways.csv", index=False)
 
 # -- RETRIEVE protein_data OF EACH COMPOUND IN A DATAFRAME (without Enthanolamine)
-compounds = ["bethanechol", "caffeine", "carbachol", "forskolin", "Ginsenoside rb1", "maprotiline", "pilocarpine"]
-csv_files = [f"{compound}_geneid_symbols_uniprot.csv" for compound in compounds]
-summary = app.proteins.results_summary_count(csv_files)
-summary.to_csv("Protein_Mapping_Interactions_withcaffeine", index = False)
-print(summary.head(20))
+#compounds = ["bethanechol", "caffeine", "carbachol", "forskolin", "Ginsenoside rb1", "maprotiline", "pilocarpine"]
+#csv_files = [f"{compound}_geneid_symbols_uniprot.csv" for compound in compounds]
+#summary = app.proteins.results_summary_count(csv_files)
+#summary.to_csv("Protein_Mapping_Interactions_withcaffeine.csv", index = False)
+#print(summary.head(20))
 
+compounds = ["Ginsenoside rb1", "caffeine"]
+dfs_proteins = []
+
+for c in compounds:
+    compound = app.chem.retrieve_compound(c)
+    df = app.pathways.retrieve_proteins_from_pathway(compound)
+    if df is not None and not df.empty:
+        dfs_proteins.append(df)
+df_all = pd.concat(dfs_proteins, ignore_index=True) if dfs_proteins else pd.DataFrame(columns=["uniprot_accession", "protein_name", "pathway", "compound"])
+df_all.to_csv("AllProteinsPathways.csv", ignore_index=False)
 
 
 """dfs_proteins = []

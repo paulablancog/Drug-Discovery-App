@@ -1,22 +1,22 @@
-10844
-11118
-11119
-11120
-11123
-11124
-24249
-24252
-25520
-25525
-25530
-25533
-25536
-25598
-39846
-39971
-1184538
-1281818
-1282315
-1282370
-1282562
-1360974
+Metabolism
+Biological oxidations
+Phase I - Functionalization of compounds
+Cytochrome P450 - arranged by substrate type
+Xenobiotics
+Aromatic amines can be N-hydroxylated or N-dealkylated by CYP1A2
+caffeine biosynthesis I
+caffeine biosynthesis II (via paraxanthine)
+caffeine degradation V (bacteria, via trimethylurate)
+caffeine degradation IV (bacteria, via demethylation and oxidation)
+caffeine degradation II
+caffeine degradation I (main, plants)
+caffeine degradation III (bacteria, via demethylation)
+glycogen degradation II
+Caffeine and theobromine metabolism
+Phosphodiesterases in neuronal function
+Caffeine Metabolism
+caffeine biosynthesis II (via paraxanthine)
+caffeine degradation I (main, plants)
+caffeine biosynthesis I
+caffeine degradation II
+Purinergic signaling

@@ -4,8 +4,6 @@ import requests
 from pathlib import Path
 import json
 import app.utils
-import app.chem
-import app.interactions
 
 # TODO: mirar como conseguir en pathways repetidos solamente 1 y con el que tenga mayor numero de proteinas -> si tienen el mismo nombre
 
@@ -19,7 +17,7 @@ def retrieve_pathways(compound):
         return None
 
     # Send rows that contain Pathway table JSON information 
-    retrieve_proteins_from_pathway(compound, rows)
+    df_proteinspathway = retrieve_proteins_from_pathway(compound, rows)
 
     # Find the desired pathway
     pathways_list = list() 
@@ -36,18 +34,18 @@ def retrieve_pathways(compound):
     app.utils.create_file(filename, folder)
     app.utils.write_file(filename, folder, pathways_clean_list)
     
-    print(f"Saved proteins of {compound} to {filename}")
-    return filename
+    print(f"Saved pathways of {compound} to {filename}")
+    return df_proteinspathway
 
 
-def retrieve_proteins_from_pathway(compound, rows):
+def retrieve_proteins_from_pathway(compound):
     # Cada Pathway ID obtenido en el .txt se busca en PubChem
     # Se saca JSON del Pathway y se va a interactions 
     # Se descargan las tablas de interactions = Proteins
     # Se vuelve a hacer target count data por cada pathway
-    compound_folder = f"{compound.synonyms[0]}"
-    pathway_folder = app.utils.make_subfolder(compound_folder, "Pathways")
-
+    dfs = []
+    rows = app.utils.load_json(f"compound_{compound.cid}_{compound.synonyms[0]}_interactionstable.json", "1.Pathways")
+    
     for row in rows:
         if isinstance (row,dict):
             pathway_id = row.get("pathwayid") or ""
@@ -86,9 +84,15 @@ def retrieve_proteins_from_pathway(compound, rows):
             else:
                 print(f"Creation of protein table for: {safe_pwacc}...")
                 #app.utils.save_json(proteins_table, f"{safe_pwacc}pcgetprotein.json", proteins_folder)
-                retrieve_targets2(safe_pwacc, compound, proteins_table_json)
+                df_targetlist = retrieve_targets2(safe_pwacc, compound, proteins_table_json)
 
-            print("pwacc: "+pwacc)    
+                if df_targetlist is not None and not df_targetlist.empty:
+                    dfs.append(df_targetlist)
+                  
+    if not dfs:
+        return pd.DataFrame(columns=["uniprot_accession", "protein_name", "pathway", "compound"])
+    
+    return pd.concat(dfs, ignore_index=True)
 
 
 def safe_filename(text):
@@ -130,41 +134,44 @@ def retrieve_targets_1(compound):
     print(f"Saved proteins of {compound} to {filename}")
     return filename
 
+
+# -- GET PROTEINS FROM EACH PATHWAY IN DIFFERENT FILES --
+# -> INPUT: pwaac (to see in which pathway the protein interacts), compound, proteins JSON from 1 single pathway (from ExternalTableName in Proteins section from Pathway JSON)
+# -> PROCESS: get all the proteins inside a csv with the pathway as a row of dicts
+# -> OUTPUT: s csv with column["UniprotKB_accession", "Pathway"], each row is a protein. All proteins together from all Pathways
 def retrieve_targets2(safe_pwacc, compound, json):
     # Retrieve the Proteins in pathway json
-    folder = f"{compound.synonyms[0]}"
-    pathway_folder = app.utils.make_subfolder(folder, "Pathways")
-    proteins_folder = app.utils.make_subfolder(pathway_folder, "Proteins")
-    #json = app.utils.load_json(f"{safe_pwacc}_Information.json", proteins_folder)
     if json is None:
-        print("No Interactions JSON retrieved")
+        print("No Proteins in the pathway: "+safe_pwacc)
         return None
     
     # Find protein names & id
-    target_list = list() 
     rows = json.get("SDQOutputSet", [{}])[0].get("rows", []) or []
     status = json.get("SDQOutputSet", [{}])[0].get("status", {}) or []
     
     if status.get("code") != 0:
         print("No proteins via pcget for: "+safe_pwacc)
-    else:
-        for row in rows:
-            if isinstance(row,dict): # is row a dictionary object? -> rows should be a list of dictionaries (.get() only exists in dictionaries)
-                acc_id = row.get("acc") or ""
-                protname = row.get("protname")  or ""
-                if acc_id:
-                    target_list.append(f"{acc_id}\t{protname}")
-                    print("Successfully retrieved Proteins IDs")
-                else:
-                    print("No proteins extracted from the json file")
+        return pd.DataFrame(columns=["uniprot_accession", "protein_name", "pathway", "compound"])
+    
+    target_list = []
+    for row in rows:
+        if isinstance(row,dict): # is row a dictionary object? -> rows should be a list of dictionaries (.get() only exists in dictionaries)
+            acc_id = row.get("acc") or ""
+            protname = row.get("protname")  or ""
+            if acc_id:
+                target_list.append({"uniprot_accession": acc_id, 
+                                       "protein_name": protname,
+                                       "pathway": safe_pwacc,
+                                       "compound": compound.synonyms[0]})
+                print("Successfully retrieved Proteins IDs")
+            else:
+                print("No proteins extracted from the json file")
 
-        # Save protein set in folder
-        filename = f"pathway_protein_data_{safe_pwacc}"
-        app.utils.create_file(filename, proteins_folder)
-        app.utils.write_file(filename, proteins_folder, target_list)
-        
-        print(f"Saved proteins of {compound} to {filename}")
-        return filename
+    # Save proteins in folder
+    df_targetlist = pd.DataFrame(target_list)
+    return df_targetlist
+
+
 
 
 def read_all_pathways(pathwaystxt, compound):

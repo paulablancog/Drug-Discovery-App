@@ -9,27 +9,6 @@ from Bio import Entrez
 import requests
 import time
 
-# -- MANUAL DICTIONARY FOR PROTEIN-GENES
-"""OVERRIDES = {
-    "m1 receptor": "CHRM1",
-    "m2 receptor": "CHRM2",
-    "m3 receptor": "CHRM3",
-    "m4 receptor": "CHRM4",
-    "m5 receptor": "CHRM5",
-    "muscarinic acetylcholine receptor m1": "CHRM1",
-    "muscarinic acetylcholine receptor m2": "CHRM2",
-    "muscarinic acetylcholine receptor m3": "CHRM3",
-    "muscarinic acetylcholine receptor m4": "CHRM4",
-    "muscarinic acetylcholine receptor m5": "CHRM5",
-    "adenosine receptor a1": "ADORA1",
-    "a1 receptor": "ADORA1",
-    "a2a receptor": "ADORA2A",
-    "a2b receptor": "ADORA2B",
-    "a3 receptor": "ADORA3",
-    "net": "SLC6A2",  # norepinephrine transporter
-    "norepinephrine transporter": "SLC6A2",
-}
-"""
 
 def chunk_list(items,size):
     for i in range(0,len(items), size):
@@ -95,6 +74,8 @@ UniProt_url = "https://rest.uniprot.org"
 def get_idmapping_db(db_name):
 # Look in Uniprot ID-mapping database code GeneID and UniProtKB
     req = requests.get(f"{UniProt_url}/configure/idmapping/fields", timeout=30).json()
+    print("Printing idmapping dbs")
+    
     for group in req.get("groups", []):
         for item in group.get("items", []):
             if item.get("displayName") == db_name:
@@ -122,7 +103,6 @@ def wait_for_job(jobId, repeats = 2):
             return
 
         json = req.json()
-        
         status = json.get("jobStatus") or json.get("status") #TODO: check this field
         
         if status in ("FINISHED", "DONE"):
@@ -146,7 +126,6 @@ def download_results(jobId):
         req = requests.get(url, params, timeout=60)
         req.raise_for_status()
         json = req.json()
-        print(json)
     # Now let's download the resulting table with the accession code
         for row in json.get("results", []):
             geneid=str(row.get("from")).strip()
@@ -274,7 +253,7 @@ def normalize_protein(proteintxt, compound):
     return df
 
 # Now I need to call normalized_protein for each compound, store the returned DataFrames in a list and then concat
-# ask what this does
+# ask what this does -> TODO: ESTE METODO YA NO ME SIRVE (UTILIZO LOS DE UNIPROT_ACCESSION)
 
 def read_target_proteins (targets_pathway):
     df = pd.read_csv(targets_pathway)
@@ -319,7 +298,7 @@ def read_target_proteins (targets_pathway):
         df_mapped = df.merge(df_map, on="normalized_target", how="left")
 
         df_mapped["canonical_target"] = df_mapped["normalized_target"]
-        df_mapped["canonical_target"] = df_mapped["canonical_target"].replace(OVERRIDES)
+        df_mapped["canonical_target"] = df_mapped["canonical_target"]
         mask = (~df_mapped["is_gene"] & df_mapped["gene_symbol_mygene"].notna())
         df_mapped.loc[mask, "canonical_target"] = df_mapped.loc[mask, "gene_symbol_mygene"]
     return df_mapped, df_map

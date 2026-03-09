@@ -1,0 +1,13 @@
+uniprot_accession,protein_name,pathway,compound
+A0A0A6ZFR4,UDP-glucosyltransferase 74AE2,BioCyc_META_PWY-5672,Ginsenoside rb1
+A0A0A6ZFY4,UDP-glucosyltransferase 29,BioCyc_META_PWY-5672,Ginsenoside rb1
+A0A0A7HB61,UDP-glycosyltransferase 71A27,BioCyc_META_PWY-5672,Ginsenoside rb1
+A0A0K0PVM5,UDP-glycosyltransferase 101,BioCyc_META_PWY-5672,Ginsenoside rb1
+A0A0K0PVW1,UDP-glycosyltransferase 100,BioCyc_META_PWY-5672,Ginsenoside rb1
+H2DH16,Dammarenediol 12-hydroxylase,BioCyc_META_PWY-5672,Ginsenoside rb1
+I7C6E8,Beta-amyrin 28-monooxygenase,BioCyc_META_PWY-5672,Ginsenoside rb1
+I7CT85,Protopanaxadiol 6-hydroxylase,BioCyc_META_PWY-5672,Ginsenoside rb1
+O82140,Beta-amyrin synthase 1,BioCyc_META_PWY-5672,Ginsenoside rb1
+Q08IT1,Dammarenediol II synthase,BioCyc_META_PWY-5672,Ginsenoside rb1
+O82140,Beta-amyrin synthase 1,PlantCyc_PLANT_PWY-5672,Ginsenoside rb1
+Q08IT1,Dammarenediol II synthase,PlantCyc_PLANT_PWY-5672,Ginsenoside rb1

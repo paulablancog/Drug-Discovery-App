@@ -75,7 +75,7 @@ def get_idmapping_db(db_name):
 # Look in Uniprot ID-mapping database code GeneID and UniProtKB
     req = requests.get(f"{UniProt_url}/configure/idmapping/fields", timeout=30).json()
     print("Printing idmapping dbs")
-    
+
     for group in req.get("groups", []):
         for item in group.get("items", []):
             if item.get("displayName") == db_name:
@@ -304,31 +304,20 @@ def read_target_proteins (targets_pathway):
     return df_mapped, df_map
 
 
-#omg what does this do
-def results_summary_count(csv_files):
-    dfs = []
+def results_proteins(df_interactions, df_pathways):
+    df = df_interactions.copy()
+    df["compound"] = df["compound"].astype(str).str.strip()
+    df["geneid"] = df["geneid"].astype(str).str.strip()
+    df["symbol"] = df["symbol"].astype(str).str.strip()
+    df["uniprot_accession"] = df["uniprot_accession"].astype(str).str.strip()
 
-    for file in csv_files:
-        df = pd.read_csv(file)
-
-        df["compound"] = df["compound"].astype(str).str.strip()
-        df["geneid"] = df["geneid"].astype(str).str.strip()
-        df["symbol"] = df["symbol"].astype(str).str.strip()
-        df["uniprot_accession"] = df["uniprot_accession"].astype(str).str.strip()
-
-        df = df[df["uniprot_accession"].notna()]
-        df = df[df["uniprot_accession"] != ""]
-        df = df[df["uniprot_accession"].str.lower() != "nan"]
-
-        dfs.append(df)
-    if not dfs:
-        return pd.DataFrame(columns=["uniprot_accession", "total_count", "n_compounds", "compounds", "symbol", "geneid"
-        ])
+    df = df[df["uniprot_accession"].notna()]
+    df = df[df["uniprot_accession"] != ""]
+    df = df[df["uniprot_accession"].str.lower() != "nan"]
     
-    all_df = pd.concat(dfs, ignore_index=True)
-
+   
     summary =(
-        all_df.groupby("uniprot_accession").agg(
+        df.groupby("uniprot_accession").agg(
             total_count = ("uniprot_accession", "size"),
             n_compounds = ("compound", "nunique"),
             compounds = ("compound", lambda x: ";".join(sorted(set(x)))),

@@ -38,14 +38,12 @@ def retrieve_pathways(compound):
     return df_proteinspathway
 
 
-def retrieve_proteins_from_pathway(compound):
+def retrieve_proteins_from_pathway(compound, rows):
     # Cada Pathway ID obtenido en el .txt se busca en PubChem
     # Se saca JSON del Pathway y se va a interactions 
     # Se descargan las tablas de interactions = Proteins
     # Se vuelve a hacer target count data por cada pathway
     dfs = []
-    rows = app.utils.load_json(f"compound_{compound.cid}_{compound.synonyms[0]}_interactionstable.json", "1.Pathways")
-    
     for row in rows:
         if isinstance (row,dict):
             pathway_id = row.get("pathwayid") or ""

@@ -384,6 +384,9 @@
                             "String": "Choline, carbamate, hydrochloride"
                         },
                         {
+                            "String": "YUVEZZI COMPONENT CARBACHOL"
+                        },
+                        {
                             "String": ".gamma.-Carbamoyl choline chloride"
                         },
                         {
@@ -622,7 +625,7 @@
                 "ReferenceNumber": 52,
                 "Value": {
                     "DateISO8601": [
-                        "2026-02-28"
+                        "2026-03-07"
                     ]
                 }
             },
@@ -1424,6 +1427,9 @@
                     },
                     {
                         "TOCHeading": "ATCvet Classification"
+                    },
+                    {
+                        "TOCHeading": "Open Targets Classification"
                     }
                 ]
             }

@@ -5,7 +5,7 @@
         "RecordTitle": "Caffeine",
         "Information": [
             {
-                "ReferenceNumber": 284,
+                "ReferenceNumber": 286,
                 "Value": {
                     "StringWithMarkup": [
                         {
@@ -1283,7 +1283,7 @@
                 }
             },
             {
-                "ReferenceNumber": 77,
+                "ReferenceNumber": 78,
                 "Name": "",
                 "Value": {
                     "StringWithMarkup": [
@@ -1321,7 +1321,7 @@
                 }
             },
             {
-                "ReferenceNumber": 284,
+                "ReferenceNumber": 286,
                 "Reference": [
                     "Computed by PubChem 2.2 (PubChem release 2025.04.14)"
                 ],
@@ -1334,7 +1334,7 @@
                 }
             },
             {
-                "ReferenceNumber": 284,
+                "ReferenceNumber": 286,
                 "Reference": [
                     "Computed by PubChem 2.2 (PubChem release 2025.04.14)"
                 ],
@@ -1348,7 +1348,7 @@
                 }
             },
             {
-                "ReferenceNumber": 284,
+                "ReferenceNumber": 286,
                 "Reference": [
                     "Computed by InChI 1.07.2 (PubChem release 2025.04.14)"
                 ],
@@ -1361,7 +1361,7 @@
                 }
             },
             {
-                "ReferenceNumber": 48,
+                "ReferenceNumber": 49,
                 "URL": "https://gsrs.ncats.nih.gov/ginas/app/beta/substances/3G6A5W338E",
                 "Value": {
                     "StringWithMarkup": [
@@ -1372,15 +1372,15 @@
                 }
             },
             {
-                "ReferenceNumber": 284,
+                "ReferenceNumber": 286,
                 "Value": {
                     "DateISO8601": [
-                        "2026-02-28"
+                        "2026-03-07"
                     ]
                 }
             },
             {
-                "ReferenceNumber": 284,
+                "ReferenceNumber": 286,
                 "Value": {
                     "DateISO8601": [
                         "2004-09-16"
@@ -1504,7 +1504,7 @@
                 }
             },
             {
-                "ReferenceNumber": 25,
+                "ReferenceNumber": 26,
                 "Value": {
                     "StringWithMarkup": [
                         {
@@ -1565,7 +1565,7 @@
                 }
             },
             {
-                "ReferenceNumber": 51,
+                "ReferenceNumber": 52,
                 "Description": "FDA Pharmacology Summary",
                 "Value": {
                     "StringWithMarkup": [
@@ -1592,7 +1592,7 @@
                 }
             },
             {
-                "ReferenceNumber": 87,
+                "ReferenceNumber": 88,
                 "Description": "LiverTox Summary",
                 "Value": {
                     "StringWithMarkup": [
@@ -1633,7 +1633,7 @@
                 }
             },
             {
-                "ReferenceNumber": 88,
+                "ReferenceNumber": 89,
                 "Value": {
                     "StringWithMarkup": [
                         {
@@ -1667,7 +1667,7 @@
                 }
             },
             {
-                "ReferenceNumber": 222,
+                "ReferenceNumber": 224,
                 "Value": {
                     "StringWithMarkup": [
                         {
@@ -1749,7 +1749,7 @@
                 }
             },
             {
-                "ReferenceNumber": 251,
+                "ReferenceNumber": 253,
                 "Value": {
                     "StringWithMarkup": [
                         {
@@ -1788,7 +1788,7 @@
                 }
             },
             {
-                "ReferenceNumber": 272,
+                "ReferenceNumber": 274,
                 "ExtendedReference": [
                     {
                         "Citation": "A11723: Rodrigues IM, Klein LC: Boiled or filtered coffee? Effects of coffee and caffeine on cholesterol, fibrinogen and C-reactive protein. Toxicol Rev. 2006;25(1):55-69. PMID:16856769",
@@ -2082,7 +2082,7 @@
                 }
             },
             {
-                "ReferenceNumber": 283,
+                "ReferenceNumber": 285,
                 "Value": {
                     "StringWithMarkup": [
                         {
@@ -2092,7 +2092,7 @@
                 }
             },
             {
-                "ReferenceNumber": 284,
+                "ReferenceNumber": 286,
                 "Name": "See Also",
                 "Value": {
                     "StringWithMarkup": [
@@ -2256,6 +2256,9 @@
                             },
                             {
                                 "TOCHeading": "KEGG ID"
+                            },
+                            {
+                                "TOCHeading": "MetaboLights"
                             },
                             {
                                 "TOCHeading": "Metabolomics Workbench ID"
@@ -2618,6 +2621,9 @@
                                 "TOCHeading": "NIPH Clinical Trials Search of Japan"
                             }
                         ]
+                    },
+                    {
+                        "TOCHeading": "DEA Drug and Chemical Information"
                     },
                     {
                         "TOCHeading": "EMA Drug Information"
@@ -3337,13 +3343,16 @@
                     },
                     {
                         "TOCHeading": "FDA Liver Toxicity Knowledge Base (LTKB)"
+                    },
+                    {
+                        "TOCHeading": "Open Targets Classification"
                     }
                 ]
             }
         ],
         "Reference": [
             {
-                "ReferenceNumber": 284,
+                "ReferenceNumber": 286,
                 "SourceName": "PubChem",
                 "SourceID": "PubChem",
                 "Description": "Data deposited in or computed by PubChem",
@@ -3371,7 +3380,7 @@
                 "ANID": 757193
             },
             {
-                "ReferenceNumber": 77,
+                "ReferenceNumber": 78,
                 "SourceName": "ILO-WHO International Chemical Safety Cards (ICSCs)",
                 "SourceID": "0405",
                 "Name": "CAFFEINE",
@@ -3382,7 +3391,7 @@
                 "ANID": 2260311
             },
             {
-                "ReferenceNumber": 48,
+                "ReferenceNumber": 49,
                 "SourceName": "FDA Global Substance Registration System (GSRS)",
                 "SourceID": "3G6A5W338E",
                 "Name": "CAFFEINE",
@@ -3402,7 +3411,7 @@
                 "ANID": 2506073
             },
             {
-                "ReferenceNumber": 25,
+                "ReferenceNumber": 26,
                 "SourceName": "DrugBank",
                 "SourceID": "DB00201",
                 "Name": "Caffeine",
@@ -3413,7 +3422,7 @@
                 "ANID": 3600734
             },
             {
-                "ReferenceNumber": 51,
+                "ReferenceNumber": 52,
                 "SourceName": "FDA Pharm Classes",
                 "SourceID": "3G6A5W338E",
                 "Name": "CAFFEINE",
@@ -3424,7 +3433,7 @@
                 "ANID": 6490150
             },
             {
-                "ReferenceNumber": 87,
+                "ReferenceNumber": 88,
                 "SourceName": "LiverTox",
                 "SourceID": "Caffeine",
                 "Name": "Caffeine",
@@ -3435,7 +3444,7 @@
                 "ANID": 9158358
             },
             {
-                "ReferenceNumber": 88,
+                "ReferenceNumber": 89,
                 "SourceName": "LOTUS - the natural products occurrence database",
                 "SourceID": "Q60235",
                 "Name": "Caffeine",
@@ -3446,7 +3455,7 @@
                 "ANID": 19829503
             },
             {
-                "ReferenceNumber": 222,
+                "ReferenceNumber": 224,
                 "SourceName": "NCI Thesaurus (NCIt)",
                 "SourceID": "C328::Compound",
                 "Description": "NCI Thesaurus (NCIt), from the U.S. National Cancer Institute, provides reference terminology for many NCI and other systems. It covers vocabulary for clinical care, translational and basic research, and public information and administrative activities.",
@@ -3456,7 +3465,7 @@
                 "ANID": 14395650
             },
             {
-                "ReferenceNumber": 251,
+                "ReferenceNumber": 253,
                 "SourceName": "RRUFF Project",
                 "SourceID": "m_caffeine",
                 "Name": "Caffeine",
@@ -3465,7 +3474,7 @@
                 "ANID": 55237215
             },
             {
-                "ReferenceNumber": 272,
+                "ReferenceNumber": 274,
                 "SourceName": "Toxin and Toxin Target Database (T3DB)",
                 "SourceID": "Compound::T3D2712",
                 "Name": "Caffeine",
@@ -3476,7 +3485,7 @@
                 "ANID": 20442602
             },
             {
-                "ReferenceNumber": 283,
+                "ReferenceNumber": 285,
                 "SourceName": "Medical Subject Headings (MeSH)",
                 "SourceID": "M0003138",
                 "Name": "Caffeine",

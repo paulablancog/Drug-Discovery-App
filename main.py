@@ -76,61 +76,96 @@ app.proteins.retrieve_targets_1(compound)
 #out2 = out_nodups.merge(df_map, on="geneid", how="left")
 #out2.to_csv(f"{compound.synonyms[0]}_geneid_symbols_uniprot.csv", index=False)
 
-# -- RETRIEVE THE PATHWAY (PATHWAYS COUNT) --
-df_proteinspathways = app.pathways.retrieve_pathways(compound)
-df_proteinspathways.to_csv(f"{compound}_Proteins_pathways.csv", index=False)
+# -- RETRIEVE protein_data OF EACH COMPOUND IN A DATAFRAME (Chemical-Target Interactions)
+compounds = ["bethanechol", "caffeine", "Ethanolamine", "carbachol", "forskolin", "Ginsenoside rb1", "maprotiline", "pilocarpine"]
+csv_files = [f"{compound}_geneid_symbols_uniprot.csv" for compound in compounds]
 
-# -- RETRIEVE protein_data OF EACH COMPOUND IN A DATAFRAME (without Enthanolamine)
-#compounds = ["bethanechol", "caffeine", "carbachol", "forskolin", "Ginsenoside rb1", "maprotiline", "pilocarpine"]
-#csv_files = [f"{compound}_geneid_symbols_uniprot.csv" for compound in compounds]
+dfs_int = []
+for csv in csv_files:
+    if not Path(csv).exists():
+        print("Not a csv for Protein Interactions: "+csv)
+        continue
+    df = pd.read_csv(csv)
+    dfs_int.append(df)
+
+df_interactions = pd.concat(dfs_int, ignore_index=True) if dfs_int else pd.DataFrame(columns = ["uniprot_accession", "compound", "symbol", "geneid"])
+df_interactions.to_csv("ProteinInteractions.csv")
+
 #summary = app.proteins.results_summary_count(csv_files)
-#summary.to_csv("Protein_Mapping_Interactions_withcaffeine.csv", index = False)
+#summary.to_csv("Protein_Mapping_Interactions.csv", index = False)
 #print(summary.head(20))
 
-compounds = ["Ginsenoside rb1", "caffeine"]
+# --RETRIEVE ALL PROTEINS FROM PATHWAY COMPOUNDS (also creates pathways.txt)
+compounds = ["CC(=CCC[C@@](C)([C@H]1CC[C@@]2([C@@H]1[C@@H](C[C@H]3[C@]2(CC[C@@H]4[C@@]3(CC[C@@H](C4(C)C)O[C@H]5[C@@H]([C@H]([C@@H]([C@H](O5)CO)O)O)O[C@H]6[C@@H]([C@H]([C@@H]([C@H](O6)CO)O)O)O)C)C)O)C)O[C@H]7[C@@H]([C@H]([C@@H]([C@H](O7)CO[C@H]8[C@@H]([C@H]([C@@H]([C@H](O8)CO)O)O)O)O)O)O)C", "CN1C=NC2=C1C(=O)N(C(=O)N2C)C", "C(CO)N"]
 dfs_proteins = []
 
+# TODO: VER SI SE DUPLICAN PATHWAYS
 for c in compounds:
     compound = app.chem.retrieve_compound(c)
-    df = app.pathways.retrieve_proteins_from_pathway(compound)
-    if df is not None and not df.empty:
+    filename = f"{compound.synonyms[0]}_ProteinsAllPathways.csv"
+    compound_file = Path(filename)
+    if compound_file.exists():
+        print("Protein Pathways already exists")
+        df = pd.read_csv(compound_file)
         dfs_proteins.append(df)
+        continue
+
+    df = app.pathways.retrieve_pathways(compound)
+    if df is None or df.empty:
+        continue
+
+    df.to_csv(filename, index=False)
+    dfs_proteins.append(df)
+
 df_all = pd.concat(dfs_proteins, ignore_index=True) if dfs_proteins else pd.DataFrame(columns=["uniprot_accession", "protein_name", "pathway", "compound"])
-df_all.to_csv("AllProteinsPathways.csv", ignore_index=False)
+df_all.to_csv("AllProteinsPathways.csv", index=False)
+
+# --READ BOTH PROTEIN INTERACTIONS (chemical & pathways)
+df_interactions = pd.read_csv("ProteinInteractions.csv")
+df_pathways = pd.read_csv("AllProteinsPathways.csv")
+
+df_interactions.columns = df_interactions.columns.str.strip()
+df_pathways.columns = df_pathways.columns.str.strip()
+
+df_interactions["uniprot_accession"] = (df_interactions["uniprot_accession"]
+    .astype(str)
+    .str.strip()
+    .replace({"nan": "", "None": "", "NaN": ""})
+)
+df_interactions = df_interactions[df_interactions["uniprot_accession"] != ""].copy()
+
+df_pathways["uniprot_accession"] = (df_pathways["uniprot_accession"]
+    .astype(str)
+    .str.strip()
+    .replace({"nan": "", "None": "", "NaN": ""})
+)
+df_pathways = df_pathways[df_pathways["uniprot_accession"] != ""].copy()
 
 
-"""dfs_proteins = []
+interactions_summary = (
+    df_interactions.groupby("uniprot_accession", as_index=False).agg(
+        total_count = ("uniprot_accession", "size"),
+        n_compounds = ("compound", "nunique"),
+        compounds=("compound", lambda x: ";".join(sorted(set(str(v).strip() for v in x if pd.notna(v) and str(v).strip())))),
+        symbol=("symbol", lambda x: ";".join(sorted(set(str(v).strip() for v in x if pd.notna(v) and str(v).strip())))),
+        geneid=("geneid", lambda x: ";".join(sorted(set(str(v).strip() for v in x if pd.notna(v) and str(v).strip())))),
+    )
+)
 
-for compound in compounds:
-    dfs_proteins.append(app.proteins.normalize_protein("protein_data.txt", compound))
+pathway_summary = (
+    df_pathways.groupby("uniprot_accession", as_index=False).agg(
+        n_pathways = ("pathway", "nunique"),
+        pathways = ("pathway", lambda x: ";".join(sorted(set(x)))),
+    )
+)
 
-df_all_proteins = pd.concat(dfs_proteins, ignore_index=True)
-df_all_proteins.to_csv("targets_normalized.csv", index=False)
-print("CSV Done for targets")
+final_summary = (
+    interactions_summary.merge(pathway_summary, on="uniprot_accession", how="outer").fillna(
+        {"n_pathways":0, "pathways": ""}).sort_values(["total_count", "n_compounds"], ascending=[False, False])
+    )
 
-df_mapped, df_map = app.proteins.read_target_proteins("targets_normalized.csv")
-df_mapped.to_csv("targets_mapped.csv", index=False)
-df_map.to_csv("mygene_mapping.csv", index=False)
-
-summary_proteins = app.proteins.results_summary_count(df_mapped)
-summary_proteins.to_csv("targets_summart.csv", index=False) """
-
-"""# -- RETRIEVE pathway_data OF ALL COMPOUNDS AND COMPARE IT
-dfs_pathways = []
-for c in compounds:
-    dfs_pathways.append(app.pathways.read_all_pathways("pathways_data.txt", c))
-
-df_all_pathways = pd.concat(dfs_pathways, ignore_index=True)
-df_all_pathways.to_csv("pathways_csv", index=False)
-print("Wrote CSV for pathways")
-
-summary_pathways = app.pathways.map_pathways(df_all_pathways)
-summary_pathways.to_csv("pathways_summary.csv", index=False)
-print("Done mapping pathways")"""
-
-
-# -- RETRIEVE PATHWAY PROTEINS (PROTEIN COUNT INSIDE A PATHWAY) --
-#app.pathways.retrieve_proteins_from_pathway(compound)
+final_summary.to_csv("Protein_mapping.csv", index=False)
+print(final_summary.head(20))
 
 # Bethanechol: CC(C[N+](C)(C)C)OC(=O)N  
 # Caffeine: CN1C=NC2=C1C(=O)N(C(=O)N2C)C  

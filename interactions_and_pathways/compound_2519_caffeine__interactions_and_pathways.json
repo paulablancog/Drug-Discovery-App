@@ -13,13 +13,13 @@
                         "Description": "Experimentally determined 3D structures of the macromolecules (e.g., proteins) that this compounds bind to.  The 3D structures in this section are from multiple sources including the RCSB Protein Data Bank (PDB), PDB in Europe (PDBe), and NCBI Structure database.",
                         "Information": [
                             {
-                                "ReferenceNumber": 248,
+                                "ReferenceNumber": 250,
                                 "Value": {
                                     "ExternalTableName": "pdb"
                                 }
                             },
                             {
-                                "ReferenceNumber": 284,
+                                "ReferenceNumber": 286,
                                 "URL": "https://www.ncbi.nlm.nih.gov/structure?cmd=Link&LinkName=pccompound_structure&from_uid=2519",
                                 "Value": {
                                     "StringWithMarkup": [
@@ -53,7 +53,7 @@
                                         "Description": "The ligand code for this compound used in the Protein Data Bank in Europe (PDBe).",
                                         "Information": [
                                             {
-                                                "ReferenceNumber": 246,
+                                                "ReferenceNumber": 248,
                                                 "URL": "http://www.ebi.ac.uk/pdbe-srv/pdbechem/chemicalCompound/show/CFF",
                                                 "Value": {
                                                     "StringWithMarkup": [
@@ -70,7 +70,7 @@
                                         "Description": "The structure code for the Protein Data Bank in Europe (PDBe) protein-ligand co-complex from which the ligand's 3-D coordinates were taken.",
                                         "Information": [
                                             {
-                                                "ReferenceNumber": 246,
+                                                "ReferenceNumber": 248,
                                                 "URL": "http://www.ebi.ac.uk/pdbe/entry/pdb/1GFZ",
                                                 "Value": {
                                                     "StringWithMarkup": [
@@ -87,7 +87,7 @@
                                         "Description": "The experimental protein-bound 3D structure of this compound in a protein-ligand co-complex archived in the Protein Data Bank in Europe (PDBe).",
                                         "Information": [
                                             {
-                                                "ReferenceNumber": 246,
+                                                "ReferenceNumber": 248,
                                                 "URL": "http://www.ebi.ac.uk/pdbe-srv/pdbechem/chemicalCompound/show/CFF",
                                                 "Value": {
                                                     "ExternalDataURL": [
@@ -119,12 +119,6 @@
                                 }
                             },
                             {
-                                "ReferenceNumber": 24,
-                                "Value": {
-                                    "ExternalTableName": "consolidatedcompoundtarget"
-                                }
-                            },
-                            {
                                 "ReferenceNumber": 25,
                                 "Value": {
                                     "ExternalTableName": "consolidatedcompoundtarget"
@@ -137,25 +131,31 @@
                                 }
                             },
                             {
-                                "ReferenceNumber": 81,
+                                "ReferenceNumber": 27,
                                 "Value": {
                                     "ExternalTableName": "consolidatedcompoundtarget"
                                 }
                             },
                             {
-                                "ReferenceNumber": 269,
+                                "ReferenceNumber": 82,
                                 "Value": {
                                     "ExternalTableName": "consolidatedcompoundtarget"
                                 }
                             },
                             {
-                                "ReferenceNumber": 270,
+                                "ReferenceNumber": 271,
                                 "Value": {
                                     "ExternalTableName": "consolidatedcompoundtarget"
                                 }
                             },
                             {
                                 "ReferenceNumber": 272,
+                                "Value": {
+                                    "ExternalTableName": "consolidatedcompoundtarget"
+                                }
+                            },
+                            {
+                                "ReferenceNumber": 274,
                                 "Value": {
                                     "ExternalTableName": "consolidatedcompoundtarget"
                                 }
@@ -167,7 +167,7 @@
                         "Description": "Biological pathways in which this compound is involved.",
                         "Information": [
                             {
-                                "ReferenceNumber": 284,
+                                "ReferenceNumber": 286,
                                 "Value": {
                                     "ExternalTableName": "collection=pathway&core=1"
                                 }
@@ -201,7 +201,7 @@
                 "ANID": 9023421
             },
             {
-                "ReferenceNumber": 24,
+                "ReferenceNumber": 25,
                 "SourceName": "Drug Gene Interaction database (DGIdb)",
                 "SourceID": "rxcui:1886",
                 "Name": "CAFFEINE",
@@ -212,7 +212,7 @@
                 "ANID": 37458420
             },
             {
-                "ReferenceNumber": 25,
+                "ReferenceNumber": 26,
                 "SourceName": "DrugBank",
                 "SourceID": "DB00201",
                 "Name": "Caffeine",
@@ -223,7 +223,7 @@
                 "ANID": 3600734
             },
             {
-                "ReferenceNumber": 26,
+                "ReferenceNumber": 27,
                 "SourceName": "DrugCentral",
                 "SourceID": "Compound::463",
                 "Name": "caffeine",
@@ -232,7 +232,7 @@
                 "ANID": 55537856
             },
             {
-                "ReferenceNumber": 81,
+                "ReferenceNumber": 82,
                 "SourceName": "IUPHAR/BPS Guide to PHARMACOLOGY",
                 "SourceID": "407::Compound",
                 "Name": "caffeine",
@@ -243,7 +243,7 @@
                 "ANID": 19629045
             },
             {
-                "ReferenceNumber": 269,
+                "ReferenceNumber": 271,
                 "SourceName": "Therapeutic Target Database (TTD)",
                 "SourceID": "D0B3HD",
                 "Name": "Caffeine",
@@ -252,7 +252,7 @@
                 "ANID": 19773332
             },
             {
-                "ReferenceNumber": 270,
+                "ReferenceNumber": 272,
                 "SourceName": "Therapeutic Target Database (TTD)",
                 "SourceID": "D0H9IX",
                 "Name": "PMID28870136-Compound-52",
@@ -261,7 +261,7 @@
                 "ANID": 19776664
             },
             {
-                "ReferenceNumber": 272,
+                "ReferenceNumber": 274,
                 "SourceName": "Toxin and Toxin Target Database (T3DB)",
                 "SourceID": "Compound::T3D2712",
                 "Name": "Caffeine",
@@ -272,7 +272,7 @@
                 "ANID": 20442602
             },
             {
-                "ReferenceNumber": 246,
+                "ReferenceNumber": 248,
                 "SourceName": "Protein Data Bank in Europe (PDBe)",
                 "SourceID": "CFF",
                 "Description": "The Protein Data Bank in Europe (PDBe) manages the PDB with its wwPDB partners and provides a high-quality, up-to-date and integrated resource of macromolecular structures to support basic and applied research and education across the sciences.",
@@ -280,7 +280,7 @@
                 "ANID": 8193977
             },
             {
-                "ReferenceNumber": 248,
+                "ReferenceNumber": 250,
                 "SourceName": "RCSB Protein Data Bank (RCSB PDB)",
                 "SourceID": "2519",
                 "Description": "The RCSB Protein Data Bank (PDB) contains crystallographic data defining 3D shapes of proteins, nucleic acids, and complex assemblies that helps students and researchers understand all aspects of biomedicine and agriculture, from protein synthesis to health and disease.",
@@ -290,7 +290,7 @@
                 "ANID": 13145162
             },
             {
-                "ReferenceNumber": 284,
+                "ReferenceNumber": 286,
                 "SourceName": "PubChem",
                 "SourceID": "PubChem",
                 "Description": "Data deposited in or computed by PubChem",

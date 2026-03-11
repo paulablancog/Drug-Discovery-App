@@ -327,3 +327,76 @@ def results_proteins(df_interactions, df_pathways):
     )
 
     return summary
+
+
+def fetch_goterms(csvfile):
+    df = pd.read_csv(csvfile)
+    accessions = df["uniprot_accession"].dropna().astype(str).str.strip()
+
+    url = "https://www.ebi.ac.uk/QuickGO/services/annotation/search"
+    headers = {"Accept": "application/json"}
+
+    rows = []
+    limit = 200
+    print("Fetching GO terms...")
+    # I have to access more than one page (pagination)
+    with requests.Session() as session:
+        for acc in accessions:
+            page = 1
+
+            # For pages to add each loop
+            while True:
+                parameters = {
+                    "geneProductId": f"UniProtKB:{acc}",
+                    "limit":200,
+                    "page": page,
+                }
+                request = session.get(url, params=parameters, headers=headers, timeout=60)
+                request.raise_for_status()
+                result_json = request.json()
+
+                results = result_json.get("results", [])
+                if not results:
+                    break
+
+                for row in results:
+                    rows.append({
+                        "uniprot_accession": acc,
+                        "go_id": row.get("goId"),
+                        "evidence_code": row.get("goEvidence"),
+                    })
+                if len(results) < limit:
+                    break
+                page +=1
+
+    print("Got al GO terms")
+    return pd.DataFrame(rows)
+
+# what is chunk
+def fetch_gonames(go_ids):
+    go_ids = sorted({str(x).strip() for x in go_ids if pd.notna(x) and str(x).strip()})
+    if not go_ids:
+        return pd.DataFrame(columns=["go_id", "go_name"])
+    url = "https://www.ebi.ac.uk/QuickGO/services/ontology/go/terms/{ids}"
+    headers = {"Accept": "application/json"}
+
+    rows = []
+    # there are thousands of go_ids, so send them 100 by 100
+    chunk_size = 100
+
+    with requests.Session() as session:
+        for i in range(0, len(go_ids), chunk_size):
+            chunk = go_ids[i:i+chunk_size]
+            ids_str = ",".join(chunk)
+
+            request = session.get(url.format(ids=ids_str), headers=headers, timeout=60)
+            request.raise_for_status()
+            result_json = request.json()
+
+            for row in result_json.get("results", []):
+                rows.append({
+                    "go_id": row.get("id"),
+                    "go_name": row.get("name"),
+                })
+    
+    return pd.DataFrame(rows)

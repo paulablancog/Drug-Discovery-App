@@ -76,7 +76,7 @@ app.proteins.retrieve_targets_1(compound)
 #out2 = out_nodups.merge(df_map, on="geneid", how="left")
 #out2.to_csv(f"{compound.synonyms[0]}_geneid_symbols_uniprot.csv", index=False)
 
-# -- RETRIEVE protein_data OF EACH COMPOUND IN A DATAFRAME (Chemical-Target Interactions)
+"""# -- RETRIEVE protein_data OF EACH COMPOUND IN A DATAFRAME (Chemical-Target Interactions)
 compounds = ["bethanechol", "caffeine", "Ethanolamine", "carbachol", "forskolin", "Ginsenoside rb1", "maprotiline", "pilocarpine"]
 csv_files = [f"{compound}_geneid_symbols_uniprot.csv" for compound in compounds]
 
@@ -121,51 +121,95 @@ df_all = pd.concat(dfs_proteins, ignore_index=True) if dfs_proteins else pd.Data
 df_all.to_csv("AllProteinsPathways.csv", index=False)
 
 # --READ BOTH PROTEIN INTERACTIONS (chemical & pathways)
-df_interactions = pd.read_csv("ProteinInteractions.csv")
-df_pathways = pd.read_csv("AllProteinsPathways.csv")
 
-df_interactions.columns = df_interactions.columns.str.strip()
-df_pathways.columns = df_pathways.columns.str.strip()
+filename = "Protein_mapping.csv"
+proteinmapping_file = Path(filename)
+if proteinmapping_file.exists():
+    print("Protein_mapping.csv already exists, loading it...")
+    final_summary = pd.read_csv(proteinmapping_file)
+else:
+    df_interactions = pd.read_csv("ProteinInteractions.csv")
+    df_pathways = pd.read_csv("AllProteinsPathways.csv")
 
-df_interactions["uniprot_accession"] = (df_interactions["uniprot_accession"]
-    .astype(str)
-    .str.strip()
-    .replace({"nan": "", "None": "", "NaN": ""})
-)
-df_interactions = df_interactions[df_interactions["uniprot_accession"] != ""].copy()
+    df_interactions.columns = df_interactions.columns.str.strip()
+    df_pathways.columns = df_pathways.columns.str.strip()
 
-df_pathways["uniprot_accession"] = (df_pathways["uniprot_accession"]
-    .astype(str)
-    .str.strip()
-    .replace({"nan": "", "None": "", "NaN": ""})
-)
-df_pathways = df_pathways[df_pathways["uniprot_accession"] != ""].copy()
-
-
-interactions_summary = (
-    df_interactions.groupby("uniprot_accession", as_index=False).agg(
-        total_count = ("uniprot_accession", "size"),
-        n_compounds = ("compound", "nunique"),
-        compounds=("compound", lambda x: ";".join(sorted(set(str(v).strip() for v in x if pd.notna(v) and str(v).strip())))),
-        symbol=("symbol", lambda x: ";".join(sorted(set(str(v).strip() for v in x if pd.notna(v) and str(v).strip())))),
-        geneid=("geneid", lambda x: ";".join(sorted(set(str(v).strip() for v in x if pd.notna(v) and str(v).strip())))),
+    df_interactions["uniprot_accession"] = (df_interactions["uniprot_accession"]
+        .astype(str)
+        .str.strip()
+        .replace({"nan": "", "None": "", "NaN": ""})
     )
-)
+    df_interactions = df_interactions[df_interactions["uniprot_accession"] != ""].copy()
 
-pathway_summary = (
-    df_pathways.groupby("uniprot_accession", as_index=False).agg(
-        n_pathways = ("pathway", "nunique"),
-        pathways = ("pathway", lambda x: ";".join(sorted(set(x)))),
+    df_pathways["uniprot_accession"] = (df_pathways["uniprot_accession"]
+        .astype(str)
+        .str.strip()
+        .replace({"nan": "", "None": "", "NaN": ""})
     )
-)
+    df_pathways = df_pathways[df_pathways["uniprot_accession"] != ""].copy()
 
-final_summary = (
-    interactions_summary.merge(pathway_summary, on="uniprot_accession", how="outer").fillna(
-        {"n_pathways":0, "pathways": ""}).sort_values(["total_count", "n_compounds"], ascending=[False, False])
+
+    interactions_summary = (
+        df_interactions.groupby("uniprot_accession", as_index=False).agg(
+            total_count = ("uniprot_accession", "size"),
+            n_compounds = ("compound", "nunique"),
+            compounds=("compound", lambda x: ";".join(sorted(set(str(v).strip() for v in x if pd.notna(v) and str(v).strip())))),
+            symbol=("symbol", lambda x: ";".join(sorted(set(str(v).strip() for v in x if pd.notna(v) and str(v).strip())))),
+            geneid=("geneid", lambda x: ";".join(sorted(set(str(v).strip() for v in x if pd.notna(v) and str(v).strip())))),
+        )
     )
 
-final_summary.to_csv("Protein_mapping.csv", index=False)
+    pathway_summary = (
+        df_pathways.groupby("uniprot_accession", as_index=False).agg(
+            n_pathways = ("pathway", "nunique"),
+            pathways = ("pathway", lambda x: ";".join(sorted(set(x)))),
+        )
+    )
+
+    final_summary = (
+        interactions_summary.merge(pathway_summary, on="uniprot_accession", how="outer").fillna(
+            {"n_pathways":0, "pathways": ""}).sort_values(["total_count", "n_compounds"], ascending=[False, False])
+        )
+
+    final_summary.to_csv("Protein_mapping.csv", index=False)
+
 print(final_summary.head(20))
+
+df_go = app.proteins.fetch_goterms("Protein_mapping.csv")
+print(df_go.head(20))
+print("GO Terms")
+df_go.to_csv("Go_terms.csv", index=False)
+go_name = app.proteins.fetch_gonames(df_go["go_id"].dropna().unique())
+df_go = df_go.merge(go_name, on="go_id", how="left")
+df_go.to_csv("Go_terms_Names.csv", index = False)
+
+if df_go.empty:
+    final_summaryGO = final_summary.copy()
+    final_summaryGO["n_go_terms"] = 0
+    final_summaryGO["go_ids"] = ""
+    final_summaryGO["go_names"] = ""
+    final_summaryGO["evidence_code"] = ""
+
+else:
+    go_summary = (df_go.groupby("uniprot_accession", as_index=False).agg(
+        n_go_terms = ("go_id", lambda x: x.dropna().nunique()),
+        go_ids = ("go_id", lambda x: ";".join(sorted(set(str(v).strip() for v in x if pd.notna(v) and str(v).strip())))),
+        go_names = ("go_name", lambda x: ";".join(sorted(set(str(v).strip() for v in x if pd.notna(v) and str(v).strip())))),
+        evidence_code = ("evidence_code", lambda x: ";".join(sorted(set(str(v).strip() for v in x if pd.notna(v) and str(v).strip())))),  
+        )
+    )
+
+    final_summaryGO = final_summary.merge(go_summary, on="uniprot_accession", how="left")
+    final_summaryGO["n_go_terms"] = final_summaryGO["n_go_terms"].fillna(0).astype(int)
+
+    for col in ["go_ids", "go_names", "evidence_code"]:
+        final_summaryGO[col] = final_summaryGO[col].fillna("")
+
+final_summaryGO.to_csv("Protein_mappingGO.csv", index=False)"""
+excelsummary = pd.read_csv("Protein_mappingGO.csv")
+excelsummary.to_excel("Protein_mapping.xlsx", index=False)
+#print(final_summaryGO.head(20))
+
 
 # Bethanechol: CC(C[N+](C)(C)C)OC(=O)N  
 # Caffeine: CN1C=NC2=C1C(=O)N(C(=O)N2C)C  

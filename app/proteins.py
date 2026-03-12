@@ -328,14 +328,37 @@ def results_proteins(df_interactions, df_pathways):
 
     return summary
 
-
-def fetch_goterms(csvfile):
+# Se podria elegir que aspecto quieres buscar ({biological_process, molecular_function, cellular_component})
+def fetch_goterms(csvfile, aspects = None):
     df = pd.read_csv(csvfile)
     accessions = df["uniprot_accession"].dropna().astype(str).str.strip()
+
+    if aspects is None:
+        aspects = [
+            "biological_process",
+            "molecular_function",
+            "cellular_component",
+        ]
+
+    check_aspects = {
+        "biological_process",
+        "molecular_function",
+        "cellular_component",
+    }
+
+    aspects = [a.strip() for a in aspects if str(a).strip()]
+    invalid = [a for a in aspects if a not in check_aspects]
+    if invalid:
+        raise ValueError(
+            "Invalid aspects"
+            f"Allowed aspects are: {check_aspects}"
+        )
+
 
     url = "https://www.ebi.ac.uk/QuickGO/services/annotation/search"
     headers = {"Accept": "application/json"}
 
+    
     rows = []
     limit = 200
     print("Fetching GO terms...")
@@ -348,6 +371,7 @@ def fetch_goterms(csvfile):
             while True:
                 parameters = {
                     "geneProductId": f"UniProtKB:{acc}",
+                    "aspect": ",".join(aspects),
                     "limit":200,
                     "page": page,
                 }
@@ -363,6 +387,7 @@ def fetch_goterms(csvfile):
                     rows.append({
                         "uniprot_accession": acc,
                         "go_id": row.get("goId"),
+                        "aspect": row.get("goAspect"),
                         "evidence_code": row.get("goEvidence"),
                     })
                 if len(results) < limit:
@@ -400,3 +425,18 @@ def fetch_gonames(go_ids):
                 })
     
     return pd.DataFrame(rows)
+
+def summarize_goaspect(df_go, aspect, prefix):
+    df_aspect = df_go[df_go["aspect"] == aspect].copy()
+
+    if df_aspect.empty:
+        return pd.DataFrame(columns=["uniprot_accession", f"go_{prefix}_ids", f"go_{prefix}_names",])
+    
+    return (
+        df_aspect.groupby("uniprot_accession", as_index=False).agg(
+            **{
+                f"go_{prefix}_ids": ("go_id", lambda x: ";".join(sorted(set(str(v).strip() for v in x if pd.notna(v) and str(v).strip())))),
+                f"go_{prefix}_names": ("go_name", lambda x: ";".join(sorted(set(str(v).strip() for v in x if pd.notna(v) and str(v).strip())))),
+            }
+        )
+    )

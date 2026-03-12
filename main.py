@@ -65,18 +65,18 @@ for subsection, table_list in tables:
 app.proteins.retrieve_targets_1(compound)
 
 # 2) NCBI: geneid -> symbol + description
-#email = "paulablglez@gmail.com"
-#out = app.proteins.translate_geneid_to_protein(email,"protein_data.txt", compound)
+email = "paulablglez@gmail.com"
+out = app.proteins.translate_geneid_to_protein(email,"protein_data.txt", compound)
 
 # 3) UniProt: geneid -> uniprot accession
-#df_map = app.proteins.map_genes_to_uniprot("protein_data.txt", compound)
+df_map = app.proteins.map_genes_to_uniprot("protein_data.txt", compound)
 
 # 4) Merge both data Frames and save
-#out_nodups = out.drop_duplicates(subset=["geneid"])
-#out2 = out_nodups.merge(df_map, on="geneid", how="left")
-#out2.to_csv(f"{compound.synonyms[0]}_geneid_symbols_uniprot.csv", index=False)
+out_nodups = out.drop_duplicates(subset=["geneid"])
+out2 = out_nodups.merge(df_map, on="geneid", how="left")
+out2.to_csv(f"{compound.synonyms[0]}_geneid_symbols_uniprot.csv", index=False)
 
-"""# -- RETRIEVE protein_data OF EACH COMPOUND IN A DATAFRAME (Chemical-Target Interactions)
+# -- RETRIEVE protein_data OF EACH COMPOUND IN A DATAFRAME (Chemical-Target Interactions)
 compounds = ["bethanechol", "caffeine", "Ethanolamine", "carbachol", "forskolin", "Ginsenoside rb1", "maprotiline", "pilocarpine"]
 csv_files = [f"{compound}_geneid_symbols_uniprot.csv" for compound in compounds]
 
@@ -175,10 +175,11 @@ else:
 
 print(final_summary.head(20))
 
-df_go = app.proteins.fetch_goterms("Protein_mapping.csv")
+df_go = app.proteins.fetch_goterms("Protein_mapping.csv", aspects=["biological_process", "molecular_function", "cellular_component"])
 print(df_go.head(20))
 print("GO Terms")
 df_go.to_csv("Go_terms.csv", index=False)
+
 go_name = app.proteins.fetch_gonames(df_go["go_id"].dropna().unique())
 df_go = df_go.merge(go_name, on="go_id", how="left")
 df_go.to_csv("Go_terms_Names.csv", index = False)
@@ -190,8 +191,20 @@ if df_go.empty:
     final_summaryGO["go_names"] = ""
     final_summaryGO["evidence_code"] = ""
 
+    final_summaryGO["go_bp_ids"] = ""
+    final_summaryGO["go_bp_names"] = ""
+    
+    final_summaryGO["go_mf_ids"] = ""
+    final_summaryGO["go_mf_names"] = ""
+    
+    final_summaryGO["go_cc_ids"] = ""
+    final_summaryGO["go_cc_names"] = ""
+
 else:
-    go_summary = (df_go.groupby("uniprot_accession", as_index=False).agg(
+    df_go = df_go.drop_duplicates(subset=["uniprot_accession", "go_id", "aspect", "evidence_code"]).copy()
+
+    go_summary = (
+        df_go.groupby("uniprot_accession", as_index=False).agg(
         n_go_terms = ("go_id", lambda x: x.dropna().nunique()),
         go_ids = ("go_id", lambda x: ";".join(sorted(set(str(v).strip() for v in x if pd.notna(v) and str(v).strip())))),
         go_names = ("go_name", lambda x: ";".join(sorted(set(str(v).strip() for v in x if pd.notna(v) and str(v).strip())))),
@@ -199,15 +212,29 @@ else:
         )
     )
 
+    bp_summary = app.proteins.summarize_goaspect(df_go, "biological_process", "bp")
+    mf_summary = app.proteins.summarize_goaspect(df_go, "molecular_function", "mf")
+    cc_summary = app.proteins.summarize_goaspect(df_go, "cellular_component", "cc")
+
+
     final_summaryGO = final_summary.merge(go_summary, on="uniprot_accession", how="left")
+    final_summaryGO = final_summaryGO.merge(bp_summary, on="uniprot_accession", how="left")
+    final_summaryGO = final_summaryGO.merge(mf_summary, on="uniprot_accession", how="left")
+    final_summaryGO = final_summaryGO.merge(cc_summary, on="uniprot_accession", how="left")
+    
     final_summaryGO["n_go_terms"] = final_summaryGO["n_go_terms"].fillna(0).astype(int)
 
-    for col in ["go_ids", "go_names", "evidence_code"]:
+    for col in ["go_ids", "go_names", "evidence_code", 
+                "go_bp_ids", "go_bp_names", 
+                "go_mf_ids", "go_mf_names", 
+                "go_cc_ids", "go_cc_names"]:
         final_summaryGO[col] = final_summaryGO[col].fillna("")
 
-final_summaryGO.to_csv("Protein_mappingGO.csv", index=False)"""
+final_summaryGO.to_csv("Protein_mappingGO.csv", index=False)
 excelsummary = pd.read_csv("Protein_mappingGO.csv")
 excelsummary.to_excel("Protein_mapping.xlsx", index=False)
+
+
 #print(final_summaryGO.head(20))
 
 

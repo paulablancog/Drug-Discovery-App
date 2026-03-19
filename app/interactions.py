@@ -1,8 +1,5 @@
-import pandas as pd
-import pubchempy as pcp
-import requests 
-from pathlib import Path
 import json
+
 import app.utils
 
 
@@ -14,88 +11,59 @@ import app.utils
 # 4) Scans JSON that points to proteins, genes and pathways (for later use PUG-REST information geneID, proteinID and pathway info + interactions)
 # 5) Returns those IDs as sets
  
-# Inside a Record JSON, there are Sections with TOCHeading and Section (subsections)
-def get_all_sections(compound):
-    # TODO -> do safely the synonym thing
-    index_json = app.utils.load_json(f"compound_{compound.cid}_{compound.synonyms[0]}__index.json", "indexes")
-    
-    record = index_json.get("Record", {}) 
-    sections = record.get("Section", []) or []
-    
-    out = [] #just in case there are no sections
-
-    # For each Section, get all the subsections
-    for section in sections:
-        # for each Section, get all the subsections recursively
-        out.extend(get_sections(section)) # what does extend do? it adds the elements of the list returned by get_sections to the out list, instead of adding the list itself as a single element
-        
-    # Find Interactions and Pathways TOCHeading
-    found = None
-    for section in out:
-        if section.get("TOCHeading", "").lower() == "interactions and pathways":
-            found = section
-            break
-
-    if found:
-        print("\nFound Interactions and Pathways section in the index JSON")
-        data = load_interactions_and_pathways_data(compound)
-        save_data(data, compound)
-        return out, data # both the sections and the data of interactions
-    else:
-        print("\nNo Interactions and Pathways section found in this compound")
-        return out, None # just the sections, no interactions data
-
-   
-# Inside a Section, there are subsections with TOCHeading and Section 
-def get_sections(section):
-    out = [section] 
-    for subsection in section.get("Section", []):
-        out.extend(get_sections(subsection)) # We call recursively get_sections to get each subsection possible until there are no more subsections
-        #print("\n")
-        #print(subsection)
-    return out # returns a list of Sections inside a Record (key Sections) i guess..
-   
-
 def load_interactions_and_pathways_data(compound):
+    """Loads the Interactions and Pathway section from compound and returns a JSON"""
     # 1. Creates the URL
-    url = f"{app.utils.URL_base}/rest/pug_view/data/compound/{compound.cid}/JSON?heading=Interactions%20and%20Pathways"
+    url = f"{app.utils.URL_BASE}/rest/pug_view/data/compound/{compound.cid}/JSON?heading=Interactions%20and%20Pathways"
     # 2. Retrieves the index JSON data of interactions and pathways
-    data = app.utils.get_json(url) # This data is going to be saved as a JSON file in the interactions_and_pathways folder 
+    return app.utils.get_json(url)
 
-    if data is None:
-        print("\nFailed to retrieve Interactions and Pathways data JSON for compound: "+compound.synonyms[0])
-        return None
-    return data
+
+def flatten_record_sections(record_json):
+    """Returns all Sections from a Record in JSON"""
+    record = record_json.get("Record", {})
+    sections = record.get("Section", []) or []
+
+    out = []
+
+    for section in sections:
+        out.extend(flatten_section(section))
+    return out  
+
+# TODO: what is this useful for?
+def flatten_section(section):
+    """Returns each subsection from a bigger Section"""
+    out = [section]
+    for subsection in section.get("Section", []) or []:
+        out.extend(flatten_section(subsection))
+    return out # returns a list of subsections inside a single Section
+
+def find_section_by_heading(record_json, heading):
+    """Looks for the first section whose TOCHeading matches heading"""
+    heading = heading.strip().lower()
+
+    for section in flatten_record_sections(record_json):
+        if section.get("TOCHeading", "").strip().lower() == heading:
+            return section
     
+    return None
 
-def save_data(data, compound):
-    if data is not None:
-        app.utils.save_json(data, f"compound_{compound.cid}_{compound.synonyms[0]}__interactions_and_pathways.json", "interactions_and_pathways")
-        print("\nInteractions and Pathways data saved successfully for compound: "+compound.synonyms[0])
-    else:
-        print("\nNo Interactions and Pathways data to save for compound: "+compound.synonyms[0])
+def get_all_sections(index_json):
+    """Flatten and return all sections from the initial index JSON"""
+    return flatten_record_sections(index_json)
+
+def has_interactions_and_pathways(index_json):
+    """Checks if the compound has Interactions and Pathways section (if it doesn't, ignore TODO)"""
+    return find_section_by_heading(index_json, "Interactions and Pathways") is not None
 
 
 def retrieve_externaltable(interactions_json):
-    index = interactions_json.get("Record", {})
-    top_sections = index.get("Section", []) or []
-
-    section = None
-
-    # Find the Interactions and Pathways section in the JSON index input
-    for header in top_sections:
-        if header.get("TOCHeading", "").lower() == "interactions and pathways":
-            section = header
-            print("Interactions and Pathways section found in JSON index.")
-            break
-    
-    if section == None:
-        print("Compound does not have interactions with anything... Check JSON")
+    """Return the subsection name (Chemical-Target or Pathways) and its external name table"""
+    # I need the section, so I call find_section_by_heading (if not i would call has_interactions...)
+    section = find_section_by_heading(interactions_json, "Interactions and Pathways")
+    if section is None:
         return []
     
-    print(section)
-
-    subsection = None
     results = []
 
     # Get subsection (ProteinBound 3D Structures, Chemical-Target Interactions or Pathways) and the ExternalTableName of each Information in each subsection (if it exists)
@@ -103,19 +71,12 @@ def retrieve_externaltable(interactions_json):
         subsection = subheader.get("TOCHeading", "")
         externaltables = [] # external table in each subsection (ProteinBound, Chemical-Target or Pathways)
         
-        if subsection.lower() == "protein bound 3d structures":
-            print(f"\n Interaction subheader entered: {subsection}") 
-        elif subsection.lower() == "chemical-target interactions":
-            print(f"\n Interaction subheader entered: {subsection}")
-        elif subsection.lower() == "pathways":
-            print(f"\n Interaction subheader entered: {subsection}")
-
         for information in subheader.get("Information", []):
             externaltablename = information.get("Value", {}).get("ExternalTableName")
             if externaltablename:
                 externaltables.append(externaltablename) 
+
         tables = list(dict.fromkeys(externaltables)) # remove duplicates
-        
         results.append((subsection, tables)) # add the subsection and its tables to the results list
     
     return results 
@@ -123,6 +84,7 @@ def retrieve_externaltable(interactions_json):
 
 # Build a SDQ query for PubChem for Chemical-Target Interactions External Tables
 def sdq_query_externaltable(collection, where, select = "*", start = 1, limit = 1000, order = "cid,asc"):
+    """Run a SDQ query on PubChem and return the resulting JSON"""
     if order is None:
         order_list = []
     elif isinstance(order, str):
@@ -139,31 +101,20 @@ def sdq_query_externaltable(collection, where, select = "*", start = 1, limit = 
         "where": where, # the filter condition (example: cid must equal 5831)
         "width": 10000000  # allow wide fields (for long text citations for example)
     }
+
     # endpoint for SDQ queries
-    url = f"{app.utils.URL_base}/sdq/sphinxql.cgi"
+    url = f"{app.utils.URL_BASE}/sdq/sphinxql.cgi"
     params = {
         "infmt": "json",
         "outfmt": "json",
         "query": json.dumps(query)
     }
 
-    for attempt in range(3): # Try 3 times to retrieve the data
-        print(f"\nAttempting to retrieve External Table data from URL: {url} (Attempt {attempt + 1}/3)")
-        try:
-            response = requests.get(url, params=params, timeout=30)
-            if response.status_code == 200:
-                print(f"Successfully retrieved data from URL in attempt {attempt + 1}")
-                return response.json()
-            else:
-                print(f"Request failed with status code {response.status_code}. Attempt {attempt + 1}/3")
-        # Catch any request exceptions
-        except requests.exceptions.RequestException as e:
-            print(f"Request error: {e}. Attempt {attempt + 1}/3")   
-    print("SDQ request failed after 3 attempts.")
-    return None
+    return app.utils.get_json(url, params=params)
 
 
 def get_interactions_table(compound, collection, page_size = 1000, where = None, order="cid,asc"):
+    """Retrieve all rows from PubChem SDQ External table with pagination"""
     if where is None:
         where = {"ands": [{"cid": str(compound.cid)}]} # default where clause if not provided
     
@@ -193,8 +144,8 @@ def get_interactions_table(compound, collection, page_size = 1000, where = None,
             break
         rows_page = data.get("SDQOutputSet", [{}])[0].get("rows", []) or []
         if not rows_page:
-            print("No data found in the SDQ query")
             break
+
         all_rows.extend(rows_page)
         start += len(rows_page)
 

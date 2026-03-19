@@ -3,117 +3,103 @@ import json
 import requests
 import csv
 
-URL_base = "https://pubchem.ncbi.nlm.nih.gov"
+URL_BASE= "https://pubchem.ncbi.nlm.nih.gov"
 
-# Check problems and timeout
-def get_json(url):
-    for attempt in range(3): # Try 3 times to retrieve the data
-        print(f"\nAttempting to retrieve data from URL: {url} (Attempt {attempt + 1}/3)")
+
+def create_folder(folder):
+    path = Path(folder)
+    path.mkdir(parents=True, exist_ok=True)
+    return path
+
+def safe_filename(filename):
+    filename = "" if filename is None else str(filename)
+    for ch in '<>:/\\|?*':
+        filename = filename.replace(ch, "_")
+    return filename.strip()
+
+
+def get_json(url, params=None):
+    """GET JSON with 3 retires + timeout. Returns None if failure or timeout"""
+    for attempt in range(3):
         try:
-            response = requests.get(url, timeout=30)
+            response = requests.get(url, params=params, timeout=30)
             if response.status_code == 200:
-                print(f"Successfully retrieved data from URL in attempt {attempt + 1}")
-                print("Printing JSON...")
                 return response.json()
-            else:
-                print(f"Request failed with status code {response.status_code}. Attempt {attempt + 1}/3")
-        # Catch any request exceptions
         except requests.exceptions.RequestException as e:
-            print(f"Request error: {e}. Attempt {attempt + 1}/3")   
-    print("Failed to retrieve data after 3 attempts.")
+            print(f"Request error for {url}: {e}. Attempt {attempt + 1}/3")   
     return None
 
 
-# Save JSON to file GENERAL USE
-def save_json(json_file, filename, folder):
-    Path(folder).mkdir(parents=True, exist_ok=True)
-    path = Path(folder) / filename
-    path.write_text(json.dumps(json_file, indent=4)) # writes the JSON data to the file with indentation for readability
+def save_json(data, filename, folder):
+    folder_path = create_folder(folder)
+    path = folder_path / filename
+    path.write_text(json.dumps(data, indent=4), encoding="utf-8") 
     return str(path)
 
-def make_subfolder(parent_folder, child_folder):
-    path = Path(parent_folder) / child_folder
-    path.mkdir(parents=True, exist_ok=True)
-    return str(path)
-
-# Find if the file exists and return it
 def load_json(filename, folder):
-    Path(folder).mkdir(parents=True, exist_ok=True) # creates the folder if it doesn't exist
-    path = Path(folder) / filename
-    if path.exists():
-        print(f"File {path} already exists. Loading from file.")
-        print("\n")
-        return json.loads(path.read_text())
-    else:
-        # Give the option to the user to click download files?? THINK ABOUT IT
-        # TODO
-        print(f"File {filename} does not exist. Please run the code to create it.")
+    folder_path = create_folder(folder)
+    path = folder_path / filename
+
+    if not path.exists():
         return None
     
+    return json.loads(path.read_text(encoding="utf-8"))
 
 
-def save_rows_json (rows, compound, filename):
-    path = Path(filename) # turns the filename into a Path object
-    path.parent.mkdir(parents=True, exist_ok=True) # creates the "parent" folder with the first word in the url
-    with open(path, "w") as f:
+# TODO: why not folder here?
+def save_rows_json (rows, filename):
+    path = Path(filename)
+    path.parent.mkdir(parents=True, exist_ok=True) 
+
+    with open(path, "w", encoding="utf-8") as f:
         json.dump(rows, f, indent=4)
-        return str(path)
+
+    return str(path)
     
 
-def save_rows_csv (rows, compound, filename):
+def save_rows_csv (rows, filename):
     path = Path(filename) # turns the filename into a Path object
     path.parent.mkdir(parents=True, exist_ok=True) # creates the "parent" folder with the first word in the url
-
-    file_path = path
-
+    
     if not rows:
-        print("No rows to save in CSV format for file: "+filename)
-        with open(file_path, "w", newline="", encoding="utf-8-sig") as f:
+        with open(path, "w", newline="", encoding="utf-8-sig") as f:
             f.write("No data available\n")
-            return str(file_path)
+            return str(path)
         
-    fieldnames = sorted({k for row in rows for k in row.keys()})
-    with open(file_path, "w", newline = "", encoding = "utf-8-sig") as f:
+    fieldnames = sorted({k for row in rows if isinstance(row,dict) for k in row.keys()})
+
+    with open(path, "w", newline = "", encoding = "utf-8-sig") as f:
         writer = csv.DictWriter(f,fieldnames=fieldnames)
         writer.writeheader()
         for row in rows:
-            writer.writerow(row)
-    return str(file_path)
+            if isinstance(row,dict):
+                writer.writerow(row)
 
-# Save JSON to file GENERAL USE
-def save_json(json_file, filename, folder):
-    Path(folder).mkdir(parents=True, exist_ok=True)
-    path = Path(folder) / filename
-    path.write_text(json.dumps(json_file, indent=4)) # writes the JSON data to the file with indentation for readability
     return str(path)
 
-# Create a file
-def create_file(filename, folder):
-    Path(folder).mkdir(parents=True, exist_ok=True)
-    path = Path(folder) / f"{filename}.txt"
 
-    if path.exists():
-            print("File already exists, loading from cache...")
-            return str(path)
+def create_text_file(filename, folder):
+    folder_path = create_folder(folder)
+    path = folder_path / f"{filename}.txt"
 
-    path.touch() # Creates an empty path
+    if not path.exists():
+            path.touch() #empty path
+
     return str(path)
 
 # Open an existing file and write on it
-def write_file(filename, folder, lines):
-    path = Path(folder) / f"{filename}.txt"
-    text = "\n".join("" if x is None else str(x) for x in lines) + "\n" # TODO cambiar esto??
+def write_text_file(filename, folder, lines):
+    folder_path = create_folder(folder)
+    path = folder_path / f"{filename}.txt"
+    
+    text = "\n".join("" if x is None else str(x) for x in lines) + "\n" 
     with open (path, "w") as f: # append to add information to the file without overwritting
         f.write(text)
 
-# Reads a txt file and returns the line read
-def read_file(filename, folder):
+def read_text_file(filename, folder):
     path = Path(folder) / f"{filename}"
-    with open (path, "r", encoding="utf-8") as f:
-        line = f.readline()
-    return line
+    return path.read_text(encoding="utf-8")
 
 def read_file_lines(filename, folder):
     path = Path(folder) / filename
-    with open(path, "r", encoding = "utf-8") as f:
-        return f.read().splitlines()
+    return path.read_text(encoding="utf-8").splitlines()

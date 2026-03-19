@@ -1,356 +1,545 @@
 {
     "Record": {
         "RecordType": "CID",
-        "RecordNumber": 2370,
-        "RecordTitle": "Bethanechol",
+        "RecordNumber": 4011,
+        "RecordTitle": "Maprotiline",
         "Information": [
             {
-                "ReferenceNumber": 39,
+                "ReferenceNumber": 91,
                 "Value": {
                     "StringWithMarkup": [
                         {
-                            "String": "bethanechol"
+                            "String": "maprotiline"
                         },
                         {
-                            "String": "674-38-4"
+                            "String": "10262-69-8"
                         },
                         {
-                            "String": "Amidopropyldimethylbetaine"
+                            "String": "Maprotilina"
                         },
                         {
-                            "String": "Carbamyl-beta-methylcholine"
+                            "String": "Maprotylina"
                         },
                         {
-                            "String": "Carbamoyl-beta-methylcholine"
+                            "String": "9,10-Ethanoanthracene-9(10H)-propanamine, N-methyl-"
                         },
                         {
-                            "String": "(2-Hydroxypropyl)trimethylammonium carbamate"
+                            "String": "Maprotilinum"
                         },
                         {
-                            "String": "Besacholine"
+                            "String": "N-Methyl-9,10-ethanoanthracene-9(10H)-propylamine"
                         },
                         {
-                            "String": "2-carbamoyloxypropyl-trimethylazanium"
+                            "String": "2U1W68TROF"
                         },
                         {
-                            "String": "beta-Methyl carbachol chloride"
+                            "String": "3-(9,10-Dihydro-9,10-ethanoanthracen-9-yl)propylmethylamine"
                         },
                         {
-                            "String": "Bethaine choline chloride"
+                            "String": "DTXSID7045029"
                         },
                         {
-                            "String": "2-(carbamoyloxy)-N,N,N-trimethylpropan-1-aminium"
+                            "String": "BA-34276 FREE BASE"
                         },
                         {
-                            "String": "Uro-Carb"
+                            "String": "BA-34,276 FREE BASE"
                         },
                         {
-                            "String": "004F72P8F4"
+                            "String": "DTXCID5025029"
                         },
                         {
-                            "String": "CHEBI:3084"
+                            "String": "Dibencycladine"
                         },
                         {
-                            "String": "DTXSID5048398"
+                            "String": "Maprotilin"
                         },
                         {
-                            "String": "1-Propanaminium, 2-((aminocarbonyl)oxy)-N,N,N-trimethyl-"
+                            "String": "methyl(3-{tetracyclo[6.6.2.0^{2,7}.0^{9,14}]hexadeca-2(7),3,5,9(14),10,12-hexaen-1-yl}propyl)amine"
                         },
                         {
-                            "String": "Bethanecol"
+                            "String": "Novo Maprotiline"
                         },
                         {
-                            "String": "Hermes, Myo"
+                            "String": "Maprotilin TEVA"
                         },
                         {
-                            "String": "RefChem:54534"
+                            "String": "methyl(3-(tetracyclo(6.6.2.0^(2,7).0^(9,14))hexadeca-2(7),3,5,9(14),10,12-hexaen-1-yl)propyl)amine"
                         },
                         {
-                            "String": "PMS Bethanechol Chloride"
+                            "String": "Maprotilin ratiopharm"
                         },
                         {
-                            "String": "DTXCID0028371"
+                            "String": "Maprotilin neuraxpharm"
                         },
                         {
-                            "String": "1-(trimethylazaniumyl)propan-2-yl carbamate"
+                            "String": "RefChem:155761"
                         },
                         {
-                            "String": "2-carbamoyloxypropyl(trimethyl)azanium"
+                            "String": "N06AA21"
                         },
                         {
-                            "String": "2-carbamoyloxypropyl-trimethyl-azanium"
+                            "String": "methyl(3-(tetracyclo(6.6.2.02,7.09,14)hexadeca-2,4,6,9,11,13-hexaen-1-yl)propyl)amine"
                         },
                         {
-                            "String": "1-Propanaminium, 2-[(aminocarbonyl)oxy]-N,N,N-trimethyl-, (S)-"
+                            "String": "233-599-4"
                         },
                         {
-                            "String": "NCGC00163217-01"
+                            "String": "Maprotylina [Polish]"
                         },
                         {
-                            "String": "BRN 1773706"
+                            "String": "Maprotilinum [INN-Latin]"
                         },
                         {
-                            "String": "2-carbamoyloxypropyl(trimethyl)ammonium;chloride"
+                            "String": "Maprotilina [INN-Spanish]"
                         },
                         {
-                            "String": "2-carbamoyloxypropyl(trimethyl)azanium;chloride"
+                            "String": "276-Ba"
                         },
                         {
-                            "String": "2-((Aminocarbonyl)oxy)-N,N,N-trimethyl-1-propanaminium"
+                            "String": "Maprotiline (USAN)"
                         },
                         {
-                            "String": "Ammonium, (2-hydroxypropyl)trimethyl-, carbamate (ester)"
+                            "String": "N-methyl-3-(1-tetracyclo[6.6.2.02,7.09,14]hexadeca-2,4,6,9,11,13-hexaenyl)propan-1-amine"
                         },
                         {
-                            "String": "UNII-004F72P8F4"
+                            "String": "9,10-Ethanoanthracene-9(10H)-propylamine, N-methyl-"
                         },
                         {
-                            "String": "Carbamyl--methylcholine"
+                            "String": "CHEBI:6690"
                         },
                         {
-                            "String": "Spectrum_000084"
+                            "String": "NCGC00015708-04"
                         },
                         {
-                            "String": "Prestwick0_001073"
+                            "String": "BA-34,276 [AS HYDROCHLORIDE]"
                         },
                         {
-                            "String": "Prestwick1_001073"
+                            "String": "3-(9,10-ethanoanthracen-9(10H)-yl)-N-methylpropan-1-amine"
                         },
                         {
-                            "String": "Prestwick2_001073"
+                            "String": "MAPROTILINE [USAN]"
                         },
                         {
-                            "String": "Prestwick3_001073"
+                            "String": "N-Methyl-9,10-ethanoanthracene-9(10H)-propanamine;N-Methyl-9,10-ethanoanthracene-9(10H)-propanamine"
                         },
                         {
-                            "String": "Spectrum2_000132"
+                            "String": "CAS-10262-69-8"
                         },
                         {
-                            "String": "Spectrum3_000311"
+                            "String": "EINECS 233-599-4"
                         },
                         {
-                            "String": "Spectrum4_000255"
+                            "String": "CAS-10347-81-6"
                         },
                         {
-                            "String": "Spectrum5_000892"
+                            "String": "UNII-2U1W68TROF"
                         },
                         {
-                            "String": "BETHANECHOL [VANDF]"
+                            "String": "BRN 2385493"
                         },
                         {
-                            "String": "CHEMBL1482"
+                            "String": "Maprotiline [USAN:INN:BAN]"
                         },
                         {
-                            "String": "Lopac0_000304"
+                            "String": "N-Methyl-9,10-ethanoanthracene-9(10H)-propanamine"
                         },
                         {
-                            "String": "SCHEMBL37096"
+                            "String": "Spectrum_000887"
                         },
                         {
-                            "String": "BETHANECHOL [WHO-DD]"
+                            "String": "Tocris-0935"
                         },
                         {
-                            "String": "BSPBio_001086"
+                            "String": "MAPROTILINE [MI]"
                         },
                         {
-                            "String": "BSPBio_001902"
+                            "String": "Prestwick0_000346"
                         },
                         {
-                            "String": "GTPL297"
+                            "String": "Prestwick1_000346"
                         },
                         {
-                            "String": "KBioGR_000690"
+                            "String": "Prestwick2_000346"
                         },
                         {
-                            "String": "KBioSS_000504"
+                            "String": "Prestwick3_000346"
                         },
                         {
-                            "String": "cid_11548"
+                            "String": "Spectrum2_000139"
                         },
                         {
-                            "String": "DivK1c_000179"
+                            "String": "Spectrum3_000483"
                         },
                         {
-                            "String": "SPBio_000204"
+                            "String": "Spectrum4_000035"
                         },
                         {
-                            "String": "SPBio_002993"
+                            "String": "Spectrum5_000918"
                         },
                         {
-                            "String": "BPBio1_001196"
+                            "String": "Lopac-M-9651"
                         },
                         {
-                            "String": "BDBM39342"
+                            "String": "MAPROTILINE [INN]"
                         },
                         {
-                            "String": "KBio1_000179"
+                            "String": "C07107"
                         },
                         {
-                            "String": "KBio2_000504"
+                            "String": "MAPROTILINE [VANDF]"
                         },
                         {
-                            "String": "KBio2_003072"
+                            "String": "MAPROTILINE [MART.]"
                         },
                         {
-                            "String": "KBio2_005640"
+                            "String": "Lopac0_000812"
                         },
                         {
-                            "String": "KBio3_001402"
+                            "String": "SCHEMBL33993"
                         },
                         {
-                            "String": "NINDS_000179"
+                            "String": "BSPBio_000411"
                         },
                         {
-                            "String": "HMS2089I08"
+                            "String": "BSPBio_001945"
                         },
                         {
-                            "String": "HY-B0406"
+                            "String": "KBioGR_000469"
                         },
                         {
-                            "String": "AKOS025310166"
+                            "String": "KBioSS_001367"
                         },
                         {
-                            "String": "CCG-204399"
+                            "String": "MAPROTILINE [WHO-DD]"
                         },
                         {
-                            "String": "CS-4994"
+                            "String": "MLS001201766"
                         },
                         {
-                            "String": "DB01019"
+                            "String": "CHEMBL21731"
                         },
                         {
-                            "String": "IDI1_000179"
+                            "String": "DivK1c_000891"
                         },
                         {
-                            "String": "NCGC00015245-03"
+                            "String": "SCHEMBL121015"
                         },
                         {
-                            "String": "NCGC00015245-04"
+                            "String": "SPBio_000218"
                         },
                         {
-                            "String": "NCGC00015245-06"
+                            "String": "SPBio_002332"
                         },
                         {
-                            "String": "NCGC00015245-07"
+                            "String": "BPBio1_000453"
                         },
                         {
-                            "String": "NCGC00015245-08"
+                            "String": "GTPL2402"
                         },
                         {
-                            "String": "NCGC00015245-18"
+                            "String": "orb1689516"
                         },
                         {
-                            "String": "NCGC00089770-02"
+                            "String": "CHEMBL1201257"
                         },
                         {
-                            "String": "DA-71442"
+                            "String": "CHEMBL5495516"
                         },
                         {
-                            "String": "SBI-0050292.P004"
+                            "String": "SCHEMBL21994200"
                         },
                         {
-                            "String": "5215B"
+                            "String": "SCHEMBL29354154"
                         },
                         {
-                            "String": "AB00053794"
+                            "String": "HY-B0444A"
                         },
                         {
-                            "String": "NS00007014"
+                            "String": "KBio1_000891"
                         },
                         {
-                            "String": "C06850"
+                            "String": "KBio2_001367"
                         },
                         {
-                            "String": "AB00053794-14"
+                            "String": "KBio2_003935"
                         },
                         {
-                            "String": "AB00053794-15"
+                            "String": "KBio2_006503"
                         },
                         {
-                            "String": "AB00053794_16"
+                            "String": "KBio3_001445"
                         },
                         {
-                            "String": "AB00053794_17"
+                            "String": "BA-34276 [As Hydrochloride]"
                         },
                         {
-                            "String": "2-aminocarbonyloxypropyl(trimethyl)azanium;chloride"
+                            "String": "NINDS_000891"
                         },
                         {
-                            "String": "Q419059"
+                            "String": "GLXC-21356"
                         },
                         {
-                            "String": "BRD-A99833829-003-25-5"
+                            "String": "HMS2089K11"
                         },
                         {
-                            "String": "BRD-A99833829-003-26-3"
+                            "String": "HMS2962E12"
                         },
                         {
-                            "String": "BRD-A99833829-003-27-1"
+                            "String": "Dibencycladine, Deprilept, Ludiomil"
+                        },
+                        {
+                            "String": "Tox21_110200"
+                        },
+                        {
+                            "String": "AR-111"
+                        },
+                        {
+                            "String": "BBL010079"
+                        },
+                        {
+                            "String": "BDBM50101973"
+                        },
+                        {
+                            "String": "BDBM50378025"
+                        },
+                        {
+                            "String": "EBC-26414"
+                        },
+                        {
+                            "String": "MFCD00661057"
+                        },
+                        {
+                            "String": "STK711156"
+                        },
+                        {
+                            "String": "AKOS005530670"
+                        },
+                        {
+                            "String": "Tox21_110200_1"
+                        },
+                        {
+                            "String": "CCG-204896"
+                        },
+                        {
+                            "String": "DB00934"
+                        },
+                        {
+                            "String": "SDCCGSBI-0050789.P005"
+                        },
+                        {
+                            "String": "IDI1_000891"
+                        },
+                        {
+                            "String": "SMP1_000169"
+                        },
+                        {
+                            "String": "NCGC00015708-01"
+                        },
+                        {
+                            "String": "NCGC00015708-02"
+                        },
+                        {
+                            "String": "NCGC00015708-03"
+                        },
+                        {
+                            "String": "NCGC00015708-05"
+                        },
+                        {
+                            "String": "NCGC00015708-06"
+                        },
+                        {
+                            "String": "NCGC00015708-07"
+                        },
+                        {
+                            "String": "NCGC00015708-08"
+                        },
+                        {
+                            "String": "NCGC00015708-09"
+                        },
+                        {
+                            "String": "NCGC00015708-10"
+                        },
+                        {
+                            "String": "NCGC00015708-11"
+                        },
+                        {
+                            "String": "NCGC00015708-12"
+                        },
+                        {
+                            "String": "NCGC00015708-13"
+                        },
+                        {
+                            "String": "NCGC00015708-15"
+                        },
+                        {
+                            "String": "NCGC00015708-17"
+                        },
+                        {
+                            "String": "NCGC00015708-19"
+                        },
+                        {
+                            "String": "NCGC00015708-25"
+                        },
+                        {
+                            "String": "NCGC00016691-01"
+                        },
+                        {
+                            "String": "NCGC00018217-01"
+                        },
+                        {
+                            "String": "NCGC00024886-01"
+                        },
+                        {
+                            "String": "NCGC00024886-02"
+                        },
+                        {
+                            "String": "NCGC00024886-03"
+                        },
+                        {
+                            "String": "AC-12507"
+                        },
+                        {
+                            "String": "DA-75318"
+                        },
+                        {
+                            "String": "PD132485"
+                        },
+                        {
+                            "String": "SMR000641863"
+                        },
+                        {
+                            "String": "SBI-0050789.P003"
+                        },
+                        {
+                            "String": "AB00514665"
+                        },
+                        {
+                            "String": "CS-0013653"
+                        },
+                        {
+                            "String": "NS00009793"
+                        },
+                        {
+                            "String": "D02566"
+                        },
+                        {
+                            "String": "EN300-226729"
+                        },
+                        {
+                            "String": "EN300-297414"
+                        },
+                        {
+                            "String": "G78229"
+                        },
+                        {
+                            "String": "AB00053679-33"
+                        },
+                        {
+                            "String": "AB00053679_34"
+                        },
+                        {
+                            "String": "AB00053679_35"
+                        },
+                        {
+                            "String": "AB01275432-01"
+                        },
+                        {
+                            "String": "262M698"
+                        },
+                        {
+                            "String": "L001173"
+                        },
+                        {
+                            "String": "Q418361"
+                        },
+                        {
+                            "String": "BRD-K03319035-001-01-3"
+                        },
+                        {
+                            "String": "BRD-K03319035-003-02-7"
+                        },
+                        {
+                            "String": "BRD-K25433859-003-11-4"
+                        },
+                        {
+                            "String": "BRD-K25433859-003-14-8"
+                        },
+                        {
+                            "String": "BRD-K25433859-003-23-9"
+                        },
+                        {
+                            "String": "BRD-K25433859-003-24-7"
+                        },
+                        {
+                            "String": "BRD-K25433859-003-25-4"
+                        },
+                        {
+                            "String": "methyl({3-[(1r)-tetracyclo[6.6.2.0^{2,7}.0^{9,14}]hexadeca-2(7),3,5,9(14),10,12-hexaen-1-yl]propyl})amine"
                         }
                     ]
                 }
             },
             {
-                "ReferenceNumber": 39,
+                "ReferenceNumber": 91,
                 "Reference": [
                     "Computed by PubChem 2.2 (PubChem release 2025.09.15)"
                 ],
                 "Value": {
                     "StringWithMarkup": [
                         {
-                            "String": "C7H17N2O2+"
+                            "String": "C20H23N"
                         }
                     ]
                 }
             },
             {
-                "ReferenceNumber": 39,
+                "ReferenceNumber": 91,
                 "Reference": [
                     "Computed by PubChem 2.2 (PubChem release 2025.09.15)"
                 ],
                 "Value": {
                     "StringWithMarkup": [
                         {
-                            "String": "161.22"
+                            "String": "277.4"
                         }
                     ],
                     "Unit": "g/mol"
                 }
             },
             {
-                "ReferenceNumber": 39,
+                "ReferenceNumber": 91,
                 "Reference": [
                     "Computed by InChI 1.07.4 (PubChem release 2025.09.15)"
                 ],
                 "Value": {
                     "StringWithMarkup": [
                         {
-                            "String": "NZUPCNDJBJXXRF-UHFFFAOYSA-O"
+                            "String": "QSLMDECMDJKHMQ-UHFFFAOYSA-N"
                         }
                     ]
                 }
             },
             {
-                "ReferenceNumber": 13,
-                "URL": "https://gsrs.ncats.nih.gov/ginas/app/beta/substances/004F72P8F4",
+                "ReferenceNumber": 21,
+                "URL": "https://gsrs.ncats.nih.gov/ginas/app/beta/substances/2U1W68TROF",
                 "Value": {
                     "StringWithMarkup": [
                         {
-                            "String": "004F72P8F4"
+                            "String": "2U1W68TROF"
                         }
                     ]
                 }
             },
             {
-                "ReferenceNumber": 39,
+                "ReferenceNumber": 91,
                 "Value": {
                     "DateISO8601": [
-                        "2026-03-07"
+                        "2026-03-14"
                     ]
                 }
             },
             {
-                "ReferenceNumber": 39,
+                "ReferenceNumber": 91,
                 "Value": {
                     "DateISO8601": [
                         "2005-03-25"
@@ -358,27 +547,20 @@
                 }
             },
             {
-                "ReferenceNumber": 3,
+                "ReferenceNumber": 7,
                 "Name": "Record Description",
                 "Description": "Ontology Summary",
                 "Value": {
                     "StringWithMarkup": [
                         {
-                            "String": "Bethanechol is the carbamic acid ester of 2-methylcholine. A slowly hydrolysed muscarinic agonist with no nicotinic effects, it is used as its chloride salt to increase smooth muscle tone, as in the gastrointestinal tract following abdominal surgery, treatment of gastro-oesophageal reflux disease, and as an alternative to catheterisation in the treatment of non-obstructive urinary retention. It has a role as a muscarinic agonist. It is a carbamate ester and a quaternary ammonium ion.",
+                            "String": "Maprotiline is a member of anthracenes.",
                             "Markup": [
                                 {
                                     "Start": 0,
                                     "Length": 11,
-                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/Bethanechol",
+                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/Maprotiline",
                                     "Type": "PubChem Internal Link",
-                                    "Extra": "CID-2370"
-                                },
-                                {
-                                    "Start": 42,
-                                    "Length": 15,
-                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/2-methylcholine",
-                                    "Type": "PubChem Internal Link",
-                                    "Extra": "CID-16942"
+                                    "Extra": "CID-4011"
                                 }
                             ]
                         }
@@ -386,60 +568,53 @@
                 }
             },
             {
-                "ReferenceNumber": 9,
+                "ReferenceNumber": 15,
                 "Value": {
                     "StringWithMarkup": [
                         {
-                            "String": "Bethanechol is a synthetic ester that was initially synthesized in 1935. As a cholinergic agent, bethanechol is similar in structure and pharmacological function to acetylcholine and is used in specific cases when stimulation of the parasympathetic nervous system is necessary. For example, bethanechol is readily used to treat postoperative or postpartum urinary retention. An advantage of bethanechol is that in contrast to acetylcholine, bethanechol is not degraded by cholinesterase allowing its effects to be longer-lasting.",
+                            "String": "Maprotiline is a tetracyclic antidepressant with similar pharmacological properties to tricyclic antidepressants (TCAs). Similar to TCAs, maprotiline inhibits neuronal norepinephrine reuptake, possesses some anticholinergic activity, and does not affect monoamine oxidase activity. It differs from TCAs in that it does not appear to block serotonin reuptake. Maprotiline may be used to treat depressive affective disorders, including dysthymic disorder (depressive neurosis) and major depressive disorder. Maprotiline is effective at reducing symptoms of anxiety associated with depression.",
                             "Markup": [
                                 {
                                     "Start": 0,
                                     "Length": 11,
-                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/Bethanechol",
+                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/Maprotiline",
                                     "Type": "PubChem Internal Link",
-                                    "Extra": "CID-2370"
+                                    "Extra": "CID-4011"
                                 },
                                 {
-                                    "Start": 97,
+                                    "Start": 138,
                                     "Length": 11,
-                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/bethanechol",
+                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/maprotiline",
                                     "Type": "PubChem Internal Link",
-                                    "Extra": "CID-2370"
+                                    "Extra": "CID-4011"
                                 },
                                 {
-                                    "Start": 165,
-                                    "Length": 13,
-                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/acetylcholine",
+                                    "Start": 168,
+                                    "Length": 14,
+                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/norepinephrine",
                                     "Type": "PubChem Internal Link",
-                                    "Extra": "CID-187"
+                                    "Extra": "CID-5814"
                                 },
                                 {
-                                    "Start": 291,
+                                    "Start": 339,
+                                    "Length": 9,
+                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/serotonin",
+                                    "Type": "PubChem Internal Link",
+                                    "Extra": "CID-5202"
+                                },
+                                {
+                                    "Start": 359,
                                     "Length": 11,
-                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/bethanechol",
+                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/Maprotiline",
                                     "Type": "PubChem Internal Link",
-                                    "Extra": "CID-2370"
+                                    "Extra": "CID-4011"
                                 },
                                 {
-                                    "Start": 391,
+                                    "Start": 506,
                                     "Length": 11,
-                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/bethanechol",
+                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/Maprotiline",
                                     "Type": "PubChem Internal Link",
-                                    "Extra": "CID-2370"
-                                },
-                                {
-                                    "Start": 426,
-                                    "Length": 13,
-                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/acetylcholine",
-                                    "Type": "PubChem Internal Link",
-                                    "Extra": "CID-187"
-                                },
-                                {
-                                    "Start": 441,
-                                    "Length": 11,
-                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/bethanechol",
-                                    "Type": "PubChem Internal Link",
-                                    "Extra": "CID-2370"
+                                    "Extra": "CID-4011"
                                 }
                             ]
                         }
@@ -447,26 +622,53 @@
                 }
             },
             {
-                "ReferenceNumber": 16,
-                "Description": "FDA Pharmacology Summary",
+                "ReferenceNumber": 85,
                 "Value": {
                     "StringWithMarkup": [
                         {
-                            "String": "Bethanechol is a Cholinergic Muscarinic Agonist. The mechanism of action of bethanechol is as a Cholinergic Muscarinic Agonist.",
+                            "String": "Maprotiline is a tetracyclic antidepressant with similar pharmacological properties to tricyclic antidepressants (TCAs). Similar to TCAs, maprotiline inhibits neuronal norepinephrine reuptake, possesses some anticholinergic activity, and does not affect monoamine oxidase activity. It differs from TCAs in that it does not appear to block serotonin reuptake. Maprotiline may be used to treat depressive affective disorders, including dysthymic disorder (depressive neurosis) and major depressive disorder. Maprotiline is effective at reducing symptoms of anxiety associated with depression. ",
                             "Markup": [
                                 {
                                     "Start": 0,
                                     "Length": 11,
-                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/Bethanechol",
+                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/Maprotiline",
                                     "Type": "PubChem Internal Link",
-                                    "Extra": "CID-2370"
+                                    "Extra": "CID-4011"
                                 },
                                 {
-                                    "Start": 76,
+                                    "Start": 138,
                                     "Length": 11,
-                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/bethanechol",
+                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/maprotiline",
                                     "Type": "PubChem Internal Link",
-                                    "Extra": "CID-2370"
+                                    "Extra": "CID-4011"
+                                },
+                                {
+                                    "Start": 168,
+                                    "Length": 14,
+                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/norepinephrine",
+                                    "Type": "PubChem Internal Link",
+                                    "Extra": "CID-5814"
+                                },
+                                {
+                                    "Start": 339,
+                                    "Length": 9,
+                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/serotonin",
+                                    "Type": "PubChem Internal Link",
+                                    "Extra": "CID-5202"
+                                },
+                                {
+                                    "Start": 359,
+                                    "Length": 11,
+                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/Maprotiline",
+                                    "Type": "PubChem Internal Link",
+                                    "Extra": "CID-4011"
+                                },
+                                {
+                                    "Start": 506,
+                                    "Length": 11,
+                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/Maprotiline",
+                                    "Type": "PubChem Internal Link",
+                                    "Extra": "CID-4011"
                                 }
                             ]
                         }
@@ -474,55 +676,22 @@
                 }
             },
             {
-                "ReferenceNumber": 33,
+                "ReferenceNumber": 90,
                 "Value": {
                     "StringWithMarkup": [
                         {
-                            "String": "Bethanechol is a synthetic ester structurally and pharmacologically related to acetylcholine. A slowly hydrolyzed muscarinic agonist with no nicotinic effects, bethanechol is generally used to increase smooth muscle tone, as in the GI tract following abdominal surgery or in urinary retention in the absence of obstruction. It may cause hypotension, cardiac rate changes, and bronchial spasms. [PubChem]",
-                            "Markup": [
-                                {
-                                    "Start": 0,
-                                    "Length": 11,
-                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/Bethanechol",
-                                    "Type": "PubChem Internal Link",
-                                    "Extra": "CID-2370"
-                                },
-                                {
-                                    "Start": 79,
-                                    "Length": 13,
-                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/acetylcholine",
-                                    "Type": "PubChem Internal Link",
-                                    "Extra": "CID-187"
-                                },
-                                {
-                                    "Start": 160,
-                                    "Length": 11,
-                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/bethanechol",
-                                    "Type": "PubChem Internal Link",
-                                    "Extra": "CID-2370"
-                                }
-                            ]
+                            "String": "A bridged-ring tetracyclic antidepressant that is both mechanistically and functionally similar to the tricyclic antidepressants, including side effects associated with its use."
                         }
                     ]
                 }
             },
             {
-                "ReferenceNumber": 38,
-                "Value": {
-                    "StringWithMarkup": [
-                        {
-                            "String": "A slowly hydrolyzing muscarinic agonist with no nicotinic effects. Bethanechol is generally used to increase smooth muscle tone, as in the GI tract following abdominal surgery or in urinary retention in the absence of obstruction. It may cause hypotension, HEART RATE changes, and BRONCHIAL SPASM."
-                        }
-                    ]
-                }
-            },
-            {
-                "ReferenceNumber": 39,
+                "ReferenceNumber": 91,
                 "Name": "See Also",
                 "Value": {
                     "StringWithMarkup": [
                         {
-                            "String": "See also: Bethanechol Chloride (active moiety of).",
+                            "String": "See also: Maprotiline Hydrochloride (active moiety of).",
                             "Markup": [
                                 {
                                     "Start": 0,
@@ -531,13 +700,13 @@
                                 },
                                 {
                                     "Start": 10,
-                                    "Length": 20,
-                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/11548"
+                                    "Length": 25,
+                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/71478"
                                 },
                                 {
                                     "Start": 10,
-                                    "Length": 20,
-                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/image/imgsrv.fcgi?t=s&cid=11548",
+                                    "Length": 25,
+                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/image/imgsrv.fcgi?t=s&cid=71478",
                                     "Type": "Icon"
                                 }
                             ]
@@ -594,6 +763,9 @@
                                 "TOCHeading": "Related CAS"
                             },
                             {
+                                "TOCHeading": "European Community (EC) Number"
+                            },
+                            {
                                 "TOCHeading": "UNII"
                             },
                             {
@@ -634,9 +806,6 @@
                             },
                             {
                                 "TOCHeading": "Pharos Ligand ID"
-                            },
-                            {
-                                "TOCHeading": "RXCUI"
                             },
                             {
                                 "TOCHeading": "Wikidata"
@@ -743,7 +912,16 @@
                                 "TOCHeading": "Solubility"
                             },
                             {
+                                "TOCHeading": "LogP"
+                            },
+                            {
+                                "TOCHeading": "Dissociation Constants"
+                            },
+                            {
                                 "TOCHeading": "Collision Cross Section"
+                            },
+                            {
+                                "TOCHeading": "Kovats Retention Index"
                             }
                         ]
                     },
@@ -755,9 +933,6 @@
                                 "Section": [
                                     {
                                         "TOCHeading": "Human Drugs"
-                                    },
-                                    {
-                                        "TOCHeading": "Animal Drugs"
                                     }
                                 ]
                             }
@@ -771,6 +946,12 @@
                     {
                         "TOCHeading": "Mass Spectrometry",
                         "Section": [
+                            {
+                                "TOCHeading": "GC-MS"
+                            },
+                            {
+                                "TOCHeading": "MS-MS"
+                            },
                             {
                                 "TOCHeading": "LC-MS"
                             }
@@ -829,6 +1010,9 @@
                         "Section": [
                             {
                                 "TOCHeading": "ClinicalTrials.gov"
+                            },
+                            {
+                                "TOCHeading": "EU Clinical Trials Register"
                             }
                         ]
                     },
@@ -840,6 +1024,9 @@
                             },
                             {
                                 "TOCHeading": "First Approval"
+                            },
+                            {
+                                "TOCHeading": "Black Box Warning"
                             },
                             {
                                 "TOCHeading": "Availability Type"
@@ -870,13 +1057,19 @@
                         "TOCHeading": "MeSH Pharmacological Classification"
                     },
                     {
-                        "TOCHeading": "FDA Pharmacological Classification"
-                    },
-                    {
                         "TOCHeading": "ATC Code"
                     },
                     {
                         "TOCHeading": "Absorption, Distribution and Excretion"
+                    },
+                    {
+                        "TOCHeading": "Protein Binding"
+                    },
+                    {
+                        "TOCHeading": "Metabolism/Metabolites"
+                    },
+                    {
+                        "TOCHeading": "Biological Half-Life"
                     },
                     {
                         "TOCHeading": "Mechanism of Action"
@@ -888,6 +1081,9 @@
                                 "TOCHeading": "Cellular Locations"
                             }
                         ]
+                    },
+                    {
+                        "TOCHeading": "Transformations"
                     }
                 ]
             },
@@ -901,6 +1097,14 @@
                                 "TOCHeading": "Use Classification"
                             }
                         ]
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Safety and Hazards",
+                "Section": [
+                    {
+                        "TOCHeading": "Regulatory Information"
                     }
                 ]
             },
@@ -926,13 +1130,13 @@
                                 "TOCHeading": "Exposure Routes"
                             },
                             {
-                                "TOCHeading": "Adverse Effects"
+                                "TOCHeading": "Signs and Symptoms"
                             },
                             {
                                 "TOCHeading": "Acute Effects"
                             },
                             {
-                                "TOCHeading": "Treatment"
+                                "TOCHeading": "Toxicity Data"
                             }
                         ]
                     }
@@ -949,6 +1153,12 @@
                     },
                     {
                         "TOCHeading": "NLM Curated PubMed Citations"
+                    },
+                    {
+                        "TOCHeading": "Springer Nature References"
+                    },
+                    {
+                        "TOCHeading": "Nature Journal References"
                     },
                     {
                         "TOCHeading": "Chemical Co-Occurrences in Literature"
@@ -1019,16 +1229,13 @@
                         "TOCHeading": "KEGG: ATC"
                     },
                     {
-                        "TOCHeading": "KEGG: Risk Category of Japanese OTC Drugs"
+                        "TOCHeading": "KEGG: Target-based Classification of Drugs"
                     },
                     {
                         "TOCHeading": "KEGG: Drug Groups"
                     },
                     {
                         "TOCHeading": "WHO ATC Classification System"
-                    },
-                    {
-                        "TOCHeading": "FDA Pharm Classes"
                     },
                     {
                         "TOCHeading": "ChemIDplus"
@@ -1049,7 +1256,13 @@
                         "TOCHeading": "EPA DSSTox Classification"
                     },
                     {
+                        "TOCHeading": "CCS Classification - Baker Lab"
+                    },
+                    {
                         "TOCHeading": "MolGenie Organic Chemistry Ontology"
+                    },
+                    {
+                        "TOCHeading": "Chemicals in PubChem from Regulatory Sources"
                     },
                     {
                         "TOCHeading": "ATCvet Classification"
@@ -1065,72 +1278,61 @@
         ],
         "Reference": [
             {
-                "ReferenceNumber": 39,
+                "ReferenceNumber": 91,
                 "SourceName": "PubChem",
                 "SourceID": "PubChem",
                 "Description": "Data deposited in or computed by PubChem",
                 "URL": "https://pubchem.ncbi.nlm.nih.gov"
             },
             {
-                "ReferenceNumber": 13,
+                "ReferenceNumber": 21,
                 "SourceName": "FDA Global Substance Registration System (GSRS)",
-                "SourceID": "004F72P8F4",
-                "Name": "BETHANECHOL",
+                "SourceID": "2U1W68TROF",
+                "Name": "MAPROTILINE",
                 "Description": "The FDA Global Substance Registration System (GSRS) enables the efficient and accurate exchange of information on what substances are in regulated products. Instead of relying on names, which vary across regulatory domains, countries, and regions, the GSRS knowledge base makes it possible for substances to be defined by standardized, scientific descriptions.",
-                "URL": "https://gsrs.ncats.nih.gov/ginas/app/beta/substances/004F72P8F4",
+                "URL": "https://gsrs.ncats.nih.gov/ginas/app/beta/substances/2U1W68TROF",
                 "LicenseNote": "Unless otherwise noted, the contents of the FDA website (www.fda.gov), both text and graphics, are not copyrighted. They are in the public domain and may be republished, reprinted and otherwise used freely by anyone without the need to obtain permission from FDA. Credit to the U.S. Food and Drug Administration as the source is appreciated but not required.",
                 "LicenseURL": "https://www.fda.gov/about-fda/about-website/website-policies#linking",
-                "ANID": 5824193
+                "ANID": 5801964
             },
             {
-                "ReferenceNumber": 3,
+                "ReferenceNumber": 7,
                 "SourceName": "ChEBI",
-                "SourceID": "CHEBI:OBO:2370",
-                "Name": "Bethanechol",
+                "SourceID": "CHEBI:OBO:4011",
+                "Name": "Maprotiline",
                 "Description": "Chemical Entities of Biological Interest (ChEBI) is a database and ontology of molecular entities focused on 'small' chemical compounds, that is part of the Open Biomedical Ontologies effort. The term \"molecular entity\" refers to any constitutionally or isotopically distinct atom, molecule, ion, ion pair, radical, radical ion, complex, conformer, etc., identifiable as a separately distinguishable entity.",
-                "URL": "https://www.ebi.ac.uk/chebi/searchId.do?chebiId=CHEBI:3084",
-                "ANID": 2446271
+                "URL": "https://www.ebi.ac.uk/chebi/searchId.do?chebiId=CHEBI:6690",
+                "ANID": 2499803
             },
             {
-                "ReferenceNumber": 9,
+                "ReferenceNumber": 15,
                 "SourceName": "DrugBank",
-                "SourceID": "DB01019",
-                "Name": "Bethanechol",
+                "SourceID": "DB00934",
+                "Name": "Maprotiline",
                 "Description": "The DrugBank database is a unique bioinformatics and cheminformatics resource that combines detailed drug (i.e. chemical, pharmacological and pharmaceutical) data with comprehensive drug target (i.e. sequence, structure, and pathway) information.",
-                "URL": "https://www.drugbank.ca/drugs/DB01019",
+                "URL": "https://www.drugbank.ca/drugs/DB00934",
                 "LicenseNote": "Creative Common's Attribution-NonCommercial 4.0 International License (http://creativecommons.org/licenses/by-nc/4.0/legalcode)",
                 "LicenseURL": "https://www.drugbank.ca/legal/terms_of_use",
-                "ANID": 3607673
+                "ANID": 3607063
             },
             {
-                "ReferenceNumber": 16,
-                "SourceName": "FDA Pharm Classes",
-                "SourceID": "004F72P8F4",
-                "Name": "BETHANECHOL",
-                "Description": "FDA Pharmacologic class is a group of active moieties that share scientifically documented properties and is defined on the basis of any combination of attributes of the active moiety. Read more at https://www.fda.gov/industry/structured-product-labeling-resources/pharmacologic-class",
-                "URL": "https://dailymed.nlm.nih.gov/dailymed/browse-drug-classes.cfm",
-                "LicenseNote": "Unless otherwise noted, the contents of the FDA website (www.fda.gov), both text and graphics, are not copyrighted. They are in the public domain and may be republished, reprinted and otherwise used freely by anyone without the need to obtain permission from FDA. Credit to the U.S. Food and Drug Administration as the source is appreciated but not required.",
-                "LicenseURL": "https://www.fda.gov/about-fda/about-website/website-policies#linking",
-                "ANID": 6490281
-            },
-            {
-                "ReferenceNumber": 33,
+                "ReferenceNumber": 85,
                 "SourceName": "Toxin and Toxin Target Database (T3DB)",
-                "SourceID": "Compound::T3D2958",
-                "Name": "Bethanechol",
+                "SourceID": "Compound::T3D2934",
+                "Name": "Maprotiline",
                 "Description": "The Toxin and Toxin Target Database (T3DB), or, soon to be referred as, the Toxic Exposome Database, is a unique bioinformatics resource that combines detailed toxin data with comprehensive toxin target information.",
-                "URL": "http://www.t3db.ca/toxins/T3D2958",
+                "URL": "http://www.t3db.ca/toxins/T3D2934",
                 "LicenseNote": "T3DB is offered to the public as a freely available resource. Use and re-distribution of the data, in whole or in part, for commercial purposes requires explicit permission of the authors and explicit acknowledgment of the source material (T3DB) and the original publication.",
-                "LicenseURL": "http://www.t3db.ca/downloads",
-                "ANID": 20442778
+                "LicenseURL": "https://t3db.ca/downloads",
+                "ANID": 20442762
             },
             {
-                "ReferenceNumber": 38,
+                "ReferenceNumber": 90,
                 "SourceName": "Medical Subject Headings (MeSH)",
-                "SourceID": "M0028052",
-                "Name": "Bethanechol",
+                "SourceID": "M0013021",
+                "Name": "Maprotiline",
                 "Description": "MeSH (Medical Subject Headings) is the U.S. National Library of Medicine's controlled vocabulary thesaurus used for indexing articles for PubMed.",
-                "URL": "https://id.nlm.nih.gov/mesh/M0028052.html",
+                "URL": "https://id.nlm.nih.gov/mesh/M0013021.html",
                 "LicenseNote": "Works produced by the U.S. government are not subject to copyright protection in the United States. Any such works found on National Library of Medicine (NLM) Web sites may be freely used or reproduced without permission in the U.S.",
                 "LicenseURL": "https://www.nlm.nih.gov/copyright.html"
             }

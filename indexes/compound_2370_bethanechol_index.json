@@ -345,7 +345,7 @@
                 "ReferenceNumber": 39,
                 "Value": {
                     "DateISO8601": [
-                        "2026-03-07"
+                        "2026-03-14"
                     ]
                 }
             },
@@ -522,7 +522,7 @@
                 "Value": {
                     "StringWithMarkup": [
                         {
-                            "String": "See also: Bethanechol Chloride (active moiety of).",
+                            "String": "See also: Bethanechol Chloride (active moiety of); Ipratropium Bromide (related).",
                             "Markup": [
                                 {
                                     "Start": 0,
@@ -539,6 +539,11 @@
                                     "Length": 20,
                                     "URL": "https://pubchem.ncbi.nlm.nih.gov/image/imgsrv.fcgi?t=s&cid=11548",
                                     "Type": "Icon"
+                                },
+                                {
+                                    "Start": 51,
+                                    "Length": 19,
+                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/Ipratropium%20Bromide"
                                 }
                             ]
                         }
@@ -1121,7 +1126,7 @@
                 "Description": "The Toxin and Toxin Target Database (T3DB), or, soon to be referred as, the Toxic Exposome Database, is a unique bioinformatics resource that combines detailed toxin data with comprehensive toxin target information.",
                 "URL": "http://www.t3db.ca/toxins/T3D2958",
                 "LicenseNote": "T3DB is offered to the public as a freely available resource. Use and re-distribution of the data, in whole or in part, for commercial purposes requires explicit permission of the authors and explicit acknowledgment of the source material (T3DB) and the original publication.",
-                "LicenseURL": "http://www.t3db.ca/downloads",
+                "LicenseURL": "https://t3db.ca/downloads",
                 "ANID": 20442778
             },
             {

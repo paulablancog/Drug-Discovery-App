@@ -1,0 +1,1680 @@
+{
+    "Record": {
+        "RecordType": "CID",
+        "RecordNumber": 5910,
+        "RecordTitle": "Pilocarpine",
+        "Information": [
+            {
+                "ReferenceNumber": 115,
+                "Value": {
+                    "StringWithMarkup": [
+                        {
+                            "String": "pilocarpine"
+                        },
+                        {
+                            "String": "92-13-7"
+                        },
+                        {
+                            "String": "Pilokarpin"
+                        },
+                        {
+                            "String": "Pilocarpol"
+                        },
+                        {
+                            "String": "Syncarpine"
+                        },
+                        {
+                            "String": "Ocusert pilo"
+                        },
+                        {
+                            "String": "Pilocarpin"
+                        },
+                        {
+                            "String": "Spersacarpine"
+                        },
+                        {
+                            "String": "Ocusert pilo-20"
+                        },
+                        {
+                            "String": "Ocusert Pilo-40"
+                        },
+                        {
+                            "String": "Ocusert P 20"
+                        },
+                        {
+                            "String": "ocucarpine"
+                        },
+                        {
+                            "String": "Pilocarpine muriate"
+                        },
+                        {
+                            "String": "Pilovisc"
+                        },
+                        {
+                            "String": "Pilocarpinum"
+                        },
+                        {
+                            "String": "Spersacarpine hydrochloride"
+                        },
+                        {
+                            "String": "Pilokarpin monohydrochloride"
+                        },
+                        {
+                            "String": "01MI4Q9DI3"
+                        },
+                        {
+                            "String": "DTXSID1021162"
+                        },
+                        {
+                            "String": "(3S,4R)-3-ethyl-4-[(1-methyl-1H-imidazol-5-yl)methyl]oxolan-2-one"
+                        },
+                        {
+                            "String": "(3S,4R)-3-ethyl-4-[(3-methylimidazol-4-yl)methyl]oxolan-2-one"
+                        },
+                        {
+                            "String": "Imidazole-5-butyric acid, alpha-ethyl-beta-(hydroxymethyl)-1-methyl-, gamma-lactone"
+                        },
+                        {
+                            "String": "CHEBI:8207"
+                        },
+                        {
+                            "String": "DTXCID901162"
+                        },
+                        {
+                            "String": "(3S,4R)-3-ethyldihydro-4-((1-methyl-1H-imidazol-5-yl)methyl)-2(3H)-furanone"
+                        },
+                        {
+                            "String": "Hydrochloride, Pilocarpine"
+                        },
+                        {
+                            "String": "(3S,4R)-3-ethyl-4-((3-methylimidazol-4-yl)methyl)oxolan-2-one"
+                        },
+                        {
+                            "String": "(3S,4R)-3-ethyl-4-((1-methyl-1H-imidazol-5-yl)methyl)oxolan-2-one"
+                        },
+                        {
+                            "String": "Nitrate, Pilocarpine"
+                        },
+                        {
+                            "String": "RefChem:56450"
+                        },
+                        {
+                            "String": "CHEBI:39462"
+                        },
+                        {
+                            "String": "Pilocarpine Mononitrate, (3S-cis)-"
+                        },
+                        {
+                            "String": "Pilocarpine, Monohydrochloride, (3S-cis)-"
+                        },
+                        {
+                            "String": "202-128-4"
+                        },
+                        {
+                            "String": "(+)-Pilocarpine"
+                        },
+                        {
+                            "String": "Epicar"
+                        },
+                        {
+                            "String": "Isoptocarpine"
+                        },
+                        {
+                            "String": "Pilocarpine chloride"
+                        },
+                        {
+                            "String": "(3S,4R)-3-ethyl-4-[(1-methyl-1H-imidazol-5-yl)methyl]dihydrofuran-2(3H)-one"
+                        },
+                        {
+                            "String": "(3S,4R)-3-Ethyl-4-((1-methyl-1H-imidazol-5-yl)methyl)dihydrofuran-2(3H)-one"
+                        },
+                        {
+                            "String": "Pilokarpol"
+                        },
+                        {
+                            "String": "CHEMBL550"
+                        },
+                        {
+                            "String": "(3S-cis)-3-Ethyldihydro-4-((1-methyl-1H-imidazol-5-yl)methyl)-2(3H)-furanone"
+                        },
+                        {
+                            "String": "(3S-cis)-3-ethyldihydro-4-[(1-methyl-1H-imidazol-5-yl)methyl]-2(3H)-furanone"
+                        },
+                        {
+                            "String": "MFCD00153042"
+                        },
+                        {
+                            "String": "2(3H)-Furanone, 3-ethyldihydro-4-((1-methyl-1H-imidazol-5-yl)methyl)-, (3S,4R)-"
+                        },
+                        {
+                            "String": "92-13-7 (FREE BASE)"
+                        },
+                        {
+                            "String": "NCGC00023339-09"
+                        },
+                        {
+                            "String": "Pilocarpine 100 microg/mL in Acetonitrile"
+                        },
+                        {
+                            "String": "(3S,4R)-3-ethyl-4-[(3-methylimidazol-4-yl)methyl]tetrahydrofuran-2-one"
+                        },
+                        {
+                            "String": "2(3H)-Furanone, 3-ethyldihydro-4-[(1-methyl-1H-imidazol-5-yl)methyl]-, (3S,4R)-"
+                        },
+                        {
+                            "String": "Pilocarpine nitrate salt"
+                        },
+                        {
+                            "String": "Pilocarpine (Hydrochloride)"
+                        },
+                        {
+                            "String": "CAS-92-13-7"
+                        },
+                        {
+                            "String": "HSDB 3163"
+                        },
+                        {
+                            "String": "Pilocarpine (JAN/USP)"
+                        },
+                        {
+                            "String": "EINECS 202-128-4"
+                        },
+                        {
+                            "String": "Ocusert pilo-20 (TN)"
+                        },
+                        {
+                            "String": "UNII-01MI4Q9DI3"
+                        },
+                        {
+                            "String": "Pilocaroine"
+                        },
+                        {
+                            "String": "Pilocarpine [USP:BAN:JAN]"
+                        },
+                        {
+                            "String": "AI3-50523"
+                        },
+                        {
+                            "String": "(3S,4R)-3-ethyl-4-[(1-methylimidazol-5-yl)methyl]-3,4,5-trihydrofuran-2-one"
+                        },
+                        {
+                            "String": "Ocucarpine; Ocusert P 20; Ocusert Pilo"
+                        },
+                        {
+                            "String": "Spectrum_001107"
+                        },
+                        {
+                            "String": "Tocris-0694"
+                        },
+                        {
+                            "String": "PILOCARPINE [MI]"
+                        },
+                        {
+                            "String": "Prestwick0_000449"
+                        },
+                        {
+                            "String": "Prestwick1_000449"
+                        },
+                        {
+                            "String": "Prestwick2_000449"
+                        },
+                        {
+                            "String": "Prestwick3_000449"
+                        },
+                        {
+                            "String": "Spectrum2_001284"
+                        },
+                        {
+                            "String": "Spectrum3_000546"
+                        },
+                        {
+                            "String": "Spectrum4_000478"
+                        },
+                        {
+                            "String": "Spectrum5_001379"
+                        },
+                        {
+                            "String": "PILOCARPINE [JAN]"
+                        },
+                        {
+                            "String": "PILOCARPINE [HSDB]"
+                        },
+                        {
+                            "String": "PILOCARPINE [VANDF]"
+                        },
+                        {
+                            "String": "PILOCARPINUM [HPUS]"
+                        },
+                        {
+                            "String": "PILOCARPINE [MART.]"
+                        },
+                        {
+                            "String": "Lopac0_000950"
+                        },
+                        {
+                            "String": "Lopac0_000960"
+                        },
+                        {
+                            "String": "SCHEMBL15146"
+                        },
+                        {
+                            "String": "BSPBio_000498"
+                        },
+                        {
+                            "String": "BSPBio_002191"
+                        },
+                        {
+                            "String": "GTPL305"
+                        },
+                        {
+                            "String": "KBioGR_000956"
+                        },
+                        {
+                            "String": "KBioSS_001587"
+                        },
+                        {
+                            "String": "PILOCARPINE [USP-RS]"
+                        },
+                        {
+                            "String": "PILOCARPINE [WHO-DD]"
+                        },
+                        {
+                            "String": "BIDD:GT0217"
+                        },
+                        {
+                            "String": "DivK1c_000358"
+                        },
+                        {
+                            "String": "SPBio_001287"
+                        },
+                        {
+                            "String": "SPBio_002437"
+                        },
+                        {
+                            "String": "BPBio1_000548"
+                        },
+                        {
+                            "String": "HY-B0726A"
+                        },
+                        {
+                            "String": "KBio1_000358"
+                        },
+                        {
+                            "String": "KBio2_001587"
+                        },
+                        {
+                            "String": "KBio2_004155"
+                        },
+                        {
+                            "String": "KBio2_006723"
+                        },
+                        {
+                            "String": "KBio3_001691"
+                        },
+                        {
+                            "String": "PILOCARPINE [ORANGE BOOK]"
+                        },
+                        {
+                            "String": "NINDS_000358"
+                        },
+                        {
+                            "String": "GLXC-20879"
+                        },
+                        {
+                            "String": "HMS2089K17"
+                        },
+                        {
+                            "String": "PILOCARPINE [USP MONOGRAPH]"
+                        },
+                        {
+                            "String": "MSK40310"
+                        },
+                        {
+                            "String": "Tox21_110887"
+                        },
+                        {
+                            "String": "BDBM50008072"
+                        },
+                        {
+                            "String": "EBC-26203"
+                        },
+                        {
+                            "String": "SBB012409"
+                        },
+                        {
+                            "String": "AKOS016010311"
+                        },
+                        {
+                            "String": "Tox21_110887_1"
+                        },
+                        {
+                            "String": "CCG-205031"
+                        },
+                        {
+                            "String": "DB01085"
+                        },
+                        {
+                            "String": "FP05587"
+                        },
+                        {
+                            "String": "SDCCGMLS-0003164.P005"
+                        },
+                        {
+                            "String": "SDCCGSBI-0050924.P006"
+                        },
+                        {
+                            "String": "IDI1_000358"
+                        },
+                        {
+                            "String": "NCGC00023339-03"
+                        },
+                        {
+                            "String": "NCGC00023339-06"
+                        },
+                        {
+                            "String": "NCGC00023339-07"
+                        },
+                        {
+                            "String": "NCGC00023339-08"
+                        },
+                        {
+                            "String": "NCGC00023339-10"
+                        },
+                        {
+                            "String": "NCGC00023339-11"
+                        },
+                        {
+                            "String": "NCGC00023339-12"
+                        },
+                        {
+                            "String": "NCGC00023339-13"
+                        },
+                        {
+                            "String": "NCGC00023339-14"
+                        },
+                        {
+                            "String": "NCGC00023339-16"
+                        },
+                        {
+                            "String": "NCGC00023339-27"
+                        },
+                        {
+                            "String": "NCGC00023339-28"
+                        },
+                        {
+                            "String": "BS-18966"
+                        },
+                        {
+                            "String": "DA-76884"
+                        },
+                        {
+                            "String": "NCI60_004403"
+                        },
+                        {
+                            "String": "ST069319"
+                        },
+                        {
+                            "String": "SBI-0050924.P004"
+                        },
+                        {
+                            "String": "CS-0013746"
+                        },
+                        {
+                            "String": "NS00007560"
+                        },
+                        {
+                            "String": "C07474"
+                        },
+                        {
+                            "String": "D00525"
+                        },
+                        {
+                            "String": "E87145"
+                        },
+                        {
+                            "String": "AB00053525-27"
+                        },
+                        {
+                            "String": "AB00053525_28"
+                        },
+                        {
+                            "String": "AB00053525_29"
+                        },
+                        {
+                            "String": "092P137"
+                        },
+                        {
+                            "String": "EN300-19632236"
+                        },
+                        {
+                            "String": "Q411461"
+                        },
+                        {
+                            "String": "BRD-K85090592-003-18-6"
+                        },
+                        {
+                            "String": "BRD-K85090592-003-19-4"
+                        },
+                        {
+                            "String": "BRD-K85090592-008-05-2"
+                        },
+                        {
+                            "String": "BRD-K85090592-008-15-1"
+                        },
+                        {
+                            "String": "BRD-K85090592-008-22-7"
+                        },
+                        {
+                            "String": "SR-01000075339-11"
+                        },
+                        {
+                            "String": "102282-25-7"
+                        }
+                    ]
+                }
+            },
+            {
+                "ReferenceNumber": 115,
+                "Reference": [
+                    "Computed by PubChem 2.2 (PubChem release 2025.09.15)"
+                ],
+                "Value": {
+                    "StringWithMarkup": [
+                        {
+                            "String": "C11H16N2O2"
+                        }
+                    ]
+                }
+            },
+            {
+                "ReferenceNumber": 115,
+                "Reference": [
+                    "Computed by PubChem 2.2 (PubChem release 2025.09.15)"
+                ],
+                "Value": {
+                    "StringWithMarkup": [
+                        {
+                            "String": "208.26"
+                        }
+                    ],
+                    "Unit": "g/mol"
+                }
+            },
+            {
+                "ReferenceNumber": 115,
+                "Reference": [
+                    "Computed by InChI 1.07.4 (PubChem release 2025.09.15)"
+                ],
+                "Value": {
+                    "StringWithMarkup": [
+                        {
+                            "String": "QCHFTSOMWOSFHM-WPRPVWTQSA-N"
+                        }
+                    ]
+                }
+            },
+            {
+                "ReferenceNumber": 18,
+                "URL": "https://gsrs.ncats.nih.gov/ginas/app/beta/substances/01MI4Q9DI3",
+                "Value": {
+                    "StringWithMarkup": [
+                        {
+                            "String": "01MI4Q9DI3"
+                        }
+                    ]
+                }
+            },
+            {
+                "ReferenceNumber": 115,
+                "Value": {
+                    "DateISO8601": [
+                        "2026-03-14"
+                    ]
+                }
+            },
+            {
+                "ReferenceNumber": 115,
+                "Value": {
+                    "DateISO8601": [
+                        "2005-06-24"
+                    ]
+                }
+            },
+            {
+                "ReferenceNumber": 4,
+                "Name": "Record Description",
+                "Description": "Ontology Summary",
+                "Value": {
+                    "StringWithMarkup": [
+                        {
+                            "String": "(+)-pilocarpine is the (+)-enantiomer of pilocarpine. It has a role as an antiglaucoma drug. It is an enantiomer of a (-)-pilocarpine.",
+                            "Markup": [
+                                {
+                                    "Start": 0,
+                                    "Length": 15,
+                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/%28%2B%29-pilocarpine",
+                                    "Type": "PubChem Internal Link",
+                                    "Extra": "CID-5910"
+                                },
+                                {
+                                    "Start": 41,
+                                    "Length": 11,
+                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/pilocarpine",
+                                    "Type": "PubChem Internal Link",
+                                    "Extra": "CID-5910"
+                                },
+                                {
+                                    "Start": 122,
+                                    "Length": 11,
+                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/pilocarpine",
+                                    "Type": "PubChem Internal Link",
+                                    "Extra": "CID-5910"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "ReferenceNumber": 9,
+                "Value": {
+                    "StringWithMarkup": [
+                        {
+                            "String": "A naturally occurring alkaloid derived from the Pilocarpus plants, pilocarpine is a muscarinic acetylcholine agonist. Pilocarpine is associated with parasympathomimetic effects by selectively working on muscarinic receptors. Pilocarpine is used to treat dry mouth and various ophthalmic conditions, including elevated intraocular pressure and glaucoma. The usage of glaucoma by pilocarpine dates back to 1875.",
+                            "Markup": [
+                                {
+                                    "Start": 48,
+                                    "Length": 10,
+                                    "Type": "Italics"
+                                },
+                                {
+                                    "Start": 67,
+                                    "Length": 11,
+                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/pilocarpine",
+                                    "Type": "PubChem Internal Link",
+                                    "Extra": "CID-5910"
+                                },
+                                {
+                                    "Start": 95,
+                                    "Length": 13,
+                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/acetylcholine",
+                                    "Type": "PubChem Internal Link",
+                                    "Extra": "CID-187"
+                                },
+                                {
+                                    "Start": 118,
+                                    "Length": 11,
+                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/Pilocarpine",
+                                    "Type": "PubChem Internal Link",
+                                    "Extra": "CID-5910"
+                                },
+                                {
+                                    "Start": 225,
+                                    "Length": 11,
+                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/Pilocarpine",
+                                    "Type": "PubChem Internal Link",
+                                    "Extra": "CID-5910"
+                                },
+                                {
+                                    "Start": 378,
+                                    "Length": 11,
+                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/pilocarpine",
+                                    "Type": "PubChem Internal Link",
+                                    "Extra": "CID-5910"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "ReferenceNumber": 21,
+                "Description": "FDA Pharmacology Summary",
+                "Value": {
+                    "StringWithMarkup": [
+                        {
+                            "String": "Pilocarpine is a Cholinergic Receptor Agonist. The mechanism of action of pilocarpine is as a Cholinergic Agonist, and Cholinergic Muscarinic Agonist.",
+                            "Markup": [
+                                {
+                                    "Start": 0,
+                                    "Length": 11,
+                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/Pilocarpine",
+                                    "Type": "PubChem Internal Link",
+                                    "Extra": "CID-5910"
+                                },
+                                {
+                                    "Start": 74,
+                                    "Length": 11,
+                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/pilocarpine",
+                                    "Type": "PubChem Internal Link",
+                                    "Extra": "CID-5910"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "ReferenceNumber": 37,
+                "Description": "LiverTox Summary",
+                "Value": {
+                    "StringWithMarkup": [
+                        {
+                            "String": "Pilocarpine is an orally available cholinergic agonist that is used to treat symptoms of dry mouth in patients with keratoconjunctivitis sicca (Sj\u00f6gren syndrome) or with xerostomia (dry mouth) due to local irradiation. Pilocarpine has not been linked to serum enzyme elevations during therapy or to instances of clinically apparent liver injury.",
+                            "Markup": [
+                                {
+                                    "Start": 0,
+                                    "Length": 11,
+                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/Pilocarpine",
+                                    "Type": "PubChem Internal Link",
+                                    "Extra": "CID-5910"
+                                },
+                                {
+                                    "Start": 219,
+                                    "Length": 11,
+                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/Pilocarpine",
+                                    "Type": "PubChem Internal Link",
+                                    "Extra": "CID-5910"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "ReferenceNumber": 38,
+                "Value": {
+                    "StringWithMarkup": [
+                        {
+                            "String": "Pilocarpine has been reported in Pilocarpus microphyllus, Pilocarpus racemosus, and other organisms with data available.",
+                            "Markup": [
+                                {
+                                    "Start": 33,
+                                    "Length": 23,
+                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/taxonomy/2743281#section=Natural-Products"
+                                },
+                                {
+                                    "Start": 58,
+                                    "Length": 20,
+                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/taxonomy/1129487#section=Natural-Products"
+                                },
+                                {
+                                    "Start": 84,
+                                    "Length": 15,
+                                    "URL": "#section=Taxonomy"
+                                },
+                                {
+                                    "Start": 0,
+                                    "Length": 11,
+                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/Pilocarpine",
+                                    "Type": "PubChem Internal Link",
+                                    "Extra": "CID-5910"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "ReferenceNumber": 80,
+                "Value": {
+                    "StringWithMarkup": [
+                        {
+                            "String": "Pilocarpine is a natural alkaloid extracted from plants of the genus Pilocarpus with cholinergic agonist activity. As a cholinergic parasympathomimetic agent, pilocarpine predominantly binds to muscarinic receptors, thereby inducing exocrine gland secretion and stimulating smooth muscle in the bronchi, urinary tract, biliary tract, and intestinal tract. When applied topically to eyes, this agent stimulates the sphincter pupillae to contract, resulting in miosis; stimulates the ciliary muscle to contract, resulting in spasm of accommodation; and may cause a transitory rise in intraocular pressure followed by a more persistent fall due to opening of the trabecular meshwork and an increase in the outflow of aqueous humor.",
+                            "Markup": [
+                                {
+                                    "Start": 0,
+                                    "Length": 11,
+                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/Pilocarpine",
+                                    "Type": "PubChem Internal Link",
+                                    "Extra": "CID-5910"
+                                },
+                                {
+                                    "Start": 159,
+                                    "Length": 11,
+                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/pilocarpine",
+                                    "Type": "PubChem Internal Link",
+                                    "Extra": "CID-5910"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "ReferenceNumber": 105,
+                "Value": {
+                    "StringWithMarkup": [
+                        {
+                            "String": "Pilocarpine is only found in individuals that have used or taken this drug. It is a slowly hydrolyzed muscarinic agonist with no nicotinic effects. Pilocarpine is used as a miotic and in the treatment of glaucoma. [PubChem]Pilocarpine is a cholinergic parasympathomimetic agent. It increase secretion by the exocrine glands, and produces contraction of the iris sphincter muscle and ciliary muscle (when given topically to the eyes) by mainly stimulating muscarinic receptors.",
+                            "Markup": [
+                                {
+                                    "Start": 0,
+                                    "Length": 11,
+                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/Pilocarpine",
+                                    "Type": "PubChem Internal Link",
+                                    "Extra": "CID-5910"
+                                },
+                                {
+                                    "Start": 148,
+                                    "Length": 11,
+                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/Pilocarpine",
+                                    "Type": "PubChem Internal Link",
+                                    "Extra": "CID-5910"
+                                },
+                                {
+                                    "Start": 223,
+                                    "Length": 11,
+                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/Pilocarpine",
+                                    "Type": "PubChem Internal Link",
+                                    "Extra": "CID-5910"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "ReferenceNumber": 114,
+                "Value": {
+                    "StringWithMarkup": [
+                        {
+                            "String": "A slowly hydrolyzed muscarinic agonist with no nicotinic effects. Pilocarpine is used as a miotic and in the treatment of glaucoma."
+                        }
+                    ]
+                }
+            },
+            {
+                "ReferenceNumber": 115,
+                "Name": "See Also",
+                "Value": {
+                    "StringWithMarkup": [
+                        {
+                            "String": "See also: Arecoline (related); Pilocarpine Hydrochloride (active moiety of); Pilocarpine Nitrate (active moiety of).",
+                            "Markup": [
+                                {
+                                    "Start": 0,
+                                    "Length": 8,
+                                    "URL": "#section=Other-Relationships"
+                                },
+                                {
+                                    "Start": 10,
+                                    "Length": 9,
+                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/2230"
+                                },
+                                {
+                                    "Start": 10,
+                                    "Length": 9,
+                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/image/imgsrv.fcgi?t=s&cid=2230",
+                                    "Type": "Icon"
+                                },
+                                {
+                                    "Start": 31,
+                                    "Length": 25,
+                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/5909"
+                                },
+                                {
+                                    "Start": 31,
+                                    "Length": 25,
+                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/image/imgsrv.fcgi?t=s&cid=5909",
+                                    "Type": "Icon"
+                                },
+                                {
+                                    "Start": 77,
+                                    "Length": 19,
+                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/657349"
+                                },
+                                {
+                                    "Start": 77,
+                                    "Length": 19,
+                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/image/imgsrv.fcgi?t=s&cid=657349",
+                                    "Type": "Icon"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        ],
+        "Section": [
+            {
+                "TOCHeading": "Structures",
+                "Section": [
+                    {
+                        "TOCHeading": "2D Structure"
+                    },
+                    {
+                        "TOCHeading": "3D Conformer"
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Primary Hazards"
+            },
+            {
+                "TOCHeading": "Names and Identifiers",
+                "Section": [
+                    {
+                        "TOCHeading": "Record Description"
+                    },
+                    {
+                        "TOCHeading": "Computed Descriptors",
+                        "Section": [
+                            {
+                                "TOCHeading": "IUPAC Name"
+                            },
+                            {
+                                "TOCHeading": "InChI"
+                            },
+                            {
+                                "TOCHeading": "InChIKey"
+                            },
+                            {
+                                "TOCHeading": "SMILES"
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "Molecular Formula"
+                    },
+                    {
+                        "TOCHeading": "Other Identifiers",
+                        "Section": [
+                            {
+                                "TOCHeading": "CAS"
+                            },
+                            {
+                                "TOCHeading": "Deprecated CAS"
+                            },
+                            {
+                                "TOCHeading": "European Community (EC) Number"
+                            },
+                            {
+                                "TOCHeading": "UNII"
+                            },
+                            {
+                                "TOCHeading": "AIDS Number"
+                            },
+                            {
+                                "TOCHeading": "ChEBI ID"
+                            },
+                            {
+                                "TOCHeading": "ChEMBL ID"
+                            },
+                            {
+                                "TOCHeading": "DrugBank ID"
+                            },
+                            {
+                                "TOCHeading": "DrugCentral"
+                            },
+                            {
+                                "TOCHeading": "DSSTox Substance ID"
+                            },
+                            {
+                                "TOCHeading": "HMDB ID"
+                            },
+                            {
+                                "TOCHeading": "KEGG ID"
+                            },
+                            {
+                                "TOCHeading": "Metabolomics Workbench ID"
+                            },
+                            {
+                                "TOCHeading": "NCI Thesaurus Code"
+                            },
+                            {
+                                "TOCHeading": "Nikkaji Number"
+                            },
+                            {
+                                "TOCHeading": "Open Targets"
+                            },
+                            {
+                                "TOCHeading": "PharmGKB ID"
+                            },
+                            {
+                                "TOCHeading": "Pharos Ligand ID"
+                            },
+                            {
+                                "TOCHeading": "RXCUI"
+                            },
+                            {
+                                "TOCHeading": "Wikidata"
+                            },
+                            {
+                                "TOCHeading": "Wikipedia"
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "Synonyms",
+                        "Section": [
+                            {
+                                "TOCHeading": "MeSH Entry Terms"
+                            },
+                            {
+                                "TOCHeading": "Depositor-Supplied Synonyms"
+                            },
+                            {
+                                "TOCHeading": "Removed Synonyms"
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "Create Date"
+                    },
+                    {
+                        "TOCHeading": "Modify Date"
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Chemical and Physical Properties",
+                "Section": [
+                    {
+                        "TOCHeading": "Computed Properties",
+                        "Section": [
+                            {
+                                "TOCHeading": "Molecular Weight"
+                            },
+                            {
+                                "TOCHeading": "XLogP3"
+                            },
+                            {
+                                "TOCHeading": "Hydrogen Bond Donor Count"
+                            },
+                            {
+                                "TOCHeading": "Hydrogen Bond Acceptor Count"
+                            },
+                            {
+                                "TOCHeading": "Rotatable Bond Count"
+                            },
+                            {
+                                "TOCHeading": "Exact Mass"
+                            },
+                            {
+                                "TOCHeading": "Monoisotopic Mass"
+                            },
+                            {
+                                "TOCHeading": "Topological Polar Surface Area"
+                            },
+                            {
+                                "TOCHeading": "Heavy Atom Count"
+                            },
+                            {
+                                "TOCHeading": "Formal Charge"
+                            },
+                            {
+                                "TOCHeading": "Complexity"
+                            },
+                            {
+                                "TOCHeading": "Isotope Atom Count"
+                            },
+                            {
+                                "TOCHeading": "Defined Atom Stereocenter Count"
+                            },
+                            {
+                                "TOCHeading": "Undefined Atom Stereocenter Count"
+                            },
+                            {
+                                "TOCHeading": "Defined Bond Stereocenter Count"
+                            },
+                            {
+                                "TOCHeading": "Undefined Bond Stereocenter Count"
+                            },
+                            {
+                                "TOCHeading": "Covalently-Bonded Unit Count"
+                            },
+                            {
+                                "TOCHeading": "Compound Is Canonicalized"
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "Experimental Properties",
+                        "Section": [
+                            {
+                                "TOCHeading": "Physical Description"
+                            },
+                            {
+                                "TOCHeading": "Color/Form"
+                            },
+                            {
+                                "TOCHeading": "Boiling Point"
+                            },
+                            {
+                                "TOCHeading": "Melting Point"
+                            },
+                            {
+                                "TOCHeading": "Solubility"
+                            },
+                            {
+                                "TOCHeading": "LogP"
+                            },
+                            {
+                                "TOCHeading": "Stability/Shelf Life"
+                            },
+                            {
+                                "TOCHeading": "Optical Rotation"
+                            },
+                            {
+                                "TOCHeading": "Decomposition"
+                            },
+                            {
+                                "TOCHeading": "Dissociation Constants"
+                            },
+                            {
+                                "TOCHeading": "Collision Cross Section"
+                            },
+                            {
+                                "TOCHeading": "Other Experimental Properties"
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "Chemical Classes",
+                        "Section": [
+                            {
+                                "TOCHeading": "Drugs",
+                                "Section": [
+                                    {
+                                        "TOCHeading": "Human Drugs"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Spectral Information",
+                "Section": [
+                    {
+                        "TOCHeading": "1D NMR Spectra",
+                        "Section": [
+                            {
+                                "TOCHeading": "13C NMR Spectra"
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "Mass Spectrometry",
+                        "Section": [
+                            {
+                                "TOCHeading": "GC-MS"
+                            },
+                            {
+                                "TOCHeading": "MS-MS"
+                            },
+                            {
+                                "TOCHeading": "LC-MS"
+                            },
+                            {
+                                "TOCHeading": "Other MS"
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "UV Spectra"
+                    },
+                    {
+                        "TOCHeading": "IR Spectra",
+                        "Section": [
+                            {
+                                "TOCHeading": "ATR-IR Spectra"
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "Other Spectra"
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Related Records",
+                "Section": [
+                    {
+                        "TOCHeading": "Related Compounds with Annotation"
+                    },
+                    {
+                        "TOCHeading": "Related Compounds"
+                    },
+                    {
+                        "TOCHeading": "Substances",
+                        "Section": [
+                            {
+                                "TOCHeading": "PubChem Reference Collection SID"
+                            },
+                            {
+                                "TOCHeading": "Related Substances"
+                            },
+                            {
+                                "TOCHeading": "Substances by Category"
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "Other Relationships"
+                    },
+                    {
+                        "TOCHeading": "Entrez Crosslinks"
+                    },
+                    {
+                        "TOCHeading": "NCBI LinkOut"
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Chemical Vendors"
+            },
+            {
+                "TOCHeading": "Drug and Medication Information",
+                "Section": [
+                    {
+                        "TOCHeading": "Drug Indication"
+                    },
+                    {
+                        "TOCHeading": "LiverTox Summary"
+                    },
+                    {
+                        "TOCHeading": "Drug Classes"
+                    },
+                    {
+                        "TOCHeading": "WHO Essential Medicines"
+                    },
+                    {
+                        "TOCHeading": "FDA Approved Drugs"
+                    },
+                    {
+                        "TOCHeading": "FDA Orange Book"
+                    },
+                    {
+                        "TOCHeading": "Clinical Trials",
+                        "Section": [
+                            {
+                                "TOCHeading": "ClinicalTrials.gov"
+                            },
+                            {
+                                "TOCHeading": "NIPH Clinical Trials Search of Japan"
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "Therapeutic Uses"
+                    },
+                    {
+                        "TOCHeading": "Drug Development Summary",
+                        "Section": [
+                            {
+                                "TOCHeading": "Max Phase"
+                            },
+                            {
+                                "TOCHeading": "First Approval"
+                            },
+                            {
+                                "TOCHeading": "Availability Type"
+                            },
+                            {
+                                "TOCHeading": "Route of Administration"
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "Drug Warnings"
+                    },
+                    {
+                        "TOCHeading": "Drug Tolerance"
+                    },
+                    {
+                        "TOCHeading": "Drug Targets"
+                    },
+                    {
+                        "TOCHeading": "Drug-Drug Interactions"
+                    },
+                    {
+                        "TOCHeading": "Drug-Food Interactions"
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Pharmacology and Biochemistry",
+                "Section": [
+                    {
+                        "TOCHeading": "Pharmacodynamics"
+                    },
+                    {
+                        "TOCHeading": "MeSH Pharmacological Classification"
+                    },
+                    {
+                        "TOCHeading": "FDA Pharmacological Classification"
+                    },
+                    {
+                        "TOCHeading": "ATC Code"
+                    },
+                    {
+                        "TOCHeading": "Absorption, Distribution and Excretion"
+                    },
+                    {
+                        "TOCHeading": "Protein Binding"
+                    },
+                    {
+                        "TOCHeading": "Metabolism/Metabolites"
+                    },
+                    {
+                        "TOCHeading": "Biological Half-Life"
+                    },
+                    {
+                        "TOCHeading": "Mechanism of Action"
+                    },
+                    {
+                        "TOCHeading": "Human Metabolite Information",
+                        "Section": [
+                            {
+                                "TOCHeading": "Cellular Locations"
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "Transformations"
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Use and Manufacturing",
+                "Section": [
+                    {
+                        "TOCHeading": "Uses"
+                    },
+                    {
+                        "TOCHeading": "Methods of Manufacturing"
+                    },
+                    {
+                        "TOCHeading": "Formulations/Preparations"
+                    },
+                    {
+                        "TOCHeading": "General Manufacturing Information"
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Identification",
+                "Section": [
+                    {
+                        "TOCHeading": "Analytic Laboratory Methods"
+                    },
+                    {
+                        "TOCHeading": "Clinical Laboratory Methods"
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Safety and Hazards",
+                "Section": [
+                    {
+                        "TOCHeading": "Hazards Identification",
+                        "Section": [
+                            {
+                                "TOCHeading": "GHS Classification"
+                            },
+                            {
+                                "TOCHeading": "Hazard Classes and Categories"
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "Handling and Storage",
+                        "Section": [
+                            {
+                                "TOCHeading": "Storage Conditions"
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "Regulatory Information"
+                    },
+                    {
+                        "TOCHeading": "Other Safety Information"
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Toxicity",
+                "Section": [
+                    {
+                        "TOCHeading": "Toxicological Information",
+                        "Section": [
+                            {
+                                "TOCHeading": "Toxicity Summary"
+                            },
+                            {
+                                "TOCHeading": "Hepatotoxicity"
+                            },
+                            {
+                                "TOCHeading": "Drug Induced Liver Injury"
+                            },
+                            {
+                                "TOCHeading": "Carcinogen Classification"
+                            },
+                            {
+                                "TOCHeading": "Effects During Pregnancy and Lactation"
+                            },
+                            {
+                                "TOCHeading": "Exposure Routes"
+                            },
+                            {
+                                "TOCHeading": "Adverse Effects"
+                            },
+                            {
+                                "TOCHeading": "Acute Effects"
+                            },
+                            {
+                                "TOCHeading": "Treatment"
+                            },
+                            {
+                                "TOCHeading": "Antidote and Emergency Treatment"
+                            },
+                            {
+                                "TOCHeading": "Human Toxicity Excerpts"
+                            },
+                            {
+                                "TOCHeading": "Non-Human Toxicity Excerpts"
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "Ecological Information",
+                        "Section": [
+                            {
+                                "TOCHeading": "Natural Pollution Sources"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Associated Disorders and Diseases",
+                "Section": [
+                    {
+                        "TOCHeading": "Disease and References"
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Literature",
+                "Section": [
+                    {
+                        "TOCHeading": "Consolidated References"
+                    },
+                    {
+                        "TOCHeading": "NLM Curated PubMed Citations"
+                    },
+                    {
+                        "TOCHeading": "Springer Nature References"
+                    },
+                    {
+                        "TOCHeading": "Thieme References"
+                    },
+                    {
+                        "TOCHeading": "Wiley References"
+                    },
+                    {
+                        "TOCHeading": "Nature Journal References"
+                    },
+                    {
+                        "TOCHeading": "Chemical Co-Occurrences in Literature"
+                    },
+                    {
+                        "TOCHeading": "Chemical-Gene Co-Occurrences in Literature"
+                    },
+                    {
+                        "TOCHeading": "Chemical-Disease Co-Occurrences in Literature"
+                    },
+                    {
+                        "TOCHeading": "Chemical-Organism Co-Occurrences in Literature"
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Patents",
+                "Section": [
+                    {
+                        "TOCHeading": "Depositor-Supplied Patent Identifiers"
+                    },
+                    {
+                        "TOCHeading": "WIPO PATENTSCOPE"
+                    },
+                    {
+                        "TOCHeading": "Chemical Co-Occurrences in Patents"
+                    },
+                    {
+                        "TOCHeading": "Chemical-Disease Co-Occurrences in Patents"
+                    },
+                    {
+                        "TOCHeading": "Chemical-Gene Co-Occurrences in Patents"
+                    },
+                    {
+                        "TOCHeading": "Chemical-Organism Co-Occurrences in Patents"
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Interactions and Pathways",
+                "Section": [
+                    {
+                        "TOCHeading": "Protein Bound 3D Structures",
+                        "Section": [
+                            {
+                                "TOCHeading": "Ligands from Protein Bound 3D Structures",
+                                "Section": [
+                                    {
+                                        "TOCHeading": "PDBe Ligand Code"
+                                    },
+                                    {
+                                        "TOCHeading": "PDBe Structure Code"
+                                    },
+                                    {
+                                        "TOCHeading": "PDBe Conformer"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "Chemical-Target Interactions"
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Biological Test Results",
+                "Section": [
+                    {
+                        "TOCHeading": "BioAssay Results"
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Taxonomy"
+            },
+            {
+                "TOCHeading": "Classification",
+                "Section": [
+                    {
+                        "TOCHeading": "MeSH Tree"
+                    },
+                    {
+                        "TOCHeading": "NCI Thesaurus Tree"
+                    },
+                    {
+                        "TOCHeading": "ChEBI Ontology"
+                    },
+                    {
+                        "TOCHeading": "KEGG: Phytochemical Compounds"
+                    },
+                    {
+                        "TOCHeading": "KEGG: ATC"
+                    },
+                    {
+                        "TOCHeading": "KEGG: Target-based Classification of Drugs"
+                    },
+                    {
+                        "TOCHeading": "KEGG: Drug Groups"
+                    },
+                    {
+                        "TOCHeading": "WHO ATC Classification System"
+                    },
+                    {
+                        "TOCHeading": "FDA Pharm Classes"
+                    },
+                    {
+                        "TOCHeading": "ChemIDplus"
+                    },
+                    {
+                        "TOCHeading": "IUPHAR/BPS Guide to PHARMACOLOGY Target Classification"
+                    },
+                    {
+                        "TOCHeading": "ChEMBL Target Tree"
+                    },
+                    {
+                        "TOCHeading": "UN GHS Classification"
+                    },
+                    {
+                        "TOCHeading": "NORMAN Suspect List Exchange Classification"
+                    },
+                    {
+                        "TOCHeading": "CCSBase Classification"
+                    },
+                    {
+                        "TOCHeading": "EPA DSSTox Classification"
+                    },
+                    {
+                        "TOCHeading": "EPA TSCA and CDR Classification"
+                    },
+                    {
+                        "TOCHeading": "LOTUS Tree"
+                    },
+                    {
+                        "TOCHeading": "EPA Substance Registry Services Tree"
+                    },
+                    {
+                        "TOCHeading": "MolGenie Organic Chemistry Ontology"
+                    },
+                    {
+                        "TOCHeading": "Chemicals in PubChem from Regulatory Sources"
+                    },
+                    {
+                        "TOCHeading": "ATCvet Classification"
+                    },
+                    {
+                        "TOCHeading": "FDA Liver Toxicity Knowledge Base (LTKB)"
+                    },
+                    {
+                        "TOCHeading": "Open Targets Classification"
+                    }
+                ]
+            }
+        ],
+        "Reference": [
+            {
+                "ReferenceNumber": 115,
+                "SourceName": "PubChem",
+                "SourceID": "PubChem",
+                "Description": "Data deposited in or computed by PubChem",
+                "URL": "https://pubchem.ncbi.nlm.nih.gov"
+            },
+            {
+                "ReferenceNumber": 18,
+                "SourceName": "FDA Global Substance Registration System (GSRS)",
+                "SourceID": "01MI4Q9DI3",
+                "Name": "Pilocarpine",
+                "Description": "The FDA Global Substance Registration System (GSRS) enables the efficient and accurate exchange of information on what substances are in regulated products. Instead of relying on names, which vary across regulatory domains, countries, and regions, the GSRS knowledge base makes it possible for substances to be defined by standardized, scientific descriptions.",
+                "URL": "https://gsrs.ncats.nih.gov/ginas/app/beta/substances/01MI4Q9DI3",
+                "LicenseNote": "Unless otherwise noted, the contents of the FDA website (www.fda.gov), both text and graphics, are not copyrighted. They are in the public domain and may be republished, reprinted and otherwise used freely by anyone without the need to obtain permission from FDA. Credit to the U.S. Food and Drug Administration as the source is appreciated but not required.",
+                "LicenseURL": "https://www.fda.gov/about-fda/about-website/website-policies#linking",
+                "ANID": 5809294
+            },
+            {
+                "ReferenceNumber": 4,
+                "SourceName": "ChEBI",
+                "SourceID": "CHEBI:OBO:5910",
+                "Name": "(+)-pilocarpine",
+                "Description": "Chemical Entities of Biological Interest (ChEBI) is a database and ontology of molecular entities focused on 'small' chemical compounds, that is part of the Open Biomedical Ontologies effort. The term \"molecular entity\" refers to any constitutionally or isotopically distinct atom, molecule, ion, ion pair, radical, radical ion, complex, conformer, etc., identifiable as a separately distinguishable entity.",
+                "URL": "https://www.ebi.ac.uk/chebi/searchId.do?chebiId=CHEBI:8207",
+                "ANID": 2503203
+            },
+            {
+                "ReferenceNumber": 9,
+                "SourceName": "DrugBank",
+                "SourceID": "DB01085",
+                "Name": "Pilocarpine",
+                "Description": "The DrugBank database is a unique bioinformatics and cheminformatics resource that combines detailed drug (i.e. chemical, pharmacological and pharmaceutical) data with comprehensive drug target (i.e. sequence, structure, and pathway) information.",
+                "URL": "https://www.drugbank.ca/drugs/DB01085",
+                "LicenseNote": "Creative Common's Attribution-NonCommercial 4.0 International License (http://creativecommons.org/licenses/by-nc/4.0/legalcode)",
+                "LicenseURL": "https://www.drugbank.ca/legal/terms_of_use",
+                "ANID": 3608275
+            },
+            {
+                "ReferenceNumber": 21,
+                "SourceName": "FDA Pharm Classes",
+                "SourceID": "01MI4Q9DI3",
+                "Name": "PILOCARPINE",
+                "Description": "FDA Pharmacologic class is a group of active moieties that share scientifically documented properties and is defined on the basis of any combination of attributes of the active moiety. Read more at https://www.fda.gov/industry/structured-product-labeling-resources/pharmacologic-class",
+                "URL": "https://dailymed.nlm.nih.gov/dailymed/browse-drug-classes.cfm",
+                "LicenseNote": "Unless otherwise noted, the contents of the FDA website (www.fda.gov), both text and graphics, are not copyrighted. They are in the public domain and may be republished, reprinted and otherwise used freely by anyone without the need to obtain permission from FDA. Credit to the U.S. Food and Drug Administration as the source is appreciated but not required.",
+                "LicenseURL": "https://www.fda.gov/about-fda/about-website/website-policies#linking",
+                "ANID": 6489790
+            },
+            {
+                "ReferenceNumber": 37,
+                "SourceName": "LiverTox",
+                "SourceID": "Pilocarpine",
+                "Name": "Pilocarpine",
+                "Description": "LIVERTOX provides up-to-date, accurate, and easily accessed information on the diagnosis, cause, frequency, patterns, and management of liver injury attributable to prescription and nonprescription medications, herbals and dietary supplements.",
+                "URL": "https://www.ncbi.nlm.nih.gov/books/n/livertox/Pilocarpine/",
+                "LicenseURL": "https://www.nlm.nih.gov/copyright.html",
+                "IsToxnet": true,
+                "ANID": 2262295
+            },
+            {
+                "ReferenceNumber": 38,
+                "SourceName": "LOTUS - the natural products occurrence database",
+                "SourceID": "Q411461",
+                "Name": "Pilocarpine",
+                "Description": "LOTUS is one of the biggest and best annotated resources for natural products occurrences available free of charge and without any restriction.",
+                "URL": "https://www.wikidata.org/wiki/Q411461",
+                "LicenseNote": "The code for LOTUS is released under the GNU General Public License v3.0.",
+                "LicenseURL": "https://lotus.nprod.net/",
+                "ANID": 19836358
+            },
+            {
+                "ReferenceNumber": 80,
+                "SourceName": "NCI Thesaurus (NCIt)",
+                "SourceID": "C62068::Compound",
+                "Description": "NCI Thesaurus (NCIt), from the U.S. National Cancer Institute, provides reference terminology for many NCI and other systems. It covers vocabulary for clinical care, translational and basic research, and public information and administrative activities.",
+                "URL": "https://ncithesaurus.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&ns=ncit&code=C62068",
+                "LicenseNote": "Unless otherwise indicated, all text within NCI products is free of copyright and may be reused without our permission. Credit the National Cancer Institute as the source.",
+                "LicenseURL": "https://www.cancer.gov/policies/copyright-reuse",
+                "ANID": 14396818
+            },
+            {
+                "ReferenceNumber": 105,
+                "SourceName": "Toxin and Toxin Target Database (T3DB)",
+                "SourceID": "Compound::T3D2979",
+                "Name": "Pilocarpine",
+                "Description": "The Toxin and Toxin Target Database (T3DB), or, soon to be referred as, the Toxic Exposome Database, is a unique bioinformatics resource that combines detailed toxin data with comprehensive toxin target information.",
+                "URL": "http://www.t3db.ca/toxins/T3D2979",
+                "LicenseNote": "T3DB is offered to the public as a freely available resource. Use and re-distribution of the data, in whole or in part, for commercial purposes requires explicit permission of the authors and explicit acknowledgment of the source material (T3DB) and the original publication.",
+                "LicenseURL": "https://t3db.ca/downloads",
+                "ANID": 20442798
+            },
+            {
+                "ReferenceNumber": 114,
+                "SourceName": "Medical Subject Headings (MeSH)",
+                "SourceID": "M0016860",
+                "Name": "Pilocarpine",
+                "Description": "MeSH (Medical Subject Headings) is the U.S. National Library of Medicine's controlled vocabulary thesaurus used for indexing articles for PubMed.",
+                "URL": "https://id.nlm.nih.gov/mesh/M0016860.html",
+                "LicenseNote": "Works produced by the U.S. government are not subject to copyright protection in the United States. Any such works found on National Library of Medicine (NLM) Web sites may be freely used or reproduced without permission in the U.S.",
+                "LicenseURL": "https://www.nlm.nih.gov/copyright.html"
+            }
+        ]
+    }
+}

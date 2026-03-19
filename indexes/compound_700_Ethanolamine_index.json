@@ -1,0 +1,2388 @@
+{
+    "Record": {
+        "RecordType": "CID",
+        "RecordNumber": 700,
+        "RecordTitle": "Ethanolamine",
+        "Information": [
+            {
+                "ReferenceNumber": 155,
+                "Value": {
+                    "StringWithMarkup": [
+                        {
+                            "String": "Ethanolamine"
+                        },
+                        {
+                            "String": "2-aminoethanol"
+                        },
+                        {
+                            "String": "141-43-5"
+                        },
+                        {
+                            "String": "monoethanolamine"
+                        },
+                        {
+                            "String": "Olamine"
+                        },
+                        {
+                            "String": "2-Aminoethan-1-ol"
+                        },
+                        {
+                            "String": "2-Hydroxyethylamine"
+                        },
+                        {
+                            "String": "colamine"
+                        },
+                        {
+                            "String": "Aminoethanol"
+                        },
+                        {
+                            "String": "Ethanol, 2-amino-"
+                        },
+                        {
+                            "String": "Ethylolamine"
+                        },
+                        {
+                            "String": "2-Hydroxyethanamine"
+                        },
+                        {
+                            "String": "2-Amino-1-ethanol"
+                        },
+                        {
+                            "String": "beta-Hydroxyethylamine"
+                        },
+                        {
+                            "String": "2-Ethanolamine"
+                        },
+                        {
+                            "String": "1-Amino-2-hydroxyethane"
+                        },
+                        {
+                            "String": "beta-Aminoethyl alcohol"
+                        },
+                        {
+                            "String": "Thiofaco M-50"
+                        },
+                        {
+                            "String": "Aethanolamin"
+                        },
+                        {
+                            "String": "2-Aminoethyl alcohol"
+                        },
+                        {
+                            "String": "MEA (alcohol)"
+                        },
+                        {
+                            "String": "USAF EK-1597"
+                        },
+                        {
+                            "String": "beta-Aminoethanol"
+                        },
+                        {
+                            "String": "Kolamin"
+                        },
+                        {
+                            "String": "Monoaethanolamin"
+                        },
+                        {
+                            "String": "beta-ethanolamine"
+                        },
+                        {
+                            "String": "2-Aminoaethanol"
+                        },
+                        {
+                            "String": "Etanolamina"
+                        },
+                        {
+                            "String": "Glycinol (monoethanolamine)"
+                        },
+                        {
+                            "String": "2-Aminoetanolo"
+                        },
+                        {
+                            "String": "DTXSID6022000"
+                        },
+                        {
+                            "String": "CHEBI:16000"
+                        },
+                        {
+                            "String": "5KV86114PT"
+                        },
+                        {
+                            "String": "DTXCID202000"
+                        },
+                        {
+                            "String": "2 Aminoethanol"
+                        },
+                        {
+                            "String": "RefChem:55665"
+                        },
+                        {
+                            "String": "205-483-3"
+                        },
+                        {
+                            "String": "618-436-0"
+                        },
+                        {
+                            "String": "682-672-0"
+                        },
+                        {
+                            "String": "2-amino-ethanol"
+                        },
+                        {
+                            "String": "Kolamin [Czech]"
+                        },
+                        {
+                            "String": "2-Amino ethanol"
+                        },
+                        {
+                            "String": "Aethanolamin [German]"
+                        },
+                        {
+                            "String": "Caswell No. 426"
+                        },
+                        {
+                            "String": "Etanolamina [Italian]"
+                        },
+                        {
+                            "String": "Monoaethanolamin [German]"
+                        },
+                        {
+                            "String": "2-Aminoaethanol [German]"
+                        },
+                        {
+                            "String": "2-Aminoetanolo [Italian]"
+                        },
+                        {
+                            "String": "MFCD00008183"
+                        },
+                        {
+                            "String": "UN2491"
+                        },
+                        {
+                            "String": "CCRIS 6260"
+                        },
+                        {
+                            "String": "HSDB 531"
+                        },
+                        {
+                            "String": "AI3-24219"
+                        },
+                        {
+                            "String": "C2H7NO"
+                        },
+                        {
+                            "String": "Olamine [INN]"
+                        },
+                        {
+                            "String": "EPA Pesticide Chemical Code 011601"
+                        },
+                        {
+                            "String": "Acid Orange  86"
+                        },
+                        {
+                            "String": "ETHANOL AMINE"
+                        },
+                        {
+                            "String": "Monoethanolamine (MEA)"
+                        },
+                        {
+                            "String": "C.I. Acid orange 108"
+                        },
+                        {
+                            "String": "CHEMBL104943"
+                        },
+                        {
+                            "String": "12220-07-4"
+                        },
+                        {
+                            "String": "Envision Conditioner PDD 9020"
+                        },
+                        {
+                            "String": "ethanol-amine"
+                        },
+                        {
+                            "String": "UN 2491"
+                        },
+                        {
+                            "String": "Monoethanolamine (NF)"
+                        },
+                        {
+                            "String": "Monoethanolamine [NF]"
+                        },
+                        {
+                            "String": "NCGC00090789-02"
+                        },
+                        {
+                            "String": "12220-09-6"
+                        },
+                        {
+                            "String": "Ethane, 1-amino-2-hydroxy-"
+                        },
+                        {
+                            "String": "Ethanolamine @ 1000 microg/mL in H2O"
+                        },
+                        {
+                            "String": "EINECS 205-483-3"
+                        },
+                        {
+                            "String": "Ifosfamide EP Impurity D"
+                        },
+                        {
+                            "String": "ethanolamin"
+                        },
+                        {
+                            "String": "ethanolarnine"
+                        },
+                        {
+                            "String": "hydoxyethylamine"
+                        },
+                        {
+                            "String": "b-Aminoethanol"
+                        },
+                        {
+                            "String": "b-Ethanolamine"
+                        },
+                        {
+                            "String": "UNII-5KV86114PT"
+                        },
+                        {
+                            "String": "H-Glycinol"
+                        },
+                        {
+                            "String": "monoethanol amine"
+                        },
+                        {
+                            "String": "2 -aminoethanol"
+                        },
+                        {
+                            "String": "Ethanolamine CRS"
+                        },
+                        {
+                            "String": "b-Hydroxyethylamine"
+                        },
+                        {
+                            "String": "ethanol, 2-amino"
+                        },
+                        {
+                            "String": "2-hydroxylethylamine"
+                        },
+                        {
+                            "String": ".beta.-Aminoethanol"
+                        },
+                        {
+                            "String": ".beta.-Ethanolamine"
+                        },
+                        {
+                            "String": "b-Aminoethyl alcohol"
+                        },
+                        {
+                            "String": "2-hydroxy-ethylamine"
+                        },
+                        {
+                            "String": "2-hydroxyethyl amine"
+                        },
+                        {
+                            "String": "2-hydroxyethyl-amine"
+                        },
+                        {
+                            "String": "12-Amine"
+                        },
+                        {
+                            "String": "2-amino-ethan-1-ol"
+                        },
+                        {
+                            "String": "2-hydroxy- ethylamine"
+                        },
+                        {
+                            "String": "2-hydroxy-1-ethylamine"
+                        },
+                        {
+                            "String": ".beta.-Hydroxyethylamine"
+                        },
+                        {
+                            "String": "Ethanolamine, >=98%"
+                        },
+                        {
+                            "String": "Ethanolamine, >=99%"
+                        },
+                        {
+                            "String": "3-phenyl-5-p-tolyl-1H-[1,2,4]triazole"
+                        },
+                        {
+                            "String": "ETHANOLAMINE [MI]"
+                        },
+                        {
+                            "String": "NH2CH2CH2OH"
+                        },
+                        {
+                            "String": "Trolamine impurity A CRS"
+                        },
+                        {
+                            "String": ".beta.-Aminoethyl alcohol"
+                        },
+                        {
+                            "String": "Ethanolamine, AR, 99%"
+                        },
+                        {
+                            "String": "bmse000276"
+                        },
+                        {
+                            "String": "Epitope ID:120354"
+                        },
+                        {
+                            "String": "NH2C2H4OH"
+                        },
+                        {
+                            "String": "EC 205-483-3"
+                        },
+                        {
+                            "String": "ETHANOLAMINE [HSDB]"
+                        },
+                        {
+                            "String": "2-Aminoethanol, redistilled"
+                        },
+                        {
+                            "String": "2-aminoethanol,hydrochloride"
+                        },
+                        {
+                            "String": "SCHEMBL1644"
+                        },
+                        {
+                            "String": "MEA-LCI; MEA 90"
+                        },
+                        {
+                            "String": "Ethanolamine: 2-aminoethanol"
+                        },
+                        {
+                            "String": "SCHEMBL27195"
+                        },
+                        {
+                            "String": "SCHEMBL66887"
+                        },
+                        {
+                            "String": "MONOETHANOLAMINE [II]"
+                        },
+                        {
+                            "String": "BIDD:ER0367"
+                        },
+                        {
+                            "String": "ETHANOLAMINE [WHO-DD]"
+                        },
+                        {
+                            "String": "Ethanolamine, LR, >=99%"
+                        },
+                        {
+                            "String": "SCHEMBL465432"
+                        },
+                        {
+                            "String": "SCHEMBL480066"
+                        },
+                        {
+                            "String": "SCHEMBL503243"
+                        },
+                        {
+                            "String": "2-Aminoethanol (Ethanolamine)"
+                        },
+                        {
+                            "String": "BDBM7973"
+                        },
+                        {
+                            "String": "SCHEMBL1706983"
+                        },
+                        {
+                            "String": "SCHEMBL2195331"
+                        },
+                        {
+                            "String": "SCHEMBL2771045"
+                        },
+                        {
+                            "String": "SCHEMBL6434956"
+                        },
+                        {
+                            "String": "SCHEMBL7765524"
+                        },
+                        {
+                            "String": "SCHEMBL11446998"
+                        },
+                        {
+                            "String": "Ethanolamine, analytical standard"
+                        },
+                        {
+                            "String": "GTPL14272"
+                        },
+                        {
+                            "String": "MONOETHANOLAMINE [USP-RS]"
+                        },
+                        {
+                            "String": "|A-Aminoethyl alcohol Ethanolamine"
+                        },
+                        {
+                            "String": "Ethanol, 2-amino- (8CI,9CI)"
+                        },
+                        {
+                            "String": "ETHANOLAMINE [EP MONOGRAPH]"
+                        },
+                        {
+                            "String": "DPG-5733"
+                        },
+                        {
+                            "String": "STR00417"
+                        },
+                        {
+                            "String": "Tox21_400020"
+                        },
+                        {
+                            "String": "c0594"
+                        },
+                        {
+                            "String": "EBC-44084"
+                        },
+                        {
+                            "String": "MSK001357"
+                        },
+                        {
+                            "String": "STL199164"
+                        },
+                        {
+                            "String": "Ethanolamine, for synthesis, 99.0%"
+                        },
+                        {
+                            "String": "AKOS000245055"
+                        },
+                        {
+                            "String": "DB03994"
+                        },
+                        {
+                            "String": "FM31711"
+                        },
+                        {
+                            "String": "Ethanolamine, ACS reagent, >=99.0%"
+                        },
+                        {
+                            "String": "Ethanolamine, ReagentPlus(R), >=99%"
+                        },
+                        {
+                            "String": "Ethanolamine, USP, 98.0-100.5%"
+                        },
+                        {
+                            "String": "beta-Aminoethyl alcohol beta-Ethanolamine"
+                        },
+                        {
+                            "String": "NCGC00090789-01"
+                        },
+                        {
+                            "String": "NCGC00090789-03"
+                        },
+                        {
+                            "String": "BP-21017"
+                        },
+                        {
+                            "String": "BP-24368"
+                        },
+                        {
+                            "String": "BP-31055"
+                        },
+                        {
+                            "String": "CAS-141-43-5"
+                        },
+                        {
+                            "String": "FA111931"
+                        },
+                        {
+                            "String": "FA175299"
+                        },
+                        {
+                            "String": "TROLAMINE IMPURITY A [EP IMPURITY]"
+                        },
+                        {
+                            "String": "Ethanolamine, SAJ first grade, >=99.0%"
+                        },
+                        {
+                            "String": "IFOSFAMIDE IMPURITY D [EP IMPURITY]"
+                        },
+                        {
+                            "String": "Ethanolamine, JIS special grade, >=99.0%"
+                        },
+                        {
+                            "String": "NS00001908"
+                        },
+                        {
+                            "String": "O-(2-Aminoethyl)polyethylene glycol 3,000"
+                        },
+                        {
+                            "String": "EN300-19392"
+                        },
+                        {
+                            "String": "C00189"
+                        },
+                        {
+                            "String": "D05074"
+                        },
+                        {
+                            "String": "P20022"
+                        },
+                        {
+                            "String": "InChI=1/C2H7NO/c3-1-2-4/h4H,1-3H"
+                        },
+                        {
+                            "String": "A902308"
+                        },
+                        {
+                            "String": "F043400"
+                        },
+                        {
+                            "String": "Q410387"
+                        },
+                        {
+                            "String": "Ethanolamine, purified by redistillation, >=99.5%"
+                        },
+                        {
+                            "String": "587CE5AA-008A-469C-AB39-82CC4D0CA779"
+                        },
+                        {
+                            "String": "ethanolamine; 2-aminoethanol; 2-aminoethyl alcohol; mea"
+                        },
+                        {
+                            "String": "F2190-0367"
+                        },
+                        {
+                            "String": "Z104473700"
+                        },
+                        {
+                            "String": "Ethanolamine, puriss. p.a., ACS reagent, >=99.0% (GC/NT)"
+                        },
+                        {
+                            "String": "Ethanolamine, liquid, BioReagent, suitable for cell culture, >=98%"
+                        },
+                        {
+                            "String": "Trolamine impurity A, European Pharmacopoeia (EP) Reference Standard"
+                        },
+                        {
+                            "String": "Monoethanolamine, United States Pharmacopeia (USP) Reference Standard"
+                        },
+                        {
+                            "String": "Monoethanolamine, Pharmaceutical Secondary Standard; Certified Reference Material"
+                        }
+                    ]
+                }
+            },
+            {
+                "ReferenceNumber": 2,
+                "Value": {
+                    "StringWithMarkup": [
+                        {
+                            "String": "C2H7NO"
+                        }
+                    ]
+                }
+            },
+            {
+                "ReferenceNumber": 5,
+                "Value": {
+                    "StringWithMarkup": [
+                        {
+                            "String": "C2H7NO"
+                        }
+                    ]
+                }
+            },
+            {
+                "ReferenceNumber": 72,
+                "Name": "",
+                "Value": {
+                    "StringWithMarkup": [
+                        {
+                            "String": "C2H7NO",
+                            "Markup": [
+                                {
+                                    "Start": 1,
+                                    "Length": 1,
+                                    "Type": "Subscript"
+                                },
+                                {
+                                    "Start": 3,
+                                    "Length": 1,
+                                    "Type": "Subscript"
+                                }
+                            ]
+                        },
+                        {
+                            "String": "H2NCH2CH2OH",
+                            "Markup": [
+                                {
+                                    "Start": 1,
+                                    "Length": 1,
+                                    "Type": "Subscript"
+                                },
+                                {
+                                    "Start": 5,
+                                    "Length": 1,
+                                    "Type": "Subscript"
+                                },
+                                {
+                                    "Start": 8,
+                                    "Length": 1,
+                                    "Type": "Subscript"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "ReferenceNumber": 155,
+                "Reference": [
+                    "Computed by PubChem 2.2 (PubChem release 2025.09.15)"
+                ],
+                "Value": {
+                    "StringWithMarkup": [
+                        {
+                            "String": "C2H7NO"
+                        }
+                    ]
+                }
+            },
+            {
+                "ReferenceNumber": 155,
+                "Reference": [
+                    "Computed by PubChem 2.2 (PubChem release 2025.09.15)"
+                ],
+                "Value": {
+                    "StringWithMarkup": [
+                        {
+                            "String": "61.08"
+                        }
+                    ],
+                    "Unit": "g/mol"
+                }
+            },
+            {
+                "ReferenceNumber": 155,
+                "Reference": [
+                    "Computed by InChI 1.07.4 (PubChem release 2025.09.15)"
+                ],
+                "Value": {
+                    "StringWithMarkup": [
+                        {
+                            "String": "HZAXFHJVJLSVMW-UHFFFAOYSA-N"
+                        }
+                    ]
+                }
+            },
+            {
+                "ReferenceNumber": 39,
+                "URL": "https://gsrs.ncats.nih.gov/ginas/app/beta/substances/5KV86114PT",
+                "Value": {
+                    "StringWithMarkup": [
+                        {
+                            "String": "5KV86114PT"
+                        }
+                    ]
+                }
+            },
+            {
+                "ReferenceNumber": 155,
+                "Value": {
+                    "DateISO8601": [
+                        "2026-03-14"
+                    ]
+                }
+            },
+            {
+                "ReferenceNumber": 155,
+                "Value": {
+                    "DateISO8601": [
+                        "2004-09-16"
+                    ]
+                }
+            },
+            {
+                "ReferenceNumber": 5,
+                "Description": "Physical Description",
+                "Value": {
+                    "StringWithMarkup": [
+                        {
+                            "String": "Ethanolamine appears as a clear colorless liquid with an odor resembling that of ammonia. Flash point 185 \u00b0F. May attack copper, brass, and rubber. Corrosive to tissue. Moderately toxic. Produces toxic oxides of nitrogen during combustion.",
+                            "Markup": [
+                                {
+                                    "Start": 0,
+                                    "Length": 12,
+                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/Ethanolamine",
+                                    "Type": "PubChem Internal Link",
+                                    "Extra": "CID-700"
+                                },
+                                {
+                                    "Start": 81,
+                                    "Length": 7,
+                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/ammonia",
+                                    "Type": "PubChem Internal Link",
+                                    "Extra": "CID-222"
+                                },
+                                {
+                                    "Start": 121,
+                                    "Length": 6,
+                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/element/Copper",
+                                    "Type": "PubChem Internal Link",
+                                    "Extra": "Element-Copper"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "ReferenceNumber": 10,
+                "Name": "Record Description",
+                "Description": "Ontology Summary",
+                "Value": {
+                    "StringWithMarkup": [
+                        {
+                            "String": "Ethanolamine is a member of the class of ethanolamines that is ethane with an amino substituent at C-1 and a hydroxy substituent at C-2, making it both a primary amine and a primary alcohol. It has a role as a mouse metabolite, an Escherichia coli metabolite and a human metabolite. It is a primary alcohol, a member of ethanolamines and a primary amine. It is a conjugate base of an ethanolaminium(1+).",
+                            "Markup": [
+                                {
+                                    "Start": 0,
+                                    "Length": 12,
+                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/Ethanolamine",
+                                    "Type": "PubChem Internal Link",
+                                    "Extra": "CID-700"
+                                },
+                                {
+                                    "Start": 63,
+                                    "Length": 6,
+                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/ethane",
+                                    "Type": "PubChem Internal Link",
+                                    "Extra": "CID-6324"
+                                },
+                                {
+                                    "Start": 109,
+                                    "Length": 7,
+                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/hydroxy",
+                                    "Type": "PubChem Internal Link",
+                                    "Extra": "CID-961"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "ReferenceNumber": 16,
+                "Reference": [
+                    "Journal of the American College of Toxicology 2(7):183-235, 1983",
+                    "International Journal of Toxicology 34(Suppl.2):84-98, 2015"
+                ],
+                "ExtendedReference": [
+                    {
+                        "Citation": "Journal of the American College of Toxicology 2(7):183-235, 1983",
+                        "Matched": {
+                            "PCLID": 906421391,
+                            "Citation": "Journal of the American College of Toxicology 2(7):183-235, 1983"
+                        }
+                    },
+                    {
+                        "Citation": "International Journal of Toxicology 34(Suppl.2):84-98, 2015",
+                        "Matched": {
+                            "PCLID": 906421633,
+                            "Citation": "International Journal of Toxicology 34(Suppl.2):84-98, 2015"
+                        }
+                    }
+                ],
+                "Value": {
+                    "StringWithMarkup": [
+                        {
+                            "String": "The CIR Expert Panel concluded that ethanolamine and the 12 related ethanolamine salts, listed below, are safe in the present practices of use and concentration described in this safety assessment (rinse-off products only) when formulated to be non-irritating. The Panel cautioned that ingredients should not be used in cosmetic products in which N-nitroso compounds may be formed...Ethanolamine...",
+                            "Markup": [
+                                {
+                                    "Start": 36,
+                                    "Length": 12,
+                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/ethanolamine",
+                                    "Type": "PubChem Internal Link",
+                                    "Extra": "CID-700"
+                                },
+                                {
+                                    "Start": 68,
+                                    "Length": 12,
+                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/ethanolamine",
+                                    "Type": "PubChem Internal Link",
+                                    "Extra": "CID-700"
+                                },
+                                {
+                                    "Start": 383,
+                                    "Length": 12,
+                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/Ethanolamine",
+                                    "Type": "PubChem Internal Link",
+                                    "Extra": "CID-700"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "ReferenceNumber": 17,
+                "Reference": [
+                    "Journal of the American College of Toxicology 2(7):183-235, 1983",
+                    "International Journal of Toxicology 34(Suppl.2):84-98, 2015"
+                ],
+                "ExtendedReference": [
+                    {
+                        "Citation": "Journal of the American College of Toxicology 2(7):183-235, 1983",
+                        "Matched": {
+                            "PCLID": 906421391,
+                            "Citation": "Journal of the American College of Toxicology 2(7):183-235, 1983"
+                        }
+                    },
+                    {
+                        "Citation": "International Journal of Toxicology 34(Suppl.2):84-98, 2015",
+                        "Matched": {
+                            "PCLID": 906421633,
+                            "Citation": "International Journal of Toxicology 34(Suppl.2):84-98, 2015"
+                        }
+                    }
+                ],
+                "Value": {
+                    "StringWithMarkup": [
+                        {
+                            "String": "The CIR Expert Panel concluded that ethanolamine and the 12 related ethanolamine salts, listed below, are safe in the present practices of use and concentration described in this safety assessment (rinse-off products only) when formulated to be non-irritating. The Panel cautioned that ingredients should not be used in cosmetic products in which N-nitroso compounds may be formed...Monoethanolamine...",
+                            "Markup": [
+                                {
+                                    "Start": 36,
+                                    "Length": 12,
+                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/ethanolamine",
+                                    "Type": "PubChem Internal Link",
+                                    "Extra": "CID-700"
+                                },
+                                {
+                                    "Start": 68,
+                                    "Length": 12,
+                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/ethanolamine",
+                                    "Type": "PubChem Internal Link",
+                                    "Extra": "CID-700"
+                                },
+                                {
+                                    "Start": 383,
+                                    "Length": 16,
+                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/Monoethanolamine",
+                                    "Type": "PubChem Internal Link",
+                                    "Extra": "CID-700"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "ReferenceNumber": 20,
+                "Value": {
+                    "StringWithMarkup": [
+                        {
+                            "String": "A viscous, hygroscopic amino alcohol with an ammoniacal odor. It is widely distributed in biological tissue and is a component of lecithin. It is used as a surfactant, fluorimetric reagent, and to remove CO2 and H2S from natural gas and other gases.",
+                            "Markup": [
+                                {
+                                    "Start": 23,
+                                    "Length": 13,
+                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/amino%20alcohol",
+                                    "Type": "PubChem Internal Link",
+                                    "Extra": "CID-787"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "ReferenceNumber": 21,
+                "Value": {
+                    "StringWithMarkup": [
+                        {
+                            "String": "Ethanolamine is a metabolite found in or produced by Escherichia coli (strain K12, MG1655).",
+                            "Markup": [
+                                {
+                                    "Start": 53,
+                                    "Length": 37,
+                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/taxonomy/511145"
+                                },
+                                {
+                                    "Start": 0,
+                                    "Length": 12,
+                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/Ethanolamine",
+                                    "Type": "PubChem Internal Link",
+                                    "Extra": "CID-700"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "ReferenceNumber": 43,
+                "Description": "FDA Pharmacology Summary",
+                "Value": {
+                    "StringWithMarkup": [
+                        {
+                            "String": "Ethanolamine is a Sclerosing Agent. The mechanism of action of ethanolamine is as a Sclerosing Activity. The physiologic effect of ethanolamine is by means of Vascular Sclerosing Activity.",
+                            "Markup": [
+                                {
+                                    "Start": 0,
+                                    "Length": 12,
+                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/Ethanolamine",
+                                    "Type": "PubChem Internal Link",
+                                    "Extra": "CID-700"
+                                },
+                                {
+                                    "Start": 63,
+                                    "Length": 12,
+                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/ethanolamine",
+                                    "Type": "PubChem Internal Link",
+                                    "Extra": "CID-700"
+                                },
+                                {
+                                    "Start": 131,
+                                    "Length": 12,
+                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/ethanolamine",
+                                    "Type": "PubChem Internal Link",
+                                    "Extra": "CID-700"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "ReferenceNumber": 80,
+                "Value": {
+                    "StringWithMarkup": [
+                        {
+                            "String": "Ethanolamine has been reported in Microchloropsis, Glycine max, and other organisms with data available.",
+                            "Markup": [
+                                {
+                                    "Start": 34,
+                                    "Length": 15,
+                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/taxonomy/2511164#section=Natural-Products"
+                                },
+                                {
+                                    "Start": 51,
+                                    "Length": 11,
+                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/taxonomy/3847#section=Natural-Products"
+                                },
+                                {
+                                    "Start": 68,
+                                    "Length": 15,
+                                    "URL": "#section=Taxonomy"
+                                },
+                                {
+                                    "Start": 0,
+                                    "Length": 12,
+                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/Ethanolamine",
+                                    "Type": "PubChem Internal Link",
+                                    "Extra": "CID-700"
+                                },
+                                {
+                                    "Start": 51,
+                                    "Length": 7,
+                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/Glycine",
+                                    "Type": "PubChem Internal Link",
+                                    "Extra": "CID-750"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "ReferenceNumber": 109,
+                "Value": {
+                    "StringWithMarkup": [
+                        {
+                            "String": "Monoethanolamine is a first generation monoethanolamine with antihistaminic property. Ethanolamine competes with free histamine for binding at the histamine (H)-1 receptor thereby acting as an inverse agonist that combines with and stabilizes the inactive form of the H1-receptor thereby shifting the equilibrium toward the inactive state. This leads to a reduction of the negative symptoms brought on by H1-receptor binding.",
+                            "Markup": [
+                                {
+                                    "Start": 0,
+                                    "Length": 16,
+                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/Monoethanolamine",
+                                    "Type": "PubChem Internal Link",
+                                    "Extra": "CID-700"
+                                },
+                                {
+                                    "Start": 39,
+                                    "Length": 16,
+                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/monoethanolamine",
+                                    "Type": "PubChem Internal Link",
+                                    "Extra": "CID-700"
+                                },
+                                {
+                                    "Start": 86,
+                                    "Length": 12,
+                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/Ethanolamine",
+                                    "Type": "PubChem Internal Link",
+                                    "Extra": "CID-700"
+                                },
+                                {
+                                    "Start": 118,
+                                    "Length": 9,
+                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/histamine",
+                                    "Type": "PubChem Internal Link",
+                                    "Extra": "CID-774"
+                                },
+                                {
+                                    "Start": 147,
+                                    "Length": 9,
+                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/histamine",
+                                    "Type": "PubChem Internal Link",
+                                    "Extra": "CID-774"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "ReferenceNumber": 144,
+                "Value": {
+                    "StringWithMarkup": [
+                        {
+                            "String": "Ethanolamine is a viscous, hygroscopic amino alcohol with an ammoniacal odor. It is widely distributed in biological tissue and is a component of lecithin. It is used as a surfactant, fluorometric reagent, and to remove CO2 and H2S from natural gas and other gases.",
+                            "Markup": [
+                                {
+                                    "Start": 0,
+                                    "Length": 12,
+                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/Ethanolamine",
+                                    "Type": "PubChem Internal Link",
+                                    "Extra": "CID-700"
+                                },
+                                {
+                                    "Start": 39,
+                                    "Length": 13,
+                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/amino%20alcohol",
+                                    "Type": "PubChem Internal Link",
+                                    "Extra": "CID-787"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "ReferenceNumber": 153,
+                "Value": {
+                    "StringWithMarkup": [
+                        {
+                            "String": "Ethanolamine is a metabolite found in or produced by Saccharomyces cerevisiae.",
+                            "Markup": [
+                                {
+                                    "Start": 53,
+                                    "Length": 24,
+                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/taxonomy/4932"
+                                },
+                                {
+                                    "Start": 0,
+                                    "Length": 12,
+                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/Ethanolamine",
+                                    "Type": "PubChem Internal Link",
+                                    "Extra": "CID-700"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "ReferenceNumber": 154,
+                "Value": {
+                    "StringWithMarkup": [
+                        {
+                            "String": "A viscous, hygroscopic amino alcohol with an ammoniacal odor. It is widely distributed in biological tissue and is a component of lecithin. It is used as a surfactant, fluorimetric reagent, and to remove CO2 and H2S from natural gas and other gases."
+                        }
+                    ]
+                }
+            },
+            {
+                "ReferenceNumber": 155,
+                "Name": "See Also",
+                "Value": {
+                    "StringWithMarkup": [
+                        {
+                            "String": "See also: Acid Orange 86 (annotation moved to).",
+                            "Markup": [
+                                {
+                                    "Start": 0,
+                                    "Length": 8,
+                                    "URL": "#section=Other-Relationships"
+                                },
+                                {
+                                    "Start": 10,
+                                    "Length": 14,
+                                    "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/Acid%20Orange%2086"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        ],
+        "Section": [
+            {
+                "TOCHeading": "Structures",
+                "Section": [
+                    {
+                        "TOCHeading": "2D Structure"
+                    },
+                    {
+                        "TOCHeading": "3D Conformer"
+                    },
+                    {
+                        "TOCHeading": "Crystal Structures",
+                        "Section": [
+                            {
+                                "TOCHeading": "COD Number"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Biologic Description",
+                "Section": [
+                    {
+                        "TOCHeading": "Biologic Depiction"
+                    },
+                    {
+                        "TOCHeading": "Biologic Line Notation"
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Primary Hazards"
+            },
+            {
+                "TOCHeading": "Names and Identifiers",
+                "Section": [
+                    {
+                        "TOCHeading": "Record Description"
+                    },
+                    {
+                        "TOCHeading": "Computed Descriptors",
+                        "Section": [
+                            {
+                                "TOCHeading": "IUPAC Name"
+                            },
+                            {
+                                "TOCHeading": "InChI"
+                            },
+                            {
+                                "TOCHeading": "InChIKey"
+                            },
+                            {
+                                "TOCHeading": "SMILES"
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "Molecular Formula"
+                    },
+                    {
+                        "TOCHeading": "Other Identifiers",
+                        "Section": [
+                            {
+                                "TOCHeading": "CAS"
+                            },
+                            {
+                                "TOCHeading": "Related CAS"
+                            },
+                            {
+                                "TOCHeading": "Deprecated CAS"
+                            },
+                            {
+                                "TOCHeading": "European Community (EC) Number"
+                            },
+                            {
+                                "TOCHeading": "UNII"
+                            },
+                            {
+                                "TOCHeading": "UN Number"
+                            },
+                            {
+                                "TOCHeading": "ChEBI ID"
+                            },
+                            {
+                                "TOCHeading": "ChEMBL ID"
+                            },
+                            {
+                                "TOCHeading": "DrugBank ID"
+                            },
+                            {
+                                "TOCHeading": "DSSTox Substance ID"
+                            },
+                            {
+                                "TOCHeading": "HMDB ID"
+                            },
+                            {
+                                "TOCHeading": "HTS Number"
+                            },
+                            {
+                                "TOCHeading": "ICSC Number"
+                            },
+                            {
+                                "TOCHeading": "KEGG ID"
+                            },
+                            {
+                                "TOCHeading": "MetaboLights"
+                            },
+                            {
+                                "TOCHeading": "Metabolomics Workbench ID"
+                            },
+                            {
+                                "TOCHeading": "NCI Thesaurus Code"
+                            },
+                            {
+                                "TOCHeading": "Nikkaji Number"
+                            },
+                            {
+                                "TOCHeading": "Open Targets"
+                            },
+                            {
+                                "TOCHeading": "RTECS Number"
+                            },
+                            {
+                                "TOCHeading": "RXCUI"
+                            },
+                            {
+                                "TOCHeading": "Wikidata"
+                            },
+                            {
+                                "TOCHeading": "Wikipedia"
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "Synonyms",
+                        "Section": [
+                            {
+                                "TOCHeading": "MeSH Entry Terms"
+                            },
+                            {
+                                "TOCHeading": "Depositor-Supplied Synonyms"
+                            },
+                            {
+                                "TOCHeading": "Removed Synonyms"
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "Create Date"
+                    },
+                    {
+                        "TOCHeading": "Modify Date"
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Chemical and Physical Properties",
+                "Section": [
+                    {
+                        "TOCHeading": "Computed Properties",
+                        "Section": [
+                            {
+                                "TOCHeading": "Molecular Weight"
+                            },
+                            {
+                                "TOCHeading": "XLogP3"
+                            },
+                            {
+                                "TOCHeading": "Hydrogen Bond Donor Count"
+                            },
+                            {
+                                "TOCHeading": "Hydrogen Bond Acceptor Count"
+                            },
+                            {
+                                "TOCHeading": "Rotatable Bond Count"
+                            },
+                            {
+                                "TOCHeading": "Exact Mass"
+                            },
+                            {
+                                "TOCHeading": "Monoisotopic Mass"
+                            },
+                            {
+                                "TOCHeading": "Topological Polar Surface Area"
+                            },
+                            {
+                                "TOCHeading": "Heavy Atom Count"
+                            },
+                            {
+                                "TOCHeading": "Formal Charge"
+                            },
+                            {
+                                "TOCHeading": "Complexity"
+                            },
+                            {
+                                "TOCHeading": "Isotope Atom Count"
+                            },
+                            {
+                                "TOCHeading": "Defined Atom Stereocenter Count"
+                            },
+                            {
+                                "TOCHeading": "Undefined Atom Stereocenter Count"
+                            },
+                            {
+                                "TOCHeading": "Defined Bond Stereocenter Count"
+                            },
+                            {
+                                "TOCHeading": "Undefined Bond Stereocenter Count"
+                            },
+                            {
+                                "TOCHeading": "Covalently-Bonded Unit Count"
+                            },
+                            {
+                                "TOCHeading": "Compound Is Canonicalized"
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "Experimental Properties",
+                        "Section": [
+                            {
+                                "TOCHeading": "Physical Description"
+                            },
+                            {
+                                "TOCHeading": "Color/Form"
+                            },
+                            {
+                                "TOCHeading": "Odor"
+                            },
+                            {
+                                "TOCHeading": "Boiling Point"
+                            },
+                            {
+                                "TOCHeading": "Melting Point"
+                            },
+                            {
+                                "TOCHeading": "Flash Point"
+                            },
+                            {
+                                "TOCHeading": "Solubility"
+                            },
+                            {
+                                "TOCHeading": "Density"
+                            },
+                            {
+                                "TOCHeading": "Vapor Density"
+                            },
+                            {
+                                "TOCHeading": "Vapor Pressure"
+                            },
+                            {
+                                "TOCHeading": "LogP"
+                            },
+                            {
+                                "TOCHeading": "Stability/Shelf Life"
+                            },
+                            {
+                                "TOCHeading": "Autoignition Temperature"
+                            },
+                            {
+                                "TOCHeading": "Decomposition"
+                            },
+                            {
+                                "TOCHeading": "Viscosity"
+                            },
+                            {
+                                "TOCHeading": "Heat of Combustion"
+                            },
+                            {
+                                "TOCHeading": "Heat of Vaporization"
+                            },
+                            {
+                                "TOCHeading": "pH"
+                            },
+                            {
+                                "TOCHeading": "Ionization Potential"
+                            },
+                            {
+                                "TOCHeading": "Odor Threshold"
+                            },
+                            {
+                                "TOCHeading": "Refractive Index"
+                            },
+                            {
+                                "TOCHeading": "Dissociation Constants"
+                            },
+                            {
+                                "TOCHeading": "Kovats Retention Index"
+                            },
+                            {
+                                "TOCHeading": "Other Experimental Properties"
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "SpringerMaterials Properties"
+                    },
+                    {
+                        "TOCHeading": "Chemical Classes",
+                        "Section": [
+                            {
+                                "TOCHeading": "Drugs",
+                                "Section": [
+                                    {
+                                        "TOCHeading": "Animal Drugs"
+                                    }
+                                ]
+                            },
+                            {
+                                "TOCHeading": "Cosmetics"
+                            },
+                            {
+                                "TOCHeading": "Food Additives"
+                            },
+                            {
+                                "TOCHeading": "Food Contact Substances"
+                            },
+                            {
+                                "TOCHeading": "Fragrances"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Spectral Information",
+                "Section": [
+                    {
+                        "TOCHeading": "1D NMR Spectra",
+                        "Section": [
+                            {
+                                "TOCHeading": "1H NMR Spectra"
+                            },
+                            {
+                                "TOCHeading": "13C NMR Spectra"
+                            },
+                            {
+                                "TOCHeading": "15N NMR Spectra"
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "2D NMR Spectra",
+                        "Section": [
+                            {
+                                "TOCHeading": "1H-1H NMR Spectra"
+                            },
+                            {
+                                "TOCHeading": "1H-13C NMR Spectra"
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "Mass Spectrometry",
+                        "Section": [
+                            {
+                                "TOCHeading": "GC-MS"
+                            },
+                            {
+                                "TOCHeading": "MS-MS"
+                            },
+                            {
+                                "TOCHeading": "LC-MS"
+                            },
+                            {
+                                "TOCHeading": "Other MS"
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "UV Spectra"
+                    },
+                    {
+                        "TOCHeading": "IR Spectra",
+                        "Section": [
+                            {
+                                "TOCHeading": "FTIR Spectra"
+                            },
+                            {
+                                "TOCHeading": "ATR-IR Spectra"
+                            },
+                            {
+                                "TOCHeading": "Vapor Phase IR Spectra"
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "Raman Spectra"
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Related Records",
+                "Section": [
+                    {
+                        "TOCHeading": "Related Compounds with Annotation"
+                    },
+                    {
+                        "TOCHeading": "Related Compounds"
+                    },
+                    {
+                        "TOCHeading": "Substances",
+                        "Section": [
+                            {
+                                "TOCHeading": "PubChem Reference Collection SID"
+                            },
+                            {
+                                "TOCHeading": "Related Substances"
+                            },
+                            {
+                                "TOCHeading": "Substances by Category"
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "Other Relationships"
+                    },
+                    {
+                        "TOCHeading": "Entrez Crosslinks"
+                    },
+                    {
+                        "TOCHeading": "Associated Chemicals"
+                    },
+                    {
+                        "TOCHeading": "NCBI LinkOut"
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Chemical Vendors"
+            },
+            {
+                "TOCHeading": "Drug and Medication Information",
+                "Section": [
+                    {
+                        "TOCHeading": "Drug Indication"
+                    },
+                    {
+                        "TOCHeading": "EMA Drug Information"
+                    },
+                    {
+                        "TOCHeading": "Drug Development Summary",
+                        "Section": [
+                            {
+                                "TOCHeading": "Max Phase"
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "Biomarker Information"
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Food Additives and Ingredients",
+                "Section": [
+                    {
+                        "TOCHeading": "FDA Substances Added to Food"
+                    },
+                    {
+                        "TOCHeading": "FDA Food Contact Substances (FCS)"
+                    },
+                    {
+                        "TOCHeading": "Associated Foods"
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Pharmacology and Biochemistry",
+                "Section": [
+                    {
+                        "TOCHeading": "FDA Pharmacological Classification"
+                    },
+                    {
+                        "TOCHeading": "Bionecessity"
+                    },
+                    {
+                        "TOCHeading": "Absorption, Distribution and Excretion"
+                    },
+                    {
+                        "TOCHeading": "Metabolism/Metabolites"
+                    },
+                    {
+                        "TOCHeading": "Biological Half-Life"
+                    },
+                    {
+                        "TOCHeading": "Human Metabolite Information",
+                        "Section": [
+                            {
+                                "TOCHeading": "Tissue Locations"
+                            },
+                            {
+                                "TOCHeading": "Cellular Locations"
+                            },
+                            {
+                                "TOCHeading": "Metabolite Pathways"
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "Biochemical Reactions"
+                    },
+                    {
+                        "TOCHeading": "Transformations"
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Use and Manufacturing",
+                "Section": [
+                    {
+                        "TOCHeading": "Uses",
+                        "Section": [
+                            {
+                                "TOCHeading": "Use Classification"
+                            },
+                            {
+                                "TOCHeading": "Industry Uses"
+                            },
+                            {
+                                "TOCHeading": "Consumer Uses"
+                            },
+                            {
+                                "TOCHeading": "Household Products"
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "Methods of Manufacturing"
+                    },
+                    {
+                        "TOCHeading": "Formulations/Preparations"
+                    },
+                    {
+                        "TOCHeading": "Consumption Patterns"
+                    },
+                    {
+                        "TOCHeading": "U.S. Production"
+                    },
+                    {
+                        "TOCHeading": "U.S. Imports"
+                    },
+                    {
+                        "TOCHeading": "U.S. Exports"
+                    },
+                    {
+                        "TOCHeading": "General Manufacturing Information"
+                    },
+                    {
+                        "TOCHeading": "Sampling Procedures"
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Identification",
+                "Section": [
+                    {
+                        "TOCHeading": "Analytic Laboratory Methods"
+                    },
+                    {
+                        "TOCHeading": "NIOSH Analytical Methods"
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Safety and Hazards",
+                "Section": [
+                    {
+                        "TOCHeading": "Hazards Identification",
+                        "Section": [
+                            {
+                                "TOCHeading": "GHS Classification"
+                            },
+                            {
+                                "TOCHeading": "Hazard Classes and Categories"
+                            },
+                            {
+                                "TOCHeading": "NFPA Hazard Classification"
+                            },
+                            {
+                                "TOCHeading": "DOT Hazard Classification"
+                            },
+                            {
+                                "TOCHeading": "EPA Safer Chemical"
+                            },
+                            {
+                                "TOCHeading": "Health Hazards"
+                            },
+                            {
+                                "TOCHeading": "Fire Hazards"
+                            },
+                            {
+                                "TOCHeading": "Hazards Summary"
+                            },
+                            {
+                                "TOCHeading": "Fire Potential"
+                            },
+                            {
+                                "TOCHeading": "Skin, Eye, and Respiratory Irritations"
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "Safety and Hazard Properties",
+                        "Section": [
+                            {
+                                "TOCHeading": "Flammable Limits"
+                            },
+                            {
+                                "TOCHeading": "Lower Explosive Limit (LEL)"
+                            },
+                            {
+                                "TOCHeading": "Upper Explosive Limit (UEL)"
+                            },
+                            {
+                                "TOCHeading": "Critical Temperature & Pressure"
+                            },
+                            {
+                                "TOCHeading": "Explosive Limits and Potential"
+                            },
+                            {
+                                "TOCHeading": "OSHA Standards"
+                            },
+                            {
+                                "TOCHeading": "NIOSH Recommendations"
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "First Aid Measures",
+                        "Section": [
+                            {
+                                "TOCHeading": "First Aid"
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "Fire Fighting",
+                        "Section": [
+                            {
+                                "TOCHeading": "Fire Fighting Procedures"
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "Accidental Release Measures",
+                        "Section": [
+                            {
+                                "TOCHeading": "Isolation and Evacuation"
+                            },
+                            {
+                                "TOCHeading": "Spillage Disposal"
+                            },
+                            {
+                                "TOCHeading": "Cleanup Methods"
+                            },
+                            {
+                                "TOCHeading": "Disposal Methods"
+                            },
+                            {
+                                "TOCHeading": "Preventive Measures"
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "Handling and Storage",
+                        "Section": [
+                            {
+                                "TOCHeading": "Nonfire Spill Response"
+                            },
+                            {
+                                "TOCHeading": "Safe Storage"
+                            },
+                            {
+                                "TOCHeading": "Storage Conditions"
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "Exposure Control and Personal Protection",
+                        "Section": [
+                            {
+                                "TOCHeading": "Recommended Exposure Limit (REL)"
+                            },
+                            {
+                                "TOCHeading": "Permissible Exposure Limit (PEL)"
+                            },
+                            {
+                                "TOCHeading": "Immediately Dangerous to Life or Health (IDLH)"
+                            },
+                            {
+                                "TOCHeading": "Threshold Limit Values (TLV)"
+                            },
+                            {
+                                "TOCHeading": "Occupational Exposure Limits (OEL)"
+                            },
+                            {
+                                "TOCHeading": "Emergency Response Planning Guidelines"
+                            },
+                            {
+                                "TOCHeading": "Inhalation Risk"
+                            },
+                            {
+                                "TOCHeading": "Effects of Short Term Exposure"
+                            },
+                            {
+                                "TOCHeading": "Personal Protective Equipment (PPE)"
+                            },
+                            {
+                                "TOCHeading": "Respirator Recommendations"
+                            },
+                            {
+                                "TOCHeading": "Fire Prevention"
+                            },
+                            {
+                                "TOCHeading": "Exposure Prevention"
+                            },
+                            {
+                                "TOCHeading": "Inhalation Prevention"
+                            },
+                            {
+                                "TOCHeading": "Skin Prevention"
+                            },
+                            {
+                                "TOCHeading": "Eye Prevention"
+                            },
+                            {
+                                "TOCHeading": "Ingestion Prevention"
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "Stability and Reactivity",
+                        "Section": [
+                            {
+                                "TOCHeading": "Air and Water Reactions"
+                            },
+                            {
+                                "TOCHeading": "Reactive Group"
+                            },
+                            {
+                                "TOCHeading": "Reactivity Profile"
+                            },
+                            {
+                                "TOCHeading": "Hazardous Reactivities and Incompatibilities"
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "Transport Information",
+                        "Section": [
+                            {
+                                "TOCHeading": "DOT Emergency Guidelines"
+                            },
+                            {
+                                "TOCHeading": "DOT ID and Guide"
+                            },
+                            {
+                                "TOCHeading": "Shipping Name/ Number DOT/UN/NA/IMO"
+                            },
+                            {
+                                "TOCHeading": "Shipment Methods and Regulations"
+                            },
+                            {
+                                "TOCHeading": "DOT Label"
+                            },
+                            {
+                                "TOCHeading": "Packaging and Labelling"
+                            },
+                            {
+                                "TOCHeading": "UN Classification"
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "Regulatory Information",
+                        "Section": [
+                            {
+                                "TOCHeading": "Atmospheric Standards"
+                            },
+                            {
+                                "TOCHeading": "FIFRA Requirements"
+                            },
+                            {
+                                "TOCHeading": "FDA Requirements"
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "Other Safety Information",
+                        "Section": [
+                            {
+                                "TOCHeading": "Toxic Combustion Products"
+                            },
+                            {
+                                "TOCHeading": "Special Reports"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Toxicity",
+                "Section": [
+                    {
+                        "TOCHeading": "Toxicological Information",
+                        "Section": [
+                            {
+                                "TOCHeading": "Toxicity Summary"
+                            },
+                            {
+                                "TOCHeading": "NIOSH Toxicity Data"
+                            },
+                            {
+                                "TOCHeading": "Carcinogen Classification"
+                            },
+                            {
+                                "TOCHeading": "Exposure Routes"
+                            },
+                            {
+                                "TOCHeading": "Signs and Symptoms"
+                            },
+                            {
+                                "TOCHeading": "Target Organs"
+                            },
+                            {
+                                "TOCHeading": "Acute Toxicity Link"
+                            },
+                            {
+                                "TOCHeading": "Adverse Effects"
+                            },
+                            {
+                                "TOCHeading": "Acute Effects"
+                            },
+                            {
+                                "TOCHeading": "Toxicity Data"
+                            },
+                            {
+                                "TOCHeading": "Interactions"
+                            },
+                            {
+                                "TOCHeading": "Antidote and Emergency Treatment"
+                            },
+                            {
+                                "TOCHeading": "Medical Surveillance"
+                            },
+                            {
+                                "TOCHeading": "Human Toxicity Excerpts"
+                            },
+                            {
+                                "TOCHeading": "Non-Human Toxicity Excerpts"
+                            },
+                            {
+                                "TOCHeading": "Non-Human Toxicity Values"
+                            },
+                            {
+                                "TOCHeading": "Ongoing Test Status"
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "Ecological Information",
+                        "Section": [
+                            {
+                                "TOCHeading": "Ecotoxicity Values"
+                            },
+                            {
+                                "TOCHeading": "Ecotoxicity Excerpts"
+                            },
+                            {
+                                "TOCHeading": "ICSC Environmental Data"
+                            },
+                            {
+                                "TOCHeading": "Environmental Fate/Exposure Summary"
+                            },
+                            {
+                                "TOCHeading": "Natural Pollution Sources"
+                            },
+                            {
+                                "TOCHeading": "Artificial Pollution Sources"
+                            },
+                            {
+                                "TOCHeading": "Environmental Fate"
+                            },
+                            {
+                                "TOCHeading": "Environmental Biodegradation"
+                            },
+                            {
+                                "TOCHeading": "Environmental Abiotic Degradation"
+                            },
+                            {
+                                "TOCHeading": "Environmental Bioconcentration"
+                            },
+                            {
+                                "TOCHeading": "Soil Adsorption/Mobility"
+                            },
+                            {
+                                "TOCHeading": "Volatilization from Water/Soil"
+                            },
+                            {
+                                "TOCHeading": "Food Survey Values"
+                            },
+                            {
+                                "TOCHeading": "Plant Concentrations"
+                            },
+                            {
+                                "TOCHeading": "Other Environmental Concentrations"
+                            },
+                            {
+                                "TOCHeading": "Probable Routes of Human Exposure"
+                            },
+                            {
+                                "TOCHeading": "Body Burden"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Associated Disorders and Diseases",
+                "Section": [
+                    {
+                        "TOCHeading": "Disease and References"
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Literature",
+                "Section": [
+                    {
+                        "TOCHeading": "Consolidated References"
+                    },
+                    {
+                        "TOCHeading": "NLM Curated PubMed Citations"
+                    },
+                    {
+                        "TOCHeading": "Springer Nature References"
+                    },
+                    {
+                        "TOCHeading": "Thieme References"
+                    },
+                    {
+                        "TOCHeading": "Wiley References"
+                    },
+                    {
+                        "TOCHeading": "Nature Journal References"
+                    },
+                    {
+                        "TOCHeading": "Chemical Co-Occurrences in Literature"
+                    },
+                    {
+                        "TOCHeading": "Chemical-Gene Co-Occurrences in Literature"
+                    },
+                    {
+                        "TOCHeading": "Chemical-Disease Co-Occurrences in Literature"
+                    },
+                    {
+                        "TOCHeading": "Chemical-Organism Co-Occurrences in Literature"
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Patents",
+                "Section": [
+                    {
+                        "TOCHeading": "Depositor-Supplied Patent Identifiers"
+                    },
+                    {
+                        "TOCHeading": "WIPO PATENTSCOPE"
+                    },
+                    {
+                        "TOCHeading": "Chemical Co-Occurrences in Patents"
+                    },
+                    {
+                        "TOCHeading": "Chemical-Disease Co-Occurrences in Patents"
+                    },
+                    {
+                        "TOCHeading": "Chemical-Gene Co-Occurrences in Patents"
+                    },
+                    {
+                        "TOCHeading": "Chemical-Organism Co-Occurrences in Patents"
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Interactions and Pathways",
+                "Section": [
+                    {
+                        "TOCHeading": "Protein Bound 3D Structures",
+                        "Section": [
+                            {
+                                "TOCHeading": "Ligands from Protein Bound 3D Structures",
+                                "Section": [
+                                    {
+                                        "TOCHeading": "PDBe Ligand Code"
+                                    },
+                                    {
+                                        "TOCHeading": "PDBe Conformer"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "Chemical-Target Interactions"
+                    },
+                    {
+                        "TOCHeading": "Pathways"
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Biological Test Results",
+                "Section": [
+                    {
+                        "TOCHeading": "BioAssay Results"
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Taxonomy"
+            },
+            {
+                "TOCHeading": "Classification",
+                "Section": [
+                    {
+                        "TOCHeading": "MeSH Tree"
+                    },
+                    {
+                        "TOCHeading": "NCI Thesaurus Tree"
+                    },
+                    {
+                        "TOCHeading": "ChEBI Ontology"
+                    },
+                    {
+                        "TOCHeading": "KEGG: Metabolite"
+                    },
+                    {
+                        "TOCHeading": "FDA Pharm Classes"
+                    },
+                    {
+                        "TOCHeading": "EPA Safer Choice"
+                    },
+                    {
+                        "TOCHeading": "ChemIDplus"
+                    },
+                    {
+                        "TOCHeading": "CAMEO Chemicals"
+                    },
+                    {
+                        "TOCHeading": "ChEMBL Target Tree"
+                    },
+                    {
+                        "TOCHeading": "Household Products Database Tree"
+                    },
+                    {
+                        "TOCHeading": "UN GHS Classification"
+                    },
+                    {
+                        "TOCHeading": "EPA CPDat Classification"
+                    },
+                    {
+                        "TOCHeading": "NORMAN Suspect List Exchange Classification"
+                    },
+                    {
+                        "TOCHeading": "EPA DSSTox Classification"
+                    },
+                    {
+                        "TOCHeading": "Consumer Product Information Database Classification"
+                    },
+                    {
+                        "TOCHeading": "EPA TSCA and CDR Classification"
+                    },
+                    {
+                        "TOCHeading": "LOTUS Tree"
+                    },
+                    {
+                        "TOCHeading": "EPA Substance Registry Services Tree"
+                    },
+                    {
+                        "TOCHeading": "MolGenie Organic Chemistry Ontology"
+                    },
+                    {
+                        "TOCHeading": "Chemicals in PubChem from Regulatory Sources"
+                    },
+                    {
+                        "TOCHeading": "HTS Classification"
+                    },
+                    {
+                        "TOCHeading": "FDA Liver Toxicity Knowledge Base (LTKB)"
+                    },
+                    {
+                        "TOCHeading": "Open Targets Classification"
+                    }
+                ]
+            }
+        ],
+        "Reference": [
+            {
+                "ReferenceNumber": 155,
+                "SourceName": "PubChem",
+                "SourceID": "PubChem",
+                "Description": "Data deposited in or computed by PubChem",
+                "URL": "https://pubchem.ncbi.nlm.nih.gov"
+            },
+            {
+                "ReferenceNumber": 2,
+                "SourceName": "Australian Industrial Chemicals Introduction Scheme (AICIS)",
+                "SourceID": "inv_3890",
+                "Name": "Ethanol, 2-amino-",
+                "Description": "The Australian Industrial Chemicals Introduction Scheme (AICIS) helps protect the environment by finding out the risks of industrial chemicals and recommending ways to promote their safer use. They regulate chemicals (including polymers) that are manufactured or imported into Australia for an industrial use, such as in inks, paints, adhesives, solvents, cosmetics and personal care products, cleaning products, as well as in manufacturing, construction and mining applications.",
+                "URL": "https://services.industrialchemicals.gov.au/search-inventory/",
+                "LicenseURL": "https://www.industrialchemicals.gov.au/copyright",
+                "ANID": 39390116
+            },
+            {
+                "ReferenceNumber": 5,
+                "SourceName": "CAMEO Chemicals",
+                "SourceID": "1146",
+                "Name": "ETHANOLAMINE",
+                "Description": "CAMEO Chemicals is a chemical database designed for people who are involved in hazardous material incident response and planning. CAMEO Chemicals contains a library with thousands of datasheets containing response-related information and recommendations for hazardous materials that are commonly transported, used, or stored in the United States. CAMEO Chemicals was developed by the National Oceanic and Atmospheric Administration's Office of Response and Restoration in partnership with the Environmental Protection Agency's Office of Emergency Management.",
+                "URL": "https://cameochemicals.noaa.gov/chemical/1146",
+                "LicenseNote": "CAMEO Chemicals and all other CAMEO products are available at no charge to those organizations and individuals (recipients) responsible for the safe handling of chemicals. However, some of the chemical data itself is subject to the copyright restrictions of the companies or organizations that provided the data.",
+                "LicenseURL": "https://cameochemicals.noaa.gov/help/reference/terms_and_conditions.htm?d_f=false",
+                "ANID": 758410
+            },
+            {
+                "ReferenceNumber": 72,
+                "SourceName": "ILO-WHO International Chemical Safety Cards (ICSCs)",
+                "SourceID": "0152",
+                "Name": "ETHANOLAMINE",
+                "Description": "The International Chemical Safety Cards (ICSCs) are data sheets intended to provide essential safety and health information on chemicals in a clear and concise way. The primary aim of the Cards is to promote the safe use of chemicals in the workplace.",
+                "URL": "https://chemicalsafety.ilo.org/dyn/icsc/showcard.display?p_card_id=0152",
+                "LicenseNote": "Creative Commons CC BY 4.0",
+                "LicenseURL": "https://www.ilo.org/global/copyright/lang--en/index.htm",
+                "ANID": 2260068
+            },
+            {
+                "ReferenceNumber": 39,
+                "SourceName": "FDA Global Substance Registration System (GSRS)",
+                "SourceID": "5KV86114PT",
+                "Name": "2-Aminoethanol",
+                "Description": "The FDA Global Substance Registration System (GSRS) enables the efficient and accurate exchange of information on what substances are in regulated products. Instead of relying on names, which vary across regulatory domains, countries, and regions, the GSRS knowledge base makes it possible for substances to be defined by standardized, scientific descriptions.",
+                "URL": "https://gsrs.ncats.nih.gov/ginas/app/beta/substances/5KV86114PT",
+                "LicenseNote": "Unless otherwise noted, the contents of the FDA website (www.fda.gov), both text and graphics, are not copyrighted. They are in the public domain and may be republished, reprinted and otherwise used freely by anyone without the need to obtain permission from FDA. Credit to the U.S. Food and Drug Administration as the source is appreciated but not required.",
+                "LicenseURL": "https://www.fda.gov/about-fda/about-website/website-policies#linking",
+                "ANID": 5812953
+            },
+            {
+                "ReferenceNumber": 10,
+                "SourceName": "ChEBI",
+                "SourceID": "CHEBI:OBO:700",
+                "Name": "Ethanolamine",
+                "Description": "Chemical Entities of Biological Interest (ChEBI) is a database and ontology of molecular entities focused on 'small' chemical compounds, that is part of the Open Biomedical Ontologies effort. The term \"molecular entity\" refers to any constitutionally or isotopically distinct atom, molecule, ion, ion pair, radical, radical ion, complex, conformer, etc., identifiable as a separately distinguishable entity.",
+                "URL": "https://www.ebi.ac.uk/chebi/searchId.do?chebiId=CHEBI:16000",
+                "ANID": 2448905
+            },
+            {
+                "ReferenceNumber": 16,
+                "SourceName": "Cosmetic Ingredient Review (CIR)",
+                "SourceID": "6a65996b-1efb-4625-954b-413f46cb6032",
+                "Name": "Ethanolamine",
+                "Description": "The Cosmetic Ingredient Review (CIR) studies individual chemical compounds as they are used in cosmetic products. CIR relies heavily on the International Nomenclature of Cosmetic Ingredients (INCI) when identifying the ingredients to be assessed. The Expert Panel for Cosmetic Ingredient Safety (Panel) assess the safety of ingredients for use in cosmetics. The function of an ingredient in cosmetics is noted. The Panel reviews the data relevant to the safety of an ingredient and concludes whether an ingredient is safe in cosmetics in the present practices of use and concentration described in a safety assessment.",
+                "URL": "https://cir-reports.cir-safety.org/cir-ingredient-status-report/?id=6a65996b-1efb-4625-954b-413f46cb6032",
+                "LicenseURL": "https://cir-safety.org/terms-use",
+                "ANID": 38998303
+            },
+            {
+                "ReferenceNumber": 17,
+                "SourceName": "Cosmetic Ingredient Review (CIR)",
+                "SourceID": "2da4207e-7b3c-4661-9258-c870cd05cbed",
+                "Name": "Monoethanolamine",
+                "Description": "The Cosmetic Ingredient Review (CIR) studies individual chemical compounds as they are used in cosmetic products. CIR relies heavily on the International Nomenclature of Cosmetic Ingredients (INCI) when identifying the ingredients to be assessed. The Expert Panel for Cosmetic Ingredient Safety (Panel) assess the safety of ingredients for use in cosmetics. The function of an ingredient in cosmetics is noted. The Panel reviews the data relevant to the safety of an ingredient and concludes whether an ingredient is safe in cosmetics in the present practices of use and concentration described in a safety assessment.",
+                "URL": "https://cir-reports.cir-safety.org/cir-ingredient-status-report/?id=2da4207e-7b3c-4661-9258-c870cd05cbed",
+                "LicenseURL": "https://cir-safety.org/terms-use",
+                "ANID": 38999587
+            },
+            {
+                "ReferenceNumber": 20,
+                "SourceName": "DrugBank",
+                "SourceID": "DB03994",
+                "Name": "Ethanolamine",
+                "Description": "The DrugBank database is a unique bioinformatics and cheminformatics resource that combines detailed drug (i.e. chemical, pharmacological and pharmaceutical) data with comprehensive drug target (i.e. sequence, structure, and pathway) information.",
+                "URL": "https://www.drugbank.ca/drugs/DB03994",
+                "LicenseNote": "Creative Common's Attribution-NonCommercial 4.0 International License (http://creativecommons.org/licenses/by-nc/4.0/legalcode)",
+                "LicenseURL": "https://www.drugbank.ca/legal/terms_of_use",
+                "ANID": 3616302
+            },
+            {
+                "ReferenceNumber": 21,
+                "SourceName": "E. coli Metabolome Database (ECMDB)",
+                "SourceID": "ECMDB00149",
+                "Description": "The ECMDB is an expertly curated database containing extensive metabolomic data and metabolic pathway diagrams about Escherichia coli (strain K12, MG1655).",
+                "URL": "https://ecmdb.ca/compounds/M2MDB000056",
+                "LicenseNote": "ECMDB is offered to the public as a freely available resource.",
+                "LicenseURL": "https://ecmdb.ca/citations",
+                "ANID": 15352117
+            },
+            {
+                "ReferenceNumber": 43,
+                "SourceName": "FDA Pharm Classes",
+                "SourceID": "5KV86114PT",
+                "Name": "ETHANOLAMINE",
+                "Description": "FDA Pharmacologic class is a group of active moieties that share scientifically documented properties and is defined on the basis of any combination of attributes of the active moiety. Read more at https://www.fda.gov/industry/structured-product-labeling-resources/pharmacologic-class",
+                "URL": "https://dailymed.nlm.nih.gov/dailymed/browse-drug-classes.cfm",
+                "LicenseNote": "Unless otherwise noted, the contents of the FDA website (www.fda.gov), both text and graphics, are not copyrighted. They are in the public domain and may be republished, reprinted and otherwise used freely by anyone without the need to obtain permission from FDA. Credit to the U.S. Food and Drug Administration as the source is appreciated but not required.",
+                "LicenseURL": "https://www.fda.gov/about-fda/about-website/website-policies#linking",
+                "ANID": 6490826
+            },
+            {
+                "ReferenceNumber": 80,
+                "SourceName": "LOTUS - the natural products occurrence database",
+                "SourceID": "Q410387",
+                "Name": "Ethanolamine",
+                "Description": "LOTUS is one of the biggest and best annotated resources for natural products occurrences available free of charge and without any restriction.",
+                "URL": "https://www.wikidata.org/wiki/Q410387",
+                "LicenseNote": "The code for LOTUS is released under the GNU General Public License v3.0.",
+                "LicenseURL": "https://lotus.nprod.net/",
+                "ANID": 19825229
+            },
+            {
+                "ReferenceNumber": 109,
+                "SourceName": "NCI Thesaurus (NCIt)",
+                "SourceID": "C61756::Compound",
+                "Description": "NCI Thesaurus (NCIt), from the U.S. National Cancer Institute, provides reference terminology for many NCI and other systems. It covers vocabulary for clinical care, translational and basic research, and public information and administrative activities.",
+                "URL": "https://ncithesaurus.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&ns=ncit&code=C61756",
+                "LicenseNote": "Unless otherwise indicated, all text within NCI products is free of copyright and may be reused without our permission. Credit the National Cancer Institute as the source.",
+                "LicenseURL": "https://www.cancer.gov/policies/copyright-reuse",
+                "ANID": 14394631
+            },
+            {
+                "ReferenceNumber": 144,
+                "SourceName": "Toxin and Toxin Target Database (T3DB)",
+                "SourceID": "Compound::T3D4769",
+                "Name": "Ethanolamine",
+                "Description": "The Toxin and Toxin Target Database (T3DB), or, soon to be referred as, the Toxic Exposome Database, is a unique bioinformatics resource that combines detailed toxin data with comprehensive toxin target information.",
+                "URL": "http://www.t3db.ca/toxins/T3D4769",
+                "LicenseNote": "T3DB is offered to the public as a freely available resource. Use and re-distribution of the data, in whole or in part, for commercial purposes requires explicit permission of the authors and explicit acknowledgment of the source material (T3DB) and the original publication.",
+                "LicenseURL": "https://t3db.ca/downloads",
+                "ANID": 20443862
+            },
+            {
+                "ReferenceNumber": 153,
+                "SourceName": "Yeast Metabolome Database (YMDB)",
+                "SourceID": "YMDB00009",
+                "Name": "Ethanolamine",
+                "Description": "The Yeast Metabolome Database (YMDB) is a manually curated database of small molecule metabolites found in or produced by Saccharomyces cerevisiae (also known as Baker's yeast and Brewer's yeast).",
+                "URL": "https://www.ymdb.ca/compounds/YMDB00009",
+                "LicenseNote": "YMDB is offered to the public as a freely available resource.",
+                "LicenseURL": "http://www.ymdb.ca/downloads",
+                "ANID": 19796647
+            },
+            {
+                "ReferenceNumber": 154,
+                "SourceName": "Medical Subject Headings (MeSH)",
+                "SourceID": "M0029475",
+                "Name": "Ethanolamine",
+                "Description": "MeSH (Medical Subject Headings) is the U.S. National Library of Medicine's controlled vocabulary thesaurus used for indexing articles for PubMed.",
+                "URL": "https://id.nlm.nih.gov/mesh/M0029475.html",
+                "LicenseNote": "Works produced by the U.S. government are not subject to copyright protection in the United States. Any such works found on National Library of Medicine (NLM) Web sites may be freely used or reproduced without permission in the U.S.",
+                "LicenseURL": "https://www.nlm.nih.gov/copyright.html"
+            }
+        ]
+    }
+}

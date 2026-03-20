@@ -14,6 +14,8 @@ caffeine degradation III (bacteria, via demethylation)
 glycogen degradation II
 Caffeine and theobromine metabolism
 Phosphodiesterases in neuronal function
+Caffeine Pathway, Pharmacokinetics
+Theophylline Pathway, Pharmacokinetics
 Caffeine Metabolism
 caffeine biosynthesis II (via paraxanthine)
 caffeine degradation I (main, plants)

@@ -213171,6 +213171,8 @@ A4GNA8,GO:0005737,cellular_component,cytoplasm
 A4GNA8,GO:0005783,cellular_component,endoplasmic reticulum
 A4GNA8,GO:0005789,cellular_component,endoplasmic reticulum membrane
 A4GNA8,GO:0005829,cellular_component,cytosol
+A4Z6T7,GO:0004060,molecular_function,arylamine N-acetyltransferase activity
+A4Z6T7,GO:0016407,molecular_function,acetyltransferase activity
 A5D6W6,GO:0003674,molecular_function,molecular_function
 A5D6W6,GO:0010945,molecular_function,coenzyme A diphosphatase activity
 A5D6W6,GO:0017129,molecular_function,triglyceride binding
@@ -213389,6 +213391,20 @@ C9JRZ8,GO:0005759,cellular_component,mitochondrial matrix
 C9JRZ8,GO:0005829,cellular_component,cytosol
 C9JRZ8,GO:0005829,cellular_component,cytosol
 C9JRZ8,GO:0005886,cellular_component,plasma membrane
+F4HXY7,GO:0006659,biological_process,phosphatidylserine biosynthetic process
+F4HXY7,GO:0003882,molecular_function,CDP-diacylglycerol-serine O-phosphatidyltransferase activity
+F4HXY7,GO:0106245,molecular_function,L-serine-phosphatidylethanolamine phosphatidyltransferase activity
+F4HXY7,GO:0006646,biological_process,phosphatidylethanolamine biosynthetic process
+F4HXY7,GO:0006659,biological_process,phosphatidylserine biosynthetic process
+F4HXY7,GO:0006659,biological_process,phosphatidylserine biosynthetic process
+F4HXY7,GO:0009556,biological_process,microsporogenesis
+F4HXY7,GO:0005634,cellular_component,nucleus
+F4HXY7,GO:0005635,cellular_component,nuclear envelope
+F4HXY7,GO:0005739,cellular_component,mitochondrion
+F4HXY7,GO:0005789,cellular_component,endoplasmic reticulum membrane
+F4HXY7,GO:0005789,cellular_component,endoplasmic reticulum membrane
+F4HXY7,GO:0005789,cellular_component,endoplasmic reticulum membrane
+F4HXY7,GO:0031965,cellular_component,nuclear membrane
 G5EC09,GO:0004142,molecular_function,diacylglycerol cholinephosphotransferase activity
 G5EC09,GO:0004142,molecular_function,diacylglycerol cholinephosphotransferase activity
 G5EC09,GO:0004307,molecular_function,ethanolaminephosphotransferase activity
@@ -214283,6 +214299,24 @@ O00764,GO:0005829,cellular_component,cytosol
 O00764,GO:0034774,cellular_component,secretory granule lumen
 O00764,GO:0035580,cellular_component,specific granule lumen
 O00764,GO:0070062,cellular_component,extracellular exosome
+O04928,GO:0008654,biological_process,phospholipid biosynthetic process
+O04928,GO:0080186,biological_process,developmental vegetative growth
+O04928,GO:0004605,molecular_function,phosphatidate cytidylyltransferase activity
+O04928,GO:0004605,molecular_function,phosphatidate cytidylyltransferase activity
+O04928,GO:0004605,molecular_function,phosphatidate cytidylyltransferase activity
+O04928,GO:0004605,molecular_function,phosphatidate cytidylyltransferase activity
+O04928,GO:0004605,molecular_function,phosphatidate cytidylyltransferase activity
+O04928,GO:0004605,molecular_function,phosphatidate cytidylyltransferase activity
+O04928,GO:0016772,molecular_function,"transferase activity, transferring phosphorus-containing groups"
+O04928,GO:0016024,biological_process,CDP-diacylglycerol biosynthetic process
+O04928,GO:0016024,biological_process,CDP-diacylglycerol biosynthetic process
+O04928,GO:0140042,biological_process,lipid droplet formation
+O04928,GO:0005789,cellular_component,endoplasmic reticulum membrane
+O04928,GO:0005634,cellular_component,nucleus
+O04928,GO:0005739,cellular_component,mitochondrion
+O04928,GO:0005783,cellular_component,endoplasmic reticulum
+O04928,GO:0016020,cellular_component,membrane
+O04928,GO:0016020,cellular_component,membrane
 O14521,GO:0005515,molecular_function,protein binding
 O14521,GO:0008177,molecular_function,succinate dehydrogenase (quinone) activity
 O14521,GO:0009055,molecular_function,electron transfer activity
@@ -215973,6 +216007,19 @@ O15528,GO:0005739,cellular_component,mitochondrion
 O15528,GO:0005741,cellular_component,mitochondrial outer membrane
 O15528,GO:0005741,cellular_component,mitochondrial outer membrane
 O15528,GO:0031966,cellular_component,mitochondrial membrane
+O22216,GO:0016616,molecular_function,"oxidoreductase activity, acting on the CH-OH group of donors, NAD or NADP as acceptor"
+O22216,GO:0047952,molecular_function,glycerol-3-phosphate dehydrogenase [NAD(P)+] activity
+O22216,GO:0051287,molecular_function,NAD binding
+O22216,GO:0051287,molecular_function,NAD binding
+O22216,GO:0141152,molecular_function,glycerol-3-phosphate dehydrogenase (NAD+) activity
+O22216,GO:0005975,biological_process,carbohydrate metabolic process
+O22216,GO:0006072,biological_process,glycerol-3-phosphate metabolic process
+O22216,GO:0006072,biological_process,glycerol-3-phosphate metabolic process
+O22216,GO:0046168,biological_process,glycerol-3-phosphate catabolic process
+O22216,GO:0005829,cellular_component,cytosol
+O22216,GO:0005737,cellular_component,cytoplasm
+O22216,GO:0005829,cellular_component,cytosol
+O22216,GO:0005829,cellular_component,cytosol
 O43175,GO:0004617,molecular_function,phosphoglycerate dehydrogenase activity
 O43175,GO:0004617,molecular_function,phosphoglycerate dehydrogenase activity
 O43175,GO:0004617,molecular_function,phosphoglycerate dehydrogenase activity
@@ -247931,6 +247978,21 @@ Q8IY26,GO:0005789,cellular_component,endoplasmic reticulum membrane
 Q8IY26,GO:0005789,cellular_component,endoplasmic reticulum membrane
 Q8IY26,GO:0005886,cellular_component,plasma membrane
 Q8IY26,GO:0031965,cellular_component,nuclear membrane
+Q8LG50,GO:0003841,molecular_function,1-acylglycerol-3-phosphate O-acyltransferase activity
+Q8LG50,GO:0003841,molecular_function,1-acylglycerol-3-phosphate O-acyltransferase activity
+Q8LG50,GO:0003841,molecular_function,1-acylglycerol-3-phosphate O-acyltransferase activity
+Q8LG50,GO:0005515,molecular_function,protein binding
+Q8LG50,GO:0005515,molecular_function,protein binding
+Q8LG50,GO:0016746,molecular_function,acyltransferase activity
+Q8LG50,GO:0016024,biological_process,CDP-diacylglycerol biosynthetic process
+Q8LG50,GO:0140042,biological_process,lipid droplet formation
+Q8LG50,GO:0005811,cellular_component,lipid droplet
+Q8LG50,GO:0012505,cellular_component,endomembrane system
+Q8LG50,GO:0005576,cellular_component,extracellular region
+Q8LG50,GO:0005783,cellular_component,endoplasmic reticulum
+Q8LG50,GO:0005783,cellular_component,endoplasmic reticulum
+Q8LG50,GO:0005783,cellular_component,endoplasmic reticulum
+Q8LG50,GO:0005789,cellular_component,endoplasmic reticulum membrane
 Q8N0U8,GO:0005515,molecular_function,protein binding
 Q8N0U8,GO:0005515,molecular_function,protein binding
 Q8N0U8,GO:0005515,molecular_function,protein binding
@@ -257154,6 +257216,22 @@ Q9SAH5,GO:0008757,molecular_function,S-adenosylmethionine-dependent methyltransf
 Q9SAH5,GO:0006656,biological_process,phosphatidylcholine biosynthetic process
 Q9SAH5,GO:0005789,cellular_component,endoplasmic reticulum membrane
 Q9SAH5,GO:0009507,cellular_component,chloroplast
+Q9SHJ5,GO:0048235,biological_process,pollen sperm cell differentiation
+Q9SHJ5,GO:0004366,molecular_function,glycerol-3-phosphate O-acyltransferase activity
+Q9SHJ5,GO:0016746,molecular_function,acyltransferase activity
+Q9SHJ5,GO:0016791,molecular_function,phosphatase activity
+Q9SHJ5,GO:0090447,molecular_function,glycerol-3-phosphate 2-O-acyltransferase activity
+Q9SHJ5,GO:0090447,molecular_function,glycerol-3-phosphate 2-O-acyltransferase activity
+Q9SHJ5,GO:0090447,molecular_function,glycerol-3-phosphate 2-O-acyltransferase activity
+Q9SHJ5,GO:0010143,biological_process,cutin biosynthetic process
+Q9SHJ5,GO:0016024,biological_process,CDP-diacylglycerol biosynthetic process
+Q9SHJ5,GO:0160062,biological_process,cutin-based cuticle development
+Q9SHJ5,GO:0016020,cellular_component,membrane
+Q9SHJ5,GO:0005739,cellular_component,mitochondrion
+Q9SHJ5,GO:0005739,cellular_component,mitochondrion
+Q9SHJ5,GO:0005739,cellular_component,mitochondrion
+Q9SHJ5,GO:0016020,cellular_component,membrane
+Q9SHJ5,GO:0016020,cellular_component,membrane
 Q9SRQ7,GO:0009395,biological_process,phospholipid catabolic process
 Q9SRQ7,GO:0004629,molecular_function,C-type glycerophospholipase activity
 Q9SRQ7,GO:0004629,molecular_function,C-type glycerophospholipase activity

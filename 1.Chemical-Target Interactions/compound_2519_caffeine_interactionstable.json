@@ -37031,6 +37031,19 @@
         "taxid": "9606"
     },
     {
+        "dsn": "Drug Gene Interaction database (DGIdb)",
+        "cmpdname": "Caffeine",
+        "srccmpdname": "CAFFEINE",
+        "srccmpdurl": "https://www.dgidb.org/drugs/rxcui:1886",
+        "srctargetname": "SHH",
+        "srctargeturl": "https://www.dgidb.org/genes/hgnc:10848",
+        "genename": "SHH",
+        "taxname": "Homo sapiens (human)",
+        "cid": "2519",
+        "geneid": "6469",
+        "taxid": "9606"
+    },
+    {
         "dsn": "Comparative Toxicogenomics Database (CTD)",
         "cmpdname": "Caffeine",
         "srccmpd": "D002110",
@@ -37049,19 +37062,6 @@
         "citations": "Zhang Z, Zhang Y, Li Y, Jiang S, Xu F, Li K, Chang L, Gao H, Kukic P, Carmichael PL, Liddell M, Li J, Zhang Q, Lyu Z, Peng S, Zuo T, Tulum L, Xu P. Quantitative phosphoproteomics reveal cellular responses from caffeine, coumarin and quercetin in treated HepG2 cells. Toxicol Appl Pharmacol. 2022 Aug 15;449():116110. doi: 10.1016/j.taap.2022.116110. PMID: 35688186.",
         "cid": "2519",
         "geneid": "359845",
-        "taxid": "9606"
-    },
-    {
-        "dsn": "Drug Gene Interaction database (DGIdb)",
-        "cmpdname": "Caffeine",
-        "srccmpdname": "CAFFEINE",
-        "srccmpdurl": "https://www.dgidb.org/drugs/rxcui:1886",
-        "srctargetname": "SHH",
-        "srctargeturl": "https://www.dgidb.org/genes/hgnc:10848",
-        "genename": "SHH",
-        "taxname": "Homo sapiens (human)",
-        "cid": "2519",
-        "geneid": "6469",
         "taxid": "9606"
     },
     {

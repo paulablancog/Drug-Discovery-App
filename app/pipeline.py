@@ -26,6 +26,12 @@ def fetch_pubchem_compound(smiles_code, email):
     compound_name = app.utils.safe_filename(app.chem.compound_display_name(compound))
     df_proteins.to_csv(f"{compound_name}_UniProt_proteins.csv", index=False)
 
+    df_pathways = app.pathways.retrieve_pathways(compound)
+    if df_pathways is None:
+        df_pathways = pd.DataFrame(columns=["uniprot_accession", "protein_name", "pathway", "compound"])
+
+    df_pathways.to_csv(f"{compound_name}_ProteinsAllPathways.csv", index=False)
+    
     return compound, compound_info, df_proteins
 
 
@@ -81,8 +87,11 @@ def load_save_interactions(compound):
 def fetch_interactions_summary(compound_names):
     csv_files = [f"{app.utils.safe_filename(name)}_UniProt_proteins.csv" for name in compound_names]
 
+    print(compound_names)
+
     dfs_int = []
     for csv_file in csv_files:
+        print("Checking: "+csv_file)
         if not Path(csv_file).exists():
             continue
     
@@ -102,24 +111,20 @@ def fetch_pathway_summary(compound_names):
     dfs_proteins = []
 
     for name in compound_names:
-        compound = app.chem.compound_retrieval(name)
-        if compound is None:
-            continue
-
-        compound_name = app.utils.safe_filename(app.chem.compound_display_name(compound))
-        filename = f"{compound_name}_ProteinsAllPathways.csv"
+        filename = f"{app.utils.safe_filename(name)}_ProteinsAllPathways.csv"
         compound_file = Path(filename)
 
         if compound_file.exists():
             dfs_proteins.append(pd.read_csv(compound_file))
             continue
 
-        df = app.pathways.retrieve_pathways(compound)
+        # THIS COULD BE DELETED as it keeps responsabilities apart (file-reader only)
+        """df = app.pathways.retrieve_pathways(name)
         if df is None or df.empty:
             continue
 
         df.to_csv(filename, index=False)
-        dfs_proteins.append(df)
+        dfs_proteins.append(df)"""
 
     df_pathways = (
         pd.concat(dfs_proteins, ignore_index=True) 
@@ -273,3 +278,36 @@ def build_go_enrichment(final_summary):
 
     final_summaryGO.to_csv("Protein_final_summaryGO.csv", index=False)
     return df_go, final_summaryGO
+
+
+def run_full_pipeline(smiles_codes, email):
+    compound_names = []
+    print("Running Pipeline")
+
+    for smiles in smiles_codes:
+        try:
+            compound, compound_info, df_proteins = fetch_pubchem_compound(smiles, email)
+            compound_name = app.utils.safe_filename(app.chem.compound_display_name(compound))
+            compound_names.append(compound_name)
+            print(compound_name)
+            print(compound_info)
+        except Exception as e:
+            print(f"Skipping {smiles}: {e}")
+    
+    df_interactions = fetch_interactions_summary(compound_names)
+    df_pathways = fetch_pathway_summary(compound_names)
+    final_summary = build_final_summary(df_interactions, df_pathways)
+    df_go, final_summaryGO = build_go_enrichment(final_summary)
+
+    final_summaryGO.to_csv("Protein_final_summaryGO.csv", index=False)
+    excelsummary = pd.read_csv("Protein_final_summaryGO.csv")
+    excelsummary.to_excel("Protein_final_summaryGO.xlsx", index=False)
+
+    return {
+        "compound_names": compound_names,
+        "df_interactions": df_interactions,
+        "df_pathways": df_pathways,
+        "final_summary": final_summary,
+        "df_go": df_go,
+        "final_summaryGO": final_summaryGO,
+    }

@@ -1807,6 +1807,16 @@ P37012,Phosphoglucomutase 2,BioCyc_META_PWY-5941,caffeine
 Q06625,Glycogen debranching enzyme,BioCyc_META_PWY-5941,caffeine
 Q96G03,Phosphopentomutase,BioCyc_META_PWY-5941,caffeine
 Q9XTL9,Glycogen phosphorylase,BioCyc_META_PWY-5941,caffeine
+A4Z6T7,Arylamine N-acetyltransferase ,PharmGKB_PA165884757,caffeine
+P05177,Cytochrome P450 1A2,PharmGKB_PA165884757,caffeine
+P05181,Cytochrome P450 2E1,PharmGKB_PA165884757,caffeine
+P08684,Cytochrome P450 3A4,PharmGKB_PA165884757,caffeine
+P11509,Cytochrome P450 2A6,PharmGKB_PA165884757,caffeine
+P47989,Xanthine dehydrogenase/oxidase,PharmGKB_PA165884757,caffeine
+P05177,Cytochrome P450 1A2,PharmGKB_PA165958541,caffeine
+P05181,Cytochrome P450 2E1,PharmGKB_PA165958541,caffeine
+P08684,Cytochrome P450 3A4,PharmGKB_PA165958541,caffeine
+P47989,Xanthine dehydrogenase/oxidase,PharmGKB_PA165958541,caffeine
 P05177,Cytochrome P450 1A2,PathBank_SMP0000028,caffeine
 P05181,Cytochrome P450 2E1,PathBank_SMP0000028,caffeine
 P08684,Cytochrome P450 3A4,PathBank_SMP0000028,caffeine

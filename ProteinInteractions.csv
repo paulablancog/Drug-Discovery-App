@@ -2333,8 +2333,8 @@ caffeine,79137,reticulophagy regulator family member 2,RETREG2,Q8NC44,Q8NC44;B3K
 caffeine,254958,"REXO1 like 1, pseudogene",REXO1L1P,,
 caffeine,282133,adenosine A1 receptor,ADORA1,P28190,P28190
 caffeine,9615,guanine deaminase,GDA,Q9Y2T3,Q9Y2T3
-caffeine,359845,refilin B,RFLNB,Q8N5W9,Q8N5W9
 caffeine,6469,sonic hedgehog signaling molecule,SHH,Q15465,Q15465
+caffeine,359845,refilin B,RFLNB,Q8N5W9,Q8N5W9
 caffeine,5994,regulatory factor X associated protein,RFXAP,O00287,O00287
 caffeine,653489,RANBP2 like and GRIP domain containing 3,RGPD3,A6NKT7,A6NKT7
 caffeine,5997,regulator of G protein signaling 2,RGS2,P41220,P41220
@@ -4551,6 +4551,8 @@ caffeine,55628,zinc finger protein 407,ZNF407,Q9C0G0,Q9C0G0
 caffeine,84858,zinc finger protein 503,ZNF503,Q96F45,Q96F45
 caffeine,9658,zinc finger protein 516,ZNF516,Q92618,Q92618;Q2YDX2
 caffeine,51042,zinc finger protein 593,ZNF593,O00488,O00488
+carbachol,1131,cholinergic receptor muscarinic 3,CHRM3,P20309,P20309
+carbachol,1135,cholinergic receptor nicotinic alpha 2 subunit,CHRNA2,Q15822,Q15822
 Ethanolamine,196,aryl hydrocarbon receptor,AHR,P35869,P35869
 Ethanolamine,306,annexin A3,ANXA3,P12429,P12429
 Ethanolamine,306,annexin A3,ANXA3,P12429,P12429
@@ -4567,8 +4569,6 @@ Ethanolamine,22933,sirtuin 2,SIRT2,Q8IXJ6,Q8IXJ6;A0A0A0MRF5
 Ethanolamine,57922,"cugbp, Elav-like family member 3a",CELF3A,Q9IBD1,Q9IBD1;A0A8M9PGK3;A0AB32T9K5
 Ethanolamine,70536,glutaminyl-peptide cyclotransferase (glutaminyl cyclase),QPCT,Q9CYK2,Q9CYK2;A0A0R4J0G6;A0A3B2W7G1;Q3UFN2
 Ethanolamine,559054,3-hydroxy-3-methylglutaryl-CoA reductase a,HMGCRA,A9JSZ0,A9JSZ0
-carbachol,1131,cholinergic receptor muscarinic 3,CHRM3,P20309,P20309
-carbachol,1135,cholinergic receptor nicotinic alpha 2 subunit,CHRNA2,Q15822,Q15822
 forskolin,107,adenylate cyclase 1,ADCY1,Q08828,Q08828;C9J1J0
 forskolin,108,adenylate cyclase 2,ADCY2,Q08462,Q08462;Q71UM8
 forskolin,108,adenylate cyclase 2,ADCY2,Q08462,Q08462;Q71UM8

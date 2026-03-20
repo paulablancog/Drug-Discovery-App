@@ -194045,7 +194045,7 @@ Q9NR19,GO:0006085,biological_process,acetyl-CoA biosynthetic process
 Q9NR19,GO:0007616,biological_process,long-term memory
 Q9NR19,GO:0008610,biological_process,lipid biosynthetic process
 Q9NR19,GO:0019413,biological_process,acetate biosynthetic process
-Q9NR19,GO:0019427,biological_process,acetyl-CoA biosynthetic process from acetate
+Q9NR19,GO:0019427,biological_process,obsolete acetyl-CoA biosynthetic process from acetate
 Q9NR19,GO:0019542,biological_process,propionate biosynthetic process
 Q9NR19,GO:0045893,biological_process,positive regulation of DNA-templated transcription
 Q9NR19,GO:0005737,cellular_component,cytoplasm
@@ -256038,7 +256038,7 @@ Q9NUB1,GO:0006068,biological_process,ethanol catabolic process
 Q9NUB1,GO:0006085,biological_process,acetyl-CoA biosynthetic process
 Q9NUB1,GO:0006085,biological_process,acetyl-CoA biosynthetic process
 Q9NUB1,GO:0019413,biological_process,acetate biosynthetic process
-Q9NUB1,GO:0019427,biological_process,acetyl-CoA biosynthetic process from acetate
+Q9NUB1,GO:0019427,biological_process,obsolete acetyl-CoA biosynthetic process from acetate
 Q9NUB1,GO:0019542,biological_process,propionate biosynthetic process
 Q9NUB1,GO:0005739,cellular_component,mitochondrion
 Q9NUB1,GO:0005739,cellular_component,mitochondrion

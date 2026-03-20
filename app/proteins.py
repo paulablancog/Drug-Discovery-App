@@ -84,7 +84,7 @@ def translate_geneid_to_protein(email, protein_data, compound, api_key=None, bat
             time.sleep(0.2)
 
     return pd.DataFrame(protein_list)
-
+ 
 
 # -- MAP GENEID TO UNIPROTKB ACCESSION CODES (1128 -> P11229)
 def get_idmapping_db(db_name):
@@ -209,6 +209,44 @@ def map_genes_to_uniprot(filename, compound):
 
     return pd.DataFrame(rows)
 
+def map_uniprot_to_symbol(accessions):
+    accessions = [str(x).strip() for x in accessions if pd.notna(x) and str(x).strip()]
+
+    if not accessions:
+        return pd.DataFrame(columns=["uniprot_accession", "mapped_symbol"])
+    
+    rows = []
+
+    with requests.Session() as session:
+        for chunk in chunk_list(accessions, 100):
+            query = " OR ".join(f"accession:{acc}" for acc in chunk)
+
+            response = session.get(f"{UNIPROT_URL}/uniprotkb/search",
+                                   params = {"query": query,
+                                             "fields": "accession,gene_primary",
+                                             "format": "json",
+                                             "size": len(chunk),
+                                             },
+                                             timeout = 60,
+                                        )
+            response.raise_for_status()
+            data = response.json()
+
+            for item in data.get("results", []):
+                accession = item.get("primaryAccession", "") or ""
+
+                mapped_symbol = ""
+                genes = item.get("genes", []) or []
+                if genes:
+                    gene_name = genes[0].get("geneName") or {}
+                    mapped_symbol = gene_name.get("value", "") or ""
+
+                rows.append({
+                    "uniprot_accession": accession,
+                    "mapped_symbol": mapped_symbol,
+                })
+    return pd.DataFrame(rows, columns=["uniprot_accession", "mapped_symbol"])
+            
 
 # ESTE SE UTILIZA??
 def results_proteins(df_interactions, df_pathways):

@@ -106,7 +106,7 @@ def fetch_interactions_summary(compound_names):
     df_interactions.to_csv("ProteinInteractions.csv", index=False)
     return df_interactions
 
-#This list I have to see wether it passes SMILES or just the compound names
+
 def fetch_pathway_summary(compound_names):
     dfs_proteins = []
 
@@ -118,14 +118,6 @@ def fetch_pathway_summary(compound_names):
             dfs_proteins.append(pd.read_csv(compound_file))
             continue
 
-        # THIS COULD BE DELETED as it keeps responsabilities apart (file-reader only)
-        """df = app.pathways.retrieve_pathways(name)
-        if df is None or df.empty:
-            continue
-
-        df.to_csv(filename, index=False)
-        dfs_proteins.append(df)"""
-
     df_pathways = (
         pd.concat(dfs_proteins, ignore_index=True) 
         if dfs_proteins 
@@ -134,6 +126,33 @@ def fetch_pathway_summary(compound_names):
 
     df_pathways.to_csv("AllProteinsPathways.csv", index=False)
     return df_pathways
+
+def fill_missing_symbols(final_summary):
+    final_summary = final_summary.copy()
+
+    missing = (final_summary["symbol"].isna() | (final_summary["symbol"].astype(str).str.strip() == ""))
+    missing_accessions = (final_summary.loc[missing, "uniprot_accession"].dropna().astype(str).str.strip())
+    missing_accessions = [x for x in missing_accessions.unique() if x]
+
+    if not missing_accessions:
+        return final_summary
+    df_symbols = app.proteins.map_uniprot_to_symbol(missing_accessions)
+
+    final_summary = final_summary.merge(df_symbols, on="uniprot_accession", how="left")
+
+    final_summary["symbol"] = final_summary.apply(
+        lambda row: str(row["symbol"]).strip()
+        if pd.notna(row["symbol"]) and str(row["symbol"]).strip()
+        else (
+            str(row["mapped_symbol"]).strip()
+            if pd.notna(row["mapped_symbol"]) and str(row["mapped_symbol"]).strip()
+            else ""
+            ),
+        axis=1
+    )
+
+    final_summary = final_summary.drop(columns=["mapped_symbol"], errors = "ignore")
+    return final_summary
 
 
 # I NEED TO CHECK IF THOSE FILES ALREADY EXIST OR NOT
@@ -189,6 +208,22 @@ def build_final_summary(df_interactions, df_pathways):
         "pathway_compounds": "",
     })
 
+    final_summary["total_count"] = final_summary["total_count"].astype(int)
+    final_summary["n_pathways"] = final_summary["n_pathways"].astype(int)
+
+
+    final_summary["source"] = final_summary.apply(
+        lambda row:
+        "interaction_and_pathway" if row["total_count"] >0 and row["n_pathways"] >0
+        else "interaction_predominant" if row["total_count"] >0
+        else "pathway_predominant" if row["n_pathways"] >0
+        else "",
+        axis = 1
+    )
+
+    final_summary = fill_missing_symbols(final_summary)
+
+
     def merge_compound_strings(*values):
         items = []
         seen = set()
@@ -205,6 +240,7 @@ def build_final_summary(df_interactions, df_pathways):
 
         return ";".join(sorted(items))
 
+
     # Pathway-only proteins now inherit the compound(s) from pathways
     final_summary["compounds"] = final_summary.apply(
         lambda row: merge_compound_strings(
@@ -215,9 +251,7 @@ def build_final_summary(df_interactions, df_pathways):
         )
 
     final_summary["n_compounds"] = final_summary["compounds"].apply(lambda x: len([v for v in str(x).split(";") if v.strip()]) if str(x).strip() else 0)
-    final_summary["total_count"] = final_summary["total_count"].astype(int)
-    final_summary["n_pathways"] = final_summary["n_pathways"].astype(int)
-
+    
     final_summary = final_summary.sort_values(["total_count", "n_compounds"], ascending=[False,False])
     
     final_summary.to_csv("Protein_final_summary.csv", index=False)

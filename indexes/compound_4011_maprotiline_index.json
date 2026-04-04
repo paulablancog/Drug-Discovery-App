@@ -5,7 +5,7 @@
         "RecordTitle": "Maprotiline",
         "Information": [
             {
-                "ReferenceNumber": 91,
+                "ReferenceNumber": 92,
                 "Value": {
                     "StringWithMarkup": [
                         {
@@ -444,9 +444,6 @@
                             "String": "AB01275432-01"
                         },
                         {
-                            "String": "262M698"
-                        },
-                        {
                             "String": "L001173"
                         },
                         {
@@ -480,7 +477,7 @@
                 }
             },
             {
-                "ReferenceNumber": 91,
+                "ReferenceNumber": 92,
                 "Reference": [
                     "Computed by PubChem 2.2 (PubChem release 2025.09.15)"
                 ],
@@ -493,7 +490,7 @@
                 }
             },
             {
-                "ReferenceNumber": 91,
+                "ReferenceNumber": 92,
                 "Reference": [
                     "Computed by PubChem 2.2 (PubChem release 2025.09.15)"
                 ],
@@ -507,7 +504,7 @@
                 }
             },
             {
-                "ReferenceNumber": 91,
+                "ReferenceNumber": 92,
                 "Reference": [
                     "Computed by InChI 1.07.4 (PubChem release 2025.09.15)"
                 ],
@@ -520,7 +517,7 @@
                 }
             },
             {
-                "ReferenceNumber": 21,
+                "ReferenceNumber": 22,
                 "URL": "https://gsrs.ncats.nih.gov/ginas/app/beta/substances/2U1W68TROF",
                 "Value": {
                     "StringWithMarkup": [
@@ -531,15 +528,15 @@
                 }
             },
             {
-                "ReferenceNumber": 91,
+                "ReferenceNumber": 92,
                 "Value": {
                     "DateISO8601": [
-                        "2026-03-14"
+                        "2026-03-28"
                     ]
                 }
             },
             {
-                "ReferenceNumber": 91,
+                "ReferenceNumber": 92,
                 "Value": {
                     "DateISO8601": [
                         "2005-03-25"
@@ -622,7 +619,7 @@
                 }
             },
             {
-                "ReferenceNumber": 85,
+                "ReferenceNumber": 86,
                 "Value": {
                     "StringWithMarkup": [
                         {
@@ -676,7 +673,7 @@
                 }
             },
             {
-                "ReferenceNumber": 90,
+                "ReferenceNumber": 91,
                 "Value": {
                     "StringWithMarkup": [
                         {
@@ -686,7 +683,7 @@
                 }
             },
             {
-                "ReferenceNumber": 91,
+                "ReferenceNumber": 92,
                 "Name": "See Also",
                 "Value": {
                     "StringWithMarkup": [
@@ -797,9 +794,6 @@
                             },
                             {
                                 "TOCHeading": "Nikkaji Number"
-                            },
-                            {
-                                "TOCHeading": "Open Targets"
                             },
                             {
                                 "TOCHeading": "PharmGKB ID"
@@ -1015,6 +1009,9 @@
                                 "TOCHeading": "EU Clinical Trials Register"
                             }
                         ]
+                    },
+                    {
+                        "TOCHeading": "EMA Drug Information"
                     },
                     {
                         "TOCHeading": "Drug Development Summary",
@@ -1278,14 +1275,14 @@
         ],
         "Reference": [
             {
-                "ReferenceNumber": 91,
+                "ReferenceNumber": 92,
                 "SourceName": "PubChem",
                 "SourceID": "PubChem",
                 "Description": "Data deposited in or computed by PubChem",
                 "URL": "https://pubchem.ncbi.nlm.nih.gov"
             },
             {
-                "ReferenceNumber": 21,
+                "ReferenceNumber": 22,
                 "SourceName": "FDA Global Substance Registration System (GSRS)",
                 "SourceID": "2U1W68TROF",
                 "Name": "MAPROTILINE",
@@ -1316,7 +1313,7 @@
                 "ANID": 3607063
             },
             {
-                "ReferenceNumber": 85,
+                "ReferenceNumber": 86,
                 "SourceName": "Toxin and Toxin Target Database (T3DB)",
                 "SourceID": "Compound::T3D2934",
                 "Name": "Maprotiline",
@@ -1327,7 +1324,7 @@
                 "ANID": 20442762
             },
             {
-                "ReferenceNumber": 90,
+                "ReferenceNumber": 91,
                 "SourceName": "Medical Subject Headings (MeSH)",
                 "SourceID": "M0013021",
                 "Name": "Maprotiline",

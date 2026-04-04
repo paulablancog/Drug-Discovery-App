@@ -105,6 +105,9 @@
                             "String": "UNII-004F72P8F4"
                         },
                         {
+                            "String": "111244-96-3"
+                        },
+                        {
                             "String": "Carbamyl--methylcholine"
                         },
                         {
@@ -345,7 +348,7 @@
                 "ReferenceNumber": 39,
                 "Value": {
                     "DateISO8601": [
-                        "2026-03-14"
+                        "2026-03-28"
                     ]
                 }
             },
@@ -630,9 +633,6 @@
                             },
                             {
                                 "TOCHeading": "Nikkaji Number"
-                            },
-                            {
-                                "TOCHeading": "Open Targets"
                             },
                             {
                                 "TOCHeading": "PharmGKB ID"

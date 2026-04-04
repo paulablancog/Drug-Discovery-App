@@ -1,17 +1,16 @@
-compound,geneid,description,symbol,uniprot_accession,uniprot_accessions
-Ethanolamine,196,aryl hydrocarbon receptor,AHR,P35869,P35869
-Ethanolamine,306,annexin A3,ANXA3,P12429,P12429
-Ethanolamine,306,annexin A3,ANXA3,P12429,P12429
-Ethanolamine,338,apolipoprotein B,APOB,P04114,P04114;A0AAG2UUW0;Q59HB3;Q7Z7Q0
-Ethanolamine,348,apolipoprotein E,APOE,P02649,P02649;A0A0S2Z3D5
-Ethanolamine,1757,sarcosine dehydrogenase,SARDH,Q9UL12,Q9UL12;A8K596
-Ethanolamine,1950,epidermal growth factor,EGF,P01133,P01133;A0A494C018
-Ethanolamine,2099,estrogen receptor 1,ESR1,P03372,P03372;A0A125SXW3;A8KAF4;G4XH65;H0Y4W6;Q9UBT1
-Ethanolamine,2246,fibroblast growth factor 1,FGF1,P05230,P05230;A8K147;Q16089
-Ethanolamine,5408,pancreatic lipase related protein 2 (gene/pseudogene),PNLIPRP2,P54317,P54317;A0AAG2UV77
-Ethanolamine,6097,RAR related orphan receptor C,RORC,P51449,P51449;B4DPR1;F1D8P6;Q6I9R9
-Ethanolamine,8800,peroxisomal biogenesis factor 11 alpha,PEX11A,O75192,O75192;B2R8C6;B4DMF6
-Ethanolamine,22933,sirtuin 2,SIRT2,Q8IXJ6,Q8IXJ6;A0A0A0MRF5
-Ethanolamine,57922,"cugbp, Elav-like family member 3a",CELF3A,Q9IBD1,Q9IBD1;A0A8M9PGK3;A0AB32T9K5
-Ethanolamine,70536,glutaminyl-peptide cyclotransferase (glutaminyl cyclase),QPCT,Q9CYK2,Q9CYK2;A0A0R4J0G6;A0A3B2W7G1;Q3UFN2
-Ethanolamine,559054,3-hydroxy-3-methylglutaryl-CoA reductase a,HMGCRA,A9JSZ0,A9JSZ0
+compound,geneid,symbol,description,uniprot_accession,uniprot_accessions
+Ethanolamine,196,AHR,aryl hydrocarbon receptor,P35869,P35869
+Ethanolamine,306,ANXA3,annexin A3,P12429,P12429
+Ethanolamine,338,APOB,apolipoprotein B,P04114,P04114;A0AAG2UUW0;Q59HB3;Q7Z7Q0
+Ethanolamine,348,APOE,apolipoprotein E,P02649,P02649;A0A0S2Z3D5
+Ethanolamine,1757,SARDH,sarcosine dehydrogenase,Q9UL12,Q9UL12;A8K596
+Ethanolamine,1950,EGF,epidermal growth factor,P01133,P01133;A0A494C018
+Ethanolamine,2099,ESR1,estrogen receptor 1,P03372,P03372;A0A125SXW3;A8KAF4;G4XH65;H0Y4W6;Q9UBT1
+Ethanolamine,2246,FGF1,fibroblast growth factor 1,P05230,P05230;A8K147;Q16089
+Ethanolamine,5408,PNLIPRP2,pancreatic lipase related protein 2 (gene/pseudogene),P54317,P54317;A0AAG2UV77
+Ethanolamine,6097,RORC,RAR related orphan receptor C,P51449,P51449;B4DPR1;F1D8P6;Q6I9R9
+Ethanolamine,8800,PEX11A,peroxisomal biogenesis factor 11 alpha,O75192,O75192;B2R8C6;B4DMF6
+Ethanolamine,22933,SIRT2,sirtuin 2,Q8IXJ6,Q8IXJ6;A0A0A0MRF5
+Ethanolamine,57922,CELF3A,"cugbp, Elav-like family member 3a",Q9IBD1,Q9IBD1;A0A8M9PGK3;A0AB32T9K5
+Ethanolamine,70536,QPCT,glutaminyl-peptide cyclotransferase (glutaminyl cyclase),Q9CYK2,Q9CYK2;A0A0R4J0G6;A0A3B2W7G1;Q3UFN2
+Ethanolamine,559054,HMGCRA,3-hydroxy-3-methylglutaryl-CoA reductase a,A9JSZ0,A9JSZ0

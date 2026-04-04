@@ -5,7 +5,7 @@
         "RecordTitle": "Forskolin",
         "Information": [
             {
-                "ReferenceNumber": 66,
+                "ReferenceNumber": 69,
                 "Value": {
                     "StringWithMarkup": [
                         {
@@ -471,7 +471,7 @@
                 }
             },
             {
-                "ReferenceNumber": 66,
+                "ReferenceNumber": 69,
                 "Reference": [
                     "Computed by PubChem 2.2 (PubChem release 2025.09.15)"
                 ],
@@ -484,7 +484,7 @@
                 }
             },
             {
-                "ReferenceNumber": 66,
+                "ReferenceNumber": 69,
                 "Reference": [
                     "Computed by PubChem 2.2 (PubChem release 2025.09.15)"
                 ],
@@ -498,7 +498,7 @@
                 }
             },
             {
-                "ReferenceNumber": 66,
+                "ReferenceNumber": 69,
                 "Reference": [
                     "Computed by InChI 1.07.4 (PubChem release 2025.09.15)"
                 ],
@@ -522,15 +522,15 @@
                 }
             },
             {
-                "ReferenceNumber": 66,
+                "ReferenceNumber": 69,
                 "Value": {
                     "DateISO8601": [
-                        "2026-03-14"
+                        "2026-03-28"
                     ]
                 }
             },
             {
-                "ReferenceNumber": 66,
+                "ReferenceNumber": 69,
                 "Value": {
                     "DateISO8601": [
                         "2005-06-24"
@@ -597,7 +597,7 @@
                 }
             },
             {
-                "ReferenceNumber": 20,
+                "ReferenceNumber": 21,
                 "Value": {
                     "StringWithMarkup": [
                         {
@@ -631,7 +631,7 @@
                 }
             },
             {
-                "ReferenceNumber": 62,
+                "ReferenceNumber": 65,
                 "Value": {
                     "StringWithMarkup": [
                         {
@@ -657,7 +657,7 @@
                 }
             },
             {
-                "ReferenceNumber": 65,
+                "ReferenceNumber": 68,
                 "Value": {
                     "StringWithMarkup": [
                         {
@@ -752,9 +752,6 @@
                             },
                             {
                                 "TOCHeading": "Nikkaji Number"
-                            },
-                            {
-                                "TOCHeading": "Open Targets"
                             },
                             {
                                 "TOCHeading": "PharmGKB ID"
@@ -869,6 +866,9 @@
                                 "TOCHeading": "Drugs"
                             },
                             {
+                                "TOCHeading": "Dietary Ingredients"
+                            },
+                            {
                                 "TOCHeading": "Endocrine Disruptors"
                             },
                             {
@@ -954,6 +954,14 @@
                     },
                     {
                         "TOCHeading": "Drug-Drug Interactions"
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Food Additives and Ingredients",
+                "Section": [
+                    {
+                        "TOCHeading": "Dietary Supplements"
                     }
                 ]
             },
@@ -1139,9 +1147,6 @@
                         "TOCHeading": "EPA DSSTox Classification"
                     },
                     {
-                        "TOCHeading": "LOTUS Tree"
-                    },
-                    {
                         "TOCHeading": "EPA Substance Registry Services Tree"
                     },
                     {
@@ -1155,7 +1160,7 @@
         ],
         "Reference": [
             {
-                "ReferenceNumber": 66,
+                "ReferenceNumber": 69,
                 "SourceName": "PubChem",
                 "SourceID": "PubChem",
                 "Description": "Data deposited in or computed by PubChem",
@@ -1193,7 +1198,7 @@
                 "ANID": 3613457
             },
             {
-                "ReferenceNumber": 20,
+                "ReferenceNumber": 21,
                 "SourceName": "LOTUS - the natural products occurrence database",
                 "SourceID": "Q412747",
                 "Name": "Forskolin",
@@ -1204,7 +1209,7 @@
                 "ANID": 19834477
             },
             {
-                "ReferenceNumber": 62,
+                "ReferenceNumber": 65,
                 "SourceName": "Toxin and Toxin Target Database (T3DB)",
                 "SourceID": "Compound::T3D4827",
                 "Name": "Forskolin",
@@ -1215,7 +1220,7 @@
                 "ANID": 20443917
             },
             {
-                "ReferenceNumber": 65,
+                "ReferenceNumber": 68,
                 "SourceName": "Medical Subject Headings (MeSH)",
                 "SourceID": "M0358301",
                 "Name": "Colforsin",

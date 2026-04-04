@@ -16,12 +16,19 @@ def fetch_pubchem_compound(smiles_code, email):
 
     load_save_interactions(compound)
 
-    app.proteins.retrieve_targets_1(compound)
-    proteins_data = app.proteins.translate_geneid_to_protein(email, "protein_data.txt", compound)
-    df_map = app.proteins.map_genes_to_uniprot("protein_data.txt", compound)
+    df_geneids = app.proteins.retrieve_targets_1(compound)
+    proteins_data = app.proteins.translate_geneid_to_protein(email, df_geneids, compound)
+    df_map = app.proteins.map_genes_to_uniprot(df_geneids)
 
-    protein_data = proteins_data.drop_duplicates(subset=["geneid"])
-    df_proteins = protein_data.merge(df_map, on="geneid", how="left")
+    protein_data = proteins_data.drop_duplicates(subset=["geneid"]) if "geneid" in proteins_data.columns else proteins_data
+
+    if "geneid" not in df_map.columns:
+        df_map = pd.DataFrame(columns=["geneid", "uniprot_accession", "uniprot_accessions"])
+    
+    if protein_data.empty:
+        df_proteins = pd.DataFrame(columns=["compound", "geneid", "symbol", "description", "uniprot_accessions"])
+    else:
+        df_proteins = protein_data.merge(df_map, on="geneid", how="left")
 
     compound_name = app.utils.safe_filename(app.chem.compound_display_name(compound))
     df_proteins.to_csv(f"{compound_name}_UniProt_proteins.csv", index=False)
@@ -59,30 +66,42 @@ def load_save_interactions(compound):
 
     # 6. Get external tables
     tables = app.interactions.retrieve_externaltable(data)
-
+    
     # 7. Download and save each table
     where_pathways = {"ands": [{"cid": str(compound.cid)}, {"core": "1"}]}
-    rows = None
 
     for subsection, table_list in tables:
-        for table_name in table_list:
-            subsection_1 = (subsection or "").lower()
+        subsection_1 = (subsection or "").lower()
 
+        clean_tables = []
+        seen = set()
+        for table_name in table_list:
+            table_name = str(table_name).strip()
+            if table_name not in seen:
+                seen.add(table_name)
+                clean_tables.append(table_name)
+            
             # -- PATHWAY INTERACTIONS --
             if subsection_1 == "pathways":
                 rows = app.interactions.get_interactions_table(compound, "pathway", where = where_pathways, order="pathwayid,asc")   
+                app.utils.save_rows_json(rows, f"1.{subsection}/compound_{compound.cid}_{compound_name}_interactionstable.json")
+                app.utils.save_rows_csv(rows, f"1.{subsection}/compound_{compound.cid}_{compound_name}_interactionstable.csv")
+    
 
             # -- CHEMICAL-TARGET INTERACTIONS -- 
             elif subsection_1 == "chemical-target interactions": 
-                rows = app.interactions.get_interactions_table(compound, table_name,order="geneid,asc")
-            
+                for table_name in clean_tables:
+                    if table_name.lower().startswith("collection="):
+                        continue
+                
+                    rows = app.interactions.get_interactions_table(compound, table_name, order="geneid,asc")
+                    app.utils.save_rows_json(rows, f"1.{subsection}/compound_{compound.cid}_{compound_name}_interactionstable.json")
+                    app.utils.save_rows_csv(rows, f"1.{subsection}/compound_{compound.cid}_{compound_name}_interactionstable.csv")
+    
             else:
                 continue
 
-            # -- SAVING INTERACTION TABLES IN SEPARATED SUBSECTIONS FOLDERS --
-            app.utils.save_rows_json(rows, f"1.{subsection}/compound_{compound.cid}_{compound_name}_interactionstable.json")
-            app.utils.save_rows_csv(rows, f"1.{subsection}/compound_{compound.cid}_{compound_name}_interactionstable.csv")
-    
+            
 
 def fetch_interactions_summary(compound_names):
     csv_files = [f"{app.utils.safe_filename(name)}_UniProt_proteins.csv" for name in compound_names]
@@ -90,11 +109,27 @@ def fetch_interactions_summary(compound_names):
     print(compound_names)
 
     dfs_int = []
+    required_columns = [
+        "compound",
+        "geneid", 
+        "symbol", 
+        "description",
+        "uniprot_accession",
+        "uniprot_accessions",
+    ]
+
+
     for csv_file in csv_files:
         print("Checking: "+csv_file)
         if not Path(csv_file).exists():
             continue
     
+    # So even if it is empty, the application does not crash
+        df = pd.read_csv(csv_file)
+        for col in required_columns:
+            if col not in df.columns:
+                df[col] = ""
+
         dfs_int.append(pd.read_csv(csv_file))
 
     df_interactions = (
@@ -257,15 +292,16 @@ def build_final_summary(df_interactions, df_pathways):
     final_summary.to_csv("Protein_final_summary.csv", index=False)
     return final_summary
 
+
 def build_go_enrichment(final_summary):
-    df_go = app.proteins.fetch_goterms("Protein_final_summary.csv", 
+    df_go = app.proteins.fetch_goterms(final_summary, 
                                        aspects=["biological_process", "molecular_function", "cellular_component"],
                                        )
-
-    go_name = app.proteins.fetch_gonames(df_go["go_id"].dropna().unique())
-    df_go = df_go.merge(go_name, on="go_id", how="left")
-    df_go.to_csv("Go_terms_Names.csv", index = False)
-
+    
+    df_go_empty =pd.DataFrame(columns=["uniprot_accession", "go_id", "go_name", "symbol", "aspect"])
+    df_go_empty_aspect = pd.DataFrame(columns=["uniprot_accession", "go_id", "go_name", "symbol"])
+    
+    
     if df_go.empty:
         final_summaryGO = final_summary.copy()
         final_summaryGO["n_go_terms"] = 0
@@ -280,10 +316,36 @@ def build_go_enrichment(final_summary):
             
         final_summaryGO["go_cc_ids"] = ""
         final_summaryGO["go_cc_names"] = ""
-        return df_go, final_summaryGO
-    
+        
+        return {
+            "df_go": df_go_empty,
+            "df_go_bp": df_go_empty_aspect.copy(),
+            "df_go_mf": df_go_empty_aspect.copy(),
+            "df_go_cc": df_go_empty_aspect.copy(),
+            "final_summaryGO": final_summaryGO
+        }
+
+    # Add GO names to the GO ids
+    go_name = app.proteins.fetch_gonames(df_go["go_id"].dropna().unique())
+    df_go = df_go.merge(go_name, on="go_id", how="left")
+
+    # Add symbols to the GO tables
+    symbol_map = final_summary[["uniprot_accession", "symbol"]].drop_duplicates()
+    df_go = df_go.merge(symbol_map, on="uniprot_accession", how="left")
+
+    # Final DataFrame standardized and removing duplicates
+    df_go = df_go[["uniprot_accession", "go_id","go_name", "symbol", "aspect"]].copy()
     df_go = df_go.drop_duplicates(subset=["uniprot_accession", "go_id", "aspect"]).copy()
 
+    # Build 3 tables per aspect of GO aspects
+    df_go_bp = (df_go[df_go["aspect"] == "biological_process"]
+                [["uniprot_accession","go_id","go_name","symbol"]].drop_duplicates().reset_index(drop=True))
+    df_go_mf = (df_go[df_go["aspect"] == "molecular_function"]
+                [["uniprot_accession","go_id","go_name","symbol"]].drop_duplicates().reset_index(drop=True))
+    df_go_cc = (df_go[df_go["aspect"] == "cellular_component"]
+                [["uniprot_accession","go_id","go_name","symbol"]].drop_duplicates().reset_index(drop=True))
+
+    # Build a summary table with all the aggregated GO information per protein
     go_summary = (
         df_go.groupby("uniprot_accession", as_index=False).agg(
         n_go_terms = ("go_id", lambda x: x.dropna().nunique()),
@@ -311,7 +373,13 @@ def build_go_enrichment(final_summary):
         final_summaryGO[col] = final_summaryGO[col].fillna("")
 
     final_summaryGO.to_csv("Protein_final_summaryGO.csv", index=False)
-    return df_go, final_summaryGO
+    return {
+        "df_go": df_go,
+        "df_go_bp": df_go_bp,
+        "df_go_mf": df_go_mf,
+        "df_go_cc": df_go_cc,
+        "final_summaryGO": final_summaryGO
+    }
 
 
 def run_full_pipeline(smiles_codes, email):
@@ -330,10 +398,12 @@ def run_full_pipeline(smiles_codes, email):
     
     df_interactions = fetch_interactions_summary(compound_names)
     df_pathways = fetch_pathway_summary(compound_names)
-    final_summary = build_final_summary(df_interactions, df_pathways)
-    df_go, final_summaryGO = build_go_enrichment(final_summary)
 
-    final_summaryGO.to_csv("Protein_final_summaryGO.csv", index=False)
+    final_summary = build_final_summary(df_interactions, df_pathways)
+
+    go_results = build_go_enrichment(final_summary)
+
+    go_results["final_summaryGO"].to_csv("Protein_final_summaryGO.csv", index=False)
     excelsummary = pd.read_csv("Protein_final_summaryGO.csv")
     excelsummary.to_excel("Protein_final_summaryGO.xlsx", index=False)
 
@@ -342,6 +412,9 @@ def run_full_pipeline(smiles_codes, email):
         "df_interactions": df_interactions,
         "df_pathways": df_pathways,
         "final_summary": final_summary,
-        "df_go": df_go,
-        "final_summaryGO": final_summaryGO,
+        "df_go": go_results["df_go"],
+        "df_go_bp": go_results["df_go_bp"],
+        "df_go_mf": go_results["df_go_mf"],
+        "df_go_cc": go_results["df_go_cc"],
+        "final_summaryGO": go_results["final_summaryGO"],
     }

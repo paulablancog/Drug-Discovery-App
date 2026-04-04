@@ -5,17 +5,17 @@
         "RecordTitle": "Ginsenoside Rb1",
         "Information": [
             {
-                "ReferenceNumber": 75,
+                "ReferenceNumber": 77,
                 "Value": {
                     "StringWithMarkup": [
                         {
                             "String": "Ginsenoside rb1"
                         },
                         {
-                            "String": "Gypenoside III"
+                            "String": "41753-43-9"
                         },
                         {
-                            "String": "41753-43-9"
+                            "String": "Gypenoside III"
                         },
                         {
                             "String": "Gynosaponin C"
@@ -216,9 +216,6 @@
                             "String": "C20713"
                         },
                         {
-                            "String": "753G439"
-                        },
-                        {
                             "String": "Ginsenoside Rb1, primary pharmaceutical reference standard"
                         },
                         {
@@ -258,7 +255,7 @@
                 }
             },
             {
-                "ReferenceNumber": 75,
+                "ReferenceNumber": 77,
                 "Reference": [
                     "Computed by PubChem 2.2 (PubChem release 2025.09.15)"
                 ],
@@ -271,7 +268,7 @@
                 }
             },
             {
-                "ReferenceNumber": 75,
+                "ReferenceNumber": 77,
                 "Reference": [
                     "Computed by PubChem 2.2 (PubChem release 2025.09.15)"
                 ],
@@ -285,7 +282,7 @@
                 }
             },
             {
-                "ReferenceNumber": 75,
+                "ReferenceNumber": 77,
                 "Reference": [
                     "Computed by InChI 1.07.4 (PubChem release 2025.09.15)"
                 ],
@@ -309,15 +306,15 @@
                 }
             },
             {
-                "ReferenceNumber": 75,
+                "ReferenceNumber": 77,
                 "Value": {
                     "DateISO8601": [
-                        "2026-03-14"
+                        "2026-03-28"
                     ]
                 }
             },
             {
-                "ReferenceNumber": 75,
+                "ReferenceNumber": 77,
                 "Value": {
                     "DateISO8601": [
                         "2006-10-25"
@@ -409,7 +406,7 @@
                 }
             },
             {
-                "ReferenceNumber": 17,
+                "ReferenceNumber": 19,
                 "Value": {
                     "StringWithMarkup": [
                         {
@@ -443,7 +440,7 @@
                 }
             },
             {
-                "ReferenceNumber": 75,
+                "ReferenceNumber": 77,
                 "Name": "See Also",
                 "Value": {
                     "StringWithMarkup": [
@@ -545,9 +542,6 @@
                             },
                             {
                                 "TOCHeading": "Nikkaji Number"
-                            },
-                            {
-                                "TOCHeading": "Open Targets"
                             },
                             {
                                 "TOCHeading": "Wikidata"
@@ -723,6 +717,14 @@
                 ]
             },
             {
+                "TOCHeading": "Food Additives and Ingredients",
+                "Section": [
+                    {
+                        "TOCHeading": "Associated Foods"
+                    }
+                ]
+            },
+            {
                 "TOCHeading": "Pharmacology and Biochemistry",
                 "Section": [
                     {
@@ -861,9 +863,6 @@
                         "TOCHeading": "EPA DSSTox Classification"
                     },
                     {
-                        "TOCHeading": "LOTUS Tree"
-                    },
-                    {
                         "TOCHeading": "MolGenie Organic Chemistry Ontology"
                     }
                 ]
@@ -871,7 +870,7 @@
         ],
         "Reference": [
             {
-                "ReferenceNumber": 75,
+                "ReferenceNumber": 77,
                 "SourceName": "PubChem",
                 "SourceID": "PubChem",
                 "Description": "Data deposited in or computed by PubChem",
@@ -909,7 +908,7 @@
                 "ANID": 3621401
             },
             {
-                "ReferenceNumber": 17,
+                "ReferenceNumber": 19,
                 "SourceName": "LOTUS - the natural products occurrence database",
                 "SourceID": "Q27095725",
                 "Name": "Ginsenoside rb1",

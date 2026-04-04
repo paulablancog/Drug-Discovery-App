@@ -30,7 +30,6 @@ def flatten_record_sections(record_json):
         out.extend(flatten_section(section))
     return out  
 
-# TODO: what is this useful for?
 def flatten_section(section):
     """Returns each subsection from a bigger Section"""
     out = [section]
@@ -53,7 +52,7 @@ def get_all_sections(index_json):
     return flatten_record_sections(index_json)
 
 def has_interactions_and_pathways(index_json):
-    """Checks if the compound has Interactions and Pathways section (if it doesn't, ignore TODO)"""
+    """Checks if the compound has Interactions and Pathways section"""
     return find_section_by_heading(index_json, "Interactions and Pathways") is not None
 
 

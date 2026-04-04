@@ -5,7 +5,7 @@
         "RecordTitle": "Ethanolamine",
         "Information": [
             {
-                "ReferenceNumber": 155,
+                "ReferenceNumber": 156,
                 "Value": {
                     "StringWithMarkup": [
                         {
@@ -177,16 +177,10 @@
                             "String": "EPA Pesticide Chemical Code 011601"
                         },
                         {
-                            "String": "Acid Orange  86"
-                        },
-                        {
                             "String": "ETHANOL AMINE"
                         },
                         {
                             "String": "Monoethanolamine (MEA)"
-                        },
-                        {
-                            "String": "C.I. Acid orange 108"
                         },
                         {
                             "String": "CHEMBL104943"
@@ -213,19 +207,22 @@
                             "String": "NCGC00090789-02"
                         },
                         {
-                            "String": "12220-09-6"
-                        },
-                        {
                             "String": "Ethane, 1-amino-2-hydroxy-"
                         },
                         {
                             "String": "Ethanolamine @ 1000 microg/mL in H2O"
                         },
                         {
+                            "String": "Acid Orange  86"
+                        },
+                        {
                             "String": "EINECS 205-483-3"
                         },
                         {
                             "String": "Ifosfamide EP Impurity D"
+                        },
+                        {
+                            "String": "C.I. Acid orange 108"
                         },
                         {
                             "String": "ethanolamin"
@@ -361,6 +358,9 @@
                         },
                         {
                             "String": "MONOETHANOLAMINE [II]"
+                        },
+                        {
+                            "String": "12220-09-6"
                         },
                         {
                             "String": "BIDD:ER0367"
@@ -525,9 +525,6 @@
                             "String": "InChI=1/C2H7NO/c3-1-2-4/h4H,1-3H"
                         },
                         {
-                            "String": "A902308"
-                        },
-                        {
                             "String": "F043400"
                         },
                         {
@@ -630,7 +627,7 @@
                 }
             },
             {
-                "ReferenceNumber": 155,
+                "ReferenceNumber": 156,
                 "Reference": [
                     "Computed by PubChem 2.2 (PubChem release 2025.09.15)"
                 ],
@@ -643,7 +640,7 @@
                 }
             },
             {
-                "ReferenceNumber": 155,
+                "ReferenceNumber": 156,
                 "Reference": [
                     "Computed by PubChem 2.2 (PubChem release 2025.09.15)"
                 ],
@@ -657,7 +654,7 @@
                 }
             },
             {
-                "ReferenceNumber": 155,
+                "ReferenceNumber": 156,
                 "Reference": [
                     "Computed by InChI 1.07.4 (PubChem release 2025.09.15)"
                 ],
@@ -681,15 +678,15 @@
                 }
             },
             {
-                "ReferenceNumber": 155,
+                "ReferenceNumber": 156,
                 "Value": {
                     "DateISO8601": [
-                        "2026-03-14"
+                        "2026-03-28"
                     ]
                 }
             },
             {
-                "ReferenceNumber": 155,
+                "ReferenceNumber": 156,
                 "Value": {
                     "DateISO8601": [
                         "2004-09-16"
@@ -1037,7 +1034,7 @@
                 }
             },
             {
-                "ReferenceNumber": 144,
+                "ReferenceNumber": 145,
                 "Value": {
                     "StringWithMarkup": [
                         {
@@ -1063,7 +1060,7 @@
                 }
             },
             {
-                "ReferenceNumber": 153,
+                "ReferenceNumber": 154,
                 "Value": {
                     "StringWithMarkup": [
                         {
@@ -1087,7 +1084,7 @@
                 }
             },
             {
-                "ReferenceNumber": 154,
+                "ReferenceNumber": 155,
                 "Value": {
                     "StringWithMarkup": [
                         {
@@ -1097,7 +1094,7 @@
                 }
             },
             {
-                "ReferenceNumber": 155,
+                "ReferenceNumber": 156,
                 "Name": "See Also",
                 "Value": {
                     "StringWithMarkup": [
@@ -1236,9 +1233,6 @@
                             },
                             {
                                 "TOCHeading": "Nikkaji Number"
-                            },
-                            {
-                                "TOCHeading": "Open Targets"
                             },
                             {
                                 "TOCHeading": "RTECS Number"
@@ -2195,9 +2189,6 @@
                         "TOCHeading": "EPA TSCA and CDR Classification"
                     },
                     {
-                        "TOCHeading": "LOTUS Tree"
-                    },
-                    {
                         "TOCHeading": "EPA Substance Registry Services Tree"
                     },
                     {
@@ -2220,7 +2211,7 @@
         ],
         "Reference": [
             {
-                "ReferenceNumber": 155,
+                "ReferenceNumber": 156,
                 "SourceName": "PubChem",
                 "SourceID": "PubChem",
                 "Description": "Data deposited in or computed by PubChem",
@@ -2352,7 +2343,7 @@
                 "ANID": 14394631
             },
             {
-                "ReferenceNumber": 144,
+                "ReferenceNumber": 145,
                 "SourceName": "Toxin and Toxin Target Database (T3DB)",
                 "SourceID": "Compound::T3D4769",
                 "Name": "Ethanolamine",
@@ -2363,7 +2354,7 @@
                 "ANID": 20443862
             },
             {
-                "ReferenceNumber": 153,
+                "ReferenceNumber": 154,
                 "SourceName": "Yeast Metabolome Database (YMDB)",
                 "SourceID": "YMDB00009",
                 "Name": "Ethanolamine",
@@ -2374,7 +2365,7 @@
                 "ANID": 19796647
             },
             {
-                "ReferenceNumber": 154,
+                "ReferenceNumber": 155,
                 "SourceName": "Medical Subject Headings (MeSH)",
                 "SourceID": "M0029475",
                 "Name": "Ethanolamine",

@@ -5,6 +5,7 @@ from Bio import Entrez
 import requests
 import time
 
+
 import app.utils
 
 UNIPROT_URL = "https://rest.uniprot.org"
@@ -21,21 +22,30 @@ def retrieve_targets_1(compound):
     rows = app.utils.load_json(f"compound_{compound.cid}_{compound_name}_interactionstable.json", "1.Chemical-Target Interactions")
     if rows is None:
         return None
-
+    
     target_list = [] 
     for row in rows:
         if isinstance(row,dict): # is row a dictionary object? -> rows should be a list of dictionaries (.get() only exists in dictionaries)
             gene_id = row.get("geneid")
             if gene_id:
-                target_list.append(gene_id)
+                target_list.append(str(gene_id).strip())
 
-    app.utils.create_text_file("protein_data", compound_name)
-    app.utils.write_text_file("protein_data", compound_name, target_list)
     
-    return "protein_data.txt"
+    #app.utils.create_text_file("protein_data", compound_name)
+    #app.utils.write_text_file("protein_data", compound_name, target_list)
+   
+    df_geneids = pd.DataFrame(
+        {
+            "compound": [compound_name] * len(target_list),
+            "geneid": target_list,
+        },
+        columns = ["compound", "geneid"]
+    )
+
+    return df_geneids
 
 # -- MY METHOD
-def translate_geneid_to_protein(email, protein_data, compound, api_key=None, batch_size=200):
+def translate_geneid_to_protein(email, df_geneids, compound, api_key=None, batch_size=200):
     Entrez.email = email
     if api_key:
         Entrez.api_key = api_key
@@ -45,12 +55,12 @@ def translate_geneid_to_protein(email, protein_data, compound, api_key=None, bat
     Entrez.sleep_between_tries = 20
 
     compound_name = app.utils.safe_filename(compound.synonyms[0] if compound.synonyms else compound.cid)
-    path = Path(compound_name) / protein_data
 
-    if not path.exists():
+    if df_geneids is None or df_geneids.empty or "geneid" not in df_geneids.columns:
         return pd.DataFrame(columns=["compound", "geneid", "symbol", "description"])
-
-    lines = app.utils.read_file_lines(protein_data, compound_name)
+    
+    lines = (df_geneids["geneid"].dropna().astype(str).str.strip())
+    lines = [x for x in lines.unique().tolist() if x] #removes blank strings and keeps only unique geneids to a Python list
 
     if not lines:
         return pd.DataFrame(columns=["compound", "geneid", "symbol", "description"])
@@ -83,7 +93,9 @@ def translate_geneid_to_protein(email, protein_data, compound, api_key=None, bat
             #small pause
             time.sleep(0.2)
 
-    return pd.DataFrame(protein_list)
+    return pd.DataFrame(protein_list,
+                        columns=["compound", "geneid","symbol","description"],
+                        )
  
 
 # -- MAP GENEID TO UNIPROTKB ACCESSION CODES (1128 -> P11229)
@@ -105,6 +117,7 @@ def input_idmapping_dbs(from_db, to_db, gene_list):
     req = requests.post(f"{UNIPROT_URL}/idmapping/run", data = data, timeout=60)
     req.raise_for_status()
     return req.json()["jobId"] # not the result but the response of the process of translation
+
 
 def wait_for_job(jobId, repeats = 2):
 # Loop with sleep + timeout until the job is FINISHED 
@@ -175,19 +188,15 @@ def P_accession(accessions):
     return accessions[0]
 
 
-def map_genes_to_uniprot(filename, compound):
-    compound_name = app.utils.safe_filename(compound.synonyms[0] if compound.synonyms else compound.cid)
-    path = Path(compound_name) / filename
-
-    if not path.exists():
+def map_genes_to_uniprot(df_geneids):
+    if df_geneids is None or df_geneids.empty or "geneid" not in df_geneids.columns:
         return pd.DataFrame(columns=["geneid", "uniprot_accession", "uniprot_accessions"])
-
-    lines = app.utils.read_file_lines(filename, compound_name)
-    if not lines:
-        return pd.DataFrame(columns=["compound", "uniprot_accession", "uniprot_accessions"])
     
-    #TODO mirar esta linea interesante
-    geneids = [str(x).strip() for x in lines if str(x).strip()]
+    geneids = (df_geneids["geneid"].dropna().astype(str).str.strip())
+    geneids = [x for x in geneids.unique().tolist() if x] #removes blank strings and keeps only unique geneids to a Python list
+    
+    if not geneids:
+        return pd.DataFrame(columns=["geneid", "uniprot_accession", "uniprot_accessions"])
 
     from_db = get_idmapping_db("GeneID")
     to_db = get_idmapping_db("UniProtKB")
@@ -207,7 +216,9 @@ def map_genes_to_uniprot(filename, compound):
             "uniprot_accessions": ";".join(accessions) if accessions else None,
         })
 
-    return pd.DataFrame(rows)
+    return pd.DataFrame(rows,
+                        columns=["geneid", "uniprot_accession", "uniprot_accessions"],
+                        )
 
 def map_uniprot_to_symbol(accessions):
     accessions = [str(x).strip() for x in accessions if pd.notna(x) and str(x).strip()]
@@ -274,10 +285,11 @@ def results_proteins(df_interactions, df_pathways):
     return summary
 
 # Se podria elegir que aspecto quieres buscar ({biological_process, molecular_function, cellular_component})
-def fetch_goterms(csvfile, aspects = None):
-    df = pd.read_csv(csvfile)
+def fetch_goterms(df, aspects = None):
+    if df is None or df.empty or "uniprot_accession" not in df.columns:
+        return pd.DataFrame(columns=["uniprot_accession", "go_id", "aspect"])
+    
     accessions = df["uniprot_accession"].dropna().astype(str).str.strip()
-
     accessions = accessions[accessions != ""].unique().tolist() #removes blank strings and keeps only unique accessions to a Python list
     
     if aspects is None:
@@ -340,13 +352,16 @@ def fetch_goterms(csvfile, aspects = None):
                     break
                 page +=1
 
-    return pd.DataFrame(rows)
+    return pd.DataFrame(rows,
+                        columns=["uniprot_accession", "go_id", "aspect"],
+                        )
 
-# what is chunk
+
 def fetch_gonames(go_ids):
     go_ids = sorted({str(x).strip() for x in go_ids if pd.notna(x) and str(x).strip()})
     if not go_ids:
         return pd.DataFrame(columns=["go_id", "go_name"])
+    
     url = "https://www.ebi.ac.uk/QuickGO/services/ontology/go/terms/{ids}"
     headers = {"Accept": "application/json"}
 
@@ -369,7 +384,9 @@ def fetch_gonames(go_ids):
                     "go_name": row.get("name"),
                 })
     
-    return pd.DataFrame(rows)
+    return pd.DataFrame(rows,
+                        columns=["go_id", "go_name"],
+                        )
 
 def summarize_goaspect(df_go, aspect, prefix):
     df_aspect = df_go[df_go["aspect"] == aspect].copy()

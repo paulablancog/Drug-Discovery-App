@@ -5,7 +5,7 @@
         "RecordTitle": "Carbachol",
         "Information": [
             {
-                "ReferenceNumber": 51,
+                "ReferenceNumber": 55,
                 "Value": {
                     "StringWithMarkup": [
                         {
@@ -15,6 +15,9 @@
                             "String": "51-83-2"
                         },
                         {
+                            "String": "Carbastat"
+                        },
+                        {
                             "String": "Miostat"
                         },
                         {
@@ -22,9 +25,6 @@
                         },
                         {
                             "String": "Carbamylcholine chloride"
-                        },
-                        {
-                            "String": "Carbastat"
                         },
                         {
                             "String": "Carbacholin"
@@ -229,9 +229,6 @@
                         },
                         {
                             "String": "Choline chloride carbamate"
-                        },
-                        {
-                            "String": "2-carbamoyloxyethyl(trimethyl)ammonium chloride"
                         },
                         {
                             "String": "Lentine [French]"
@@ -516,12 +513,6 @@
                             "String": "EN300-122286"
                         },
                         {
-                            "String": "2-aminocarbonyloxyethyl(trimethyl)azanium chloride"
-                        },
-                        {
-                            "String": "A828807"
-                        },
-                        {
                             "String": "Q419401"
                         },
                         {
@@ -561,7 +552,7 @@
                 }
             },
             {
-                "ReferenceNumber": 2,
+                "ReferenceNumber": 3,
                 "Value": {
                     "StringWithMarkup": [
                         {
@@ -571,7 +562,7 @@
                 }
             },
             {
-                "ReferenceNumber": 51,
+                "ReferenceNumber": 55,
                 "Reference": [
                     "Computed by PubChem 2.2 (PubChem release 2025.09.15)"
                 ],
@@ -584,7 +575,7 @@
                 }
             },
             {
-                "ReferenceNumber": 51,
+                "ReferenceNumber": 55,
                 "Reference": [
                     "Computed by PubChem 2.2 (PubChem release 2025.09.15)"
                 ],
@@ -598,7 +589,7 @@
                 }
             },
             {
-                "ReferenceNumber": 51,
+                "ReferenceNumber": 55,
                 "Reference": [
                     "Computed by InChI 1.07.4 (PubChem release 2025.09.15)"
                 ],
@@ -611,7 +602,7 @@
                 }
             },
             {
-                "ReferenceNumber": 22,
+                "ReferenceNumber": 24,
                 "URL": "https://gsrs.ncats.nih.gov/ginas/app/beta/substances/8Y164V895Y",
                 "Value": {
                     "StringWithMarkup": [
@@ -622,15 +613,15 @@
                 }
             },
             {
-                "ReferenceNumber": 51,
+                "ReferenceNumber": 55,
                 "Value": {
                     "DateISO8601": [
-                        "2026-03-14"
+                        "2026-03-28"
                     ]
                 }
             },
             {
-                "ReferenceNumber": 51,
+                "ReferenceNumber": 55,
                 "Value": {
                     "DateISO8601": [
                         "2005-06-24"
@@ -638,7 +629,7 @@
                 }
             },
             {
-                "ReferenceNumber": 2,
+                "ReferenceNumber": 3,
                 "Description": "Physical Description",
                 "Reference": [
                     "U.S. Environmental Protection Agency. 1998. Extremely Hazardous Substances (EHS) Chemical Profiles and Emergency First Aid Guides. Washington, D.C.: U.S. Government Printing Office."
@@ -661,7 +652,7 @@
                 }
             },
             {
-                "ReferenceNumber": 5,
+                "ReferenceNumber": 6,
                 "Name": "Record Description",
                 "Description": "Ontology Summary",
                 "Value": {
@@ -689,7 +680,7 @@
                 }
             },
             {
-                "ReferenceNumber": 29,
+                "ReferenceNumber": 32,
                 "Value": {
                     "StringWithMarkup": [
                         {
@@ -729,7 +720,7 @@
                 }
             },
             {
-                "ReferenceNumber": 50,
+                "ReferenceNumber": 54,
                 "Value": {
                     "StringWithMarkup": [
                         {
@@ -816,6 +807,9 @@
                                 "TOCHeading": "ChEMBL ID"
                             },
                             {
+                                "TOCHeading": "DrugCentral"
+                            },
+                            {
                                 "TOCHeading": "DSSTox Substance ID"
                             },
                             {
@@ -831,7 +825,7 @@
                                 "TOCHeading": "NSC Number"
                             },
                             {
-                                "TOCHeading": "Open Targets"
+                                "TOCHeading": "PharmGKB ID"
                             },
                             {
                                 "TOCHeading": "Pharos Ligand ID"
@@ -1330,6 +1324,9 @@
                         "TOCHeading": "WIPO PATENTSCOPE"
                     },
                     {
+                        "TOCHeading": "FDA Orange Book Patents"
+                    },
+                    {
                         "TOCHeading": "Chemical Co-Occurrences in Patents"
                     },
                     {
@@ -1433,14 +1430,14 @@
         ],
         "Reference": [
             {
-                "ReferenceNumber": 51,
+                "ReferenceNumber": 55,
                 "SourceName": "PubChem",
                 "SourceID": "PubChem",
                 "Description": "Data deposited in or computed by PubChem",
                 "URL": "https://pubchem.ncbi.nlm.nih.gov"
             },
             {
-                "ReferenceNumber": 2,
+                "ReferenceNumber": 3,
                 "SourceName": "CAMEO Chemicals",
                 "SourceID": "4900",
                 "Name": "CARBACHOL CHLORIDE",
@@ -1451,7 +1448,7 @@
                 "ANID": 757245
             },
             {
-                "ReferenceNumber": 22,
+                "ReferenceNumber": 24,
                 "SourceName": "FDA Global Substance Registration System (GSRS)",
                 "SourceID": "8Y164V895Y",
                 "Name": "Carbachol",
@@ -1462,7 +1459,7 @@
                 "ANID": 5853292
             },
             {
-                "ReferenceNumber": 5,
+                "ReferenceNumber": 6,
                 "SourceName": "ChEBI",
                 "SourceID": "CHEBI:OBO:5831",
                 "Name": "Carbachol",
@@ -1471,7 +1468,7 @@
                 "ANID": 2445340
             },
             {
-                "ReferenceNumber": 29,
+                "ReferenceNumber": 32,
                 "SourceName": "NCI Thesaurus (NCIt)",
                 "SourceID": "C47430::Compound",
                 "Description": "NCI Thesaurus (NCIt), from the U.S. National Cancer Institute, provides reference terminology for many NCI and other systems. It covers vocabulary for clinical care, translational and basic research, and public information and administrative activities.",
@@ -1481,7 +1478,7 @@
                 "ANID": 14395961
             },
             {
-                "ReferenceNumber": 50,
+                "ReferenceNumber": 54,
                 "SourceName": "Medical Subject Headings (MeSH)",
                 "SourceID": "M0003323",
                 "Name": "Carbachol",

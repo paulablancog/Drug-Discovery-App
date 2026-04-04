@@ -1,60 +1,52 @@
-compound,geneid,description,symbol,uniprot_accession,uniprot_accessions
-forskolin,107,adenylate cyclase 1,ADCY1,Q08828,Q08828;C9J1J0
-forskolin,108,adenylate cyclase 2,ADCY2,Q08462,Q08462;Q71UM8
-forskolin,108,adenylate cyclase 2,ADCY2,Q08462,Q08462;Q71UM8
-forskolin,108,adenylate cyclase 2,ADCY2,Q08462,Q08462;Q71UM8
-forskolin,108,adenylate cyclase 2,ADCY2,Q08462,Q08462;Q71UM8
-forskolin,109,adenylate cyclase 3,ADCY3,O60266,O60266;A0A0A0MSC1;B7ZLX9
-forskolin,111,adenylate cyclase 5,ADCY5,O95622,O95622;A0A384P5Q5;A0A8V8TP58;B3KWA8;B7Z2C7
-forskolin,111,adenylate cyclase 5,ADCY5,O95622,O95622;A0A384P5Q5;A0A8V8TP58;B3KWA8;B7Z2C7
-forskolin,111,adenylate cyclase 5,ADCY5,O95622,O95622;A0A384P5Q5;A0A8V8TP58;B3KWA8;B7Z2C7
-forskolin,112,adenylate cyclase 6,ADCY6,O43306,O43306
-forskolin,113,adenylate cyclase 7,ADCY7,P51828,P51828;B3KSJ0;F5H4D1;Q86YI0
-forskolin,114,adenylate cyclase 8,ADCY8,P40145,P40145;A0A0K0K1K3;Q4F7X0
-forskolin,115,adenylate cyclase 9,ADCY9,O60503,O60503
-forskolin,190,nuclear receptor subfamily 0 group B member 1,NR0B1,P51843,P51843;F1D8P4
-forskolin,196,aryl hydrocarbon receptor,AHR,P35869,P35869
-forskolin,367,androgen receptor,AR,P10275,P10275;A0A087WUX9;F1D8N5;G4VV16;Q9NUA2
-forskolin,367,androgen receptor,AR,P10275,P10275;A0A087WUX9;F1D8N5;G4VV16;Q9NUA2
-forskolin,1080,CF transmembrane conductance regulator,CFTR,P13569,P13569
-forskolin,1387,CREB binding lysine acetyltransferase,CREBBP,Q92793,Q92793
-forskolin,1588,cytochrome P450 family 19 subfamily A member 1,CYP19A1,P11511,P11511;A8K6W3;Q05CU4;Q8IYG4;Q8TCA4
-forskolin,2099,estrogen receptor 1,ESR1,P03372,P03372;A0A125SXW3;A8KAF4;G4XH65;H0Y4W6;Q9UBT1
-forskolin,2740,glucagon like peptide 1 receptor,GLP1R,P43220,P43220;A0A142FHB8
-forskolin,2778,GNAS complex locus,GNAS,P63092,O95467;P63092;P84996;Q5JWF2;A0A0A0MR13;A0A0S2Z3H8;A0A0S2Z3S5;A0A590UJF0;A0A590UJQ9;A0A590UK28;A0A7I2V5R6;B0AZR9;Q14455;Q5FWY2;Q5JWD1;Q5JWE9
-forskolin,2778,GNAS complex locus,GNAS,P63092,O95467;P63092;P84996;Q5JWF2;A0A0A0MR13;A0A0S2Z3H8;A0A0S2Z3S5;A0A590UJF0;A0A590UJQ9;A0A590UK28;A0A7I2V5R6;B0AZR9;Q14455;Q5FWY2;Q5JWD1;Q5JWE9
-forskolin,3172,hepatocyte nuclear factor 4 alpha,HNF4A,P41235,P41235;B9VVT8;F1D8S2;F1D8T0;F1D8T1
-forskolin,3778,potassium calcium-activated channel subfamily M alpha 1,KCNMA1,Q12791,Q12791;A0A087WZL8;A0A1W2PNQ3;A0A1W2PNW6;A0A1W2PP94;A0A1W2PPY5;A0A1W2PQ61;A0A1W2PQA0;A0A1W2PQK5;A0A1W2PQU4;A0A1W2PR56;A0A1W2PR62;A0A1W2PRB0;A0A1W2PRN5;A0A1W2PSD3;B7ZMF5;D5MRH1;Q59FH2;Q5SVJ7;Q5SVJ8;Q5SVJ9;S4R453
-forskolin,3779,potassium calcium-activated channel subfamily M regulatory beta subunit 1,KCNMB1,Q16558,Q16558
-forskolin,3780,potassium calcium-activated channel subfamily N member 1,KCNN1,Q92952,Q92952;A0A804HIF9;A0A804HIW7
-forskolin,3781,potassium calcium-activated channel subfamily N member 2,KCNN2,Q9H2S1,Q9H2S1;A0A3F2YNY5
-forskolin,3782,potassium calcium-activated channel subfamily N member 3,KCNN3,Q9UGI6,Q9UGI6;A0A087WYJ0
-forskolin,3783,potassium calcium-activated channel subfamily N member 4,KCNN4,O15554,O15554
-forskolin,4583,"mucin 2, oligomeric mucus/gel-forming",MUC2,Q02817,Q02817;A0A3S8TMF2
-forskolin,5054,serpin family E member 1,SERPINE1,P05121,P05121;B7ZAB0
-forskolin,5243,ATP binding cassette subfamily B member 1,ABCB1,P08183,P08183;A4D1D2
-forskolin,5467,peroxisome proliferator activated receptor delta,PPARD,Q03181,Q03181;F1D8S7
-forskolin,5468,peroxisome proliferator activated receptor gamma,PPARG,P37231,P37231;A0A3P3ZKM0;A0A494C1F9;D2KUA6;E9PFV2;E9PFX5
-forskolin,5594,mitogen-activated protein kinase 1,MAPK1,P28482,P28482;Q1HBJ4;Q499G7
-forskolin,5595,mitogen-activated protein kinase 3,MAPK3,P27361,P27361;L7RXH5;Q9BWJ1
-forskolin,5596,mitogen-activated protein kinase 4,MAPK4,P31152,P31152;B4DEW2;K7ELV1
-forskolin,5597,mitogen-activated protein kinase 6,MAPK6,Q16659,Q16659
-forskolin,5598,mitogen-activated protein kinase 7,MAPK7,Q13164,Q13164
-forskolin,6096,RAR related orphan receptor B,RORB,Q92753,Q92753;A0A1L4FMK7;Q58EY0
-forskolin,6257,retinoid X receptor beta,RXRB,P28702,P28702;A0A0G2JKR7;A0A0S2Z570;B7Z7J5;Q5STP9
-forskolin,7376,nuclear receptor subfamily 1 group H member 2,NR1H2,P55055,P55055;F1D8P7
-forskolin,7421,vitamin D receptor,VDR,P11473,P11473;A0A5K1VW50;F1D8P8
-forskolin,8856,nuclear receptor subfamily 1 group I member 2,NR1I2,O75469,O75469;F1D8P9
-forskolin,8856,nuclear receptor subfamily 1 group I member 2,NR1I2,O75469,O75469;F1D8P9
-forskolin,9971,nuclear receptor subfamily 1 group H member 4,NR1H4,Q96RI1,Q96RI1;B6ZGS9;F1DAL1
-forskolin,10242,potassium calcium-activated channel subfamily M regulatory beta subunit 2,KCNMB2,Q9Y691,Q9Y691;B5BNW5;B7Z513
-forskolin,10488,cAMP responsive element binding protein 3,CREB3,O43889,O43889
-forskolin,27094,potassium calcium-activated channel subfamily M regulatory beta subunit 3,KCNMB3,Q9NPA1,Q9NPA1
-forskolin,27345,potassium calcium-activated channel subfamily M regulatory beta subunit 4,KCNMB4,Q86W47,Q86W47
-forskolin,51564,histone deacetylase 7,HDAC7,Q8WUI4,Q8WUI4
-forskolin,55811,adenylate cyclase 10,ADCY10,Q96PN6,Q96PN6;A0A0K0K1J8
-forskolin,59350,relaxin family peptide receptor 1,RXFP1,Q9HBX9,Q9HBX9;A0A087WWV0;A0A0A0MT52;B3KV27;B4DGP2;E9PCA3;Q59H16
-forskolin,79915,ATPase family AAA domain containing 5,ATAD5,Q96QE3,Q96QE3
-forskolin,122042,relaxin family peptide receptor 2,RXFP2,Q8WXD0,Q8WXD0
-forskolin,196883,adenylate cyclase 4,ADCY4,Q8NFM4,Q8NFM4;Q86TZ7
-forskolin,225689,mitogen-activated protein kinase 15,MAPK15,Q8TD08,Q8TD08
+compound,geneid,symbol,description,uniprot_accession,uniprot_accessions
+forskolin,107,ADCY1,adenylate cyclase 1,Q08828,Q08828;C9J1J0
+forskolin,108,ADCY2,adenylate cyclase 2,Q08462,Q08462;Q71UM8
+forskolin,109,ADCY3,adenylate cyclase 3,O60266,O60266;A0A0A0MSC1;B7ZLX9
+forskolin,111,ADCY5,adenylate cyclase 5,O95622,O95622;A0A384P5Q5;A0A8V8TP58;B3KWA8;B7Z2C7
+forskolin,112,ADCY6,adenylate cyclase 6,O43306,O43306
+forskolin,113,ADCY7,adenylate cyclase 7,P51828,P51828;B3KSJ0;F5H4D1;Q86YI0
+forskolin,114,ADCY8,adenylate cyclase 8,P40145,P40145;A0A0K0K1K3;Q4F7X0
+forskolin,115,ADCY9,adenylate cyclase 9,O60503,O60503
+forskolin,190,NR0B1,nuclear receptor subfamily 0 group B member 1,P51843,P51843;F1D8P4
+forskolin,196,AHR,aryl hydrocarbon receptor,P35869,P35869
+forskolin,367,AR,androgen receptor,P10275,P10275;A0A087WUX9;F1D8N5;G4VV16;Q9NUA2
+forskolin,1080,CFTR,CF transmembrane conductance regulator,P13569,P13569
+forskolin,1387,CREBBP,CREB binding lysine acetyltransferase,Q92793,Q92793
+forskolin,1588,CYP19A1,cytochrome P450 family 19 subfamily A member 1,P11511,P11511;A8K6W3;Q05CU4;Q8IYG4;Q8TCA4
+forskolin,2099,ESR1,estrogen receptor 1,P03372,P03372;A0A125SXW3;A8KAF4;G4XH65;H0Y4W6;Q9UBT1
+forskolin,2740,GLP1R,glucagon like peptide 1 receptor,P43220,P43220;A0A142FHB8
+forskolin,2778,GNAS,GNAS complex locus,P63092,O95467;P63092;P84996;Q5JWF2;A0A0A0MR13;A0A0S2Z3H8;A0A0S2Z3S5;A0A590UJF0;A0A590UJQ9;A0A590UK28;A0A7I2V5R6;B0AZR9;Q14455;Q5FWY2;Q5JWD1;Q5JWE9
+forskolin,3172,HNF4A,hepatocyte nuclear factor 4 alpha,P41235,P41235;B9VVT8;F1D8S2;F1D8T0;F1D8T1
+forskolin,3778,KCNMA1,potassium calcium-activated channel subfamily M alpha 1,Q12791,Q12791;A0A087WZL8;A0A1W2PNQ3;A0A1W2PNW6;A0A1W2PP94;A0A1W2PPY5;A0A1W2PQ61;A0A1W2PQA0;A0A1W2PQK5;A0A1W2PQU4;A0A1W2PR56;A0A1W2PR62;A0A1W2PRB0;A0A1W2PRN5;A0A1W2PSD3;B7ZMF5;D5MRH1;Q59FH2;Q5SVJ7;Q5SVJ8;Q5SVJ9;S4R453
+forskolin,3779,KCNMB1,potassium calcium-activated channel subfamily M regulatory beta subunit 1,Q16558,Q16558
+forskolin,3780,KCNN1,potassium calcium-activated channel subfamily N member 1,Q92952,Q92952;A0A804HIF9;A0A804HIW7
+forskolin,3781,KCNN2,potassium calcium-activated channel subfamily N member 2,Q9H2S1,Q9H2S1;A0A3F2YNY5
+forskolin,3782,KCNN3,potassium calcium-activated channel subfamily N member 3,Q9UGI6,Q9UGI6;A0A087WYJ0
+forskolin,3783,KCNN4,potassium calcium-activated channel subfamily N member 4,O15554,O15554
+forskolin,4583,MUC2,"mucin 2, oligomeric mucus/gel-forming",Q02817,Q02817;A0A3S8TMF2
+forskolin,5054,SERPINE1,serpin family E member 1,P05121,P05121;B7ZAB0
+forskolin,5243,ABCB1,ATP binding cassette subfamily B member 1,P08183,P08183;A4D1D2
+forskolin,5467,PPARD,peroxisome proliferator activated receptor delta,Q03181,Q03181;F1D8S7
+forskolin,5468,PPARG,peroxisome proliferator activated receptor gamma,P37231,P37231;A0A3P3ZKM0;A0A494C1F9;D2KUA6;E9PFV2;E9PFX5
+forskolin,5594,MAPK1,mitogen-activated protein kinase 1,P28482,P28482;Q1HBJ4;Q499G7
+forskolin,5595,MAPK3,mitogen-activated protein kinase 3,P27361,P27361;L7RXH5;Q9BWJ1
+forskolin,5596,MAPK4,mitogen-activated protein kinase 4,P31152,P31152;B4DEW2;K7ELV1
+forskolin,5597,MAPK6,mitogen-activated protein kinase 6,Q16659,Q16659
+forskolin,5598,MAPK7,mitogen-activated protein kinase 7,Q13164,Q13164
+forskolin,6096,RORB,RAR related orphan receptor B,Q92753,Q92753;A0A1L4FMK7;Q58EY0
+forskolin,6257,RXRB,retinoid X receptor beta,P28702,P28702;A0A0G2JKR7;A0A0S2Z570;B7Z7J5;Q5STP9
+forskolin,7376,NR1H2,nuclear receptor subfamily 1 group H member 2,P55055,P55055;F1D8P7
+forskolin,7421,VDR,vitamin D receptor,P11473,P11473;A0A5K1VW50;F1D8P8
+forskolin,8856,NR1I2,nuclear receptor subfamily 1 group I member 2,O75469,O75469;F1D8P9
+forskolin,9971,NR1H4,nuclear receptor subfamily 1 group H member 4,Q96RI1,Q96RI1;B6ZGS9;F1DAL1
+forskolin,10242,KCNMB2,potassium calcium-activated channel subfamily M regulatory beta subunit 2,Q9Y691,Q9Y691;B5BNW5;B7Z513
+forskolin,10488,CREB3,cAMP responsive element binding protein 3,O43889,O43889
+forskolin,27094,KCNMB3,potassium calcium-activated channel subfamily M regulatory beta subunit 3,Q9NPA1,Q9NPA1
+forskolin,27345,KCNMB4,potassium calcium-activated channel subfamily M regulatory beta subunit 4,Q86W47,Q86W47
+forskolin,51564,HDAC7,histone deacetylase 7,Q8WUI4,Q8WUI4
+forskolin,55811,ADCY10,adenylate cyclase 10,Q96PN6,Q96PN6;A0A0K0K1J8
+forskolin,59350,RXFP1,relaxin family peptide receptor 1,Q9HBX9,Q9HBX9;A0A087WWV0;A0A0A0MT52;B3KV27;B4DGP2;E9PCA3;Q59H16
+forskolin,79915,ATAD5,ATPase family AAA domain containing 5,Q96QE3,Q96QE3
+forskolin,122042,RXFP2,relaxin family peptide receptor 2,Q8WXD0,Q8WXD0
+forskolin,196883,ADCY4,adenylate cyclase 4,Q8NFM4,Q8NFM4;Q86TZ7
+forskolin,225689,MAPK15,mitogen-activated protein kinase 15,Q8TD08,Q8TD08

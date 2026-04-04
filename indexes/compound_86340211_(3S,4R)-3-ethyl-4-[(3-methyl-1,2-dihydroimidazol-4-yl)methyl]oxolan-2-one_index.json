@@ -1,0 +1,212 @@
+{
+    "Record": {
+        "RecordType": "CID",
+        "RecordNumber": 86340211,
+        "RecordTitle": "(3S,4R)-3-ethyl-4-[(3-methyl-1,2-dihydroimidazol-4-yl)methyl]oxolan-2-one",
+        "Information": [
+            {
+                "ReferenceNumber": 1,
+                "Reference": [
+                    "Computed by PubChem 2.1 (PubChem release 2019.06.18)"
+                ],
+                "Value": {
+                    "StringWithMarkup": [
+                        {
+                            "String": "C11H18N2O2"
+                        }
+                    ]
+                }
+            },
+            {
+                "ReferenceNumber": 1,
+                "Reference": [
+                    "Computed by PubChem 2.1 (PubChem release 2021.05.07)"
+                ],
+                "Value": {
+                    "StringWithMarkup": [
+                        {
+                            "String": "210.27"
+                        }
+                    ],
+                    "Unit": "g/mol"
+                }
+            },
+            {
+                "ReferenceNumber": 1,
+                "Reference": [
+                    "Computed by InChI 1.0.5 (PubChem release 2019.06.18)"
+                ],
+                "Value": {
+                    "StringWithMarkup": [
+                        {
+                            "String": "SFGONUINBLOYHY-WPRPVWTQSA-N"
+                        }
+                    ]
+                }
+            },
+            {
+                "ReferenceNumber": 1,
+                "Value": {
+                    "DateISO8601": [
+                        "2026-03-28"
+                    ]
+                }
+            },
+            {
+                "ReferenceNumber": 1,
+                "Value": {
+                    "DateISO8601": [
+                        "2015-01-07"
+                    ]
+                }
+            }
+        ],
+        "Section": [
+            {
+                "TOCHeading": "Structures",
+                "Section": [
+                    {
+                        "TOCHeading": "2D Structure"
+                    },
+                    {
+                        "TOCHeading": "3D Conformer"
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Names and Identifiers",
+                "Section": [
+                    {
+                        "TOCHeading": "Computed Descriptors",
+                        "Section": [
+                            {
+                                "TOCHeading": "IUPAC Name"
+                            },
+                            {
+                                "TOCHeading": "InChI"
+                            },
+                            {
+                                "TOCHeading": "InChIKey"
+                            },
+                            {
+                                "TOCHeading": "SMILES"
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "Molecular Formula"
+                    },
+                    {
+                        "TOCHeading": "Synonyms",
+                        "Section": [
+                            {
+                                "TOCHeading": "Removed Synonyms"
+                            }
+                        ]
+                    },
+                    {
+                        "TOCHeading": "Create Date"
+                    },
+                    {
+                        "TOCHeading": "Modify Date"
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Chemical and Physical Properties",
+                "Section": [
+                    {
+                        "TOCHeading": "Computed Properties",
+                        "Section": [
+                            {
+                                "TOCHeading": "Molecular Weight"
+                            },
+                            {
+                                "TOCHeading": "XLogP3"
+                            },
+                            {
+                                "TOCHeading": "Hydrogen Bond Donor Count"
+                            },
+                            {
+                                "TOCHeading": "Hydrogen Bond Acceptor Count"
+                            },
+                            {
+                                "TOCHeading": "Rotatable Bond Count"
+                            },
+                            {
+                                "TOCHeading": "Exact Mass"
+                            },
+                            {
+                                "TOCHeading": "Monoisotopic Mass"
+                            },
+                            {
+                                "TOCHeading": "Topological Polar Surface Area"
+                            },
+                            {
+                                "TOCHeading": "Heavy Atom Count"
+                            },
+                            {
+                                "TOCHeading": "Formal Charge"
+                            },
+                            {
+                                "TOCHeading": "Complexity"
+                            },
+                            {
+                                "TOCHeading": "Isotope Atom Count"
+                            },
+                            {
+                                "TOCHeading": "Defined Atom Stereocenter Count"
+                            },
+                            {
+                                "TOCHeading": "Undefined Atom Stereocenter Count"
+                            },
+                            {
+                                "TOCHeading": "Defined Bond Stereocenter Count"
+                            },
+                            {
+                                "TOCHeading": "Undefined Bond Stereocenter Count"
+                            },
+                            {
+                                "TOCHeading": "Covalently-Bonded Unit Count"
+                            },
+                            {
+                                "TOCHeading": "Compound Is Canonicalized"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "TOCHeading": "Related Records",
+                "Section": [
+                    {
+                        "TOCHeading": "Related Compounds with Annotation"
+                    },
+                    {
+                        "TOCHeading": "Related Compounds"
+                    },
+                    {
+                        "TOCHeading": "Substances",
+                        "Section": [
+                            {
+                                "TOCHeading": "Related Substances"
+                            },
+                            {
+                                "TOCHeading": "Substances by Category"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Reference": [
+            {
+                "ReferenceNumber": 1,
+                "SourceName": "PubChem",
+                "SourceID": "PubChem",
+                "Description": "Data deposited in or computed by PubChem",
+                "URL": "https://pubchem.ncbi.nlm.nih.gov"
+            }
+        ]
+    }
+}

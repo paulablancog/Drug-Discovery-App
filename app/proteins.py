@@ -1,12 +1,8 @@
-from pathlib import Path
 import re
 import pandas as pd
 from Bio import Entrez
 import requests
 import time
-
-
-import app.utils
 
 UNIPROT_URL = "https://rest.uniprot.org"
 
@@ -15,13 +11,11 @@ def chunk_list(items,size):
         yield items[i:i + size]
 
 # Appear in main so that the user can fetch the proteins in the interactions of the compound?
-def retrieve_targets_1(compound):
-    compound_name = app.utils.safe_filename(compound.synonyms[0] if compound.synonyms else compound.cid)
+def retrieve_targets_1(compound_name, rows):
+    # Rows are the interaction json rows
+    if not rows:
+        return pd.DataFrame(columns=["compound", "geneid"])
     
-    # Retrieve the Interactions json
-    rows = app.utils.load_json(f"compound_{compound.cid}_{compound_name}_interactionstable.json", "1.Chemical-Target Interactions")
-    if rows is None:
-        return None
     
     target_list = [] 
     for row in rows:
@@ -30,10 +24,6 @@ def retrieve_targets_1(compound):
             if gene_id:
                 target_list.append(str(gene_id).strip())
 
-    
-    #app.utils.create_text_file("protein_data", compound_name)
-    #app.utils.write_text_file("protein_data", compound_name, target_list)
-   
     df_geneids = pd.DataFrame(
         {
             "compound": [compound_name] * len(target_list),
@@ -45,7 +35,7 @@ def retrieve_targets_1(compound):
     return df_geneids
 
 # -- MY METHOD
-def translate_geneid_to_protein(email, df_geneids, compound, api_key=None, batch_size=200):
+def translate_geneid_to_protein(email, df_geneids, compound_name, api_key=None, batch_size=200):
     Entrez.email = email
     if api_key:
         Entrez.api_key = api_key
@@ -53,8 +43,6 @@ def translate_geneid_to_protein(email, df_geneids, compound, api_key=None, batch
     # Retries
     Entrez.max_tries = 5
     Entrez.sleep_between_tries = 20
-
-    compound_name = app.utils.safe_filename(compound.synonyms[0] if compound.synonyms else compound.cid)
 
     if df_geneids is None or df_geneids.empty or "geneid" not in df_geneids.columns:
         return pd.DataFrame(columns=["compound", "geneid", "symbol", "description"])
@@ -123,6 +111,7 @@ def wait_for_job(jobId, repeats = 2):
 # Loop with sleep + timeout until the job is FINISHED 
     start_time = time.time()
     timeout=450
+
     while True:
         req = requests.get(f"{UNIPROT_URL}/idmapping/status/{jobId}", timeout=30, allow_redirects=False)
         req.raise_for_status()
@@ -159,6 +148,7 @@ def download_results(jobId):
         for row in json.get("results", []):
             geneid=str(row.get("from")).strip()
             accession = row.get("to")
+
             if not geneid or not accession:
                 continue
 
@@ -256,33 +246,9 @@ def map_uniprot_to_symbol(accessions):
                     "uniprot_accession": accession,
                     "mapped_symbol": mapped_symbol,
                 })
+
     return pd.DataFrame(rows, columns=["uniprot_accession", "mapped_symbol"])
             
-
-# ESTE SE UTILIZA??
-def results_proteins(df_interactions, df_pathways):
-    df = df_interactions.copy()
-    df["compound"] = df["compound"].astype(str).str.strip()
-    df["geneid"] = df["geneid"].astype(str).str.strip()
-    df["symbol"] = df["symbol"].astype(str).str.strip()
-    df["uniprot_accession"] = df["uniprot_accession"].astype(str).str.strip()
-
-    df = df[df["uniprot_accession"].notna()]
-    df = df[df["uniprot_accession"] != ""]
-    df = df[df["uniprot_accession"].str.lower() != "nan"]
-    
-   
-    summary =(
-        df.groupby("uniprot_accession").agg(
-            total_count = ("uniprot_accession", "size"),
-            n_compounds = ("compound", "nunique"),
-            compounds = ("compound", lambda x: ";".join(sorted(set(x)))),
-            symbol = ("symbol", lambda x: ";".join(sorted(set(x)))),
-            geneid = ("geneid", lambda x: ";".join(sorted(set(x)))),
-        ).reset_index().sort_values(["total_count"], ascending = [False])
-    )
-
-    return summary
 
 # Se podria elegir que aspecto quieres buscar ({biological_process, molecular_function, cellular_component})
 def fetch_goterms(df, aspects = None):
@@ -313,11 +279,9 @@ def fetch_goterms(df, aspects = None):
             f"Allowed aspects are: {check_aspects}"
         )
 
-
     url = "https://www.ebi.ac.uk/QuickGO/services/annotation/search"
     headers = {"Accept": "application/json"}
 
-    
     rows = []
     limit = 200
     
@@ -331,7 +295,7 @@ def fetch_goterms(df, aspects = None):
                 parameters = {
                     "geneProductId": f"UniProtKB:{acc}",
                     "aspect": ",".join(aspects),
-                    "limit":200,
+                    "limit":limit,
                     "page": page,
                 }
                 request = session.get(url, params=parameters, headers=headers, timeout=60)
@@ -348,8 +312,17 @@ def fetch_goterms(df, aspects = None):
                         "go_id": row.get("goId"),
                         "aspect": row.get("goAspect"),
                     })
-                if len(results) < limit:
-                    break
+                
+                page_info = result_json.get("pageInfo", {}) or {}
+                current_page = page_info.get("current", page)
+                total_pages = page_info.get("total")
+
+                if total_pages is not None:
+                    if current_page >= total_pages:
+                        break
+                    else: 
+                        if len(results) < limit:
+                            break
                 page +=1
 
     return pd.DataFrame(rows,
@@ -394,6 +367,7 @@ def summarize_goaspect(df_go, aspect, prefix):
     if df_aspect.empty:
         return pd.DataFrame(columns=["uniprot_accession", f"go_{prefix}_ids", f"go_{prefix}_names",])
     
+    #TODO what does this code do
     return (
         df_aspect.groupby("uniprot_accession", as_index=False).agg(
             **{
@@ -402,3 +376,71 @@ def summarize_goaspect(df_go, aspect, prefix):
             }
         )
     )
+
+def group_goterms(df_go_aspect):
+    if df_go_aspect is None or df_go_aspect.empty:
+        return pd.DataFrame(columns=["go_name", "go_id", "n_proteins", "n_compounds", "proteins", "compounds", "uniprot_accessions"])
+    df = df_go_aspect.copy()
+    
+    for col in ["go_name", "go_id", "symbol", "uniprot_accession", "compounds"]:
+        if col not in df.columns:
+            df[col] = ""
+        df[col] = df[col].fillna("").astype(str).str.strip()
+    df = df[df["go_id"] != ""].copy()
+
+    grouped = (df.groupby(["go_name", "go_id"], as_index = False)
+               .agg(
+                   n_proteins = ("uniprot_accession", lambda x: x.replace("", pd.NA).dropna().nunique()),
+                   proteins = ("symbol", lambda x: ";".join(sorted(set(v for v in x if v)))),
+                   compounds = ("compounds", lambda x: ";".join(sorted(set(part.strip() for value in x for part in str(value).split(";") if part.strip())))),
+                   uniprot_accessions = ("uniprot_accession", lambda x: ";".join(sorted(set(v for v in x if v)))),
+               ).reset_index(drop=True)
+    )
+    grouped["n_compounds"] = grouped["compounds"].apply(lambda x: len([v for v in str(x).split(";") if v.strip()]))
+    grouped = grouped.sort_values(["n_compounds", "n_proteins", "go_name"], ascending=[False, False, True]).reset_index(drop=True)
+
+    return grouped
+
+def count_protgoaspect(df_go_aspect, selected_go_name, selected_go_id, df):
+    if df_go_aspect is None or df_go_aspect.empty:
+        return pd.DataFrame(columns=["uniprot_accession", "symbol", "count", "compounds"])
+
+    selected = df_go_aspect[
+        (df_go_aspect["go_name"] == selected_go_name) &
+        (df_go_aspect["go_id"] == selected_go_id)
+    ].copy()
+
+    if selected.empty:
+        return pd.DataFrame(columns=["uniprot_accession", "symbol", "count", "compounds"])
+
+    proteins = selected[["symbol", "uniprot_accession"]].drop_duplicates().copy()
+
+    if df is None or df.empty:
+        proteins["count"] = 0
+        proteins["compounds"] = ""
+        return proteins.sort_values(["symbol", "uniprot_accession", "count", "compounds"], ascending=[True, True, False, True]).reset_index(drop=True)
+    
+    df_confirmation = df.copy()
+    
+    for col in ["uniprot_accession", "compound"]:
+        if col not in df_confirmation.columns:
+            df_confirmation[col] = ""
+        df_confirmation[col] = df_confirmation[col].fillna("").astype(str).str.strip()
+
+    df_confirmation = df_confirmation[df_confirmation["uniprot_accession"] != ""].copy()
+    df_confirmation = df_confirmation[df_confirmation["uniprot_accession"].isin(proteins["uniprot_accession"])].copy()
+    
+    grouped = (
+        df_confirmation.groupby(["uniprot_accession"], as_index=False)
+        .agg(
+            count= ("compound", "size"),
+            compounds = ("compound", lambda x: ";".join(sorted(set(part.strip() for value in x for part in str(value).split(";") if part.strip())))),
+        )
+    )
+
+    out = proteins.merge(grouped, on="uniprot_accession", how="left")
+    out["count"] = out["count"].fillna(0).astype(int)
+    out["compounds"] = out["compounds"].fillna("")
+
+    out = out.sort_values(["count", "uniprot_accession", "symbol"], ascending=[False, True, True]).reset_index(drop=True)
+    return out

@@ -681,7 +681,7 @@
                 "ReferenceNumber": 156,
                 "Value": {
                     "DateISO8601": [
-                        "2026-03-28"
+                        "2026-04-11"
                     ]
                 }
             },
@@ -1218,6 +1218,9 @@
                             },
                             {
                                 "TOCHeading": "ICSC Number"
+                            },
+                            {
+                                "TOCHeading": "International Nonproprietary Names (INN)"
                             },
                             {
                                 "TOCHeading": "KEGG ID"
@@ -2187,6 +2190,9 @@
                     },
                     {
                         "TOCHeading": "EPA TSCA and CDR Classification"
+                    },
+                    {
+                        "TOCHeading": "LOTUS Tree"
                     },
                     {
                         "TOCHeading": "EPA Substance Registry Services Tree"

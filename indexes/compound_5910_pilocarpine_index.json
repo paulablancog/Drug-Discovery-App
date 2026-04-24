@@ -525,7 +525,7 @@
                 "ReferenceNumber": 118,
                 "Value": {
                     "DateISO8601": [
-                        "2026-03-28"
+                        "2026-04-11"
                     ]
                 }
             },
@@ -1544,6 +1544,9 @@
                     },
                     {
                         "TOCHeading": "EPA TSCA and CDR Classification"
+                    },
+                    {
+                        "TOCHeading": "LOTUS Tree"
                     },
                     {
                         "TOCHeading": "EPA Substance Registry Services Tree"

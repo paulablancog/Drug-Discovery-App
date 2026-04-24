@@ -1,53 +1,41 @@
-compound,geneid,symbol,description,uniprot_accession,uniprot_accessions
-carbachol,1131,CHRM3,cholinergic receptor muscarinic 3,P20309,P20309
-bethanechol,13,AADAC,arylacetamide deacetylase,P22760,P22760
-bethanechol,14,AAMP,angio associated migratory cell protein,Q13685,Q13685;C9JEH3
-bethanechol,15,AANAT,aralkylamine N-acetyltransferase,Q16613,Q16613;F1T0I5
-bethanechol,16,AARS1,alanyl-tRNA synthetase 1,P49588,P49588;A0A6Q8PH44
-bethanechol,17,AAVS1,adeno-associated virus integration site 1,,
-bethanechol,1128,CHRM1,cholinergic receptor muscarinic 1,P11229,P11229;Q53XZ3
-bethanechol,1129,CHRM2,cholinergic receptor muscarinic 2,P08172,P08172;A4D1Q0;Q6SL56;Q6SL59;Q86SJ1
-bethanechol,1131,CHRM3,cholinergic receptor muscarinic 3,P20309,P20309
-bethanechol,1132,CHRM4,cholinergic receptor muscarinic 4,P08173,P08173
-bethanechol,1133,CHRM5,cholinergic receptor muscarinic 5,P08912,P08912;Q8IVW0
-bethanechol,25229,CHRM1,"cholinergic receptor, muscarinic 1",P08482,P08482;A6HZR8
-Ginsenoside rb1,207,AKT1,AKT serine/threonine kinase 1,P31749,P31749;B0LPE5;B3KVH4
-Ginsenoside rb1,523,ATP6V1A,ATPase H+ transporting V1 subunit A,P38606,P38606
-Ginsenoside rb1,526,ATP6V1B2,ATPase H+ transporting V1 subunit B2,P21281,P21281;A0A140VK65
-Ginsenoside rb1,650,BMP2,bone morphogenetic protein 2,P12643,P12643;C8C060
-Ginsenoside rb1,834,CASP1,caspase 1,P29466,P29466;A8K249;A8K257
-Ginsenoside rb1,836,CASP3,caspase 3,P42574,P42574;A8MVM1
-Ginsenoside rb1,860,RUNX2,RUNX family transcription factor 2,Q13950,Q13950;A0A0D9SEN7;Q32MY8
-Ginsenoside rb1,1186,CLCN7,Cl-/H+ antiporter 7,P51798,P51798
-Ginsenoside rb1,1508,CTSB,cathepsin B,P07858,P07858;A0A024R374
-Ginsenoside rb1,1509,CTSD,cathepsin D,P07339,P07339;V9HWI3
-Ginsenoside rb1,2353,FOS,"Fos proto-oncogene, AP-1 transcription factor subunit",P01100,P01100;Q6FG41
-Ginsenoside rb1,3162,HMOX1,heme oxygenase 1,P09601,P09601;Q6FH11
-Ginsenoside rb1,3479,IGF1,insulin like growth factor 1,P05019,P05019;Q13429;Q59GC5;Q5U743
-Ginsenoside rb1,3553,IL1B,interleukin 1 beta,P01584,P01584
-Ginsenoside rb1,3569,IL6,interleukin 6,P05231,P05231;B4DNQ5;B4DVM1;B5MC21;B5MCZ3;Q75MH2
-Ginsenoside rb1,3606,IL18,interleukin 18,Q14116,Q14116
-Ginsenoside rb1,3684,ITGAM,integrin subunit alpha M,P11215,P11215
-Ginsenoside rb1,3689,ITGB2,integrin subunit beta 2,P05107,P05107;A0A494C0X7;B4E0R1
-Ginsenoside rb1,3753,KCNE1,potassium voltage-gated channel subfamily E regulatory subunit 1,P15382,P15382;A7LFK2;A7LFK4;C7S316;Q6FHJ6
-Ginsenoside rb1,3757,KCNH2,potassium voltage-gated channel subfamily H member 2,Q12809,Q12809;A0A090N7W1;A0A090N7X5;A0A090N8Q0;A0AAQ5BGQ9;Q15BH2
-Ginsenoside rb1,3916,LAMP1,lysosome associated membrane protein 1,P11279,P11279;B3KRY3
-Ginsenoside rb1,3939,LDHA,lactate dehydrogenase A,P00338,P00338;V9HWB9
-Ginsenoside rb1,4133,MAP2,microtubule associated protein 2,P11137,P11137;A0A024R3Z1;Q6NYC5
-Ginsenoside rb1,4772,NFATC1,nuclear factor of activated T cells 1,O95644,O95644;A8K9C6;B4DER8;F5H4S8
-Ginsenoside rb1,4780,NFE2L2,NFE2 like bZIP transcription factor 2,Q16236,Q16236;A0A8V8TN14;A0A8V8TPA8
-Ginsenoside rb1,5025,P2RX4,purinergic receptor P2X 4,Q99571,Q99571
-Ginsenoside rb1,5241,PGR,progesterone receptor,P06401,P06401
-Ginsenoside rb1,5970,RELA,"RELA proto-oncogene, NF-kB subunit",Q04206,Q04206;A0A087X0W8
-Ginsenoside rb1,7040,TGFB1,transforming growth factor beta 1,P01137,P01137;A0A499FJK2
-Ginsenoside rb1,7124,TNF,tumor necrosis factor,P01375,P01375;Q5STB3
-Ginsenoside rb1,7942,TFEB,transcription factor EB,P19484,P19484;B0QYS6
-Ginsenoside rb1,8600,TNFSF11,TNF superfamily member 11,O14788,O14788;Q54A98;Q5T9Y4
-Ginsenoside rb1,8878,SQSTM1,sequestosome 1,Q13501,Q13501
-Ginsenoside rb1,28234,SLCO1B3,solute carrier organic anion transporter family member 1B3,Q9NPD5,Q9NPD5;B3KP78
-Ginsenoside rb1,40336,PARK,parkin,Q7KTX7,Q7KTX7
-Ginsenoside rb1,43828,CAMKII,Calcium/calmodulin-dependent protein kinase II,Q00168,Q00168;A4V133;A4V134;D1YSG7;D1YSG8;L0MLP2;L0MLR4;L0MNA2
-Ginsenoside rb1,65018,PINK1,PTEN induced kinase 1,Q9BXM7,Q9BXM7
-Ginsenoside rb1,79792,GSDMD,gasdermin D,P57764,P57764
-Ginsenoside rb1,81631,MAP1LC3B,microtubule associated protein 1 light chain 3 beta,Q9GZQ8,Q9GZQ8;Q658J6
-Ginsenoside rb1,114548,NLRP3,NLR family pyrin domain containing 3,Q96P20,Q96P20;A0A7I2PJH0;A0A7I2PMC6;A0A7I2PRX0;A0A7I2R3P8
+compound,geneid,symbol,description,uniprot_accession,uniprot_accessions,cid
+Ginsenoside rb1,207,AKT1,AKT serine/threonine kinase 1,P31749,P31749;B0LPE5;B3KVH4,9898279
+Ginsenoside rb1,523,ATP6V1A,ATPase H+ transporting V1 subunit A,P38606,P38606,9898279
+Ginsenoside rb1,526,ATP6V1B2,ATPase H+ transporting V1 subunit B2,P21281,P21281;A0A140VK65,9898279
+Ginsenoside rb1,650,BMP2,bone morphogenetic protein 2,P12643,P12643;C8C060,9898279
+Ginsenoside rb1,834,CASP1,caspase 1,P29466,P29466;A8K249;A8K257,9898279
+Ginsenoside rb1,836,CASP3,caspase 3,P42574,P42574;A8MVM1,9898279
+Ginsenoside rb1,860,RUNX2,RUNX family transcription factor 2,Q13950,Q13950;A0A0D9SEN7;Q32MY8,9898279
+Ginsenoside rb1,1186,CLCN7,Cl-/H+ antiporter 7,P51798,P51798,9898279
+Ginsenoside rb1,1508,CTSB,cathepsin B,P07858,P07858;A0A024R374,9898279
+Ginsenoside rb1,1509,CTSD,cathepsin D,P07339,P07339;V9HWI3,9898279
+Ginsenoside rb1,2353,FOS,"Fos proto-oncogene, AP-1 transcription factor subunit",P01100,P01100;Q6FG41,9898279
+Ginsenoside rb1,3162,HMOX1,heme oxygenase 1,P09601,P09601;Q6FH11,9898279
+Ginsenoside rb1,3479,IGF1,insulin like growth factor 1,P05019,P05019;Q13429;Q59GC5;Q5U743,9898279
+Ginsenoside rb1,3553,IL1B,interleukin 1 beta,P01584,P01584,9898279
+Ginsenoside rb1,3569,IL6,interleukin 6,P05231,P05231;B4DNQ5;B4DVM1;B5MC21;B5MCZ3;Q75MH2,9898279
+Ginsenoside rb1,3606,IL18,interleukin 18,Q14116,Q14116,9898279
+Ginsenoside rb1,3684,ITGAM,integrin subunit alpha M,P11215,P11215,9898279
+Ginsenoside rb1,3689,ITGB2,integrin subunit beta 2,P05107,P05107;A0A494C0X7;B4E0R1,9898279
+Ginsenoside rb1,3753,KCNE1,potassium voltage-gated channel subfamily E regulatory subunit 1,P15382,P15382;A7LFK2;A7LFK4;C7S316;Q6FHJ6,9898279
+Ginsenoside rb1,3757,KCNH2,potassium voltage-gated channel subfamily H member 2,Q12809,Q12809;A0A090N7W1;A0A090N7X5;A0A090N8Q0;A0AAQ5BGQ9;Q15BH2,9898279
+Ginsenoside rb1,3916,LAMP1,lysosome associated membrane protein 1,P11279,P11279;B3KRY3,9898279
+Ginsenoside rb1,3939,LDHA,lactate dehydrogenase A,P00338,P00338;V9HWB9,9898279
+Ginsenoside rb1,4133,MAP2,microtubule associated protein 2,P11137,P11137;A0A024R3Z1;Q6NYC5,9898279
+Ginsenoside rb1,4772,NFATC1,nuclear factor of activated T cells 1,O95644,O95644;A8K9C6;B4DER8;F5H4S8,9898279
+Ginsenoside rb1,4780,NFE2L2,NFE2 like bZIP transcription factor 2,Q16236,Q16236;A0A8V8TN14;A0A8V8TPA8,9898279
+Ginsenoside rb1,5025,P2RX4,purinergic receptor P2X 4,Q99571,Q99571,9898279
+Ginsenoside rb1,5241,PGR,progesterone receptor,P06401,P06401,9898279
+Ginsenoside rb1,5970,RELA,"RELA proto-oncogene, NF-kB subunit",Q04206,Q04206;A0A087X0W8,9898279
+Ginsenoside rb1,7040,TGFB1,transforming growth factor beta 1,P01137,P01137;A0A499FJK2,9898279
+Ginsenoside rb1,7124,TNF,tumor necrosis factor,P01375,P01375;Q5STB3,9898279
+Ginsenoside rb1,7942,TFEB,transcription factor EB,P19484,P19484;B0QYS6,9898279
+Ginsenoside rb1,8600,TNFSF11,TNF superfamily member 11,O14788,O14788;Q54A98;Q5T9Y4,9898279
+Ginsenoside rb1,8878,SQSTM1,sequestosome 1,Q13501,Q13501,9898279
+Ginsenoside rb1,28234,SLCO1B3,solute carrier organic anion transporter family member 1B3,Q9NPD5,Q9NPD5;B3KP78,9898279
+Ginsenoside rb1,40336,PARK,parkin,Q7KTX7,Q7KTX7,9898279
+Ginsenoside rb1,43828,CAMKII,Calcium/calmodulin-dependent protein kinase II,Q00168,Q00168;A4V133;A4V134;D1YSG7;D1YSG8;L0MLP2;L0MLR4;L0MNA2,9898279
+Ginsenoside rb1,65018,PINK1,PTEN induced kinase 1,Q9BXM7,Q9BXM7,9898279
+Ginsenoside rb1,79792,GSDMD,gasdermin D,P57764,P57764,9898279
+Ginsenoside rb1,81631,MAP1LC3B,microtubule associated protein 1 light chain 3 beta,Q9GZQ8,Q9GZQ8;Q658J6,9898279
+Ginsenoside rb1,114548,NLRP3,NLR family pyrin domain containing 3,Q96P20,Q96P20;A0A7I2PJH0;A0A7I2PMC6;A0A7I2PRX0;A0A7I2R3P8,9898279

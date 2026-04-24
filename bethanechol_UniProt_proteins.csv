@@ -1,12 +1,12 @@
-compound,geneid,symbol,description,uniprot_accession,uniprot_accessions
-bethanechol,13,AADAC,arylacetamide deacetylase,P22760,P22760
-bethanechol,14,AAMP,angio associated migratory cell protein,Q13685,Q13685;C9JEH3
-bethanechol,15,AANAT,aralkylamine N-acetyltransferase,Q16613,Q16613;F1T0I5
-bethanechol,16,AARS1,alanyl-tRNA synthetase 1,P49588,P49588;A0A6Q8PH44
-bethanechol,17,AAVS1,adeno-associated virus integration site 1,,
-bethanechol,1128,CHRM1,cholinergic receptor muscarinic 1,P11229,P11229;Q53XZ3
-bethanechol,1129,CHRM2,cholinergic receptor muscarinic 2,P08172,P08172;A4D1Q0;Q6SL56;Q6SL59;Q86SJ1
-bethanechol,1131,CHRM3,cholinergic receptor muscarinic 3,P20309,P20309
-bethanechol,1132,CHRM4,cholinergic receptor muscarinic 4,P08173,P08173
-bethanechol,1133,CHRM5,cholinergic receptor muscarinic 5,P08912,P08912;Q8IVW0
-bethanechol,25229,CHRM1,"cholinergic receptor, muscarinic 1",P08482,P08482;A6HZR8
+compound,geneid,symbol,description,uniprot_accession,uniprot_accessions,cid
+bethanechol,13,AADAC,arylacetamide deacetylase,P22760,P22760,2370
+bethanechol,14,AAMP,angio associated migratory cell protein,Q13685,Q13685;C9JEH3,2370
+bethanechol,15,AANAT,aralkylamine N-acetyltransferase,Q16613,Q16613;F1T0I5,2370
+bethanechol,16,AARS1,alanyl-tRNA synthetase 1,P49588,P49588;A0A6Q8PH44,2370
+bethanechol,17,AAVS1,adeno-associated virus integration site 1,,,2370
+bethanechol,1128,CHRM1,cholinergic receptor muscarinic 1,P11229,P11229;Q53XZ3,2370
+bethanechol,1129,CHRM2,cholinergic receptor muscarinic 2,P08172,P08172;A4D1Q0;Q6SL56;Q6SL59;Q86SJ1,2370
+bethanechol,1131,CHRM3,cholinergic receptor muscarinic 3,P20309,P20309,2370
+bethanechol,1132,CHRM4,cholinergic receptor muscarinic 4,P08173,P08173,2370
+bethanechol,1133,CHRM5,cholinergic receptor muscarinic 5,P08912,P08912;Q8IVW0,2370
+bethanechol,25229,CHRM1,"cholinergic receptor, muscarinic 1",P08482,P08482;A6HZR8,2370

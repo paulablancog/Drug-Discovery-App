@@ -1,38 +1,38 @@
-compound,geneid,symbol,description,uniprot_accession,uniprot_accessions
-maprotiline,146,ADRA1D,adrenoceptor alpha 1D,P25100,P25100;B0ZBE0
-maprotiline,147,ADRA1B,adrenoceptor alpha 1B,P35368,P35368
-maprotiline,148,ADRA1A,adrenoceptor alpha 1A,P35348,P35348;B0ZBD3
-maprotiline,150,ADRA2A,adrenoceptor alpha 2A,P08913,P08913
-maprotiline,151,ADRA2B,adrenoceptor alpha 2B,P18089,P18089
-maprotiline,152,ADRA2C,adrenoceptor alpha 2C,P18825,P18825;Q4W594
-maprotiline,316,AOX1,aldehyde oxidase 1,Q06278,Q06278
-maprotiline,774,CACNA1B,calcium voltage-gated channel subunit alpha1 B,Q00975,Q00975
-maprotiline,1128,CHRM1,cholinergic receptor muscarinic 1,P11229,P11229;Q53XZ3
-maprotiline,1129,CHRM2,cholinergic receptor muscarinic 2,P08172,P08172;A4D1Q0;Q6SL56;Q6SL59;Q86SJ1
-maprotiline,1131,CHRM3,cholinergic receptor muscarinic 3,P20309,P20309
-maprotiline,1132,CHRM4,cholinergic receptor muscarinic 4,P08173,P08173
-maprotiline,1133,CHRM5,cholinergic receptor muscarinic 5,P08912,P08912;Q8IVW0
-maprotiline,1544,CYP1A2,cytochrome P450 family 1 subfamily A member 2,P05177,P05177
-maprotiline,1565,CYP2D6,cytochrome P450 family 2 subfamily D member 6 (gene/pseudogene),P10635,P10635;C1ID52;Q5Y7H2
-maprotiline,1576,CYP3A4,cytochrome P450 family 3 subfamily A member 4,P08684,P08684;Q6GRK0
-maprotiline,1812,DRD1,dopamine receptor D1,P21728,P21728
-maprotiline,1813,DRD2,dopamine receptor D2,P14416,P14416;F8VUV1
-maprotiline,1814,DRD3,dopamine receptor D3,P35462,P35462;A1A4V4;A8K8E4;E9PCM4;X5D2G4
-maprotiline,1816,DRD5,dopamine receptor D5,P21918,P21918
-maprotiline,3269,HRH1,histamine receptor H1,P35367,P35367
-maprotiline,3274,HRH2,histamine receptor H2,P25021,P25021;A0A1B0GTK7
-maprotiline,3356,HTR2A,5-hydroxytryptamine receptor 2A,P28223,P28223;A0A7P0PKG8
-maprotiline,3357,HTR2B,5-hydroxytryptamine receptor 2B,P41595,P41595
-maprotiline,3358,HTR2C,5-hydroxytryptamine receptor 2C,P28335,P28335;K9J958
-maprotiline,3362,HTR6,5-hydroxytryptamine receptor 6,P50406,P50406
-maprotiline,3363,HTR7,5-hydroxytryptamine receptor 7,P34969,P34969
-maprotiline,4129,MAOB,monoamine oxidase B,P27338,P27338;B7Z242
-maprotiline,5004,ORM1,orosomucoid 1,P02763,P02763
-maprotiline,6530,SLC6A2,solute carrier family 6 member 2,P23975,P23975;H3BRE9
-maprotiline,6531,SLC6A3,solute carrier family 6 member 3,Q01959,Q01959
-maprotiline,6532,SLC6A4,solute carrier family 6 member 4,P31645,P31645;B2R7Y7
-maprotiline,9429,ABCG2,ATP binding cassette subfamily G member 2 (JR blood group),Q9UNQ0,Q9UNQ0
-maprotiline,16521,KCNJ5,"potassium inwardly-rectifying channel, subfamily J, member 5",P48545,P48545
-maprotiline,16522,KCNJ6,"potassium inwardly-rectifying channel, subfamily J, member 6",P48542,P48542;A0A0R4J239;A0A338P6L0;Q0VB45;Q8C4T8;Q8C8Y6
-maprotiline,29412,ADRA1A,adrenoceptor alpha 1A,P43140,P43140;A0A8L2Q6V0;A0ABK0LG70;A6K6N1
-maprotiline,80036,TRPM3,transient receptor potential cation channel subfamily M member 3,Q9HCF6,Q9HCF6;A0A7I2V4C9;A2A3F4;E9PBI7;G5E9G1;H7BYP1;Q6NW43;Q9H200
+compound,geneid,symbol,description,uniprot_accession,uniprot_accessions,cid
+maprotiline,146,ADRA1D,adrenoceptor alpha 1D,P25100,P25100;B0ZBE0,4011
+maprotiline,147,ADRA1B,adrenoceptor alpha 1B,P35368,P35368,4011
+maprotiline,148,ADRA1A,adrenoceptor alpha 1A,P35348,P35348;B0ZBD3,4011
+maprotiline,150,ADRA2A,adrenoceptor alpha 2A,P08913,P08913,4011
+maprotiline,151,ADRA2B,adrenoceptor alpha 2B,P18089,P18089,4011
+maprotiline,152,ADRA2C,adrenoceptor alpha 2C,P18825,P18825;Q4W594,4011
+maprotiline,316,AOX1,aldehyde oxidase 1,Q06278,Q06278,4011
+maprotiline,774,CACNA1B,calcium voltage-gated channel subunit alpha1 B,Q00975,Q00975,4011
+maprotiline,1128,CHRM1,cholinergic receptor muscarinic 1,P11229,P11229;Q53XZ3,4011
+maprotiline,1129,CHRM2,cholinergic receptor muscarinic 2,P08172,P08172;A4D1Q0;Q6SL56;Q6SL59;Q86SJ1,4011
+maprotiline,1131,CHRM3,cholinergic receptor muscarinic 3,P20309,P20309,4011
+maprotiline,1132,CHRM4,cholinergic receptor muscarinic 4,P08173,P08173,4011
+maprotiline,1133,CHRM5,cholinergic receptor muscarinic 5,P08912,P08912;Q8IVW0,4011
+maprotiline,1544,CYP1A2,cytochrome P450 family 1 subfamily A member 2,P05177,P05177,4011
+maprotiline,1565,CYP2D6,cytochrome P450 family 2 subfamily D member 6 (gene/pseudogene),P10635,P10635;C1ID52;Q5Y7H2,4011
+maprotiline,1576,CYP3A4,cytochrome P450 family 3 subfamily A member 4,P08684,P08684;Q6GRK0,4011
+maprotiline,1812,DRD1,dopamine receptor D1,P21728,P21728,4011
+maprotiline,1813,DRD2,dopamine receptor D2,P14416,P14416;F8VUV1,4011
+maprotiline,1814,DRD3,dopamine receptor D3,P35462,P35462;A1A4V4;A8K8E4;E9PCM4;X5D2G4,4011
+maprotiline,1816,DRD5,dopamine receptor D5,P21918,P21918,4011
+maprotiline,3269,HRH1,histamine receptor H1,P35367,P35367,4011
+maprotiline,3274,HRH2,histamine receptor H2,P25021,P25021;A0A1B0GTK7,4011
+maprotiline,3356,HTR2A,5-hydroxytryptamine receptor 2A,P28223,P28223;A0A7P0PKG8,4011
+maprotiline,3357,HTR2B,5-hydroxytryptamine receptor 2B,P41595,P41595,4011
+maprotiline,3358,HTR2C,5-hydroxytryptamine receptor 2C,P28335,P28335;K9J958,4011
+maprotiline,3362,HTR6,5-hydroxytryptamine receptor 6,P50406,P50406,4011
+maprotiline,3363,HTR7,5-hydroxytryptamine receptor 7,P34969,P34969,4011
+maprotiline,4129,MAOB,monoamine oxidase B,P27338,P27338;B7Z242,4011
+maprotiline,5004,ORM1,orosomucoid 1,P02763,P02763,4011
+maprotiline,6530,SLC6A2,solute carrier family 6 member 2,P23975,P23975;H3BRE9,4011
+maprotiline,6531,SLC6A3,solute carrier family 6 member 3,Q01959,Q01959,4011
+maprotiline,6532,SLC6A4,solute carrier family 6 member 4,P31645,P31645;B2R7Y7,4011
+maprotiline,9429,ABCG2,ATP binding cassette subfamily G member 2 (JR blood group),Q9UNQ0,Q9UNQ0,4011
+maprotiline,16521,KCNJ5,"potassium inwardly-rectifying channel, subfamily J, member 5",P48545,P48545,4011
+maprotiline,16522,KCNJ6,"potassium inwardly-rectifying channel, subfamily J, member 6",P48542,P48542;A0A0R4J239;A0A338P6L0;Q0VB45;Q8C4T8;Q8C8Y6,4011
+maprotiline,29412,ADRA1A,adrenoceptor alpha 1A,P43140,P43140;A0A8L2Q6V0;A0ABK0LG70;A6K6N1,4011
+maprotiline,80036,TRPM3,transient receptor potential cation channel subfamily M member 3,Q9HCF6,Q9HCF6;A0A7I2V4C9;A2A3F4;E9PBI7;G5E9G1;H7BYP1;Q6NW43;Q9H200,4011

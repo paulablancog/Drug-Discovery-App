@@ -17,6 +17,5 @@ df_summary_go = results.get("final_summaryGO", pd.DataFrame())
 
 st.subheader("Final summary of compounds, proteins and pathways")
 st.dataframe(df_summary, width="stretch")
-st.subheader("Final summary including ALL GO terms associated to the proteins")
-st.info("Go to GO enrichment page to see the GO terms in detail.")
-st.dataframe(df_summary_go, width="stretch")
+
+# Include in download section that GO terms are included in the final summary

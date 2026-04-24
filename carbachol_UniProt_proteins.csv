@@ -1,2 +1,2 @@
-compound,geneid,symbol,description,uniprot_accession,uniprot_accessions
-carbachol,1131,CHRM3,cholinergic receptor muscarinic 3,P20309,P20309
+compound,geneid,symbol,description,uniprot_accession,uniprot_accessions,cid
+carbachol,1131,CHRM3,cholinergic receptor muscarinic 3,P20309,P20309,5831

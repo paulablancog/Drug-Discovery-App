@@ -126,6 +126,9 @@
                             "String": "64657-11-0"
                         },
                         {
+                            "String": "(3R,4aR,5S,6S,6aS,10S,10aR,10bS)-5-(Acetyloxy)-3-ethenyldodecahydro-6,10,10b-trihydroxy-3,4a,7,7,10a-pentamethyl-1H-naphtho[2,1-b]pyran-1-one"
+                        },
+                        {
                             "String": "(3R,4aR,5S,6S,6aS,10S,10aR,10bS)-Dodecahydro-5,6,10,10b-tetrahydroxy-3,4a,7,7,10a-pentamethyl-3-vinyl-1H-naphtho(2,1-b)pyran-1-one 5-acetate"
                         },
                         {
@@ -459,9 +462,6 @@
                             "String": "(3R,4aR,5S,6S,6aS,10S,10aR,10bS)-3-Ethenyl-6,10,10b-trihydroxy-3,4a,7,7,10a-pentamethyl-1-oxododecahydro-1H-naphtho[2,1-b]pyran-5-yl acetate"
                         },
                         {
-                            "String": "(3R,4aR,5S,6S,6aS,10S,10aR,10bS)-5-(Acetyloxy)-3-ethenyldodecahydro-6,10,10b-trihydroxy-3,4a,7,7,10a-pentamethyl-1H-naphtho[2,1-b]pyran-1-one"
-                        },
-                        {
                             "String": "[3R-(3a,4ab,5b,6b,6aa,10a,10ab,10ba)]-5-(Acetyloxy)-3-e thenyldodecahydro-6,10,10b-trihydroxy-3,4a,7,7,10a-pentamethyl-1H-naphtho[2,1-b]pyran-1-one"
                         },
                         {
@@ -525,7 +525,7 @@
                 "ReferenceNumber": 69,
                 "Value": {
                     "DateISO8601": [
-                        "2026-03-28"
+                        "2026-04-11"
                     ]
                 }
             },
@@ -739,6 +739,9 @@
                                 "TOCHeading": "DSSTox Substance ID"
                             },
                             {
+                                "TOCHeading": "International Nonproprietary Names (INN)"
+                            },
+                            {
                                 "TOCHeading": "KEGG ID"
                             },
                             {
@@ -758,6 +761,9 @@
                             },
                             {
                                 "TOCHeading": "Pharos Ligand ID"
+                            },
+                            {
+                                "TOCHeading": "United States Adopted Name (USAN)"
                             },
                             {
                                 "TOCHeading": "Wikidata"
@@ -1145,6 +1151,9 @@
                     },
                     {
                         "TOCHeading": "EPA DSSTox Classification"
+                    },
+                    {
+                        "TOCHeading": "LOTUS Tree"
                     },
                     {
                         "TOCHeading": "EPA Substance Registry Services Tree"

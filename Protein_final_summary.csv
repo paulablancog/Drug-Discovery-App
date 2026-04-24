@@ -1,61 +1,51 @@
-uniprot_accession,total_count,n_compounds,compounds,symbol,geneid,n_pathways,pathways,pathway_compounds,source
-P20309,2,2,bethanechol;carbachol,CHRM3,1131,0,,,interaction_predominant
-O14788,1,1,Ginsenoside rb1,TNFSF11,8600,0,,,interaction_predominant
-O95644,1,1,Ginsenoside rb1,NFATC1,4772,0,,,interaction_predominant
-P00338,1,1,Ginsenoside rb1,LDHA,3939,0,,,interaction_predominant
-P01100,1,1,Ginsenoside rb1,FOS,2353,0,,,interaction_predominant
-P01137,1,1,Ginsenoside rb1,TGFB1,7040,0,,,interaction_predominant
-P01375,1,1,Ginsenoside rb1,TNF,7124,0,,,interaction_predominant
-P01584,1,1,Ginsenoside rb1,IL1B,3553,0,,,interaction_predominant
-P05019,1,1,Ginsenoside rb1,IGF1,3479,0,,,interaction_predominant
-P05107,1,1,Ginsenoside rb1,ITGB2,3689,0,,,interaction_predominant
-P05231,1,1,Ginsenoside rb1,IL6,3569,0,,,interaction_predominant
-P06401,1,1,Ginsenoside rb1,PGR,5241,0,,,interaction_predominant
-P07339,1,1,Ginsenoside rb1,CTSD,1509,0,,,interaction_predominant
-P07858,1,1,Ginsenoside rb1,CTSB,1508,0,,,interaction_predominant
-P08172,1,1,bethanechol,CHRM2,1129,0,,,interaction_predominant
-P08173,1,1,bethanechol,CHRM4,1132,0,,,interaction_predominant
-P08482,1,1,bethanechol,CHRM1,25229,0,,,interaction_predominant
-P08912,1,1,bethanechol,CHRM5,1133,0,,,interaction_predominant
-P09601,1,1,Ginsenoside rb1,HMOX1,3162,0,,,interaction_predominant
-P11137,1,1,Ginsenoside rb1,MAP2,4133,0,,,interaction_predominant
-P11215,1,1,Ginsenoside rb1,ITGAM,3684,0,,,interaction_predominant
-P11229,1,1,bethanechol,CHRM1,1128,0,,,interaction_predominant
-P11279,1,1,Ginsenoside rb1,LAMP1,3916,0,,,interaction_predominant
-P12643,1,1,Ginsenoside rb1,BMP2,650,0,,,interaction_predominant
-P15382,1,1,Ginsenoside rb1,KCNE1,3753,0,,,interaction_predominant
-P19484,1,1,Ginsenoside rb1,TFEB,7942,0,,,interaction_predominant
-P21281,1,1,Ginsenoside rb1,ATP6V1B2,526,0,,,interaction_predominant
-P22760,1,1,bethanechol,AADAC,13,0,,,interaction_predominant
-P29466,1,1,Ginsenoside rb1,CASP1,834,0,,,interaction_predominant
-P31749,1,1,Ginsenoside rb1,AKT1,207,0,,,interaction_predominant
-P38606,1,1,Ginsenoside rb1,ATP6V1A,523,0,,,interaction_predominant
-P42574,1,1,Ginsenoside rb1,CASP3,836,0,,,interaction_predominant
-P49588,1,1,bethanechol,AARS1,16,0,,,interaction_predominant
-P51798,1,1,Ginsenoside rb1,CLCN7,1186,0,,,interaction_predominant
-P57764,1,1,Ginsenoside rb1,GSDMD,79792,0,,,interaction_predominant
-Q00168,1,1,Ginsenoside rb1,CAMKII,43828,0,,,interaction_predominant
-Q04206,1,1,Ginsenoside rb1,RELA,5970,0,,,interaction_predominant
-Q12809,1,1,Ginsenoside rb1,KCNH2,3757,0,,,interaction_predominant
-Q13501,1,1,Ginsenoside rb1,SQSTM1,8878,0,,,interaction_predominant
-Q13685,1,1,bethanechol,AAMP,14,0,,,interaction_predominant
-Q13950,1,1,Ginsenoside rb1,RUNX2,860,0,,,interaction_predominant
-Q14116,1,1,Ginsenoside rb1,IL18,3606,0,,,interaction_predominant
-Q16236,1,1,Ginsenoside rb1,NFE2L2,4780,0,,,interaction_predominant
-Q16613,1,1,bethanechol,AANAT,15,0,,,interaction_predominant
-Q7KTX7,1,1,Ginsenoside rb1,PARK,40336,0,,,interaction_predominant
-Q96P20,1,1,Ginsenoside rb1,NLRP3,114548,0,,,interaction_predominant
-Q99571,1,1,Ginsenoside rb1,P2RX4,5025,0,,,interaction_predominant
-Q9BXM7,1,1,Ginsenoside rb1,PINK1,65018,0,,,interaction_predominant
-Q9GZQ8,1,1,Ginsenoside rb1,MAP1LC3B,81631,0,,,interaction_predominant
-Q9NPD5,1,1,Ginsenoside rb1,SLCO1B3,28234,0,,,interaction_predominant
-A0A0A6ZFR4,0,1,Ginsenoside rb1,UGT74AE2,,1,BioCyc_META_PWY-5672,Ginsenoside rb1,pathway_predominant
-A0A0A6ZFY4,0,1,Ginsenoside rb1,UGT29,,1,BioCyc_META_PWY-5672,Ginsenoside rb1,pathway_predominant
-A0A0A7HB61,0,1,Ginsenoside rb1,UGT71A27,,1,BioCyc_META_PWY-5672,Ginsenoside rb1,pathway_predominant
-A0A0K0PVM5,0,1,Ginsenoside rb1,UGT101,,1,BioCyc_META_PWY-5672,Ginsenoside rb1,pathway_predominant
-A0A0K0PVW1,0,1,Ginsenoside rb1,UGT100,,1,BioCyc_META_PWY-5672,Ginsenoside rb1,pathway_predominant
-H2DH16,0,1,Ginsenoside rb1,CYP716A47,,1,BioCyc_META_PWY-5672,Ginsenoside rb1,pathway_predominant
-I7C6E8,0,1,Ginsenoside rb1,CYP716A52v2,,1,BioCyc_META_PWY-5672,Ginsenoside rb1,pathway_predominant
-I7CT85,0,1,Ginsenoside rb1,CYP716A53v2,,1,BioCyc_META_PWY-5672,Ginsenoside rb1,pathway_predominant
-O82140,0,1,Ginsenoside rb1,OSCPNY1,,2,BioCyc_META_PWY-5672;PlantCyc_PLANT_PWY-5672,Ginsenoside rb1,pathway_predominant
-Q08IT1,0,1,Ginsenoside rb1,DDS,,2,BioCyc_META_PWY-5672;PlantCyc_PLANT_PWY-5672,Ginsenoside rb1,pathway_predominant
+uniprot_accession,interaction_count,n_compounds,compounds,symbol,geneid,pathway_count,n_pathways,pathways,pathway_compounds,total_count,source
+O14788,1,1,Ginsenoside rb1,TNFSF11,8600,0,0,,,1,interaction_predominant
+O95644,1,1,Ginsenoside rb1,NFATC1,4772,0,0,,,1,interaction_predominant
+P00338,1,1,Ginsenoside rb1,LDHA,3939,0,0,,,1,interaction_predominant
+P01100,1,1,Ginsenoside rb1,FOS,2353,0,0,,,1,interaction_predominant
+P01137,1,1,Ginsenoside rb1,TGFB1,7040,0,0,,,1,interaction_predominant
+P01375,1,1,Ginsenoside rb1,TNF,7124,0,0,,,1,interaction_predominant
+P01584,1,1,Ginsenoside rb1,IL1B,3553,0,0,,,1,interaction_predominant
+P05019,1,1,Ginsenoside rb1,IGF1,3479,0,0,,,1,interaction_predominant
+P05107,1,1,Ginsenoside rb1,ITGB2,3689,0,0,,,1,interaction_predominant
+P05231,1,1,Ginsenoside rb1,IL6,3569,0,0,,,1,interaction_predominant
+P06401,1,1,Ginsenoside rb1,PGR,5241,0,0,,,1,interaction_predominant
+P07339,1,1,Ginsenoside rb1,CTSD,1509,0,0,,,1,interaction_predominant
+P07858,1,1,Ginsenoside rb1,CTSB,1508,0,0,,,1,interaction_predominant
+P09601,1,1,Ginsenoside rb1,HMOX1,3162,0,0,,,1,interaction_predominant
+P11137,1,1,Ginsenoside rb1,MAP2,4133,0,0,,,1,interaction_predominant
+P11215,1,1,Ginsenoside rb1,ITGAM,3684,0,0,,,1,interaction_predominant
+P11279,1,1,Ginsenoside rb1,LAMP1,3916,0,0,,,1,interaction_predominant
+P12643,1,1,Ginsenoside rb1,BMP2,650,0,0,,,1,interaction_predominant
+P15382,1,1,Ginsenoside rb1,KCNE1,3753,0,0,,,1,interaction_predominant
+P19484,1,1,Ginsenoside rb1,TFEB,7942,0,0,,,1,interaction_predominant
+P21281,1,1,Ginsenoside rb1,ATP6V1B2,526,0,0,,,1,interaction_predominant
+P29466,1,1,Ginsenoside rb1,CASP1,834,0,0,,,1,interaction_predominant
+P31749,1,1,Ginsenoside rb1,AKT1,207,0,0,,,1,interaction_predominant
+P38606,1,1,Ginsenoside rb1,ATP6V1A,523,0,0,,,1,interaction_predominant
+P42574,1,1,Ginsenoside rb1,CASP3,836,0,0,,,1,interaction_predominant
+P51798,1,1,Ginsenoside rb1,CLCN7,1186,0,0,,,1,interaction_predominant
+P57764,1,1,Ginsenoside rb1,GSDMD,79792,0,0,,,1,interaction_predominant
+Q00168,1,1,Ginsenoside rb1,CAMKII,43828,0,0,,,1,interaction_predominant
+Q04206,1,1,Ginsenoside rb1,RELA,5970,0,0,,,1,interaction_predominant
+Q12809,1,1,Ginsenoside rb1,KCNH2,3757,0,0,,,1,interaction_predominant
+Q13501,1,1,Ginsenoside rb1,SQSTM1,8878,0,0,,,1,interaction_predominant
+Q13950,1,1,Ginsenoside rb1,RUNX2,860,0,0,,,1,interaction_predominant
+Q14116,1,1,Ginsenoside rb1,IL18,3606,0,0,,,1,interaction_predominant
+Q16236,1,1,Ginsenoside rb1,NFE2L2,4780,0,0,,,1,interaction_predominant
+Q7KTX7,1,1,Ginsenoside rb1,PARK,40336,0,0,,,1,interaction_predominant
+Q96P20,1,1,Ginsenoside rb1,NLRP3,114548,0,0,,,1,interaction_predominant
+Q99571,1,1,Ginsenoside rb1,P2RX4,5025,0,0,,,1,interaction_predominant
+Q9BXM7,1,1,Ginsenoside rb1,PINK1,65018,0,0,,,1,interaction_predominant
+Q9GZQ8,1,1,Ginsenoside rb1,MAP1LC3B,81631,0,0,,,1,interaction_predominant
+Q9NPD5,1,1,Ginsenoside rb1,SLCO1B3,28234,0,0,,,1,interaction_predominant
+O82140,0,1,Ginsenoside rb1,OSCPNY1,,2,2,BioCyc_META_PWY-5672;PlantCyc_PLANT_PWY-5672,Ginsenoside rb1,2,pathway_predominant
+Q08IT1,0,1,Ginsenoside rb1,DDS,,2,2,BioCyc_META_PWY-5672;PlantCyc_PLANT_PWY-5672,Ginsenoside rb1,2,pathway_predominant
+A0A0A6ZFR4,0,1,Ginsenoside rb1,UGT74AE2,,1,1,BioCyc_META_PWY-5672,Ginsenoside rb1,1,pathway_predominant
+A0A0A6ZFY4,0,1,Ginsenoside rb1,UGT29,,1,1,BioCyc_META_PWY-5672,Ginsenoside rb1,1,pathway_predominant
+A0A0A7HB61,0,1,Ginsenoside rb1,UGT71A27,,1,1,BioCyc_META_PWY-5672,Ginsenoside rb1,1,pathway_predominant
+A0A0K0PVM5,0,1,Ginsenoside rb1,UGT101,,1,1,BioCyc_META_PWY-5672,Ginsenoside rb1,1,pathway_predominant
+A0A0K0PVW1,0,1,Ginsenoside rb1,UGT100,,1,1,BioCyc_META_PWY-5672,Ginsenoside rb1,1,pathway_predominant
+H2DH16,0,1,Ginsenoside rb1,CYP716A47,,1,1,BioCyc_META_PWY-5672,Ginsenoside rb1,1,pathway_predominant
+I7C6E8,0,1,Ginsenoside rb1,CYP716A52v2,,1,1,BioCyc_META_PWY-5672,Ginsenoside rb1,1,pathway_predominant
+I7CT85,0,1,Ginsenoside rb1,CYP716A53v2,,1,1,BioCyc_META_PWY-5672,Ginsenoside rb1,1,pathway_predominant

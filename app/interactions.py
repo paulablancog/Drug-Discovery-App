@@ -138,7 +138,7 @@ def get_interactions_table(compound, collection, page_size = 1000, where = None,
     start = 1+len(rows)
 
     while len(all_rows) < total:
-        data = sdq_query_externaltable(collection, where, start = start, limit = min(page_size,1000))
+        data = sdq_query_externaltable(collection, where, start = start, limit = min(page_size,1000), order=order)
         if data is None:
             break
         rows_page = data.get("SDQOutputSet", [{}])[0].get("rows", []) or []

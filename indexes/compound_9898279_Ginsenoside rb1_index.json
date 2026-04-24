@@ -12,10 +12,10 @@
                             "String": "Ginsenoside rb1"
                         },
                         {
-                            "String": "41753-43-9"
+                            "String": "Gypenoside III"
                         },
                         {
-                            "String": "Gypenoside III"
+                            "String": "41753-43-9"
                         },
                         {
                             "String": "Gynosaponin C"
@@ -96,13 +96,13 @@
                             "String": "CHEMBL501515"
                         },
                         {
-                            "String": "2-O-beta-Glucopyranosyl-(3beta,12beta)-20-[(6-O-beta-D-glucopyranosyl-beta-D-glucopyranosyl)oxy]-12-hydroxydammar-24-en-3-yl beta-D-glucopyranoside"
-                        },
-                        {
                             "String": "EINECS 255-532-8"
                         },
                         {
                             "String": "2-O-beta-Glucopyranosyl-(3beta,12beta)-20-((6-O-beta-D-glucopyranosyl-beta-D-glucopyranosyl)oxy)-12-hydroxydammar-24-en-3-yl-beta-D-glucopyranoside"
+                        },
+                        {
+                            "String": "2-O-beta-Glucopyranosyl-(3beta,12beta)-20-[(6-O-beta-D-glucopyranosyl-beta-D-glucopyranosyl)oxy]-12-hydroxydammar-24-en-3-yl beta-D-glucopyranoside"
                         },
                         {
                             "String": "GS-Rb1"
@@ -136,6 +136,9 @@
                         },
                         {
                             "String": "orb1304975"
+                        },
+                        {
+                            "String": "orb3140522"
                         },
                         {
                             "String": "SCHEMBL29350543"
@@ -309,7 +312,7 @@
                 "ReferenceNumber": 77,
                 "Value": {
                     "DateISO8601": [
-                        "2026-03-28"
+                        "2026-04-11"
                     ]
                 }
             },
@@ -861,6 +864,9 @@
                     },
                     {
                         "TOCHeading": "EPA DSSTox Classification"
+                    },
+                    {
+                        "TOCHeading": "LOTUS Tree"
                     },
                     {
                         "TOCHeading": "MolGenie Organic Chemistry Ontology"

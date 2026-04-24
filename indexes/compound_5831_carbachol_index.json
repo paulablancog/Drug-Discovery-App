@@ -90,6 +90,9 @@
                             "String": "Mistura C"
                         },
                         {
+                            "String": "(2-Carbamoyloxyethyl)trimethylammonium chloride"
+                        },
+                        {
                             "String": "Choline chloride, carbamate"
                         },
                         {
@@ -112,9 +115,6 @@
                         },
                         {
                             "String": "Karbamoylcholin chlorid"
-                        },
-                        {
-                            "String": "(2-Carbamoyloxyethyl)trimethylammonium chloride"
                         },
                         {
                             "String": "Carbamoylcholine-hydrochloride"
@@ -616,7 +616,7 @@
                 "ReferenceNumber": 55,
                 "Value": {
                     "DateISO8601": [
-                        "2026-03-28"
+                        "2026-04-11"
                     ]
                 }
             },
@@ -811,6 +811,9 @@
                             },
                             {
                                 "TOCHeading": "DSSTox Substance ID"
+                            },
+                            {
+                                "TOCHeading": "International Nonproprietary Names (INN)"
                             },
                             {
                                 "TOCHeading": "KEGG ID"

@@ -1,4 +1,5 @@
 import pubchempy as pcp
+import pandas as pd
 import requests
 
 # Step 1: Recognize the drug by SMILES code with PubChem database
@@ -17,7 +18,7 @@ def compound_retrieval(smiles_code):
         if identity_type:
             data["identity_type"] = identity_type
         
-        response = requests.post(url, data=data, timeout=30)
+        response = requests.post(url, data=data, timeout=60)
         response.raise_for_status()
         text = response.text.strip()
         if not text:
@@ -99,55 +100,48 @@ def compound_display_name(compound):
 
     return "compound"
 
+def identify_compounds(smiles_list):
+    """For a list of SMILES code, show the identified compound name"""
+    rows = []
 
-def compound_retrieval_anotherone(smiles_code):
-    """Retrieve PubChem compound from its SMILES code"""
-    smiles_code = str(smiles_code).strip()
-    if not smiles_code:
-       print("No SMILES code entered")
-       return None 
-    
-    input_norm = "".join(smiles_code.split())
-    url = "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/smiles/cids/TXT"
-    try:
-        response = requests.post(url, data={"smiles" : smiles_code}, timeout=30)
-        response.raise_for_status()
+    for smiles in smiles_list:
+        smiles = str(smiles).strip()
+        if not smiles:
+            continue
 
-        text = response.text.strip()
-        if not text:
-            return None
-        cids = [int(line.strip()) for line in text.splitlines() if line.strip()]
-        if not cids:
-            return None
-        
-        candidates = []
+        try:
+            compound = compound_retrieval(smiles)
+            if compound is None:
+                rows.append({
+                    "smiles": smiles, 
+                    "compound_name": "Not identified", 
+                    "cid": None,
+                    "molecular_formula": None,
+                    "molecular_weight": None,
+                    "status": "Not identified.",
+                })
+                continue
+            compound_name = compound_display_name(compound)
+            compound_info = compound_information(compound)
 
-        for cid in cids:
-            try:
-                compound = pcp.Compound.from_cid(cid)
-                candidates.append(compound)
-            except Exception as ex:
-                print(f"Error retrieving compound for CID {cid}: {ex}")
-        
-        if not candidates:
-            return None
-        
-        def score(compound):
-            compound_smiles = "".join(str(getattr(compound, "smiles", "") or "").split())
-            connectivity_smiles = "".join(str(getattr(compound, "connectivity_smiles", "") or "").split())
-
-            synonym_count = len(getattr(compound, "synonyms", []) or [])
-            cid = int(getattr(compound, "cid", 11**12) or 11**12) # The large number will serve for compounds missing a CID, just use a very large number
-
-            return(
-                int(input_norm == compound_smiles and compound_smiles != ""),
-                int(input_norm == connectivity_smiles and connectivity_smiles != ""),
-                synonym_count,
-                -cid,
-            )
-        
-        return max(candidates, key=score)
-    
-    except Exception as ex:
-        print(f"No PubChem retrieval: {ex}")
-        return None
+            rows.append({
+                "smiles": smiles, 
+                "compound_name": compound_name, 
+                "cid": compound_info.get("cid"),
+                "molecular_formula": compound_info.get("molecular_formula"),
+                "molecular_weight": compound_info.get("molecular_weight"),
+                "status": "Identified",
+                })
+        except Exception as ex:
+            rows.append({
+                    "smiles": smiles, 
+                    "compound_name": "Not identified", 
+                    "cid": None,
+                    "molecular_formula": None,
+                    "molecular_weight": None,
+                    "status": f"Error: {ex}",
+                })
+            
+    return pd.DataFrame(rows, columns=[
+        "smiles", "compound_name", "cid", "molecular_formula", "molecular_weight", "status",
+    ])

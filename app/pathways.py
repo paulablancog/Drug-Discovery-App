@@ -4,74 +4,54 @@ import app.utils
 # TODO: mirar como conseguir en pathways repetidos solamente 1 y con el que tenga mayor numero de proteinas -> si tienen el mismo nombre
 
 
-def retrieve_pathways(compound):
+def retrieve_pathways(compound, rows, compound_name):
     """Retrieves all the present Pathways in a compound's Pathway section. Returns the DataFrame containing all the Pathways"""
-    compound_name = app.utils.safe_filename(compound.synonyms[0] if compound.synonyms else compound.cid)
-    # Retrieve the Interactions JSON
-    rows = app.utils.load_json(
-        f"compound_{compound.cid}_{compound_name}_interactionstable.json", "1.Pathways")
-    if rows is None:
-        return None
-
+    if not rows:
+        return pd.DataFrame(columns=["uniprot_accession", "protein_name", "pathway", "compound", "cid"])
+    
     # Send rows that contain Pathway table JSON information 
-    df_proteinspathway = retrieve_proteins_from_pathway(compound, rows)
+    df_proteinspathway = retrieve_proteins_from_pathway(compound, rows, compound_name)
 
-    # Find the desired pathway
-    pathways_list = []
-    for row in rows:
-        if isinstance(row,dict): # is row a dictionary object? -> rows should be a list of dictionaries (.get() only exists in dictionaries)
-            pathway_name = row.get("name")
-            if pathway_name:
-                pathways_list.append(pathway_name)
-
-    # Save protein set in folder
-    app.utils.create_text_file("pathways_data", compound_name)
-    app.utils.write_text_file("pathways_data", compound_name, pathways_list)
-   
     return df_proteinspathway
 
 
-def retrieve_proteins_from_pathway(compound, rows):
+def retrieve_proteins_from_pathway(compound, rows, compound_name):
     """Extracts the Protein subsection from a compound's Pathway and retrieves all the proteins from the Pathway"""
     # Cada Pathway ID obtenido en el .txt se busca en PubChem
     # Se saca JSON del Pathway y se va a interactions 
     # Se descargan las tablas de interactions = Proteins
     # Se vuelve a hacer target count data por cada pathway
     dfs = []
-    compound_name = app.utils.safe_filename(compound.synonyms[0] if compound.synonyms else compound.cid)
-    
     for row in rows:
-        if isinstance (row,dict):
-            pathway_id = row.get("pathwayid") or ""
-            pwacc = row.get("pwacc") or ""
+        if not isinstance(row, dict):
+            continue
 
-            if not pwacc:
-                continue
+        pathway_id = row.get("pathwayid") or ""
+        pwacc = row.get("pwacc") or ""
 
-            safe_pwacc = app.utils.safe_filename(pwacc)
+        if not pathway_id or not pwacc:
+            continue
 
-            # Get the Protein subsection JSON to get the table name
-            # For this pwacc, does the pathway have Protein section?
-            url_protein_subsection = f"https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/pathway/{pwacc}/JSON?heading=Proteins"
-            proteins_data = app.utils.get_json(url_protein_subsection)
-            if proteins_data is None:
-                continue
-            # The table we really want, give me the protein table for this pathway ID
-            url_proteins = pcget_pathway_protein_url(pathway_id)
-            proteins_table_json = app.utils.get_json(url_proteins)
-            if proteins_table_json is None:
-                continue
+        # The table we really want, give me the protein table for this pathway ID
+        url_proteins = pcget_pathway_protein_url(pathway_id)
+        proteins_table_json = app.utils.get_json(url_proteins)
+        if proteins_table_json is None:
+            continue
     
-            # If protein table is downloaded, convert it into a clean DataFrame
-            df_targetlist = retrieve_pathway_proteins(safe_pwacc, compound_name, proteins_table_json)
+        # If protein table is downloaded, convert it into a clean DataFrame
+        compound_cid = getattr(compound, "cid", None)
+        df_targetlist = retrieve_pathway_proteins(pwacc, compound_name, compound_cid, proteins_table_json)
 
-            if df_targetlist is not None and not df_targetlist.empty:
-                dfs.append(df_targetlist)
+        if df_targetlist is not None and not df_targetlist.empty:
+            dfs.append(df_targetlist)
                   
     if not dfs:
-        return pd.DataFrame(columns=["uniprot_accession", "protein_name", "pathway", "compound"])
+        return pd.DataFrame(columns=["uniprot_accession", "protein_name", "pathway", "compound", "cid"])
     
-    return pd.concat(dfs, ignore_index=True)
+    # TODO revisar esta linea
+    df = pd.concat(dfs, ignore_index=True)
+    df = df.drop_duplicates(subset=["uniprot_accession", "protein_name", "pathway", "compound", "cid"], keep="first").reset_index(drop=True)
+    return df
 
 
 
@@ -80,7 +60,7 @@ def pcget_pathway_protein_url(pathwayid, start=1, limit = 10000000):
     return(f"{app.utils.URL_BASE}/assay/pcget.cgi?task=pathway_protein&pathwayid={pathwayid}&start={start}&limit={limit}&infmt=json&outfmt=json")
 
 
-def retrieve_pathway_proteins(safe_pwacc, compound_name, pathway_json):
+def retrieve_pathway_proteins(pwacc, compound_name, compound_cid, pathway_json):
     """Retrieves proteins from each pathway and returns the list of proteins"""
     # Retrieve the Proteins in pathway json
     if pathway_json is None:
@@ -91,7 +71,7 @@ def retrieve_pathway_proteins(safe_pwacc, compound_name, pathway_json):
     status = pathway_json.get("SDQOutputSet", [{}])[0].get("status", {}) or []
     
     if status.get("code") != 0:
-        return pd.DataFrame(columns=["uniprot_accession", "protein_name", "pathway", "compound"])
+        return pd.DataFrame(columns=["uniprot_accession", "protein_name", "pathway", "compound", "cid"])
     
     # Extracts protein information one by one
     target_list = []
@@ -102,39 +82,63 @@ def retrieve_pathway_proteins(safe_pwacc, compound_name, pathway_json):
             if acc_id:
                 target_list.append({"uniprot_accession": acc_id, 
                                        "protein_name": protname,
-                                       "pathway": safe_pwacc,
-                                       "compound": compound_name})
+                                       "pathway": pwacc,
+                                       "compound": compound_name,
+                                       "cid": compound_cid})
 
     return pd.DataFrame(target_list) 
 
+def group_pathways(df_pathways):
+    """Groups pathway proteins so each pathway is only present once"""
+    if df_pathways is None or df_pathways.empty:
+        return pd.DataFrame(columns=["pathway", "n_proteins", "n_compounds", "compounds", "compound_cid_pairs", "proteins", "uniprot_accessions"])
+    df = df_pathways.copy()
 
-"""def read_all_pathways(pathwaystxt, compound):
-    Reads pathways extracted from a single compound and returns a DataFrame with pathway's ids
-    compound_name = app.utils.safe_filename(compound.synonyms[0] if compound.synonyms else compound.cid)
-    path = app.utils.create_folder(compound_name) / pathwaystxt
-    if not path.exists():
-        return pd.DataFrame(columns=["compound", "pathway_id"])
+    for col in ["pathway", "protein_name", "uniprot_accession", "compound", "cid"]:
+        if col in df.columns:
+            df[col] = df[col].astype("string").fillna("").str.strip()
 
-    lines = app.utils.read_file_lines(pathwaystxt, compound_name)
-    pathway_list = []
-
-    for p in lines:
-        p = p.strip()
-        if p:
-            pathway_list.append({"compound": compound_name, "pathway_id": p})
+    df = df[df["pathway"] != ""].copy()
     
-    return pd.DataFrame(pathway_list)
-"""
+    grouped = (
+        df.groupby("pathway", as_index=False)
+        .agg(
+            n_proteins=("uniprot_accession", lambda x: x.replace("", pd.NA).dropna().nunique()),
+            n_compounds=("compound", lambda x: x.replace("", pd.NA).dropna().nunique()),
+            proteins =("protein_name", lambda x: ";".join(sorted(set(v for v in x if v)))),
+            compounds=("compound", lambda x: ";".join(sorted(set(v for v in x if v)))),
+            uniprot_accessions=("uniprot_accession", lambda x: ";".join(sorted(set(v for v in x if v)))),
+        ).sort_values(["n_compounds", "pathway"], ascending=[False, True]).reset_index(drop=True)
+    )
 
-"""def map_pathways(df_pathways):
-    Summarizes how many times a pathwayid is present in the list of compounds
-    return  (
-        df_pathways.groupby("pathway_id")
-            .agg(
-                total_count=("pathway_id", "size"),
-                n_compounds=("compound", "nunique"),
-                compounds=("compound", lambda x: ";".join(sorted(set(x)))),
-            )
-            .reset_index()
-            .sort_values(["total_count", "n_compounds"], ascending=[False, False])
-    )"""
+    return grouped
+
+
+def group_compounds(df_pathways, selected_pathway = None):
+    if df_pathways is None or df_pathways.empty:
+        return pd.DataFrame(columns=["uniprot_accession", "protein_name", "count", "compounds"])
+    
+    df_pathwaysproteins = df_pathways.copy()
+
+    for col in ["pathway", "uniprot_accession", "protein_name", "compound"]:
+        if col in df_pathwaysproteins.columns:
+            df_pathwaysproteins[col] = df_pathwaysproteins[col].fillna("").astype(str).str.strip()
+
+    if selected_pathway is not None:
+        selected_pathway = str(selected_pathway).strip()
+        df_selected = df_pathwaysproteins[df_pathwaysproteins["pathway"] ==selected_pathway].copy()
+    else:
+        df_selected = df_pathwaysproteins.copy()
+
+    df_uniprot = df_selected[df_selected["uniprot_accession"] != ""].copy()
+                                          
+    grouped = (
+        df_uniprot.groupby(["uniprot_accession", "protein_name"], as_index=False)
+        .agg(
+            count = ("compound", "size"),
+            compounds = ("compound", lambda x: ";".join(sorted(set(v for v in x if v))
+                                                        ))
+                                                        ).sort_values(["count","uniprot_accession", "protein_name"], ascending=[False,True, True])
+                                                                                                     .reset_index(drop=True)
+        )  
+    return grouped                

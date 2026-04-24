@@ -21,10 +21,10 @@
                             "String": "Maprotylina"
                         },
                         {
-                            "String": "9,10-Ethanoanthracene-9(10H)-propanamine, N-methyl-"
+                            "String": "Maprotilinum"
                         },
                         {
-                            "String": "Maprotilinum"
+                            "String": "9,10-Ethanoanthracene-9(10H)-propanamine, N-methyl-"
                         },
                         {
                             "String": "N-Methyl-9,10-ethanoanthracene-9(10H)-propylamine"
@@ -531,7 +531,7 @@
                 "ReferenceNumber": 92,
                 "Value": {
                     "DateISO8601": [
-                        "2026-03-28"
+                        "2026-04-11"
                     ]
                 }
             },
@@ -784,6 +784,9 @@
                                 "TOCHeading": "HMDB ID"
                             },
                             {
+                                "TOCHeading": "International Nonproprietary Names (INN)"
+                            },
+                            {
                                 "TOCHeading": "KEGG ID"
                             },
                             {
@@ -800,6 +803,9 @@
                             },
                             {
                                 "TOCHeading": "Pharos Ligand ID"
+                            },
+                            {
+                                "TOCHeading": "United States Adopted Name (USAN)"
                             },
                             {
                                 "TOCHeading": "Wikidata"

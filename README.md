@@ -57,23 +57,23 @@ app/
 pages/
 └── home.py
 streamlit_app.py
-```markdown
+
 
 ## Getting started
 1. Clone this repository
 ```markdown
 git clone https://github.com/paulablancog/TFG-.git
 cd TFG-
-```markdown
+
 
 2. Install dependencies
 ```markdown
 pip install -r requirements.txt
-```markdown
+
 3. Run Streamlit application
 ```markdown
 streamlit run streamlit_app.py
-```markdown
+
 
 ## Author
 This project has been developed as the **Final Thesis project at CEU San Pablo University** by:

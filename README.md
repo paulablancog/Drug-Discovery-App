@@ -1,4 +1,4 @@
-### TFG - Drug Discovery App
+## Drug Discovery App
 
 This project consists of a web-based application for **compound-cenetered drug discovery analysis.** The application is designed to start from user-provided **SMILES codes**, identify the corresponding compounds and retrieve associated **compound-protein interactions** and **pathway-related proteins**, and performs **Gene Ontology (GO) enrichment** by accessing external databases such as **PubChem**, **NCBI** and **QuickGO.**
 This application enables users to carry out interactive exploratory analysis in a web environment.
@@ -46,7 +46,7 @@ The main workflow of the application is:
 8. Excel export of the analysis results
 
 ## Project Structure (Simplified Overview)
-
+```markdown
 app/
 ├── chem.py
 ├── interactions.py
@@ -57,20 +57,23 @@ app/
 pages/
 └── home.py
 streamlit_app.py
+```markdown
 
 ## Getting started
 1. Clone this repository
-
+```markdown
 git clone https://github.com/paulablancog/TFG-.git
 cd TFG-
+```markdown
 
 2. Install dependencies
-
+```markdown
 pip install -r requirements.txt
-
+```markdown
 3. Run Streamlit application
-
+```markdown
 streamlit run streamlit_app.py
+```markdown
 
 ## Author
 This project has been developed as the **Final Thesis project at CEU San Pablo University** by:

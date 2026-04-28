@@ -7,11 +7,6 @@ import html
 import re
 from urllib.parse import quote
 
-# This APP when entering new SMILES code different from the older ones, it DELETES the analysis results
-# TODO -> maybe something to look at for the Add SMILES and the big text area (the big text area could do that
-# and the Add SMILES could just add the new SMILES code without deleting the analysis and re running it again with
-# that additional SMILES PREGUNTAR)
-
 # For further load into the app
 example_smiles = [
     "CC(C[N+](C)(C)C)OC(=O)N",
@@ -406,7 +401,7 @@ def download_excel_analysis():
             num_row += 3
 
         if not df_pathways.empty and not df_groupedpathways.empty:
-            for _, row in df_groupedpathways.iterrows(): #TODO check this line
+            for _, row in df_groupedpathways.iterrows(): 
                 pathway = row["pathway"]
                 pd.DataFrame({"Pathway": [pathway]}).to_excel(
                     writer,
@@ -537,7 +532,6 @@ if "submitted_smiles":
     st.write(f"Number of SMILES code stored: {len(submitted_smiles)}")
     
 
-    # Recalculate names if SMILES are changed TODO what is tuple
     if st.session_state.get("compound_results_source") != tuple(submitted_smiles):
         st.session_state["compound_results"] = app.chem.identify_compounds(submitted_smiles)
         # This is an indicator to know whether the SMILES changed and the results need to be updated

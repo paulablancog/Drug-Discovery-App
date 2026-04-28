@@ -64,7 +64,6 @@ def translate_geneid_to_protein(email, df_geneids, compound_name, api_key=None, 
         except Exception as e:
             continue
 
-        # In Entrez JSON this is how you access the databases??? TODO
         documents = records["DocumentSummarySet"]["DocumentSummary"]
 
         for rec in documents:
@@ -96,7 +95,7 @@ def get_idmapping_db(db_name):
             if item.get("displayName") == db_name:
                 return item["name"]
             
-    raise ValueError(f"Could not find mapping database with displayName:{db_name!r}") #TODO what does the r! mean?
+    raise ValueError(f"Could not find mapping database with displayName:{db_name!r}") 
 
 
 def input_idmapping_dbs(from_db, to_db, gene_list):
@@ -121,7 +120,7 @@ def wait_for_job(jobId, repeats = 2):
             return
 
         data = req.json()
-        status = data.get("jobStatus") or data.get("status") #TODO: check this field
+        status = data.get("jobStatus") or data.get("status")
         
         if status in ("FINISHED", "DONE"):
             return
@@ -133,7 +132,6 @@ def wait_for_job(jobId, repeats = 2):
         time.sleep(repeats)
 
 
-# TODO: que es el codigo del link
 def download_results(jobId):
 # Retrieve the JSON results and download them
     url = f"{UNIPROT_URL}/idmapping/results/{jobId}"
@@ -367,7 +365,6 @@ def summarize_goaspect(df_go, aspect, prefix):
     if df_aspect.empty:
         return pd.DataFrame(columns=["uniprot_accession", f"go_{prefix}_ids", f"go_{prefix}_names",])
     
-    #TODO what does this code do
     return (
         df_aspect.groupby("uniprot_accession", as_index=False).agg(
             **{

@@ -16,7 +16,6 @@ df_bp = results.get("df_go_bp", pd.DataFrame())
 df_mf = results.get("df_go_mf", pd.DataFrame())
 df_cc = results.get("df_go_cc", pd.DataFrame())
 
-# USE EXPANDERS?? TODO
 st.subheader("Biological process GO terms")
 st.dataframe(df_bp, width="stretch")
 

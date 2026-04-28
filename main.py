@@ -1,6 +1,5 @@
 # Streamlit code
 import app.pipeline
-import pandas as pd
 
 
 smiles_codes = [

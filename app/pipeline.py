@@ -252,7 +252,6 @@ def build_final_summary(df_interactions, df_pathways):
 
     final_summary = fill_missing_symbols(final_summary)
 
-    # Que significa el asterisco? TODO
     def merge_compound_strings(*values):
         items = []
         seen = set()

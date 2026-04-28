@@ -46,7 +46,6 @@ def load_json(filename, folder):
     return json.loads(path.read_text(encoding="utf-8"))
 
 
-# TODO: why not folder here?
 def save_rows_json (rows, filename):
     path = Path(filename)
     path.parent.mkdir(parents=True, exist_ok=True) 

@@ -1,8 +1,6 @@
 import pandas as pd
 import app.utils
 
-# TODO: mirar como conseguir en pathways repetidos solamente 1 y con el que tenga mayor numero de proteinas -> si tienen el mismo nombre
-
 
 def retrieve_pathways(compound, rows, compound_name):
     """Retrieves all the present Pathways in a compound's Pathway section. Returns the DataFrame containing all the Pathways"""
@@ -48,7 +46,6 @@ def retrieve_proteins_from_pathway(compound, rows, compound_name):
     if not dfs:
         return pd.DataFrame(columns=["uniprot_accession", "protein_name", "pathway", "compound", "cid"])
     
-    # TODO revisar esta linea
     df = pd.concat(dfs, ignore_index=True)
     df = df.drop_duplicates(subset=["uniprot_accession", "protein_name", "pathway", "compound", "cid"], keep="first").reset_index(drop=True)
     return df

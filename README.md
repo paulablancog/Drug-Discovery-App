@@ -1,4 +1,3 @@
-```markdown
 ### TFG - Drug Discovery App
 
 This project consists of a web-based application for **compound-cenetered drug discovery analysis.** The application is designed to start from user-provided **SMILES codes**, identify the corresponding compounds and retrieve associated **compound-protein interactions** and **pathway-related proteins**, and performs **Gene Ontology (GO) enrichment** by accessing external databases such as **PubChem**, **NCBI** and **QuickGO.**
@@ -48,7 +47,6 @@ The main workflow of the application is:
 
 ## Project Structure (Simplified Overview)
 
-```text
 app/
 ├── chem.py
 ├── interactions.py

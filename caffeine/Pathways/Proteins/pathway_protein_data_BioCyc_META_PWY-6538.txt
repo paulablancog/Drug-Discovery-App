@@ -1,5 +1,0 @@
-H9N289	Methylxanthine N1-demethylase NdmA
-H9N290	Methylxanthine N3-demethylase NdmB
-H9N291	Oxidoreductase NdmD
-M1EY73	Methylxanthine N7-demethylase
-R9TPE4	Glutathione S-transferase 

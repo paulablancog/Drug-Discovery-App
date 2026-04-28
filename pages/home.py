@@ -3,6 +3,9 @@ import streamlit as st
 import pandas as pd
 from app.pipeline import run_full_pipeline
 import app.chem
+import html
+import re
+from urllib.parse import quote
 
 # This APP when entering new SMILES code different from the older ones, it DELETES the analysis results
 # TODO -> maybe something to look at for the Add SMILES and the big text area (the big text area could do that
@@ -222,47 +225,65 @@ smiles_input = st.text_area(
         ),
     )
 
+# CODE INJECTION RISK MANAGEMENT -------
+CID_re = re.compile(r"^\d+$")
+GENEID_re=re.compile(r"^\d+$")
+GO_re = re.compile(r"^\d+$")
+UNIPROT_re = re.compile(r"^[A-Z0-9]+(?:-[0-9]+)?$")
+PATHWAY_re = re.compile(r"^\d+$")
+
+def safe_text(value):
+    return html.escape("" if value is None else str(value), quote=True)
+
+# It is built only from validated IDs
+def safe_anchor(url, label):
+    safe_url = html.escape(url, quote=True)
+    safe_label = safe_text(label)
+    return f'<a href="{safe_url}" target="_blank" rel="noopener noreferrer">{safe_label}</a>'
 
 def compound_hyperlink(cid, compound_name):
-    if pd.notna(cid) and str(cid).strip() not in {"", "None", "nan"}:
+    cid = str(cid).strip()
+    if CID_re.fullmatch(cid):
         url = f"https://pubchem.ncbi.nlm.nih.gov/compound/{int(cid)}"
-        return f'<a href="{url}" target="_blank">{compound_name}</a>'
-    return compound_name
+        return safe_anchor(url, compound_name)
+    return safe_text(compound_name)
           
 def uniprot_hyperlink(accession, ):
     accession = str(accession).strip()
-    if accession and accession.lower() not in {"none", "nan"}:
+    if UNIPROT_re.fullmatch(accession):
         url = f"https://www.uniprot.org/uniprotkb/{accession}/entry"
-        return f'<a href="{url}" target="_blank">{accession}</a>'
-    return accession
-
+        return safe_anchor(url, accession)
+    return safe_text(accession)
+   
 def pathway_hyperlink(pwacc):
     pwacc = str(pwacc).strip()
-    if pwacc and pwacc.lower() not in {"none", "nan"}:
-        url = f"https://pubchem.ncbi.nlm.nih.gov/pathway/{pwacc}"
-        return f'<a href="{url}" target="_blank">{pwacc}</a>'
-    return pwacc 
+    if PATHWAY_re.fullmatch(pwacc):
+        url = f"https://pubchem.ncbi.nlm.nih.gov/pathway/{quote(pwacc, safe='')}"
+        return safe_anchor(url, pwacc)
+    return safe_text(pwacc) 
 
 def goterm_hyperlink(go_id, go_name=None):
     go_id = str(go_id).strip()
     go_name = str(go_name).strip() if go_name else go_id
-    if go_id and go_id.lower() not in {"none", "nan"}:
+    if GO_re.fullmatch(go_id):
         url = f"https://www.ebi.ac.uk/QuickGO/term/{go_id}"
-        return f'<a href="{url}" target="_blank">{go_name}</a>'
-    return go_name  
+        return safe_anchor(url, go_name)
+    return safe_text(go_name)  
 
 def geneid_hyperlink(geneid):
     geneid = str(geneid).strip()
-    if geneid and geneid.lower() not in {"none", "nan", ""}:
+    if GENEID_re.fullmatch(geneid):
         url = f"https://www.ncbi.nlm.nih.gov/gene/{geneid}"
-        return f'<a href="{url}" target="_blank">{geneid}</a>'
-    return geneid
-    
+        return safe_anchor(url, geneid)
+    return safe_text(geneid)
     
 
 def compounds_text_with_links(compounds_text, compound_results):
     if pd.isna(compounds_text):
         return ""
+    
+    if compound_results is None or compound_results.empty:
+        return safe_text(compounds_text)
     
     compound_to_cid = dict(
         zip(
@@ -275,12 +296,14 @@ def compounds_text_with_links(compounds_text, compound_results):
         compound = compound.strip()
         if not compound:
             continue
+
         cid = compound_to_cid.get(compound)
-        if pd.notna(cid) and str(cid).strip() not in {"", "None", "nan"}:
-            url = f"https://pubchem.ncbi.nlm.nih.gov/compound/{int(cid)}"
-            links.append(f'<a href="{url}" target="_blank">{compound}</a>')
+        cid_str = str(cid).strip() if pd.notna(cid) else ""
+        if CID_re.fullmatch(cid_str):
+            url = f"https://pubchem.ncbi.nlm.nih.gov/compound/{cid_str}"
+            links.append(safe_anchor(url, compound))
         else:
-            links.append(compound)
+            links.append(safe_text(compound))
 
     return "; ".join(links)
 
@@ -599,6 +622,7 @@ if results:
     
     st.subheader("Analysis results")
 
+# COMPOUNDS -----------------
     st.markdown("## Compounds")
     displaycomp_df = st.session_state.get("compound_results", pd.DataFrame()).copy()
     if not displaycomp_df.empty:
@@ -613,6 +637,7 @@ if results:
 
     st.divider()
 
+# COMPOUND-PROTEIN INTERACTIONS -------------
     st.markdown("## Compound-Protein Interactions")
 
     df_interactions = results.get("df_interactions", pd.DataFrame()).copy()
@@ -875,9 +900,19 @@ if results:
             lambda row: compounds_text_with_links(row, compound_results),
         )
 
-        display_dfsum = display_dfsum[
-            ["uniprot_accession", "total_count", "n_compounds", "compounds", "symbol", "n_pathways", "pathways", "pathway_compounds", "source"]
-        ]
+        display_dfsum = display_dfsum[[
+            "uniprot_accession",
+            "interaction_count",
+            "pathway_count",
+            "total_count",
+            "compounds",
+            "n_compounds",
+            "symbol",
+            "n_pathways",
+            "pathways",
+            "pathway_compounds",
+            "source",
+        ]]
 
         st.markdown(display_dfsum.to_html(escape=False, index=False), unsafe_allow_html=True)
 

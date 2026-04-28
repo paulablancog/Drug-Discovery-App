@@ -1,8 +1,0 @@
-P05177	Cytochrome P450 1A2
-P05181	Cytochrome P450 2E1
-P08684	Cytochrome P450 3A4
-P10632	Cytochrome P450 2C8
-P11245	Arylamine N-acetyltransferase 2
-P11509	Cytochrome P450 2A6
-P11712	Cytochrome P450 2C9
-P47989	Xanthine dehydrogenase/oxidase

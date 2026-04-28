@@ -399,6 +399,15 @@ def group_goterms(df_go_aspect):
     grouped["n_compounds"] = grouped["compounds"].apply(lambda x: len([v for v in str(x).split(";") if v.strip()]))
     grouped = grouped.sort_values(["n_compounds", "n_proteins", "go_name"], ascending=[False, False, True]).reset_index(drop=True)
 
+    grouped = grouped[[
+        "go_name",
+        "go_id",
+        "n_compounds",
+        "compounds",
+        "n_proteins",
+        "proteins",
+        "uniprot_accessions",
+    ]]
     return grouped
 
 def count_protgoaspect(df_go_aspect, selected_go_name, selected_go_id, df):

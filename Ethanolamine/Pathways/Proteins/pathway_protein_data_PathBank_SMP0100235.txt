@@ -1,6 +1,0 @@
-G5EC09	Choline/EthanolaminePhosphoTransferase
-P46560	Putative choline kinase B3
-P49583	Putative choline-phosphate cytidylyltransferase
-Q09643	L-serine-phosphatidylethanolamine phosphatidyltransferase 
-Q10949	Phosphatidylserine decarboxylase proenzyme, mitochondrial
-X5LPX5	CTP_transf_like domain-containing protein

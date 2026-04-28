@@ -1,8 +1,0 @@
-P0A6A8	Acyl carrier protein
-P0A6S7	Glycerol-3-phosphate dehydrogenase [NAD(P)+]
-P0A7A7	Glycerol-3-phosphate acyltransferase
-P0ABF8	CDP-diacylglycerol--glycerol-3-phosphate 3-phosphatidyltransferase
-P0ABG1	Phosphatidate cytidylyltransferase
-P23830	CDP-diacylglycerol--serine O-phosphatidyltransferase PssA
-P26647	1-acyl-sn-glycerol-3-phosphate acyltransferase
-P75919	Cardiolipin synthase C

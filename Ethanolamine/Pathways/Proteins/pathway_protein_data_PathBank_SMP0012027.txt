@@ -1,6 +1,0 @@
-O82567	Choline/ethanolaminephosphotransferase 1
-Q38882	Phospholipase D alpha 1
-Q9FR44	Phosphoethanolamine N-methyltransferase 1
-Q9M9H6	Probable choline kinase 1
-Q9MA74	Serine decarboxylase
-Q9ZV56	Choline-phosphate cytidylyltransferase 1

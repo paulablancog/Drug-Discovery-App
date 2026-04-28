@@ -1,6 +1,0 @@
-P35790	Choline kinase alpha
-P49585	Choline-phosphate cytidylyltransferase A
-Q99447	Ethanolamine-phosphate cytidylyltransferase
-Q9UBM1	Phosphatidylethanolamine N-methyltransferase
-Q9UG56	Phosphatidylserine decarboxylase proenzyme, mitochondrial
-Q9Y6K0	Choline/ethanolaminephosphotransferase 1

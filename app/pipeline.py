@@ -181,7 +181,6 @@ def fill_missing_symbols(final_summary):
     return final_summary
 
 
-# I NEED TO CHECK IF THOSE FILES ALREADY EXIST OR NOT
 def build_final_summary(df_interactions, df_pathways):
     df_interactions = df_interactions.copy()
     df_pathways = df_pathways.copy()
@@ -464,7 +463,19 @@ def run_full_pipeline(smiles_codes, email, ui = None):
     final_summary = build_final_summary(df_interactions, df_pathways)
     if ui:
         ui["summary_box"].markdown("### Protein Summary")
-        ui["summary_box"].dataframe(final_summary, width="stretch")
+        ui["summary_box"].dataframe(final_summary[[
+            "uniprot_accession",
+            "interaction_count",
+            "pathway_count",
+            "total_count",
+            "compounds",
+            "n_compounds",
+            "symbol",
+            "n_pathways",
+            "pathways",
+            "pathway_compounds",
+            "source",
+        ]], width="stretch")
         ui["progress_bar"].progress(85, text="Protein summary completed.")
 
     go_results = build_go_enrichment(final_summary)

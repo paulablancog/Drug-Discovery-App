@@ -1,4 +1,0 @@
-A9YTQ3	Aryl hydrocarbon receptor repressor
-P04798	Cytochrome P450 1A1
-P05177	Cytochrome P450 1A2
-P35869	Aryl hydrocarbon receptor

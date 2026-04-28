@@ -1,6 +1,9 @@
-# requirements for use of app
+# requirements for application
 
+streamlit
 pubchempy
 pandas
 requests
 biopython
+openpyxl
+requests

@@ -1,6 +1,6 @@
 ## Drug Discovery App
 
-This project consists of a web-based application for **compound-cenetered drug discovery analysis.** The application is designed to start from user-provided **SMILES codes**, identify the corresponding compounds and retrieve associated **compound-protein interactions** and **pathway-related proteins**, and performs **Gene Ontology (GO) enrichment** by accessing external databases such as **PubChem**, **NCBI** and **QuickGO.**
+This project consists of a web-based application for **compound-centered drug discovery analysis.** The application is designed to start from user-provided **SMILES codes**, identify the corresponding compounds and retrieve associated **compound-protein interactions** and **pathway-related proteins**, and performs **Gene Ontology (GO) enrichment** by accessing external databases such as **PubChem**, **NCBI** and **QuickGO.**
 This application enables users to carry out interactive exploratory analysis in a web environment.
 
 ## Key Features
@@ -75,6 +75,7 @@ pip install -r requirements.txt
 ```bash
 streamlit run streamlit_app.py
 ```
+Make sure you have Internet access before running the application, since queries to external databases and APIs are present.
 
 ## Author
 This project has been developed as the **Final Thesis project at CEU San Pablo University** by:

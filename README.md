@@ -57,23 +57,24 @@ app/
 pages/
 └── home.py
 streamlit_app.py
-
+```
 
 ## Getting started
 1. Clone this repository
-```markdown
+```bash
 git clone https://github.com/paulablancog/TFG-.git
 cd TFG-
-
+```
 
 2. Install dependencies
-```markdown
+```bash
 pip install -r requirements.txt
+```
 
 3. Run Streamlit application
-```markdown
+```bash
 streamlit run streamlit_app.py
-
+```
 
 ## Author
 This project has been developed as the **Final Thesis project at CEU San Pablo University** by:

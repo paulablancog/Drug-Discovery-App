@@ -1,8 +1,9 @@
-import io
 import streamlit as st
 import pandas as pd
+import streamlit.components.v1 as components
 from app.pipeline import run_full_pipeline
 import app.chem
+import app.downloads
 import html
 import re
 from urllib.parse import quote
@@ -11,6 +12,14 @@ from urllib.parse import quote
 example_smiles = [
     "CC(C[N+](C)(C)C)OC(=O)N",
 ]
+
+TAXONOMY_OPTIONS = {
+    "Homo sapiens (human)": "9606",
+    "Mus musculus (mouse)": "10090",
+    "Rattus norvegicus (rat)": "10116",
+    "Danio rerio (zebrafish)": "7955",
+    "Cavia porcellus (guinea pig)": "10141",
+}
 
 # Triple quotes allow multiple lines
 # st.markdown() : for text you want formatted with Markdown
@@ -21,24 +30,6 @@ st.markdown(
     Enter one or more **SMILES codes** to prepare the analysis. 
     Use **one SMILES code per line**
     """)
-
-
-def store_smiles(text):
-    """Collects the SMILES code per line introduced by the user and stores it into a list of unique SMILES strings"""
-    smiles = []
-    for line in text.splitlines():
-        value = line.strip()
-        if value:
-            smiles.append(value)
-    unique_smiles = []
-    seen = set()
-
-    for item in smiles:
-        if item not in seen:
-            seen.add(item)
-            unique_smiles.append(item)
-
-    return unique_smiles
 
 
 # For clearing the session:
@@ -55,7 +46,10 @@ def clear_session():
         "smiles_to_delete",
         "show_delete_smiles",
         "compound_results",
-        "compound_results_source"
+        "compound_results_source",
+        "selected_tax_ids",
+        "selected_taxonomy_labels",
+        "input_warning",
         ]:
         if key in st.session_state:
             del st.session_state[key]
@@ -77,6 +71,9 @@ if "show_delete_smiles" not in st.session_state:
 
 if "smiles_to_delete" not in st.session_state:
     st.session_state["smiles_to_delete"] = []
+
+if "input_warning" not in st.session_state:
+    st.session_state["input_warning"] = ""
 
 # This method is for clearing the results of the analysis only when the user modifies the SMILES input (should take into account the deletion of a SMILES code)
 def clear_analysis_results():
@@ -111,9 +108,30 @@ def store_additional_smiles():
     if "submitted_smiles" not in st.session_state:
         st.session_state["submitted_smiles"] = []
 
+    canonical, error = app.chem.validate_smiles(value)
+
+    if error:
+        st.session_state["input_warning"] = f"Could not add invalid SMILES: {value}"
+        st.session_state["new_smiles_input"] = ""
+        return 
+    
     if value not in st.session_state["submitted_smiles"]:
         st.session_state["submitted_smiles"].append(value)
 
+    existing_canonical = set()
+
+    for smiles in st.session_state["submitted_smiles"]:
+        existing_canonical_smiles, existing_error = app.chem.validate_smiles(smiles)
+        if existing_canonical and not existing_error:
+            existing_canonical.add(existing_canonical_smiles)
+    
+    if canonical in existing_canonical:
+        st.session_state["input_warning"] = f"Duplicate SMILES ignores: {value}"
+        st.session_state["new_smiles_input"] = ""
+        return
+
+    st.session_state["submitted_smiles"].append(canonical)
+    st.session_state["input_warning"] = ""
     st.session_state["new_smiles_input"] = ""
     st.session_state["show_add_smiles"] = False
     clear_analysis_results()
@@ -134,16 +152,35 @@ def update_smiles():
 
 
 def save_input():
-    cleaned_smiles = store_smiles(st.session_state.get("smiles_input", ""))
+    existing_smiles = st.session_state.get("submitted_smiles", [])
+
+    checked_smiles = app.chem.check_smiles_box(st.session_state.get("smiles_input", ""), existing_smiles=existing_smiles)
+
+    cleaned_smiles = checked_smiles["valid"]
+    invalid_smiles = checked_smiles["invalid"]
+    duplicate_smiles = checked_smiles["duplicates"]
     
-    if not cleaned_smiles and not st.session_state.get("submitted_smiles", []):
-        st.session_state["run_error"] = "Please enter at least one SMILES code"
+    if not cleaned_smiles and not existing_smiles:
+        if invalid_smiles:
+            st.session_state["run_error"] = (
+                "No valid SMILES were added. Invalid entried: "+", ".join(invalid_smiles)
+            )
+        else:
+            st.session_state["run_error"] = "Please enter at least one SMILES code"
         return
 
     for smiles in cleaned_smiles:
-        if smiles not in st.session_state.get("submitted_smiles", []):
-            st.session_state["submitted_smiles"].append(smiles)
+        st.session_state["submitted_smiles"].append(smiles)
     
+    warning_messages = []
+
+    if invalid_smiles:
+        warning_messages.append("Invalid SMILES ignored: "+", ".join(invalid_smiles))
+
+    if duplicate_smiles:
+        warning_messages.append("Duplicate SMILES ignored: "+", ".join(duplicate_smiles))
+
+    st.session_state["input_warning"] = '\n\n'.join(warning_messages)
 
     email_input = st.session_state.get("email_input", "").strip()
     saved_email = st.session_state.get("submitted_email", "").strip()
@@ -160,13 +197,30 @@ def save_input():
     st.session_state["run_error"] = ""
     clear_analysis_results()
 
+# TAXONOMY SELECTOR
+selected_taxonomy_labels = st.multiselect(
+    "Select which protein taxonomies to include",
+    options = list(TAXONOMY_OPTIONS.keys()),
+    default = ["Homo sapiens (human)"],
+    key = "selected_taxonomy_labels",
+    help = "Only proteins from the selected organisms will be included in the analysis.",
+    on_change=clear_analysis_results,
+)
 
+st.session_state["selected_tax_ids"] = [
+    TAXONOMY_OPTIONS[label] for label in selected_taxonomy_labels
+]
 
 def run_analysis():
     smiles_codes = st.session_state.get("submitted_smiles", [])
     email = st.session_state.get("submitted_email", "")
+    selected_tax_ids = st.session_state.get("selected_tax_ids", ["9606"])
+    
+    if not selected_tax_ids:
+        st.session_state["run_error"] = "Please select at least one protein taxonomy before running the analysis."
+        st.session_state["analysis_ready"] = False
+        return
 
-    # Tengo que meter errores TODO
     if not email:
         st.session_state["run_error"] = "Please enter a valid email before running the analysis."
         st.session_state["analysis_ready"] = False
@@ -177,7 +231,7 @@ def run_analysis():
         return
     try:
         with st.spinner("Running analysis... This may take a few minutes..."):
-            results = run_full_pipeline(smiles_codes, email, ui = {
+            results = run_full_pipeline(smiles_codes, email, selected_tax_ids=selected_tax_ids, ui = {
                 "status_box": status_box,
                 "progress_bar": progress_bar,
                 "compound_box": compound_box,
@@ -223,9 +277,9 @@ smiles_input = st.text_area(
 # CODE INJECTION RISK MANAGEMENT -------
 CID_re = re.compile(r"^\d+$")
 GENEID_re=re.compile(r"^\d+$")
-GO_re = re.compile(r"^\d+$")
 UNIPROT_re = re.compile(r"^[A-Z0-9]+(?:-[0-9]+)?$")
-PATHWAY_re = re.compile(r"^\d+$")
+GO_re = re.compile(r"^GO:\d{7}$")
+PATHWAY_re = re.compile(r"^[A-Za-z0-9_.:-]+$")
 
 def safe_text(value):
     return html.escape("" if value is None else str(value), quote=True)
@@ -250,12 +304,14 @@ def uniprot_hyperlink(accession, ):
         return safe_anchor(url, accession)
     return safe_text(accession)
    
-def pathway_hyperlink(pwacc):
+def pathway_hyperlink(pwacc, name = None):
     pwacc = str(pwacc).strip()
+    name = str(name).strip() if name is not None else pwacc
+
     if PATHWAY_re.fullmatch(pwacc):
         url = f"https://pubchem.ncbi.nlm.nih.gov/pathway/{quote(pwacc, safe='')}"
-        return safe_anchor(url, pwacc)
-    return safe_text(pwacc) 
+        return safe_anchor(url, name)
+    return safe_text(name) 
 
 def goterm_hyperlink(go_id, go_name=None):
     go_id = str(go_id).strip()
@@ -328,205 +384,224 @@ def pathway_text_with_links(pathway_text):
 
     return "; ".join(links)
 
+# TABLE DISPLAY --------------
 
-def download_excel_analysis():
-    results = st.session_state.get("results", None)
-    submitted_smiles = st.session_state.get("submitted_smiles", [])
-    
-    output = io.BytesIO()
+def show_interactive_table(df, table_id, height=None):
+    if df is None or df.empty:
+        st.info("No data available.")
+        return
 
-    with pd.ExcelWriter(output, engine='openpyxl') as writer:
-        # 1. Input SMILES
-        df_smiles = pd.DataFrame({"input_smiles": submitted_smiles})
-        df_smiles.to_excel(writer, sheet_name = "1.Input_SMILES", header = True, index=False)
+    # Optional: remove completely empty rows just in case
+    df = df.dropna(how="all").copy()
 
-        # 2. Compounds
-        compound_results = st.session_state.get("compound_results", pd.DataFrame()).copy()
-        
-        if compound_results.empty:
-            compound_results = results.get("compound_results", pd.DataFrame()).copy()
+    html_table = df.to_html(
+        escape=False,
+        index=False,
+        table_id=table_id,
+    )
 
-        compound_table = [
-            "smiles",
-            "compound_name",
-            "cid",
-            "molecular_formula",
-            "molecular_weight",
-            "status",
-        ]
+    html_code = f"""
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
 
-        for col in compound_table:
-            if col not in compound_results.columns:
-                compound_results[col] = ""
+    <style>
+    body {{
+        margin: 0;
+        padding: 0;
+        background-color: white;
+    }}
 
-        compound_results = compound_results[compound_table]
+    .dataTables_wrapper, .dataTables_wrapper * {{
+        font-family: "Segoe UI", "Helvetica", "Arial", sans-serif !important;
+        color: #31333f !important;
+        font-size: 15px !important;
+    }}
 
-        if not compound_results.empty:
-            compound_results.to_excel(writer, sheet_name = "2.Compounds", header= True, index=False)
-        else:
-            pd.DataFrame(columns=compound_table).to_excel(writer, sheet_name = "2.Compounds", index=False)
+    #{table_id} {{
+        width: 100% !important;
+        border-collapse: collapse !important;
+        background-color: white !important;
+    }}
 
-        # If analysis has not been processed TODO -> won't be able to download
+    #{table_id},
+    #{table_id} thead,
+    #{table_id} tbody,
+    #{table_id} tr,
+    #{table_id} td,
+    #{table_id} th {{
+        background-color: white !important;
+        color: #31333f !important;
+        border-color: #ccc !important;
+    }}
 
-        if not results:
-            pd.DataFrame().to_excel(writer, sheet_name = "3.Interactions", index=False)
-            pd.DataFrame().to_excel(writer, sheet_name = "4.Pathways", index=False)
-            pd.DataFrame().to_excel(writer, sheet_name = "5.GO_Enrichment", index=False)
-            pd.DataFrame().to_excel(writer, sheet_name = "6.Protein_Summary", index=False)
-            output.seek(0)
-            return output.getvalue()
-        
-        # 3. Interactions
+    #{table_id} thead th {{
+        font-weight: 600 !important;
+        border: 1px solid #999 !important;
+        padding: 10px 12px !important;
+        text-align: left !important;
+        white-space: nowrap !important;
+    }}
 
-        df_interactions = results.get("df_interactions", pd.DataFrame()).copy()
-        df_interactions.to_excel(writer, sheet_name = "3.Interactions", header = True, index=False)
+    #{table_id} tbody td {{
+        border: 1px solid #999 !important;
+        padding: 9px 12px !important;
+        vertical-align: top !important;
+        white-space: normal !important;
+    }}
 
-        # 4. Pathways
+    #{table_id} a {{
+        color: #0068c9 !important;
+        text-decoration: underline !important;
+        font-weight: 500 !important;
+    }}
 
-        df_pathways = results.get("df_pathways", pd.DataFrame()).copy()
-        df_groupedpathways = results.get("df_groupedpathways", pd.DataFrame()).copy()
-        
-        num_row = 0
+    /* Search row */
+    #{table_id} thead tr.filters th {{
+        padding: 6px 10px !important;
+        font-weight: normal !important;
+    }}
 
-        if not df_groupedpathways.empty:
-            df_groupedpathways.to_excel(writer, sheet_name = "4.Pathways", index=False, startrow=num_row)
-            num_row += len(df_groupedpathways) +3
-        else:
-            pd.DataFrame(columns=["pathway", "n_proteins", "n_compounds", "compounds"]).to_excel(
-                writer,
-                sheet_name="4.Pathways",
-                index=False,
-                startrow=num_row,
-            )
-            num_row += 3
+    #{table_id} thead tr.filters input {{
+        width: 95% !important;
+        box-sizing: border-box !important;
+        background-color: white !important;
+        color: #31333f !important;
+        font-size: 14px !important;
+        border: 1px solid #ccc !important;
+        padding: 5px 7px !important;
+    }}
 
-        if not df_pathways.empty and not df_groupedpathways.empty:
-            for _, row in df_groupedpathways.iterrows(): 
-                pathway = row["pathway"]
-                pd.DataFrame({"Pathway": [pathway]}).to_excel(
-                    writer,
-                    sheet_name = "4.Pathways",
-                    index=False,
-                    header=False,
-                    startrow=num_row,
-                )
-                num_row+=1
+    .dataTables_length select {{
+        background-color: white !important;
+        color: #31333f !important;
+        border: 1px solid #ccc !important;
+        font-size: 14px !important;
+        padding: 4px 6px !important;
+    }}
 
-                detailed_table = app.pathways.group_compounds(df_pathways, pathway)
-                if not detailed_table.empty:
-                    detail_cols = ["uniprot_accession", "protein_name"]
-                    if "count" in detailed_table.columns:
-                        detail_cols.append("count")
-                    detail_cols.append("compounds")
+    .dataTables_filter input {{
+        background-color: white !important;
+        color: #31333f !important;
+        border: 1px solid #ccc !important;
+        font-size: 14px !important;
+        padding: 5px 7px !important;
+    }}
 
-                    detailed_table = detailed_table[detail_cols]
-                    detailed_table.to_excel(
-                        writer,
-                        sheet_name="4.Pathways",
-                        index=False,
-                        startrow=num_row,
-                    )
-                    num_row += len(detailed_table) + 3
-                else:
-                    pd.DataFrame(columns=[
-                        "uniprot_accession",
-                        "protein_name",
-                        "count",
-                        "compounds"
-                    ]).to_excel(writer, sheet_name = "4.Pathways", index=False, startrow=num_row)
-                    num_row += 3
+    .dataTables_info {{
+        color: #31333f !important;
+        font-size: 14px !important;
+    }}
 
-        else:
-            pd.DataFrame(columns=[
-                        "uniprot_accession",
-                        "protein_name",
-                        "count",
-                        "compounds"
-                    ]).to_excel(writer, sheet_name = "4.Pathways", index=False, startrow=num_row)
-                    
+    .dataTables_paginate a {{
+        color: #31333f !important;
+        font-size: 14px !important;
+        font-weight: normal !important;
+        padding: 6px 12px !important;
+        border-radius: 6px !important;
+        text-decoration: none !important;
+        margin: 0 2px !important;
+    }}
 
-        # 5. GO Enrichment            
+    .dataTables_paginate a.current {{
+        background-color: #f0f0f0 !important;
+        font-weight: bold !important;
+        border: 1px solid #aaa !important;
+    }}
 
-        df_go_bp_grouped = results.get("df_go_bp_grouped", pd.DataFrame()).copy()
-        df_go_mf_grouped = results.get("df_go_mf_grouped", pd.DataFrame()).copy()
-        df_go_cc_grouped = results.get("df_go_cc_grouped", pd.DataFrame()).copy()
-        
-        df_go_bp = results.get("df_go_bp", pd.DataFrame()).copy()
-        df_go_mf = results.get("df_go_mf", pd.DataFrame()).copy()
-        df_go_cc = results.get("df_go_cc", pd.DataFrame()).copy()
+    .dataTables_paginate a:hover {{
+        background-color: #e3e3e3 !important;
+    }}
 
-        num_row = 0
-        df_confirmation = pd.concat(
-            [
-                df_interactions[["uniprot_accession", "compound"]]
-                if not df_interactions.empty and {"uniprot_accession", "compound"}.issubset(df_interactions.columns)
-                else pd.DataFrame(columns=["uniprot_accession", "compound"]),
-                df_pathways[["uniprot_accession", "compound"]]
-                if not df_pathways.empty and {"uniprot_accession", "compound"}.issubset(df_pathways.columns)
-                else pd.DataFrame(columns=["uniprot_accession", "compound"])
-            ],
-            ignore_index=True,
-        )
+    .dataTables_scrollBody thead tr {{
+        height: 0 !important;
+    }}
 
-        def write_go_aspect(sheet, title, grouped_df, detail_df, num_row):
-            pd.DataFrame({"GO Aspect": [title]}).to_excel(writer, sheet_name = sheet, index=False, header=True, startrow = num_row)
-            num_row += 2
+    .dataTables_scrollBody thead th {{
+        height: 0 !important;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+        border-top: none !important;
+        border-bottom: none !important;
+        line-height: 0 !important;
+        visibility: hidden !important;
+    }}
+    </style>
 
-            if not grouped_df.empty:
-                grouped_df.to_excel(writer, sheet_name = sheet, index=False, startrow=num_row)
-                num_row += len(grouped_df) + 2
-            else:
-                pd.DataFrame(columns=["go_name", "go_id", "n_compounds", "n_proteins"]).to_excel(
-                    writer, sheet_name = sheet, index=False, header=True, startrow=num_row)
-                num_row += 3
-            
-            if not grouped_df.empty and not detail_df.empty:
-                for _, row in grouped_df.iterrows():
-                    go_name = row["go_name"]
-                    go_id = row["go_id"]
+    <script>
+    $(document).ready(function() {{
+        var tableSelector = '#{table_id}';
 
-                    header_df = pd.DataFrame({"GO Term": [f"{go_name} ({go_id})"]})
-                    header_df.to_excel(writer, sheet_name = sheet, index=False, header=False, startrow=num_row)
-                    num_row += 1
+        // Create second header row for column filters
+        $(tableSelector + ' thead tr')
+            .clone(false)
+            .addClass('filters')
+            .appendTo(tableSelector + ' thead');
 
-                    subset = app.proteins.count_protgoaspect(detail_df, go_name, go_id, df_confirmation)
-                    if not subset.empty:
-                        detail_cols = ["symbol", "uniprot_accession"]
-                        if "count" in subset.columns:
-                            detail_cols.append("count")
+        // Replace cloned header titles with search boxes BEFORE DataTables starts
+        $(tableSelector + ' thead tr.filters th').each(function(i) {{
+            var title = $(this).text();
 
-                        detail_cols.append("compounds")
+            $(this).html(
+                '<input type="text" placeholder="Search ' + title + '" />'
+            );
+        }});
 
-                        subset = subset[detail_cols]
-                        subset.to_excel(writer, sheet_name = sheet, index=False, startrow = num_row)
-                        num_row += len(subset) +3
-                    else:
-                        pd.DataFrame(columns=["symbol", "uniprot_accession", "compounds"]).to_excel(
-                            writer, sheet_name=sheet, index=False, startrow=num_row,
-                        )
-                        num_row += 3
+        var table = $(tableSelector).DataTable({{
+            pageLength: 10,
+            lengthMenu: [[10, 20, 50, 100, -1], [10, 20, 50, 100, "All"]],
+            paging: true,
+            searching: true,
+            ordering: true,
+            orderCellsTop: true,
+            autoWidth: false,
+            fixedHeader: false
+        }});
 
-            return num_row
-        
-        num_row = write_go_aspect("5.GO_Enrichment", "Biological Process", df_go_bp_grouped, df_go_bp, num_row)
-        num_row = write_go_aspect("5.GO_Enrichment", "Molecular Function", df_go_mf_grouped, df_go_mf, num_row)
-        num_row = write_go_aspect("5.GO_Enrichment", "Cellular Component", df_go_cc_grouped, df_go_cc, num_row)
+        // Column-specific search
+        $(tableSelector + ' thead tr.filters input').on('keyup change clear', function(e) {{
+            e.stopPropagation();
 
-        df_proteinsummary = results.get("final_summaryGO", pd.DataFrame()).copy()
-        df_proteinsummary.to_excel(writer, sheet_name = "6.Protein_Summary", header = True, index=False)
+            var colIdx = $(this).parent().index();
 
-    output.seek(0)
-    return output.getvalue()
+            if (table.column(colIdx).search() !== this.value) {{
+                table
+                    .column(colIdx)
+                    .search(this.value)
+                    .draw();
+            }}
+        }});
 
+        // Prevent sorting when clicking inside search boxes
+        $(tableSelector + ' thead tr.filters input').on('click', function(e) {{
+            e.stopPropagation();
+        }});
+    }});
+    </script>
 
+    <div style="overflow-x:auto; margin-bottom: 0px;">
+        {html_table}
+    </div>
+    """
 
+    if height is None:
+        height = min(900, 300 + min(len(df), 20) * 45)
+
+    components.html(
+        html_code,
+        height=height,
+        scrolling=True,
+    )
 
 # Hacer que este botón NO modifique los SMILES adicionales
 st.button("Save input", on_click=save_input, type="primary", width='stretch')
 
+if st.session_state.get("input_warning"):
+    st.warning(st.session_state["input_warning"])
+
 submitted_smiles = st.session_state.get("submitted_smiles", [])
 
-if "submitted_smiles":
+if submitted_smiles:
     st.subheader("Saved SMILES & email")
     st.write(f"Email: {st.session_state['submitted_email']}")
     st.write(f"Number of SMILES code stored: {len(submitted_smiles)}")
@@ -583,14 +658,6 @@ if st.session_state.get("run_error", ""):
 
 results = st.session_state.get("results", None)
 if results:
-    excel = download_excel_analysis()
-
-    st.download_button(
-        label="Download analysis results as Excel",
-        data=excel,
-        file_name="analysis_results.xlsx",
-        mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
-    )
 
     st.subheader("Analysis Overview")
     col1, col2, col3 = st.columns(3)
@@ -613,7 +680,39 @@ if results:
     go2.metric("Molecular function", mf_count)
     go3.metric("Cellular component", cc_count)
 
-    
+    st.markdown("### Download selected result tables")
+    selected_pages = []
+    col1, col2 = st.columns(2)
+
+    for i, (section_key, section_label) in enumerate(app.downloads.page_selection.items()):
+        column = col1 if i % 2 == 0 else col2 # design alternating between column 1 and column 2
+        # Checkbox
+        with column:
+            checked = st.checkbox(
+                section_label,
+                value = True,
+                key = f"download_{section_key}",
+            )
+        if checked:
+            selected_pages.append(section_key)
+
+    if selected_pages:
+        if st.button("Prepare Excel file", type = "primary"):
+            with st.spinner("Preparing excel file for download..."):
+                st.session_state["prepared_excel"] = app.downloads.download_excel_analysis(selected_pages)
+                st.session_state["prepared_excel_selection"] = tuple(selected_pages)
+            # Button
+        if "prepared_excel" in st.session_state:
+            st.download_button(
+                label = "Download selected tables",
+                data = st.session_state["prepared_excel"],
+                file_name = "Analysis_results.xlsx",
+                mime = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                on_click = "ignore",
+            )
+    else:
+        st.info("Select at least one table to download.")
+
     st.subheader("Analysis results")
 
 # COMPOUNDS -----------------
@@ -625,7 +724,10 @@ if results:
             axis = 1,
         )
         displaycomp_df = displaycomp_df[["smiles", "compound_name", "cid", "molecular_formula", "molecular_weight", "status"]]
-        st.markdown(displaycomp_df.to_html(escape=False, index=False), unsafe_allow_html=True)
+        show_interactive_table(
+            displaycomp_df,
+            table_id="compounds_table",
+        )
     else:
         st.info("No compounds identified")
 
@@ -651,15 +753,18 @@ if results:
         )
        
         display_df = display_df[
-            ["compound", "geneid", "symbol", "uniprot_accession", "description"]
+            ["compound", "geneid", "symbol", "protein_name", "uniprot_accession", "description", "taxid", "taxname",]
         ]
-
-        st.markdown(display_df.to_html(escape=False, index=False), unsafe_allow_html=True)
+        show_interactive_table(
+            display_df,
+            table_id="interactionsTable",
+        )
     else:
         st.info("No valid SMILES code entered yet.")
 
     st.divider()
 
+# PATHWAYS -------------
     st.markdown("## Pathways")
 
     df_groupedpathways = results.get("df_groupedpathways", pd.DataFrame()).copy()
@@ -667,8 +772,12 @@ if results:
 
     if not df_groupedpathways.empty and not df_pathways.empty:
         # 1) Pathways table with the pathway as a selector column in plain text
+        for col in ["pathway_name", "proteins", "taxid", "taxname"]:
+            if col not in df_groupedpathways.columns:
+                df_groupedpathways[col] = ""
+        
         event = st.dataframe(
-            df_groupedpathways[["pathway","n_compounds", "n_proteins","compounds"]],
+            df_groupedpathways[["pathway", "pathway_name", "n_compounds", "n_proteins","compounds"]],
             width="stretch",
             on_select="rerun",
             selection_mode="single-row",
@@ -680,9 +789,14 @@ if results:
         if selected_rows:
             selected_index = selected_rows[0]
             selected_pathway = df_groupedpathways.iloc[selected_index]["pathway"]
+            selected_pathway_name = df_groupedpathways.iloc[selected_index].get("pathway_name", "")
             
+            if pd.notna(selected_pathway_name) and str(selected_pathway_name).strip():
+                pathway_label = f"{selected_pathway_name} ({selected_pathway})"
+            else:
+                pathway_label = selected_pathway
             # Clickable title pathway with hyperlink to PubChem
-            st.markdown(f"### Proteins in pathway: {pathway_hyperlink(selected_pathway)}",
+            st.markdown(f"### Proteins in pathway: {pathway_hyperlink(selected_pathway, pathway_label)}",
                         unsafe_allow_html=True,
             )
 
@@ -699,10 +813,12 @@ if results:
                 )
                 # Show details table
                 display_details = display_details[
-                    ["uniprot_accession", "protein_name", "count","compounds"]
+                    ["uniprot_accession", "protein_name", "symbol", "count","compounds", "taxid", "taxname"]
                 ]
-
-                st.markdown(display_details.to_html(escape=False, index=False), unsafe_allow_html=True)
+                show_interactive_table(
+                    display_details,
+                    table_id="pathwayDetailsTable",
+                )
             else:
                 st.info("No proteins found in this pathway.")
         else:
@@ -710,6 +826,7 @@ if results:
 
     st.divider()
 
+# GO ENRICHMENT -------------
     st.markdown("## GO enrichment")
     compound_results = st.session_state.get("compound_results", pd.DataFrame())
     df_interactions = results.get("df_interactions", pd.DataFrame()).copy()
@@ -761,7 +878,10 @@ if results:
                     display_godetails_bp = display_godetails_bp[
                         ["symbol", "uniprot_accession", "count","compounds"]
                     ]
-                    st.markdown(display_godetails_bp.to_html(escape=False, index=False), unsafe_allow_html=True)
+                    show_interactive_table(
+                        display_godetails_bp,
+                        table_id="goDetailsTable",
+                    )
                 else:
                     st.info("No biological process GO terms found.")
             else:
@@ -812,7 +932,10 @@ if results:
                     display_godetails_mf = display_godetails_mf[
                         ["symbol", "uniprot_accession", "count","compounds"]
                     ]
-                    st.markdown(display_godetails_mf.to_html(escape=False, index=False), unsafe_allow_html=True)
+                    show_interactive_table(
+                        display_godetails_mf,
+                        table_id="goDetailsTable",
+                    )
                 else:
                     st.info("No molecular function GO terms found.")
             else:
@@ -864,7 +987,10 @@ if results:
                     display_godetails_cc = display_godetails_cc[
                         ["symbol", "uniprot_accession", "count","compounds"]
                     ]
-                    st.markdown(display_godetails_cc.to_html(escape=False, index=False), unsafe_allow_html=True)
+                    show_interactive_table(
+                        display_godetails_cc,
+                        table_id="goDetailsTable",
+                    )
                 else:
                     st.info("No cellular component GO terms found.")
             else:
@@ -872,6 +998,7 @@ if results:
     
     st.divider()
 
+# PROTEIN SUMMARY -------------
     st.markdown("## Protein Summary")
     
     df_proteinsummary = results.get("final_summary",pd.DataFrame()).copy()
@@ -896,19 +1023,26 @@ if results:
 
         display_dfsum = display_dfsum[[
             "uniprot_accession",
+            "protein_name",
+            "symbol",
+            "taxid",
+            "taxname",
             "interaction_count",
             "pathway_count",
             "total_count",
             "compounds",
             "n_compounds",
-            "symbol",
             "n_pathways",
             "pathways",
+            "pathway_names",
             "pathway_compounds",
             "source",
         ]]
 
-        st.markdown(display_dfsum.to_html(escape=False, index=False), unsafe_allow_html=True)
+        show_interactive_table(
+            display_dfsum,
+            table_id="proteinSummaryTable",
+        )
 
     else:   
         st.info("No proteins found in the summary.")

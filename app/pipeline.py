@@ -6,7 +6,7 @@ import app.proteins
 import app.pathways
 import app.utils
 
-def fetch_pubchem_compound(smiles_code, email):
+def fetch_pubchem_compound(smiles_code, email, selected_tax_ids=None):
     compound = app.chem.compound_retrieval(smiles_code)
     if compound is None:
         raise ValueError("No compound found. Check the SMILES code")
@@ -14,11 +14,29 @@ def fetch_pubchem_compound(smiles_code, email):
     compound_info = app.chem.compound_information(compound)
     compound_name = app.chem.compound_display_name(compound)
 
-    interaction_data = load_interactions(compound) # what columns does interaction data have?
+    interaction_data = load_interactions(compound, selected_tax_ids=selected_tax_ids) 
      
-    df_geneids = app.proteins.retrieve_targets_1(compound_name, interaction_data["chemical_target_rows"])
+    df_geneids = app.proteins.retrieve_targets_1(compound_name, interaction_data["chemical_target_rows"], selected_tax_ids=selected_tax_ids)
     proteins_data = app.proteins.translate_geneid_to_protein(email, df_geneids, compound_name)
+    tax_map = pd.DataFrame(columns=["geneid", "taxid", "taxname"])
+
+    if df_geneids is not None and not df_geneids.empty:
+        for col in ["geneid", "taxid", "taxname"]:
+            if col not in df_geneids.columns:
+                df_geneids[col] = ""
+        tax_map = df_geneids[["geneid", "taxid", "taxname"]].drop_duplicates()
+    
     df_map = app.proteins.map_genes_to_uniprot(df_geneids)
+    df_uniprot_info = pd.DataFrame(columns=["uniprot_accession", "protein_name", "mapped_symbol", "taxid", "taxname"])
+
+    if df_map is not None and not df_map.empty and "uniprot_accession" in df_map.columns:
+        accessions = (
+            df_map["uniprot_accession"].dropna().astype(str).str.strip()
+        )
+        accessions = [x for x in accessions.unique() if x]
+
+        if accessions:
+            df_uniprot_info = app.proteins.map_uniprot_to_info(accessions)
 
     protein_data = proteins_data.drop_duplicates(subset=["geneid"]) if "geneid" in proteins_data.columns else proteins_data
 
@@ -26,20 +44,66 @@ def fetch_pubchem_compound(smiles_code, email):
         df_map = pd.DataFrame(columns=["geneid", "uniprot_accession"])
     
     if protein_data.empty:
-        df_proteins = pd.DataFrame(columns=["compound", "cid", "geneid", "symbol", "description"])
+        df_proteins = pd.DataFrame(columns=["compound", "cid", "geneid", "symbol", "description", "uniprot_accession", "protein_name", "taxid", "taxname"])
     else:
         df_proteins = protein_data.merge(df_map, on="geneid", how="left")
+        df_proteins = df_proteins.merge(tax_map, on="geneid", how="left")
+
+        # separate taxid and taxname from UniProt and PubChem (UniProt taxonomic information here)
+        df_uniprot_info = df_uniprot_info.rename(columns={
+            "taxid": "taxid_uniprot",
+            "taxname": "taxname_uniprot"
+        })
+
+        df_proteins = df_proteins.merge(
+            df_uniprot_info,
+            on="uniprot_accession",
+            how="left",
+        )
+
+        # PubChem taxonomy information separated from UniProt's
+        df_proteins["pubchem_taxid"] = df_proteins["taxid"].fillna("").astype(str).str.strip()
+        df_proteins["pubchem_taxname"] = df_proteins["taxname"].fillna("").astype(str).str.strip()
+
+        # I will prioritize the taxonomic information of UniProt instead of PubChem's
+        df_proteins["taxid"] = df_proteins.apply(
+            lambda row: str(row["taxid_uniprot"]).strip()
+            if pd.notna(row.get("taxid_uniprot")) and str(row.get("taxid_uniprot")).strip()
+            else str(row.get("pubchem_taxid", "")).strip(),
+            axis = 1
+        )
+
+        df_proteins["taxname"] = df_proteins.apply(
+            lambda row: str(row["taxname_uniprot"]).strip()
+            if pd.notna(row.get("taxname_uniprot")) and str(row.get("taxname_uniprot")).strip()
+            else str(row.get("pubchem_taxname", "")).strip(),
+            axis = 1
+        )
+
+        selected_tax_ids = app.interactions.normalize_taxonomy_ids(selected_tax_ids)
+        if selected_tax_ids:
+            df_proteins = df_proteins[df_proteins["taxid"].astype(str).str.strip().isin(selected_tax_ids)].copy()
+
+        df_proteins["symbol"] = df_proteins.apply(
+            lambda row: str(row["symbol"]).strip()
+            if pd.notna(row.get("symbol")) and str(row.get("symbol")).strip()
+            else str(row.get("mapped_symbol", "")).strip(),
+            axis = 1
+        )
+
         df_proteins["compound"] = compound_name
         df_proteins["cid"] = compound_info.get("cid")
+        df_proteins = df_proteins.drop(columns=["taxid_uniprot", "taxname_uniprot", "pubchem_taxid", "pubchem_taxname", "mapped_symbol"],
+        errors = "ignore")
 
-    df_pathways = app.pathways.retrieve_pathways(compound, interaction_data["pathway_rows"] ,compound_name)
+    df_pathways = app.pathways.retrieve_pathways(compound, interaction_data["pathway_rows"] ,compound_name, selected_tax_ids=selected_tax_ids)
     if df_pathways is None:
-        df_pathways = pd.DataFrame(columns=["uniprot_accession", "protein_name", "pathway", "compound"])
+        df_pathways = pd.DataFrame(columns=["uniprot_accession", "protein_name", "pathway", "pathway_name", "compound", "cid", "taxid", "taxname"])
 
     return compound, compound_info, compound_name, df_proteins, df_pathways
 
 
-def load_interactions(compound):
+def load_interactions(compound, selected_tax_ids=None):
     # 1. Creates the URL
     index_url = f"{app.utils.URL_BASE}/rest/pug_view/index/compound/{compound.cid}/JSON"
     # 2. Retrieves the index JSON
@@ -78,6 +142,7 @@ def load_interactions(compound):
             
         # -- PATHWAY INTERACTIONS --
         if subsection_1 == "pathways":
+            # TODO pathways are yet to check if they have taxonomic filter
             rows = app.interactions.get_interactions_table(compound, "pathway", where = where_pathways, order="pathwayid,asc")   
             pathway_rows.extend(rows)
     
@@ -90,6 +155,7 @@ def load_interactions(compound):
                 
                 rows = app.interactions.get_interactions_table(compound, table_name, order="geneid,asc")
                 chemical_target_rows.extend(rows)
+    
     return {
         "chemical_target_rows": chemical_target_rows,
         "pathway_rows": pathway_rows,
@@ -105,6 +171,9 @@ def fetch_interactions_summary(proteins):
         "symbol", 
         "description",
         "uniprot_accession",
+        "protein_name",
+        "taxid",
+        "taxname",
     ]
 
     dfs_int = []
@@ -127,9 +196,13 @@ def fetch_pathway_summary(pathways):
     required_columns = [
         "uniprot_accession",
         "protein_name",
-        "pathway", 
+        "symbol",
+        "pathway",
+        "pathway_name", 
         "compound", 
         "cid",
+        "taxid",
+        "taxname"
     ]
 
     dfs_proteins = []
@@ -188,18 +261,30 @@ def build_final_summary(df_interactions, df_pathways):
     df_interactions.columns = df_interactions.columns.str.strip()
     df_pathways.columns = df_pathways.columns.str.strip()
 
-    df_interactions["uniprot_accession"] = (df_interactions["uniprot_accession"]
-        .astype(str)
-        .str.strip()
-        .replace({"nan": "", "None": "", "NaN": ""})
-    )
+    for col in ["uniprot_accession", "protein_name", "compound", "geneid", "symbol", "description","taxid", "taxname"]:
+        if col in df_interactions.columns:
+            df_interactions[col] = (df_interactions[col]
+                .astype(str)
+                .str.strip()
+                .replace({"nan": "", "None": "", "NaN": ""})
+            )
+        else:
+            df_interactions[col] = ""
+
+   
     df_interactions = df_interactions[df_interactions["uniprot_accession"] != ""].copy()
     
-    df_pathways["uniprot_accession"] = (df_pathways["uniprot_accession"]
-        .astype(str)
-        .str.strip()
-        .replace({"nan": "", "None": "", "NaN": ""})
-    )
+    for col in ["uniprot_accession", "protein_name", "pathway", "pathway_name", "compound", "taxid", "taxname"]:
+        if col in df_pathways.columns:
+            df_pathways[col] = (df_pathways[col]
+                .astype(str)
+                .str.strip()
+                .replace({"nan": "", "None": "", "NaN": ""})
+            )
+        else:
+            df_pathways[col] = ""
+
+   
     df_pathways = df_pathways[df_pathways["uniprot_accession"] != ""].copy()
 
     interactions_summary = (
@@ -209,6 +294,9 @@ def build_final_summary(df_interactions, df_pathways):
             compounds=("compound", lambda x: ";".join(sorted(set(str(v).strip() for v in x if pd.notna(v) and str(v).strip())))),
             symbol=("symbol", lambda x: ";".join(sorted(set(str(v).strip() for v in x if pd.notna(v) and str(v).strip())))),
             geneid=("geneid", lambda x: ";".join(sorted(set(str(v).strip() for v in x if pd.notna(v) and str(v).strip())))),
+            interaction_protein_name=("protein_name", lambda x: ";".join(sorted(set(str(v).strip() for v in x if pd.notna(v) and str(v).strip())))),
+            interaction_taxid = ("taxid", lambda x: ";".join(sorted(set(str(v).strip() for v in x if pd.notna(v) and str(v).strip())))),
+            interaction_taxname = ("taxname", lambda x: ";".join(sorted(set(str(v).strip() for v in x if pd.notna(v) and str(v).strip())))),
         )
     )
 
@@ -217,7 +305,11 @@ def build_final_summary(df_interactions, df_pathways):
             pathway_count = ("uniprot_accession", "size"),
             n_pathways = ("pathway", "nunique"),
             pathways = ("pathway", lambda x: ";".join(sorted(set(x)))),
+            pathway_names = ("pathway_name", lambda x: ";".join(sorted(set(x)))),
             pathway_compounds = ("compound", lambda x: ";".join(sorted(set(str(v).strip() for v in x if pd.notna(v) and str(v).strip())))),
+            pathway_protein_name = ("protein_name", lambda x: ";".join(sorted(set(str(v).strip() for v in x if pd.notna(v) and str(v).strip())))),
+            pathway_taxid = ("taxid", lambda x: ";".join(sorted(set(str(v).strip() for v in x if pd.notna(v) and str(v).strip())))),
+            pathway_taxname = ("taxname", lambda x: ";".join(sorted(set(str(v).strip() for v in x if pd.notna(v) and str(v).strip())))),
         )
     )
 
@@ -233,6 +325,13 @@ def build_final_summary(df_interactions, df_pathways):
         "n_pathways": 0,
         "pathways": "",
         "pathway_compounds": "",
+        "pathway_names": "",
+        "interaction_taxid": "",
+        "interaction_taxname": "",
+        "pathway_taxid": "",
+        "pathway_taxname": "",
+        "pathway_protein_name": "",
+        "interaction_protein_name": "",
     })
 
     final_summary["interaction_count"] = final_summary["interaction_count"].astype(int)
@@ -277,6 +376,30 @@ def build_final_summary(df_interactions, df_pathways):
             ),
             axis=1
         )
+    
+    final_summary["taxid"] = final_summary.apply(
+        lambda row: merge_compound_strings(
+            row.get("interaction_taxid", ""),
+            row.get("pathway_taxid", "")
+        ),
+        axis=1
+    )
+
+    final_summary["taxname"] = final_summary.apply(
+        lambda row: merge_compound_strings( 
+            row.get("interaction_taxname", ""),
+            row.get("pathway_taxname", "")
+        ),
+        axis=1
+    )
+    
+    final_summary["protein_name"] = final_summary.apply(
+        lambda row: merge_compound_strings(
+            row.get("pathway_protein_name", ""),
+            row.get("interaction_protein_name", "")
+        ),
+        axis=1
+    )
 
     final_summary["n_compounds"] = final_summary["compounds"].apply(
         lambda x: len([v for v in str(x).split(";") if v.strip()]) if str(x).strip() else 0
@@ -398,7 +521,7 @@ def build_go_enrichment(final_summary):
     }
 
 
-def run_full_pipeline(smiles_codes, email, ui = None):
+def run_full_pipeline(smiles_codes, email, selected_tax_ids=None, ui = None):
     compound_names = []
     all_compounds = []
     proteins = []
@@ -410,7 +533,7 @@ def run_full_pipeline(smiles_codes, email, ui = None):
 
     for i, smiles in enumerate(smiles_codes, start=1):
         try:
-            compound, compound_info, compound_name, df_proteins, df_pathways = fetch_pubchem_compound(smiles, email)
+            compound, compound_info, compound_name, df_proteins, df_pathways = fetch_pubchem_compound(smiles, email, selected_tax_ids=selected_tax_ids)
             
             compound_names.append(compound_name)
             proteins.append(df_proteins)
@@ -464,14 +587,18 @@ def run_full_pipeline(smiles_codes, email, ui = None):
         ui["summary_box"].markdown("### Protein Summary")
         ui["summary_box"].dataframe(final_summary[[
             "uniprot_accession",
+            "protein_name",
+            "symbol",
+            "taxid",
+            "taxname",
             "interaction_count",
             "pathway_count",
             "total_count",
             "compounds",
             "n_compounds",
-            "symbol",
             "n_pathways",
             "pathways",
+            "pathway_names",
             "pathway_compounds",
             "source",
         ]], width="stretch")

@@ -1,8 +1,68 @@
 import pubchempy as pcp
 import pandas as pd
 import requests
+from rdkit import Chem
 
 # Step 1: Recognize the drug by SMILES code with PubChem database
+
+def validate_smiles(smiles_code):
+    smiles_code = str(smiles_code).strip()
+
+    if not smiles_code:
+        return None, "Empty SMILES"
+
+    mol = Chem.MolFromSmiles(smiles_code)
+
+    if mol is None:
+        return None, f"Invalid SMILES: {smiles_code}"
+    
+    canonical_smiles = Chem.MolToSmiles(mol, canonical=True, isomericSmiles=True)
+    return canonical_smiles, None
+
+def check_smiles_box(text, existing_smiles=None):
+    """Rejects multiline SMILES input:
+        -   Rejects invalid SMILES
+        -   Converts valid SMILES into canonical SMILES
+        -   Removes duplicates, including equivalent SMILES written differently"""
+    
+    existing_smiles = existing_smiles or []
+    
+    existing_canonical = set() 
+    
+    for smiles in existing_smiles:
+        canonical, error = validate_smiles(smiles)
+        if canonical and not error:
+            existing_canonical.add(canonical)
+
+    valid_smiles = []
+    invalid_smiles = []
+    duplicate_smiles = []
+
+    seen = set()
+
+    for line in str(text).splitlines():
+        raw_smiles = line.strip()
+        if not raw_smiles:
+            continue
+
+        canonical, error = validate_smiles(raw_smiles)
+        
+        if error:
+            invalid_smiles.append(raw_smiles)
+            continue
+        
+        if canonical in existing_canonical or canonical in seen:
+            duplicate_smiles.append(raw_smiles)
+            continue
+        seen.add(canonical)
+        valid_smiles.append(canonical)
+
+    return{
+        "valid": valid_smiles,
+        "invalid": invalid_smiles,
+        "duplicates": duplicate_smiles,
+    }
+
 
 def compound_retrieval(smiles_code):
     """Retrieve PubChem compound from its SMILES code"""
@@ -108,6 +168,19 @@ def identify_compounds(smiles_list):
         smiles = str(smiles).strip()
         if not smiles:
             continue
+        
+        canonical_smiles, smiles_error = validate_smiles(smiles)
+
+        if smiles_error:
+            rows.append({
+                "smiles": smiles,
+                "compound_name": "Invalid SMILES",
+                "cid": None,
+                "molecular_formula": None,
+                "molecular_weight": None,
+                "status": smiles_error,
+            })
+            continue
 
         try:
             compound = compound_retrieval(smiles)
@@ -118,9 +191,10 @@ def identify_compounds(smiles_list):
                     "cid": None,
                     "molecular_formula": None,
                     "molecular_weight": None,
-                    "status": "Not identified.",
+                    "status": "Valid SMILES, not identified in PubChem.",
                 })
                 continue
+
             compound_name = compound_display_name(compound)
             compound_info = compound_information(compound)
 
@@ -132,6 +206,7 @@ def identify_compounds(smiles_list):
                 "molecular_weight": compound_info.get("molecular_weight"),
                 "status": "Identified",
                 })
+            
         except Exception as ex:
             rows.append({
                     "smiles": smiles, 

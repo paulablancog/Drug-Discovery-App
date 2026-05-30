@@ -55,7 +55,6 @@ def has_interactions_and_pathways(index_json):
     """Checks if the compound has Interactions and Pathways section"""
     return find_section_by_heading(index_json, "Interactions and Pathways") is not None
 
-
 def retrieve_externaltable(interactions_json):
     """Return the subsection name (Chemical-Target or Pathways) and its external name table"""
     # I need the section, so I call find_section_by_heading (if not i would call has_interactions...)
@@ -111,8 +110,31 @@ def sdq_query_externaltable(collection, where, select = "*", start = 1, limit = 
 
     return app.utils.get_json(url, params=params)
 
+def normalize_taxonomy_ids(selected_tax_ids):
+    if selected_tax_ids is None:
+        return set()
+    if isinstance(selected_tax_ids, str):
+        selected_tax_ids = [selected_tax_ids]
+    
+    return {
+        str(taxid).strip() for taxid in selected_tax_ids if str(taxid).strip()
+    }
 
-def get_interactions_table(compound, collection, page_size = 1000, where = None, order="cid,asc"):
+def match_taxonomy(row, selected_tax_ids=None):
+    selected_tax_ids = normalize_taxonomy_ids(selected_tax_ids)
+    if not selected_tax_ids:
+        return True
+
+    taxid = str(row.get("taxid", "")).strip()
+    return taxid in selected_tax_ids
+
+def filter_taxonomy(rows, selected_tax_ids=None):
+    return [row for row in rows
+            if isinstance(row,dict) and match_taxonomy(row, selected_tax_ids)]
+
+
+# Only retrieves human interactions
+def get_interactions_table(compound, collection, page_size = 1000, where = None, order="cid,asc", selected_tax_ids=None): 
     """Retrieve all rows from PubChem SDQ External table with pagination"""
     if where is None:
         where = {"ands": [{"cid": str(compound.cid)}]} # default where clause if not provided
@@ -130,9 +152,6 @@ def get_interactions_table(compound, collection, page_size = 1000, where = None,
     block = out_set[0]
     rows = block.get("rows", []) or []
     total = int(block.get("totalCount", len(rows)))
-
-    if len(rows) >= total:
-        return rows
     
     all_rows = list(rows)
     start = 1+len(rows)
@@ -147,5 +166,8 @@ def get_interactions_table(compound, collection, page_size = 1000, where = None,
 
         all_rows.extend(rows_page)
         start += len(rows_page)
+    
+    if selected_tax_ids is not None:
+        all_rows = filter_taxonomy(all_rows, selected_tax_ids)
 
     return all_rows

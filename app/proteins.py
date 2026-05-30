@@ -11,25 +11,37 @@ def chunk_list(items,size):
         yield items[i:i + size]
 
 # Appear in main so that the user can fetch the proteins in the interactions of the compound?
-def retrieve_targets_1(compound_name, rows):
+def retrieve_targets_1(compound_name, rows, selected_tax_ids=None):
     # Rows are the interaction json rows
     if not rows:
-        return pd.DataFrame(columns=["compound", "geneid"])
+        return pd.DataFrame(columns=["compound", "geneid", "taxid", "taxname"])
     
-    
+    selected_tax_ids = {
+        str(taxid).strip() for taxid in (selected_tax_ids or []) if str(taxid).strip()
+    }
+
     target_list = [] 
+
     for row in rows:
-        if isinstance(row,dict): # is row a dictionary object? -> rows should be a list of dictionaries (.get() only exists in dictionaries)
-            gene_id = row.get("geneid")
+        if isinstance(row,dict): 
+            gene_id = str(row.get("geneid", "")).strip()
+            tax_id = str(row.get("taxid", "")).strip()
+            taxname = str(row.get("taxname", "")).strip()
+
+            if selected_tax_ids and tax_id not in selected_tax_ids:
+                continue
+
             if gene_id:
-                target_list.append(str(gene_id).strip())
+                target_list.append((str(gene_id).strip(), str(tax_id).strip() if tax_id else "", taxname))
 
     df_geneids = pd.DataFrame(
         {
             "compound": [compound_name] * len(target_list),
-            "geneid": target_list,
+            "geneid": [item[0] for item in target_list],
+            "taxid": [item[1] for item in target_list],
+            "taxname": [item[2] for item in target_list]
         },
-        columns = ["compound", "geneid"]
+        columns = ["compound", "geneid", "taxid", "taxname"]
     )
 
     return df_geneids
@@ -246,7 +258,115 @@ def map_uniprot_to_symbol(accessions):
                 })
 
     return pd.DataFrame(rows, columns=["uniprot_accession", "mapped_symbol"])
-            
+
+def map_uniprot_to_info(accessions):
+    accessions = [str(x).strip() for x in accessions if pd.notna(x) and str(x).strip()]
+
+    if not accessions:
+        return pd.DataFrame(columns=["uniprot_accession", "protein_name", "mapped_symbol", "taxid", "taxname"])
+    
+    rows = []
+
+    with requests.Session() as session:
+        for chunk in chunk_list(accessions,100):
+            query = " OR ".join(f"accession:{acc}" for acc in chunk)
+            response = session.get(f"{UNIPROT_URL}/uniprotkb/search",
+                                      params = {"query": query,
+                                                "fields": "accession,protein_name,gene_primary,organism_id,organism_name",
+                                                "format": "json",
+                                                "size": len(chunk),
+                                                },
+                                                timeout = 60,
+                                         )
+            response.raise_for_status()
+            data = response.json()
+            for item in data.get("results", []):
+                accession = str(item.get("primaryAccession", "")).strip()
+                
+                # PROTEIN NAME ---
+                protein_name = ""
+                protein_description = item.get("proteinDescription", {}) or {}
+                recommended_name = protein_description.get("recommendedName", {}) or {}
+                full_name = recommended_name.get("fullName", {}) or {}
+
+                if full_name.get("value"):
+                    protein_name = str(full_name.get("value")).strip()
+                
+                # FALLBACK: SUBMITTED NAME ---
+                if not protein_name:
+                    submitted_name = protein_description.get("submittedName", []) or []
+                    if submitted_name:
+                        submitted_full_name = submitted_name[0].get("fullName", {}) or {}
+                        protein_name = str(submitted_full_name.get("value", "")).strip()
+                
+                # GENE SYMBOL ----
+                mapped_symbol = ""
+                genes = item.get("genes", []) or []
+                if genes:
+                    gene_name = genes[0].get("geneName") or {}
+                    mapped_symbol = str(gene_name.get("value", "")).strip()
+
+                # TAXONOMY ---
+                organism = item.get("organism", {}) or {}
+                taxid = str(organism.get("taxonId", "")).strip()
+                taxname = str(
+                    organism.get("scientificName", "") or organism.get("commonName", "")
+                ).strip()
+
+                rows.append(
+                    {
+                        "uniprot_accession": accession,
+                        "protein_name": protein_name,
+                        "mapped_symbol": mapped_symbol,
+                        "taxid": taxid,
+                        "taxname": taxname,
+                    }
+                )
+    return pd.DataFrame(rows, columns=["uniprot_accession", "protein_name", "mapped_symbol", "taxid", "taxname"])
+
+
+
+def get_uniprot_taxonomy(accessions):
+    accessions = [
+        str(acc).strip() for acc in accessions if pd.notna(acc) and str(acc).strip()
+    ]      
+
+    if not accessions:
+        return {}
+    
+    taxonomy_map = {}
+    
+    with requests.Session() as session:
+        for chunk in chunk_list(accessions, 100):
+            query = " OR ".join(f"accession:{acc}" for acc in chunk)
+
+            response = session.get(f"{UNIPROT_URL}/uniprotkb/search",
+                                   params = {"query": query,
+                                             "fields": "accession,organism_id,organism_name",
+                                             "format": "json",
+                                             "size": len(chunk),
+                                             },
+                                             timeout = 60,
+                                        )
+            response.raise_for_status()
+            data = response.json()
+
+            for item in data.get("results", []):
+                accession = str(item.get("primaryAccession", "")).strip()
+                organism = item.get("organism", {}) or {}
+                
+                taxid = str(organism.get("taxonId", "")).strip()
+                taxname = str(
+                    organism.get("scientificName", "") or organism.get("commonName", "")
+                ).strip()
+
+                if accession:
+                    taxonomy_map[accession] = {
+                        "taxid": taxid,
+                        "taxname": taxname,
+                    }
+
+    return taxonomy_map
 
 # Se podria elegir que aspecto quieres buscar ({biological_process, molecular_function, cellular_component})
 def fetch_goterms(df, aspects = None):

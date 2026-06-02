@@ -62,8 +62,7 @@ streamlit_app.py
 ## Getting started
 1. Clone this repository
 ```bash
-git clone https://github.com/paulablancog/TFG-.git
-cd TFG-
+git clone https://github.com/paulablancog/Drug-Discovery-App.git
 ```
 
 2. Install dependencies

@@ -49,9 +49,6 @@ def retrieve_targets_1(compound_name, rows, selected_tax_ids=None):
 # -- MY METHOD
 def translate_geneid_to_protein(email, df_geneids, compound_name, api_key=None, batch_size=200):
     Entrez.email = email
-    if api_key:
-        Entrez.api_key = api_key
-
     # Retries
     Entrez.max_tries = 5
     Entrez.sleep_between_tries = 20
@@ -60,7 +57,7 @@ def translate_geneid_to_protein(email, df_geneids, compound_name, api_key=None, 
         return pd.DataFrame(columns=["compound", "geneid", "symbol", "description"])
     
     lines = (df_geneids["geneid"].dropna().astype(str).str.strip())
-    lines = [x for x in lines.unique().tolist() if x] #removes blank strings and keeps only unique geneids to a Python list
+    lines = [x for x in lines.unique().tolist() if x] 
 
     if not lines:
         return pd.DataFrame(columns=["compound", "geneid", "symbol", "description"])

@@ -90,6 +90,10 @@ def load_example():
     st.session_state["smiles_input"] = "\n".join(example_smiles)
     clear_analysis_results()
 
+def check_email(email):
+    email = str(email).strip()
+    return bool(re.match(r"^[\w\.-]+@[\w\.-]+\.\w+$", email))
+
 def clear_inputs():
     st.session_state["smiles_input"] = ""
     clear_session()
@@ -191,6 +195,10 @@ def save_input():
         st.session_state["run_error"] = "Please enter a valid email"
         return
     
+    if not check_email(email):
+        st.session_state["run_error"] = "Please enter a valid email address"
+        return
+    
     st.session_state["submitted_email"] = email
     st.session_state["email_input"] = email
     st.session_state["smiles_input"] = ""
@@ -223,6 +231,10 @@ def run_analysis():
 
     if not email:
         st.session_state["run_error"] = "Please enter a valid email before running the analysis."
+        st.session_state["analysis_ready"] = False
+        return
+    if not check_email(email):
+        st.session_state["run_error"] = "Please enter a valid email address before running the analysis."
         st.session_state["analysis_ready"] = False
         return
     if not smiles_codes:

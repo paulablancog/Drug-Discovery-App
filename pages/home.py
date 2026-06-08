@@ -37,6 +37,7 @@ def clear_session():
     for key in [
         "submitted_smiles", 
         "email_input",
+        "email_locked",
         "submitted_email", 
         "results",
         "analysis_ready",
@@ -63,6 +64,9 @@ if "submitted_email" not in st.session_state:
 
 if "email_error_active" not in st.session_state:
     st.session_state["email_error_active"] = False
+
+if "email_locked" not in st.session_state:
+    st.session_state["email_locked"] = False
 
 if "new_smiles_input" not in st.session_state:
     st.session_state["new_smiles_input"] = ""
@@ -216,6 +220,8 @@ def save_input():
     
     st.session_state["submitted_email"] = email
     st.session_state["email_input"] = email
+    st.session_state["email_locked"] = True
+    st.session_state["email_error_active"] = False
     st.session_state["smiles_input"] = ""
     st.session_state["run_error"] = ""
     st.session_state["taxonomy"] = taxonomy
@@ -247,6 +253,11 @@ def run_analysis():
 
     if not email:
         st.session_state["run_error"] = "Please enter a valid email before running the analysis."
+        st.session_state["analysis_ready"] = False
+        return
+    
+    if not check_email(email):
+        st.session_state["run_error"] = "Please enter a valid address before running the analysis."
         st.session_state["analysis_ready"] = False
         return
     
@@ -283,13 +294,15 @@ def run_analysis():
         st.session_state["run_error"] = f"An error occurred during the analysis: {str(e)}"
         st.session_state["analysis_ready"] = False
 
-
-email = st.text_input( # this is the email value that is going to be saved
-        "Email",
-        key = "email_input",
-        placeholder="name@example.com",
-        help = "Required for analysis",
-    )
+if (st.session_state.get("email_locked", False) and st.session_state.get("submitted_email", "")):
+    st.success(f"Email saved for this session: {st.session_state['submitted_email']}")
+else:
+    email = st.text_input( # this is the email value that is going to be saved
+            "Email",
+            key = "email_input",
+            placeholder="name@example.com",
+            help = "Required for analysis",
+        )
 
     # Creates a multi-line text box
 smiles_input = st.text_area(
@@ -698,7 +711,7 @@ if results:
     col2.metric("Interactions", len(results.get("df_interactions", pd.DataFrame())))
     col3.metric("Pathways", len(results.get("df_groupedpathways", pd.DataFrame())))
     if skipped_compound_results is not None and not skipped_compound_results.empty:
-        st.warning(f"{len(skipped_compound_results)} compounds could not be identified and were excluded from the analysis.")
+        st.warning(f"{len(skipped_compound_results)} compound(s) could not be identified and were excluded from the analysis.")
 
     df_go_bp_grouped = results.get("df_go_bp_grouped", pd.DataFrame())
     df_go_mf_grouped = results.get("df_go_mf_grouped", pd.DataFrame())

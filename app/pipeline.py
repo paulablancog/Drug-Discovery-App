@@ -585,9 +585,9 @@ def run_full_pipeline(smiles_codes, email, selected_tax_ids=None, ui = None):
                 "cid": "",  
                 "molecular_formula": "",
                 "molecular_weight": "",
-                "status": f"Excluded from analysis: {str(e)}",
+                "status": f"Excluded from analysis: {type(e)}: {str(e)}",
             })
-            print(f"Skipping {smiles}: {e}")
+            print(f"Skipping {smiles}: {type(e)}: {str(e)}")
     
     compound_results = pd.DataFrame(all_compounds)
     skipped_compound_results = pd.DataFrame(skipped_compounds)

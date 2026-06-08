@@ -621,10 +621,10 @@ def show_interactive_table(df, table_id, height=None):
 # Hacer que este botón NO modifique los SMILES adicionales
 st.button("Save input", on_click=save_input, type="primary", width='stretch')
 
-if st.session_state.get("input_warning"):
+if st.session_state.get("input_warning", ""):
     st.warning(st.session_state["input_warning"])
 
-if st.session_state.get("run_error"):
+if st.session_state.get("run_error", ""):
     st.error(st.session_state["run_error"])
 
 submitted_smiles = st.session_state.get("submitted_smiles", [])
@@ -681,8 +681,6 @@ st.button("Run Analysis", on_click=run_analysis, type="primary", width='stretch'
 # Printing the boolean result of the analysis
 if st.session_state.get("analysis_ready", False):
     st.success("Analysis completed successfully!")
-if st.session_state.get("run_error", ""):
-    st.error(st.session_state["run_error"])
 
 results = st.session_state.get("results", None)
 if results:

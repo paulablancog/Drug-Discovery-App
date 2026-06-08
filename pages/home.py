@@ -249,10 +249,7 @@ def run_analysis():
         st.session_state["run_error"] = "Please enter a valid email before running the analysis."
         st.session_state["analysis_ready"] = False
         return
-    if not check_email(email):
-        st.session_state["run_error"] = "Please enter a valid email address before running the analysis."
-        st.session_state["analysis_ready"] = False
-        return
+    
     if not smiles_codes:
         st.session_state["run_error"] = "Please enter at least one SMILES code before running the analysis."
         st.session_state["analysis_ready"] = False

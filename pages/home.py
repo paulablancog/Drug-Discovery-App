@@ -269,12 +269,16 @@ def run_analysis():
 
         st.session_state["results"] = results
         # So the DataFrame stays synchronized after analysis
-        if "compound_results" in results:
-            st.session_state["compound_results"] = results["compound_results"].copy()
-            st.session_state["compound_results_source"] = tuple(smiles_codes)
+        compound_results = results.get("compound_results", pd.DataFrame())
+
+        if compound_results.empty:
+            st.session_state["analysis_ready"] = False
+            st.session_state["run_error"] = "No valid compounds were identified from the provided SMILES codes. Please check your input and try again."
+            return
         
         st.session_state["analysis_ready"] = True
         st.session_state["run_error"] = ""
+    
     except Exception as e:
         st.session_state["run_error"] = f"An error occurred during the analysis: {str(e)}"
         st.session_state["analysis_ready"] = False

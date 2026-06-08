@@ -556,7 +556,7 @@ def run_full_pipeline(smiles_codes, email, selected_tax_ids=None, ui = None):
 
     for i, smiles in enumerate(smiles_codes, start=1):
         try:
-            compound_info, compound_name, df_proteins, df_pathways = fetch_pubchem_compound(smiles, email, selected_tax_ids=selected_tax_ids)
+            compound, compound_info, compound_name, df_proteins, df_pathways = fetch_pubchem_compound(smiles, email, selected_tax_ids=selected_tax_ids)
             
             compound_names.append(compound_name)
             proteins.append(df_proteins)

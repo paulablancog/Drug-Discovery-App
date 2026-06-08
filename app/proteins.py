@@ -1,4 +1,5 @@
 import re
+from urllib import response
 import pandas as pd
 from Bio import Entrez
 import requests
@@ -7,12 +8,13 @@ import time
 UNIPROT_URL = "https://rest.uniprot.org"
 
 def chunk_list(items,size):
+    """Yield successive n-sized chunks from items list"""
     for i in range(0,len(items), size):
         yield items[i:i + size]
 
-# Appear in main so that the user can fetch the proteins in the interactions of the compound?
 def retrieve_targets_1(compound_name, rows, selected_tax_ids=None):
-    # Rows are the interaction json rows
+    """From the "Chemical-Target" JSON rows retrieves from PubChem, extract geneids, taxids, and taxnames"""
+    
     if not rows:
         return pd.DataFrame(columns=["compound", "geneid", "taxid", "taxname"])
     
@@ -46,10 +48,8 @@ def retrieve_targets_1(compound_name, rows, selected_tax_ids=None):
 
     return df_geneids
 
-# -- MY METHOD
-def translate_geneid_to_protein(email, df_geneids, compound_name, api_key=None, batch_size=200):
+def translate_geneid_to_protein(email, df_geneids, compound_name, batch_size=200):
     Entrez.email = email
-    # Retries
     Entrez.max_tries = 5
     Entrez.sleep_between_tries = 20
 
@@ -68,18 +68,24 @@ def translate_geneid_to_protein(email, df_geneids, compound_name, api_key=None, 
         ids= ",".join(batch)
         try:
             handle = Entrez.esummary(db="gene", id = ids, retmode="xml")
-            records = Entrez.read(handle)
-            handle.close()
+            try:
+                records = Entrez.read(handle)
+            finally:
+                handle.close()
         except Exception as e:
+            print(f"Entrez esummary failed for batch {batch[:5]}: {e}")
             continue
 
-        documents = records["DocumentSummarySet"]["DocumentSummary"]
+        documents = records.get("DocumentSummarySet", {}).get("DocumentSummary", [])
 
         for rec in documents:
             gid = str(rec.attributes.get("uid", ""))
             symbol = str(rec.get("NomenclatureSymbol") or rec.get("Name") or "").upper()
             description = str(rec.get("Description") or "")
             
+            if not gid:
+                continue
+
             protein_list.append({
                 "compound": compound_name,
                 "geneid": gid,
@@ -96,9 +102,13 @@ def translate_geneid_to_protein(email, df_geneids, compound_name, api_key=None, 
 
 # -- MAP GENEID TO UNIPROTKB ACCESSION CODES (1128 -> P11229)
 def get_idmapping_db(db_name):
-# Look in Uniprot ID-mapping database code GeneID and UniProtKB
-    req = requests.get(f"{UNIPROT_URL}/configure/idmapping/fields", timeout=30).json()
+    """Given a database name, returns the corresponding GeneID - UniProtKB accession code mapping by querying the request to UniProt Mapping ID service."""
     
+    if db_name is None or not str(db_name).strip():
+        raise ValueError("Database name must be a non-empty string.")
+    
+    req = requests.get(f"{UNIPROT_URL}/configure/idmapping/fields", timeout=30).json()
+
     for group in req.get("groups", []):
         for item in group.get("items", []):
             if item.get("displayName") == db_name:
@@ -108,7 +118,7 @@ def get_idmapping_db(db_name):
 
 
 def input_idmapping_dbs(from_db, to_db, gene_list):
-# Tell UniProt to do the translation process with both GeneID db and UniProtKB db with the gene_ids list
+    """Given a list of geneids, requests UniProt to do the translation process with both GeneID db and UniProtKB db."""
     data = {"from": from_db, "to":to_db, "ids": ",".join(map(str,gene_list))}
     req = requests.post(f"{UNIPROT_URL}/idmapping/run", data = data, timeout=60)
     req.raise_for_status()
@@ -116,7 +126,7 @@ def input_idmapping_dbs(from_db, to_db, gene_list):
 
 
 def wait_for_job(jobId, repeats = 2):
-# Loop with sleep + timeout until the job is FINISHED 
+    """Given a jobID, waits until the job is finished by polling UniProt every few seconds. Returns timeout when the job is completed."""
     start_time = time.time()
     timeout=450
 
@@ -142,7 +152,7 @@ def wait_for_job(jobId, repeats = 2):
 
 
 def download_results(jobId):
-# Retrieve the JSON results and download them
+    """Given a jobID, downloads the results of the translation process, including paginated results, and returns a mapping of geneid to uniprot accessions."""
     url = f"{UNIPROT_URL}/idmapping/results/{jobId}"
     params = {"format": "json"}
     out = {}
@@ -155,6 +165,11 @@ def download_results(jobId):
         for row in json.get("results", []):
             geneid=str(row.get("from")).strip()
             accession = row.get("to")
+
+            # Si el codigo no va es por esto
+            if isinstance(accession, dict):
+                accession = str(accession.get("primaryAccession", "").strip())
+            accession = str(accession or "").strip()
 
             if not geneid or not accession:
                 continue
@@ -177,15 +192,28 @@ def download_results(jobId):
 
 
 def P_accession(accessions):
+    """Given a list of accessions, chooses one UniProt accessions that is canonical."""
     if not accessions:
         return None
-    for a in accessions:
+    
+    cleaned = [str(acc).strip() for acc in accessions if str(acc).strip()]
+
+    if not cleaned:
+        return None
+    
+    canonical_accessions = [acc for acc in cleaned if "-" not in acc]
+
+    if canonical_accessions:
+        return canonical_accessions[0]
+    
+    """for a in accessions:
         if str(a).startswith("P"):
             return a
-    return accessions[0]
+    return accessions[0]"""
 
 
 def map_genes_to_uniprot(df_geneids):
+    """Given a DataFrame with geneids, maps them to UniProtKB Mapping tool."""
     if df_geneids is None or df_geneids.empty or "geneid" not in df_geneids.columns:
         return pd.DataFrame(columns=["geneid", "uniprot_accession", "uniprot_accessions"])
     
@@ -218,6 +246,7 @@ def map_genes_to_uniprot(df_geneids):
                         )
 
 def map_uniprot_to_symbol(accessions):
+    """Given a list of UniProt accessions, retrieves the corresponding gene symbols by querying UniProtKB API."""
     accessions = [str(x).strip() for x in accessions if pd.notna(x) and str(x).strip()]
 
     if not accessions:
@@ -257,6 +286,7 @@ def map_uniprot_to_symbol(accessions):
     return pd.DataFrame(rows, columns=["uniprot_accession", "mapped_symbol"])
 
 def map_uniprot_to_info(accessions):
+    """Given a list of UniProt accessions, retrieves the corresponding protein information from UniProtKB API."""
     accessions = [str(x).strip() for x in accessions if pd.notna(x) and str(x).strip()]
 
     if not accessions:
@@ -324,6 +354,7 @@ def map_uniprot_to_info(accessions):
 
 
 def get_uniprot_taxonomy(accessions):
+    """Given a list of UniProt accessions, retrieves the corresponding taxonomy information from UniProtKB"""
     accessions = [
         str(acc).strip() for acc in accessions if pd.notna(acc) and str(acc).strip()
     ]      
@@ -365,14 +396,14 @@ def get_uniprot_taxonomy(accessions):
 
     return taxonomy_map
 
-# Se podria elegir que aspecto quieres buscar ({biological_process, molecular_function, cellular_component})
 def fetch_goterms(df, aspects = None):
+    """Given a DataFrame with UniProt accessions, retrieves the corresponding GO terms for each protein by querying QuickGO API."""
     if df is None or df.empty or "uniprot_accession" not in df.columns:
         return pd.DataFrame(columns=["uniprot_accession", "go_id", "aspect"])
     
     accessions = df["uniprot_accession"].dropna().astype(str).str.strip()
-    accessions = accessions[accessions != ""].unique().tolist() #removes blank strings and keeps only unique accessions to a Python list
-    
+    accessions = accessions[accessions != ""].unique().tolist() 
+
     if aspects is None:
         aspects = [
             "biological_process",
@@ -446,6 +477,7 @@ def fetch_goterms(df, aspects = None):
 
 
 def fetch_gonames(go_ids):
+    """Given a list of GO ids, retrieves the corresponding name of each GO term from QuickGO API."""
     go_ids = sorted({str(x).strip() for x in go_ids if pd.notna(x) and str(x).strip()})
     if not go_ids:
         return pd.DataFrame(columns=["go_id", "go_name"])
@@ -454,7 +486,7 @@ def fetch_gonames(go_ids):
     headers = {"Accept": "application/json"}
 
     rows = []
-    # there are thousands of go_ids, so send them 100 by 100
+    # There are thousands of go_ids, so send them 100 by 100
     chunk_size = 100
 
     with requests.Session() as session:
@@ -477,6 +509,7 @@ def fetch_gonames(go_ids):
                         )
 
 def summarize_goaspect(df_go, aspect, prefix):
+    """Given a DataFrame with GO annotations, groups the GO terms for a specific aspect (BP, MF or CC) by protein, concatenating the GO ids and names into semicolon-separated strings."""
     df_aspect = df_go[df_go["aspect"] == aspect].copy()
 
     if df_aspect.empty:
@@ -492,6 +525,7 @@ def summarize_goaspect(df_go, aspect, prefix):
     )
 
 def group_goterms(df_go_aspect):
+    """Groups GO terms for each aspect (BP, MF, CC) and concatenates the GO ids and names into semicolon-separated strings for each protein."""
     if df_go_aspect is None or df_go_aspect.empty:
         return pd.DataFrame(columns=["go_name", "go_id", "n_proteins", "n_compounds", "proteins", "compounds", "uniprot_accessions"])
     df = df_go_aspect.copy()
@@ -525,6 +559,7 @@ def group_goterms(df_go_aspect):
     return grouped
 
 def count_protgoaspect(df_go_aspect, selected_go_name, selected_go_id, df):
+    """Given a DataFrame with GO annotations, counts the number of compounds interacting with each protein."""
     if df_go_aspect is None or df_go_aspect.empty:
         return pd.DataFrame(columns=["uniprot_accession", "symbol", "count", "compounds"])
 

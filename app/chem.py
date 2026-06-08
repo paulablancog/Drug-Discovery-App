@@ -4,8 +4,11 @@ import requests
 from rdkit import Chem
 
 # Step 1: Recognize the drug by SMILES code with PubChem database
+# Step 2: Retrieve the compound information (CID, molecular formula, molecular weight, synonyms, etc.) by candidate ranking list.
 
 def validate_smiles(smiles_code):
+    """Validates a SMILES code and returns its canonical form if valid, or an error if invalid."""
+    
     smiles_code = str(smiles_code).strip()
 
     if not smiles_code:
@@ -66,6 +69,7 @@ def check_smiles_box(text, existing_smiles=None):
 
 def compound_retrieval(smiles_code):
     """Retrieve PubChem compound from its SMILES code"""
+    
     smiles_code = str(smiles_code).strip()
     if not smiles_code:
        print("No SMILES code entered")
@@ -79,13 +83,26 @@ def compound_retrieval(smiles_code):
             data["identity_type"] = identity_type
         
         response = requests.post(url, data=data, timeout=60)
+        if response.status_code == 404:
+            return []
+        
         response.raise_for_status()
+
         text = response.text.strip()
         if not text:
-            return None
-        return [int(line.strip()) for line in text.splitlines() if line.strip()]
+            return []
+        
+        cids = []
+        for line in text.splitlines():
+            line = line.strip()
+            if line.isdigit():
+                cids.append(int(line))
+
+        return cids
         
     def load_compounds(cids):
+        """Given a candidate list of CIDs, retrieve the corresponding PubChem compounds by stereochemical identity or by connectivity, and return the best candidate"""
+        
         candidates = []
 
         for cid in cids:
@@ -94,9 +111,12 @@ def compound_retrieval(smiles_code):
                 candidates.append(compound)
             except Exception as ex:
                 print(f"Error retrieving compound for CID {cid}: {ex}")
+        
         return candidates
 
     def score(compound):
+        """Score a compound based on the presence of metadata, to select the best candidate among the retrieved compounds"""
+        
         synonyms = getattr(compound, "synonyms", []) or []
         cid = getattr(compound, "cid", None)
         iupac_name = getattr(compound, "iupac_name", None)
@@ -123,12 +143,13 @@ def compound_retrieval(smiles_code):
         return None
     
     except Exception as ex:
-        print(f"No PubChem retrieval: {ex}")
+        print(f"No PubChem retrieval for SMILES {smiles_code}: {ex}")
         return None
     
 
 def compound_information(compound):
     """Return compound metadata dictionary from a PubChem compound"""
+    
     synonyms = getattr(compound, "synonyms", None) or []
     first_synonym = synonyms[0] if synonyms else ""
 

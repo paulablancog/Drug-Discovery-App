@@ -3,27 +3,45 @@ import app.proteins
 import app.interactions
 import app.utils
 
+# Step 1: Retrieve pathways rows already retrieved from PubChem for the identified compound
+# Step 2: For each pathway ID, request the pathway-protein table (ExternalTableName)
+# Step 3: Extract UniProt accessions and protein names for each pathway
+# Step 4: Enrich protein information with UniProt metadata: protein name, gene symbol, taxid, taxname
+# Step 5: Return a DataFrame of pathway-protein-compound relationships
+
+PATHWAY_COLUMNS = [
+    "uniprot_accession",
+    "protein_name",
+    "symbol",
+    "pathway",
+    "pathway_name",
+    "compound",
+    "cid",
+    "taxid",
+    "taxname",
+]
+
+def empty_pathway_df():
+    """Returns an empty DataFrame with the columns of the Pathway DataFrame"""
+    return pd.DataFrame(columns=PATHWAY_COLUMNS)
 
 def retrieve_pathways(compound, rows, compound_name, selected_tax_ids=None):
-    """Retrieves all the present Pathways in a compound's Pathway section. Returns the DataFrame containing all the Pathways"""
+    """Checks whether pathway rows exist, and if they do, retrieves the proteins from each pathway."""
     if not rows:
-        return pd.DataFrame(columns=["uniprot_accession", "protein_name", "symbol", "pathway", "compound", "cid", "taxid", "taxname"])
+        return empty_pathway_df()
     
     # Send rows that contain Pathway table JSON information 
     df_proteinspathway = retrieve_proteins_from_pathway(compound, rows, compound_name, selected_tax_ids=selected_tax_ids)
 
     if df_proteinspathway is None or df_proteinspathway.empty:
-        return pd.DataFrame(columns=["uniprot_accession", "protein_name","symbol", "pathway", "compound", "cid", "taxid", "taxname"])
+        return empty_pathway_df()
     
     return df_proteinspathway
 
 
 def retrieve_proteins_from_pathway(compound, rows, compound_name, selected_tax_ids=None):
-    """Extracts the Protein subsection from a compound's Pathway and retrieves all the proteins from the Pathway"""
-    # Cada Pathway ID obtenido en el .txt se busca en PubChem
-    # Se saca JSON del Pathway y se va a interactions 
-    # Se descargan las tablas de interactions = Proteins
-    # Se vuelve a hacer target count data por cada pathway
+    """Given the rows of Pathway section, retrieves the proteins in each pathway and returns a df with the information of the proteins, pathways and compound"""
+    
     dfs = []
 
     for row in rows:
@@ -53,7 +71,7 @@ def retrieve_proteins_from_pathway(compound, rows, compound_name, selected_tax_i
             dfs.append(df_targetlist)
                   
     if not dfs:
-        return pd.DataFrame(columns=["uniprot_accession", "protein_name", "symbol", "pathway", "compound", "cid", "taxid", "taxname"])
+        return empty_pathway_df()
     
     df = pd.concat(dfs, ignore_index=True)
     df = df.drop_duplicates(subset=["uniprot_accession", "protein_name", "symbol", "pathway", "compound", "cid", "taxid", "taxname"], keep="first").reset_index(drop=True)
@@ -67,23 +85,27 @@ def pcget_pathway_protein_url(pathwayid, start=1, limit = 10000000):
 
 
 def retrieve_pathway_proteins(pwacc, pathway_name, compound_name, compound_cid, pathway_json, selected_tax_ids=None):
-    """Retrieves proteins from each pathway and returns the list of proteins"""
+    """Retrieves proteins from a pathway JSON response"""
     # Retrieve the Proteins in pathway json
     if pathway_json is None:
-        return pd.DataFrame(columns=["uniprot_accession", "protein_name", "symbol", "pathway", "compound", "cid", "taxid", "taxname"])
-    
+        return empty_pathway_df()
+  
     # Find protein names & id
     rows = pathway_json.get("SDQOutputSet", [{}])[0].get("rows", []) or {}
     status = pathway_json.get("SDQOutputSet", [{}])[0].get("status", {}) or {}
+    status_code = status.get("code", 0)
+
+    if str(status_code) != "0":
+        return empty_pathway_df()
     
-    if status.get("code") != 0:
-        return pd.DataFrame(columns=["uniprot_accession", "protein_name", "symbol", "pathway", "compound", "cid", "taxid", "taxname"])
-    
+    if not isinstance(rows, list):
+        rows = []
+
     # Extracts protein information one by one
     target_list = []
 
     for row in rows:
-        if isinstance(row,dict): # is row a dictionary object? -> rows should be a list of dictionaries (.get() only exists in dictionaries)
+        if isinstance(row,dict): 
             acc_id = row.get("acc") or ""
             protname = row.get("protname")  or ""
             if acc_id:
@@ -96,7 +118,7 @@ def retrieve_pathway_proteins(pwacc, pathway_name, compound_name, compound_cid, 
     df = pd.DataFrame(target_list)
 
     if df.empty:
-        return pd.DataFrame(columns=["uniprot_accession", "protein_name", "symbol", "pathway", "compound", "cid", "taxid", "taxname"])
+        return empty_pathway_df()
     
     accessions = (df["uniprot_accession"].dropna().astype(str).str.strip().unique().tolist())
     accessions = [acc for acc in accessions if acc]
@@ -155,7 +177,7 @@ def group_pathways(df_pathways):
     """Groups pathway proteins so each pathway is only present once"""
     
     if df_pathways is None or df_pathways.empty:
-        return pd.DataFrame(columns=["pathway", "pathway_name", "n_proteins", "n_compounds", "compounds", "compound_cid_pairs", "proteins", "uniprot_accessions", "taxid", "taxname"])
+        return empty_pathway_df()
     df = df_pathways.copy()
 
     for col in ["pathway", "pathway_name","protein_name", "uniprot_accession", "compound", "cid", "taxid", "taxname"]:
@@ -181,6 +203,8 @@ def group_pathways(df_pathways):
 
 
 def group_compounds(df_pathways, selected_pathway = None):
+    """Groups pathway proteins so each pathway is only present once"""
+
     if df_pathways is None or df_pathways.empty:
         return pd.DataFrame(columns=["uniprot_accession", "protein_name", "count", "compounds", "taxid", "taxname"])
     

@@ -5,13 +5,14 @@ import csv
 
 URL_BASE= "https://pubchem.ncbi.nlm.nih.gov"
 
-
 def create_folder(folder):
+    """Creates a folder."""
     path = Path(folder)
     path.mkdir(parents=True, exist_ok=True)
     return path
 
 def safe_filename(filename):
+    """Creates a safe filename"""
     filename = "" if filename is None else str(filename)
     for ch in '<>:/\\|?*':
         filename = filename.replace(ch, "_")
@@ -31,12 +32,14 @@ def get_json(url, params=None):
 
 
 def save_json(data, filename, folder):
+    """Saves a JSON file in the specified folder."""
     folder_path = create_folder(folder)
     path = folder_path / filename
     path.write_text(json.dumps(data, indent=4), encoding="utf-8") 
     return str(path)
 
 def load_json(filename, folder):
+    """Loads a JSON file from the specified folder."""
     folder_path = create_folder(folder)
     path = folder_path / filename
 
@@ -47,6 +50,7 @@ def load_json(filename, folder):
 
 
 def save_rows_json (rows, filename):
+    """Saves a list of rows (dictionaries) as a JSON file."""
     path = Path(filename)
     path.parent.mkdir(parents=True, exist_ok=True) 
 
@@ -55,8 +59,8 @@ def save_rows_json (rows, filename):
 
     return str(path)
     
-
 def save_rows_csv (rows, filename):
+    """Saves a list of rows (dictionaries) as a CSV file."""
     path = Path(filename) # turns the filename into a Path object
     path.parent.mkdir(parents=True, exist_ok=True) # creates the "parent" folder with the first word in the url
     
@@ -76,8 +80,8 @@ def save_rows_csv (rows, filename):
 
     return str(path)
 
-
 def create_text_file(filename, folder):
+    """Creates an empty text file in the specified folder and returns its path."""
     folder_path = create_folder(folder)
     path = folder_path / f"{filename}.txt"
 
@@ -86,8 +90,8 @@ def create_text_file(filename, folder):
 
     return str(path)
 
-# Open an existing file and write on it
 def write_text_file(filename, folder, lines):
+    """Opens an existing file and writes on it"""
     folder_path = create_folder(folder)
     path = folder_path / f"{filename}.txt"
     
@@ -96,9 +100,13 @@ def write_text_file(filename, folder, lines):
         f.write(text)
 
 def read_text_file(filename, folder):
-    path = Path(folder) / f"{filename}"
+    """Reads a text file and returns its content as a string."""
+    folder_path = create_folder(folder)
+    path = folder_path / f"{filename}.txt"
     return path.read_text(encoding="utf-8")
 
 def read_file_lines(filename, folder):
-    path = Path(folder) / filename
+    """Reads a text file and returns its content as a list of lines."""
+    folder_path = create_folder(folder)
+    path = folder_path / f"{filename}.txt"
     return path.read_text(encoding="utf-8").splitlines()

@@ -15,6 +15,7 @@ page_selection = {
 
 
 def download_excel_analysis(selected_page = None):
+    """Generates an Excel file with the analysis results, each section corresponds to a new page in the Excel file."""
     results = st.session_state.get("results") or {}
     submitted_smiles = st.session_state.get("submitted_smiles", [])
 
@@ -70,7 +71,6 @@ def download_excel_analysis(selected_page = None):
             else:
                 pd.DataFrame(columns=compound_table).to_excel(writer, sheet_name = "2.Compounds", index=False)
 
-            # If analysis has not been processed TODO -> won't be able to download
 
             if not results:
                 pd.DataFrame().to_excel(writer, sheet_name = "3.Interactions", index=False)

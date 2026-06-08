@@ -77,7 +77,7 @@ if "input_warning" not in st.session_state:
 
 # This method is for clearing the results of the analysis only when the user modifies the SMILES input (should take into account the deletion of a SMILES code)
 def clear_analysis_results():
-    for key in ["results", "analysis_ready", "run_error"]:
+    for key in ["results", "analysis_ready", "run_error", "prepared_excel", "prepared_excel_selection"]:
         if key in st.session_state:
             del st.session_state[key]
 
@@ -118,9 +118,6 @@ def store_additional_smiles():
         st.session_state["input_warning"] = f"Could not add invalid SMILES: {value}"
         st.session_state["new_smiles_input"] = ""
         return 
-    
-    if value not in st.session_state["submitted_smiles"]:
-        st.session_state["submitted_smiles"].append(value)
 
     existing_canonical = set()
 
@@ -199,10 +196,16 @@ def save_input():
         st.session_state["run_error"] = "Please enter a valid email address"
         return
     
+    taxonomy = st.session_state.get("selected_tax_ids", [])
+    if not taxonomy:
+        st.session_state["run_error"] = "Please select at least one protein taxonomy"
+        return
+    
     st.session_state["submitted_email"] = email
     st.session_state["email_input"] = email
     st.session_state["smiles_input"] = ""
     st.session_state["run_error"] = ""
+    st.session_state["taxonomy"] = taxonomy
     clear_analysis_results()
 
 # TAXONOMY SELECTOR
@@ -892,7 +895,7 @@ if results:
                     ]
                     show_interactive_table(
                         display_godetails_bp,
-                        table_id="goDetailsTable",
+                        table_id="goDetailsBPTable",
                     )
                 else:
                     st.info("No biological process GO terms found.")
@@ -946,7 +949,7 @@ if results:
                     ]
                     show_interactive_table(
                         display_godetails_mf,
-                        table_id="goDetailsTable",
+                        table_id="goDetailsMFTable",
                     )
                 else:
                     st.info("No molecular function GO terms found.")
@@ -1001,7 +1004,7 @@ if results:
                     ]
                     show_interactive_table(
                         display_godetails_cc,
-                        table_id="goDetailsTable",
+                        table_id="goDetailsCCTable",
                     )
                 else:
                     st.info("No cellular component GO terms found.")

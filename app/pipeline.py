@@ -7,6 +7,7 @@ import app.pathways
 import app.utils
 
 def fetch_pubchem_compound(smiles_code, email, selected_tax_ids=None):
+    """Fetched the PubChem compound information, chemical-target interactions and pathways DataFrames for a given SMILES code. It includes a taxonomic filtering."""
     compound = app.chem.compound_retrieval(smiles_code)
     if compound is None:
         raise ValueError("No compound found. Check the SMILES code")
@@ -65,7 +66,7 @@ def fetch_pubchem_compound(smiles_code, email, selected_tax_ids=None):
         df_proteins["pubchem_taxid"] = df_proteins["taxid"].fillna("").astype(str).str.strip()
         df_proteins["pubchem_taxname"] = df_proteins["taxname"].fillna("").astype(str).str.strip()
 
-        # I will prioritize the taxonomic information of UniProt instead of PubChem's
+        # Prioritize the taxonomic information of UniProt instead of PubChem's
         df_proteins["taxid"] = df_proteins.apply(
             lambda row: str(row["taxid_uniprot"]).strip()
             if pd.notna(row.get("taxid_uniprot")) and str(row.get("taxid_uniprot")).strip()
@@ -98,12 +99,13 @@ def fetch_pubchem_compound(smiles_code, email, selected_tax_ids=None):
 
     df_pathways = app.pathways.retrieve_pathways(compound, interaction_data["pathway_rows"] ,compound_name, selected_tax_ids=selected_tax_ids)
     if df_pathways is None:
-        df_pathways = pd.DataFrame(columns=["uniprot_accession", "protein_name", "pathway", "pathway_name", "compound", "cid", "taxid", "taxname"])
+        df_pathways = pd.DataFrame(columns=["uniprot_accession", "protein_name", "symbol", "pathway", "pathway_name", "compound", "cid", "taxid", "taxname"])
 
     return compound, compound_info, compound_name, df_proteins, df_pathways
 
 
 def load_interactions(compound, selected_tax_ids=None):
+    """Load PubChem chemical-target interactions and pathways for a given compound, with optional taxonomy filtering."""
     # 1. Creates the URL
     index_url = f"{app.utils.URL_BASE}/rest/pug_view/index/compound/{compound.cid}/JSON"
     # 2. Retrieves the index JSON
@@ -113,16 +115,24 @@ def load_interactions(compound, selected_tax_ids=None):
         raise ValueError("Failed to retrieve index JSON")
 
     if not app.interactions.has_interactions_and_pathways(index_json):
-        raise ValueError("No Interactions and Pathways section found")
+        return{
+            "chemical_target_rows": [],
+            "pathway_rows": []
+        }
     
     # 4. Gets all sections in the index JSON
     # 5. Finds the Interactions and Pathways section and retrieves the data of interactions
     data = app.interactions.load_interactions_and_pathways_data(compound)
+    
     if data is None:
-        raise ValueError("No Interactions data for this compound")
+        return{
+            "chemical_target_rows": [],
+            "pathway_rows": []
+        }
 
     # 6. Get external tables
     tables = app.interactions.retrieve_externaltable(data)
+
     chemical_target_rows = []
     pathway_rows = []
 
@@ -134,6 +144,7 @@ def load_interactions(compound, selected_tax_ids=None):
 
         clean_tables = []
         seen = set()
+
         for table_name in table_list:
             table_name = str(table_name).strip()
             if table_name not in seen:
@@ -142,8 +153,7 @@ def load_interactions(compound, selected_tax_ids=None):
             
         # -- PATHWAY INTERACTIONS --
         if subsection_1 == "pathways":
-            # TODO pathways are yet to check if they have taxonomic filter
-            rows = app.interactions.get_interactions_table(compound, "pathway", where = where_pathways, order="pathwayid,asc")   
+            rows = app.interactions.get_interactions_table(compound, "pathway", where = where_pathways, order="pathwayid,asc", selected_tax_ids=selected_tax_ids)   
             pathway_rows.extend(rows)
     
 
@@ -153,7 +163,7 @@ def load_interactions(compound, selected_tax_ids=None):
                 if table_name.lower().startswith("collection="):
                     continue
                 
-                rows = app.interactions.get_interactions_table(compound, table_name, order="geneid,asc")
+                rows = app.interactions.get_interactions_table(compound, table_name, order="geneid,asc", selected_tax_ids=selected_tax_ids)
                 chemical_target_rows.extend(rows)
     
     return {
@@ -164,6 +174,8 @@ def load_interactions(compound, selected_tax_ids=None):
             
 
 def fetch_interactions_summary(proteins):
+    """Given a list of DataFrames with chemical-target interactions, 
+    it returns a DataFrame with the relevant information of the interaction proteins involved"""
     required_columns = [
         "compound",
         "cid",
@@ -193,6 +205,8 @@ def fetch_interactions_summary(proteins):
 
 
 def fetch_pathway_summary(pathways):
+    """Given a list of DataFrames with pathway interactions, 
+    it returns a DataFrame with the relevant information of the pathway proteins involved"""
     required_columns = [
         "uniprot_accession",
         "protein_name",
@@ -227,6 +241,7 @@ def fetch_pathway_summary(pathways):
     return df_pathways, df_groupedpathways
 
 def fill_missing_symbols(final_summary):
+    """Fills missing gene symbols in the final summary by mapping the UniProt accessions to gene symbols using the UniProt API"""
     final_summary = final_summary.copy()
 
     missing = (final_summary["symbol"].isna() | (final_summary["symbol"].astype(str).str.strip() == ""))
@@ -255,6 +270,8 @@ def fill_missing_symbols(final_summary):
 
 
 def build_final_summary(df_interactions, df_pathways):
+    """Given the chemical-target interactions and pathway interactions DataFrames, it builds a final summary 
+    DataFrame by merging information and aggregating it by protein (UniProt accession)"""
     df_interactions = df_interactions.copy()
     df_pathways = df_pathways.copy()
 
@@ -352,6 +369,7 @@ def build_final_summary(df_interactions, df_pathways):
     final_summary = fill_missing_symbols(final_summary)
 
     def merge_compound_strings(*values):
+        """Given multiple strings of compounds separated by semicolons, it merges them into a single string with unique compounds."""
         items = []
         seen = set()
 
@@ -420,6 +438,8 @@ def build_final_summary(df_interactions, df_pathways):
 
 
 def build_go_enrichment(final_summary):
+    """Given the final summary DataFrame, it builds the GO enrichment results by 
+    fetching the GO terms of the proteins and grouping them by aspect."""
     df_go = app.proteins.fetch_goterms(final_summary, 
                                        aspects=["biological_process", "molecular_function", "cellular_component"],
                                        )
@@ -522,6 +542,8 @@ def build_go_enrichment(final_summary):
 
 
 def run_full_pipeline(smiles_codes, email, selected_tax_ids=None, ui = None):
+    """Runs the full pipeline of fetching compound information, chemical-target and pathways information, 
+    building summaries and GO enrichment for a list of SMILES codes with UI updates and taxonomic filtering."""
     compound_names = []
     all_compounds = []
     proteins = []

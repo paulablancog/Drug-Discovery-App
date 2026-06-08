@@ -627,7 +627,7 @@ st.button("Save input", on_click=save_input, type="primary", width='stretch')
 if st.session_state.get("input_warning"):
     st.warning(st.session_state["input_warning"])
 
-if st.session_state.get("run_error").strip():
+if st.session_state.get("run_error"):
     st.error(st.session_state["run_error"])
 
 submitted_smiles = st.session_state.get("submitted_smiles", [])

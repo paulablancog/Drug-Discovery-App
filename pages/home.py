@@ -50,6 +50,7 @@ def clear_session():
         "selected_tax_ids",
         "selected_taxonomy_labels",
         "input_warning",
+        "email_error_active",
         ]:
         if key in st.session_state:
             del st.session_state[key]
@@ -59,6 +60,9 @@ if "submitted_smiles" not in st.session_state:
 
 if "submitted_email" not in st.session_state:
     st.session_state["submitted_email"] = ""
+
+if "email_error_active" not in st.session_state:
+    st.session_state["email_error_active"] = False
 
 if "new_smiles_input" not in st.session_state:
     st.session_state["new_smiles_input"] = ""
@@ -155,6 +159,28 @@ def update_smiles():
 def save_input():
     existing_smiles = st.session_state.get("submitted_smiles", [])
 
+    st.session_state["run_error"] = ""
+    st.session_state["input_warning"] = ""
+
+    # 1. Check email BEFORE saving any SMILES
+    email_input = st.session_state.get("email_input", "").strip()
+    saved_email = st.session_state.get("submitted_email", "").strip()
+
+    email = email_input or saved_email
+
+    if not email:
+        st.session_state["run_error"] = "Please enter a valid email"
+        st.session_state["email_error_active"] = True
+        return
+    
+    if not check_email(email):
+        st.session_state["run_error"] = "Please enter a valid email address"
+        st.session_state["email_error_active"] = True
+        return
+    
+    st.session_state["email_error_active"] = False
+
+    # 2. Now validate SMILES
     checked_smiles = app.chem.check_smiles_box(st.session_state.get("smiles_input", ""), existing_smiles=existing_smiles)
 
     cleaned_smiles = checked_smiles["valid"]
@@ -182,19 +208,6 @@ def save_input():
         warning_messages.append("Duplicate SMILES ignored: "+", ".join(duplicate_smiles))
 
     st.session_state["input_warning"] = '\n\n'.join(warning_messages)
-
-    email_input = st.session_state.get("email_input", "").strip()
-    saved_email = st.session_state.get("submitted_email", "").strip()
-
-    email = email_input or saved_email
-
-    if not email:
-        st.session_state["run_error"] = "Please enter a valid email"
-        return
-    
-    if not check_email(email):
-        st.session_state["run_error"] = "Please enter a valid email address"
-        return
     
     taxonomy = st.session_state.get("selected_tax_ids", [])
     if not taxonomy:
@@ -614,9 +627,12 @@ st.button("Save input", on_click=save_input, type="primary", width='stretch')
 if st.session_state.get("input_warning"):
     st.warning(st.session_state["input_warning"])
 
+if st.session_state.get("run_error").strip():
+    st.error(st.session_state["run_error"])
+
 submitted_smiles = st.session_state.get("submitted_smiles", [])
 
-if submitted_smiles:
+if submitted_smiles and not st.session_state.get("email_error_active", False):
     st.subheader("Saved SMILES & email")
     st.write(f"Email: {st.session_state['submitted_email']}")
     st.write(f"Number of SMILES code stored: {len(submitted_smiles)}")
@@ -674,12 +690,17 @@ if st.session_state.get("run_error", ""):
 results = st.session_state.get("results", None)
 if results:
 
+    compound_results = results.get("compound_results", pd.DataFrame()).copy()
+    skipped_compound_results = results.get("skipped_compound_results", pd.DataFrame()).copy()
+
     st.subheader("Analysis Overview")
     col1, col2, col3 = st.columns(3)
-    col1.metric("Compounds", len(results.get("compound_names", [])))
+    col1.metric("Compounds", len(compound_results))
     col2.metric("Interactions", len(results.get("df_interactions", pd.DataFrame())))
     col3.metric("Pathways", len(results.get("df_groupedpathways", pd.DataFrame())))
-    
+    if skipped_compound_results is not None and not skipped_compound_results.empty:
+        st.warning(f"{len(skipped_compound_results)} compounds could not be identified and were excluded from the analysis.")
+
     df_go_bp_grouped = results.get("df_go_bp_grouped", pd.DataFrame())
     df_go_mf_grouped = results.get("df_go_mf_grouped", pd.DataFrame())
     df_go_cc_grouped = results.get("df_go_cc_grouped", pd.DataFrame())
@@ -732,7 +753,7 @@ if results:
 
 # COMPOUNDS -----------------
     st.markdown("## Compounds")
-    displaycomp_df = st.session_state.get("compound_results", pd.DataFrame()).copy()
+    displaycomp_df = compound_results.copy()
     if not displaycomp_df.empty:
         displaycomp_df["compound_name"] = displaycomp_df.apply(
             lambda row: compound_hyperlink(row["cid"], row["compound_name"]),
@@ -746,13 +767,27 @@ if results:
     else:
         st.info("No compounds identified")
 
+    if skipped_compound_results is not None and not skipped_compound_results.empty:
+        with st.expander("Excluded compounds"):
+            st.info("The following compounds could not be identified in PubChem and were not included in the analysis.")
+            excluded_cols = ["smiles", "compound_name", "cid", "molecular_formula", "molecular_weight", "status"]
+
+            for col in excluded_cols:
+                if col not in skipped_compound_results.columns:
+                    skipped_compound_results[col] = ""
+
+            show_interactive_table(
+                skipped_compound_results[excluded_cols],
+                table_id="skipped_compounds_table",
+            )
+
     st.divider()
 
 # COMPOUND-PROTEIN INTERACTIONS -------------
     st.markdown("## Compound-Protein Interactions")
 
     df_interactions = results.get("df_interactions", pd.DataFrame()).copy()
-    compound_results = st.session_state.get("compound_results", pd.DataFrame())
+    compound_results = results.get("compound_results", pd.DataFrame())
 
     if not df_interactions.empty:
         display_df = df_interactions.copy()
@@ -843,7 +878,6 @@ if results:
 
 # GO ENRICHMENT -------------
     st.markdown("## GO enrichment")
-    compound_results = st.session_state.get("compound_results", pd.DataFrame())
     df_interactions = results.get("df_interactions", pd.DataFrame()).copy()
     df_pathways = results.get("df_pathways", pd.DataFrame()).copy()
 
@@ -1017,7 +1051,6 @@ if results:
     st.markdown("## Protein Summary")
     
     df_proteinsummary = results.get("final_summary",pd.DataFrame()).copy()
-    compound_results = st.session_state.get("compound_results", pd.DataFrame())
 
     if not df_proteinsummary.empty:
         display_dfsum = df_proteinsummary.copy()

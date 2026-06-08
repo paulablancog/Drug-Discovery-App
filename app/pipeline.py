@@ -546,6 +546,7 @@ def run_full_pipeline(smiles_codes, email, selected_tax_ids=None, ui = None):
     building summaries and GO enrichment for a list of SMILES codes with UI updates and taxonomic filtering."""
     compound_names = []
     all_compounds = []
+    skipped_compounds = []
     proteins = []
     pathways = []
 
@@ -555,7 +556,7 @@ def run_full_pipeline(smiles_codes, email, selected_tax_ids=None, ui = None):
 
     for i, smiles in enumerate(smiles_codes, start=1):
         try:
-            compound, compound_info, compound_name, df_proteins, df_pathways = fetch_pubchem_compound(smiles, email, selected_tax_ids=selected_tax_ids)
+            compound_info, compound_name, df_proteins, df_pathways = fetch_pubchem_compound(smiles, email, selected_tax_ids=selected_tax_ids)
             
             compound_names.append(compound_name)
             proteins.append(df_proteins)
@@ -578,18 +579,31 @@ def run_full_pipeline(smiles_codes, email, selected_tax_ids=None, ui = None):
                 ui["progress_bar"].progress(pct, text=f"Compound identified {i} of {len(smiles_codes)}...")
 
         except Exception as e:
-            all_compounds.append({
+            skipped_compounds.append({
                 "smiles":smiles,
-                "compound_name": None,
-                "cid": None,  
-                "molecular_formula": None,
-                "molecular_weight": None,
-                "status": f"Error: {str(e)}",
+                "compound_name": "",
+                "cid": "",  
+                "molecular_formula": "",
+                "molecular_weight": "",
+                "status": f"Excluded from analysis: {str(e)}",
             })
             print(f"Skipping {smiles}: {e}")
     
     compound_results = pd.DataFrame(all_compounds)
-    
+    skipped_compound_results = pd.DataFrame(skipped_compounds)
+
+    if compound_results.empty:
+        compound_results = pd.DataFrame(columns=["smiles", "compound_name", "cid", "molecular_formula", "molecular_weight", "status"])
+
+    if skipped_compound_results.empty:
+        skipped_compound_results = pd.DataFrame(columns=["smiles", "compound_name", "cid", "molecular_formula", "molecular_weight", "status"])
+
+    if ui and not skipped_compound_results.empty:
+        ui["status_box"].warning(f"Skipped {len(skipped_compound_results)} compounds that could not be identified and were excluded from the analysis.")
+
+    if ui and skipped_compounds:
+        ui["status_box"].warning(f"Skipped {len(skipped_compounds)} compound(s) that could not be identified and were excluded from the analysis.")
+        
     df_interactions = fetch_interactions_summary(proteins)
     if ui:
         ui["status_box"].info("Compound-Protein interactions retrieved")
@@ -635,6 +649,7 @@ def run_full_pipeline(smiles_codes, email, selected_tax_ids=None, ui = None):
     return {
         "compound_names": compound_names,
         "compound_results": compound_results,
+        "skipped_compound_results": skipped_compound_results,
         "df_interactions": df_interactions,
         "df_pathways": df_pathways,
         "df_groupedpathways": df_groupedpathways,

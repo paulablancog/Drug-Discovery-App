@@ -63,9 +63,9 @@ def download_excel_analysis(selected_page = None):
             for col in compound_table:
                 if col not in compound_results.columns:
                     compound_results[col] = ""
-
+        
             compound_results = compound_results[
-                compound_table["status"].astype(str).str.strip().eq("Identified")]
+                compound_results["status"].astype(str).str.strip().eq("Identified")]
 
             if not compound_results.empty:
                 compound_results.to_excel(writer, sheet_name = "2.Compounds", header= True, index=False)

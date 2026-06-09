@@ -41,8 +41,8 @@ The main workflow of the application is:
 3. Interactions and pathways retrieval
 4. GeneID extraction, translation through NCBI Entrez, and UniProt mapping
 5. Pathway protein retrieval
-6. GO annotation retrieval and aspect-like grouping
-7. Final protein summary construction
+6. Gene Ontology annotation retrieval and aspect-like grouping
+7. Final protein summary construction and GO term enrichment
 8. Excel export of the analysis results
 
 ## Project Structure (Simplified Overview)

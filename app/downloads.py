@@ -46,7 +46,7 @@ def download_excel_analysis(selected_page = None):
 
         # 2. Compounds
         if "compounds" in selected_page:
-            compound_results = st.session_state.get("compound_results", pd.DataFrame()).copy()
+            compound_results = results.get("compound_results", pd.DataFrame()).copy()
             
             if compound_results.empty:
                 compound_results = results.get("compound_results", pd.DataFrame()).copy()
@@ -64,7 +64,8 @@ def download_excel_analysis(selected_page = None):
                 if col not in compound_results.columns:
                     compound_results[col] = ""
 
-            compound_results = compound_results[compound_table]
+            compound_results = compound_results[
+                compound_table["status"].astype(str).str.strip().eq("Identified")]
 
             if not compound_results.empty:
                 compound_results.to_excel(writer, sheet_name = "2.Compounds", header= True, index=False)

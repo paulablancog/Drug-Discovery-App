@@ -21,9 +21,6 @@ TAXONOMY_OPTIONS = {
     "Cavia porcellus (guinea pig)": "10141",
 }
 
-# Triple quotes allow multiple lines
-# st.markdown() : for text you want formatted with Markdown
-# st.write() is more general-purpose and can display text, dataFrames, lists and other Python objects
 st.title("Drug Discovery Analysis")
 st.markdown(
     """
@@ -32,8 +29,8 @@ st.markdown(
     """)
 
 
-# For clearing the session:
 def clear_session():
+    """Clears variables each initiated session."""
     for key in [
         "submitted_smiles", 
         "email_input",
@@ -83,15 +80,14 @@ if "smiles_to_delete" not in st.session_state:
 if "input_warning" not in st.session_state:
     st.session_state["input_warning"] = ""
 
-# This method is for clearing the results of the analysis only when the user modifies the SMILES input (should take into account the deletion of a SMILES code)
 def clear_analysis_results():
+    """This method clears the results of the analysis only when the user modifies the SMILES input"""
     for key in ["results", "analysis_ready", "run_error", "prepared_excel", "prepared_excel_selection"]:
         if key in st.session_state:
             del st.session_state[key]
 
-# These methods modify the st.session_state of the widgets that were already initialized with a key
-# It DELETES the analysis results previously made
 def load_example():
+    """Creates an example SMILES code for the user."""
     if "submitted_smiles" not in st.session_state:
         st.session_state["submitted_smiles"] = []
 
@@ -99,24 +95,25 @@ def load_example():
     clear_analysis_results()
 
 def check_email(email):
+    """Verifies if the email introduced is valid."""
     email = str(email).strip()
     return bool(re.match(r"^[\w\.-]+@[\w\.-]+\.\w+$", email))
 
 def clear_inputs():
+    """Clears the SMILES codes input."""
     st.session_state["smiles_input"] = ""
     clear_session()
 
 def show_additional_input():
+    """Allows for multiple SMILES to be introduced multiple times after pressing the Save Input button in the interface."""
     st.session_state["show_add_smiles"] = True
 
 def store_additional_smiles():
+    """Allows for multiple SMILES codes to be introduced after pressing the Save Input button in the interface"""
     value = st.session_state.get("new_smiles_input", "").strip()
     if not value:
         return
     
-    # Here I initialize "submitted_smiles", but it is optimal if the 
-    # user "initializes" it by firstly entering SMILES code into the 
-    # big text area 
     if "submitted_smiles" not in st.session_state:
         st.session_state["submitted_smiles"] = []
 
@@ -145,22 +142,9 @@ def store_additional_smiles():
     st.session_state["show_add_smiles"] = False
     clear_analysis_results()
 
-def show_delete_smiles():
-    st.session_state["show_delete_smiles"] = True
-
-def update_smiles():
-    selected = st.session_state.get("smiles_to_delete", [])
-    current_smiles = st.session_state.get("submitted_smiles", [])
-
-    st.session_state["submitted_smiles"] = [
-        smiles for smiles in current_smiles if smiles not in selected
-    ]
-    st.session_state["smiles_to_delete"] = []
-    st.session_state["show_delete_smiles"] = False
-    clear_analysis_results()
-
 
 def save_input():
+    """Is displayed as a button in the interface. Saves the information in the session state for the analysis."""
     existing_smiles = st.session_state.get("submitted_smiles", [])
 
     st.session_state["run_error"] = ""
@@ -242,6 +226,7 @@ st.session_state["selected_tax_ids"] = [
 ]
 
 def run_analysis():
+    """Is displayed as a button in the interface. Runs the analysis with the information stored in the session state."""
     smiles_codes = st.session_state.get("submitted_smiles", [])
     email = st.session_state.get("submitted_email", "")
     selected_tax_ids = st.session_state.get("selected_tax_ids", ["9606"])
@@ -324,15 +309,18 @@ GO_re = re.compile(r"^GO:\d{7}$")
 PATHWAY_re = re.compile(r"^[A-Za-z0-9_.:-]+$")
 
 def safe_text(value):
+    """Generates safe text."""
     return html.escape("" if value is None else str(value), quote=True)
 
 # It is built only from validated IDs
 def safe_anchor(url, label):
+    """Generates a safe url for the interface."""
     safe_url = html.escape(url, quote=True)
     safe_label = safe_text(label)
     return f'<a href="{safe_url}" target="_blank" rel="noopener noreferrer">{safe_label}</a>'
 
 def compound_hyperlink(cid, compound_name):
+    """Generates the external compound URL."""
     cid = str(cid).strip()
     if CID_re.fullmatch(cid):
         url = f"https://pubchem.ncbi.nlm.nih.gov/compound/{int(cid)}"
@@ -340,6 +328,7 @@ def compound_hyperlink(cid, compound_name):
     return safe_text(compound_name)
           
 def uniprot_hyperlink(accession, ):
+    """Generates the external UniProt protein URL."""
     accession = str(accession).strip()
     if UNIPROT_re.fullmatch(accession):
         url = f"https://www.uniprot.org/uniprotkb/{accession}/entry"
@@ -347,6 +336,7 @@ def uniprot_hyperlink(accession, ):
     return safe_text(accession)
    
 def pathway_hyperlink(pwacc, name = None):
+    """Generates the external pathway URL."""
     pwacc = str(pwacc).strip()
     name = str(name).strip() if name is not None else pwacc
 
@@ -356,6 +346,7 @@ def pathway_hyperlink(pwacc, name = None):
     return safe_text(name) 
 
 def goterm_hyperlink(go_id, go_name=None):
+    """Generates the external GO term URL."""
     go_id = str(go_id).strip()
     go_name = str(go_name).strip() if go_name else go_id
     if GO_re.fullmatch(go_id):
@@ -364,6 +355,7 @@ def goterm_hyperlink(go_id, go_name=None):
     return safe_text(go_name)  
 
 def geneid_hyperlink(geneid):
+    """Generates the external gene ID URL."""
     geneid = str(geneid).strip()
     if GENEID_re.fullmatch(geneid):
         url = f"https://www.ncbi.nlm.nih.gov/gene/{geneid}"
@@ -372,6 +364,7 @@ def geneid_hyperlink(geneid):
     
 
 def compounds_text_with_links(compounds_text, compound_results):
+    """Generates the separated compound external URLs."""
     if pd.isna(compounds_text):
         return ""
     
@@ -401,6 +394,7 @@ def compounds_text_with_links(compounds_text, compound_results):
     return "; ".join(links)
 
 def uniprot_accessions_text_with_links(accessions_text):
+    """Generates the unique UniProt URLs for protein accession codes."""
     if pd.isna(accessions_text):
         return ""
     
@@ -414,6 +408,7 @@ def uniprot_accessions_text_with_links(accessions_text):
     return "; ".join(links)
 
 def pathway_text_with_links(pathway_text):
+    """Generates the unique pathway URLs."""
     if pd.isna(pathway_text):
         return ""
     
@@ -429,6 +424,7 @@ def pathway_text_with_links(pathway_text):
 # TABLE DISPLAY --------------
 
 def show_interactive_table(df, table_id, height=None):
+    """This method displays personalized tables with sorting, scrolling and searching tools within the interface."""
     if df is None or df.empty:
         st.info("No data available.")
         return

@@ -48,7 +48,7 @@ def retrieve_targets_1(compound_name, rows, selected_tax_ids=None):
 
     return df_geneids
 
-def translate_geneid_to_protein(email, df_geneids, compound_name, batch_size=200):
+def translate_geneid_to_protein(email, df_geneids, compound_name, batch_size=500):
     Entrez.email = email
     Entrez.max_tries = 5
     Entrez.sleep_between_tries = 20
@@ -92,8 +92,8 @@ def translate_geneid_to_protein(email, df_geneids, compound_name, batch_size=200
                 "description": description,
                 "symbol": symbol,
             })
-            #small pause
-            time.sleep(0.2)
+        #small pause
+        time.sleep(0.2)
 
     return pd.DataFrame(protein_list,
                         columns=["compound", "geneid","symbol","description"],
@@ -152,41 +152,39 @@ def wait_for_job(jobId, repeats = 2):
 
 
 def download_results(jobId):
-    """Given a jobID, downloads the results of the translation process, including paginated results, and returns a mapping of geneid to uniprot accessions."""
-    url = f"{UNIPROT_URL}/idmapping/results/{jobId}"
-    params = {"format": "json"}
+    """Download all UniProt ID-mapping results in a single streamed request."""
+
+    url = f"{UNIPROT_URL}/idmapping/stream/{jobId}"
+
+    response = requests.get(
+        url,
+        params={"format": "json"},
+        timeout=120,
+    )
+    response.raise_for_status()
+
+    data = response.json()
+
     out = {}
 
-    while url:
-        req = requests.get(url, params, timeout=60)
-        req.raise_for_status()
-        json = req.json()
-    # Now let's download the resulting table with the accession code
-        for row in json.get("results", []):
-            geneid=str(row.get("from")).strip()
-            accession = row.get("to")
+    for row in data.get("results", []):
+        geneid = str(row.get("from", "")).strip()
+        accession = row.get("to")
 
-            # Si el codigo no va es por esto
-            if isinstance(accession, dict):
-                accession = str(accession.get("primaryAccession", "").strip())
+        if isinstance(accession, dict):
+            accession = str(
+                accession.get("primaryAccession", "")
+            ).strip()
+        else:
             accession = str(accession or "").strip()
 
-            if not geneid or not accession:
-                continue
+        if not geneid or not accession:
+            continue
 
-            out.setdefault(geneid,[])
-            if accession not in out[geneid]:
-                out[geneid].append(accession)
+        out.setdefault(geneid, [])
 
-        params = None
-
-        link = req.headers.get("Link")
-        next_url = None
-        if link:
-            m = re.search(r'<([^>]+)>;\s*rel="next"', link)
-            if m:
-                next_url = m.group(1)
-        url = next_url
+        if accession not in out[geneid]:
+            out[geneid].append(accession)
 
     return out
 
@@ -226,10 +224,17 @@ def map_genes_to_uniprot(df_geneids):
     from_db = get_idmapping_db("GeneID")
     to_db = get_idmapping_db("UniProtKB")
 
+    start = time.perf_counter()
     jobId = input_idmapping_dbs(from_db, to_db, geneids)
-    wait_for_job(jobId)
+    print(f"[TIMING] UniProt submit: {time.perf_counter() - start:.2f} s")
 
+    start = time.perf_counter()
+    wait_for_job(jobId)
+    print(f"[TIMING] UniProt wait_for_job: {time.perf_counter() - start:.2f} s")
+
+    start = time.perf_counter()
     results = download_results(jobId)
+    print(f"[TIMING] UniProt download_results: {time.perf_counter() - start:.2f} s")
 
     rows = []
     for gene in geneids:

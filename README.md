@@ -76,8 +76,7 @@ streamlit run streamlit_app.py
 ```
 Make sure you have Internet access before running the application, since queries to external databases and APIs are present.
 
-Or directly open the application web in your browser using this URL link
-https://drugdiscoveryapp-tfg.streamlit.app
+Or directly open the application web in your browser using this URL link  https://drugdiscovery.biocomputingunit.es/
 
 
 ## Author

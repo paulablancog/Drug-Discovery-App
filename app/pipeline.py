@@ -850,9 +850,22 @@ def build_final_summary(df_interactions, df_pathways):
 def build_go_enrichment(final_summary):
     """Given the final summary DataFrame, it builds the GO enrichment results by 
     fetching the GO terms of the proteins and grouping them by aspect."""
-    df_go = app.proteins.fetch_goterms(final_summary, 
-                                       aspects=["biological_process", "molecular_function", "cellular_component"],
-                                       )
+
+
+    def log_stage(name, start):
+        elapsed = time.perf_counter() - start
+        print(f"[TIMING] {name}: {elapsed:.2f} s")
+
+    start = time.perf_counter()
+    df_go = app.proteins.fetch_goterms(
+        final_summary,
+        aspects=[
+            "biological_process",
+            "molecular_function",
+            "cellular_component",
+        ],
+    )
+    log_stage("fetch_goterms", start)
     
     df_go_empty =pd.DataFrame(columns=["uniprot_accession", "go_id", "go_name", "symbol", "aspect", "compounds"])
     df_go_empty_aspect = pd.DataFrame(columns=["uniprot_accession", "go_id", "go_name", "symbol", "compounds"])
@@ -885,7 +898,11 @@ def build_go_enrichment(final_summary):
         }
 
     # Add GO names to the GO ids
-    go_name = app.proteins.fetch_gonames(df_go["go_id"].dropna().unique())
+    start = time.perf_counter()
+    go_name = app.proteins.fetch_gonames(
+        df_go["go_id"].dropna().unique()
+    )
+    log_stage("fetch_gonames", start)
     df_go = df_go.merge(go_name, on="go_id", how="left")
 
     # Add symbols to the GO tables
@@ -908,9 +925,13 @@ def build_go_enrichment(final_summary):
     df_go_cc = (df_go[df_go["aspect"] == "cellular_component"]
                 [["uniprot_accession","go_id","go_name","symbol", "compounds"]].drop_duplicates().reset_index(drop=True))
 
+    start = time.perf_counter()
+
     df_go_bp_grouped = app.proteins.group_goterms(df_go_bp)
     df_go_mf_grouped = app.proteins.group_goterms(df_go_mf)
     df_go_cc_grouped = app.proteins.group_goterms(df_go_cc)
+
+    log_stage("group_goterms", start)
 
     # Build a summary table with all the aggregated GO information per protein
     go_summary = (
@@ -921,9 +942,11 @@ def build_go_enrichment(final_summary):
         )
     )
 
+    start = time.perf_counter()
     bp_summary = app.proteins.summarize_goaspect(df_go, "biological_process", "bp")
     mf_summary = app.proteins.summarize_goaspect(df_go, "molecular_function", "mf")
     cc_summary = app.proteins.summarize_goaspect(df_go, "cellular_component", "cc")
+    log_stage("summarize_goaspect", start)
 
 
     final_summaryGO = final_summary.merge(go_summary, on="uniprot_accession", how="left")
@@ -959,6 +982,11 @@ def run_full_pipeline(smiles_codes, email, selected_tax_ids=None, ui = None):
     skipped_compounds = []
     proteins = []
     pathways = []
+
+    def log_step(name, start):
+        print(f"[TIMING] {name}: {time.perf_counter() - start:.2f} s")
+
+    total_start = time.perf_counter()
 
     if ui:
         ui["status_box"].info("Running analysis... This may take a few minutes.")
@@ -1000,7 +1028,8 @@ def run_full_pipeline(smiles_codes, email, selected_tax_ids=None, ui = None):
                 "status": "Excluded from analysis",
             })
             print(f"Skipping {smiles}: {error_message}")
-    
+
+    log_step("All fetch_pubchem_compound calls", total_start)
     compound_results = pd.DataFrame(all_compounds)
     skipped_compound_results = pd.DataFrame(skipped_compounds)
 
@@ -1015,49 +1044,79 @@ def run_full_pipeline(smiles_codes, email, selected_tax_ids=None, ui = None):
 
     if ui and skipped_compounds:
         ui["status_box"].warning(f"Skipped {len(skipped_compounds)} compound(s) that could not be identified and were excluded from the analysis.")
-        
+
+    start = time.perf_counter()
+
     df_interactions = fetch_interactions_summary(proteins)
+
+    log_step("fetch_interactions_summary", start)
+
     if ui:
         ui["status_box"].info("Compound-Protein interactions retrieved")
         ui["interactions_box"].markdown("### Compound-Protein interactions")
         ui["interactions_box"].dataframe(df_interactions, width="stretch")
         ui["progress_bar"].progress(55, text="Compound-Protein interactions completed.")
 
+    start = time.perf_counter()
+
     df_pathways, df_groupedpathways = fetch_pathway_summary(pathways)
+
+    log_step("fetch_pathway_summary", start)
     if ui:
         ui["status_box"].info("Pathways retrieved")
         ui["pathway_box"].markdown("### Pathways")
         ui["pathway_box"].dataframe(df_groupedpathways, width="stretch")
         ui["progress_bar"].progress(70, text="Pathways completed.")
 
-    final_summary = build_final_summary(df_interactions, df_pathways)
+    start = time.perf_counter()
+
+    final_summary = build_final_summary(
+        df_interactions,
+        df_pathways
+    )
+
+    log_step("build_final_summary", start)
     if ui:
         ui["summary_box"].markdown("### Protein Summary")
-        ui["summary_box"].dataframe(final_summary[[
-            "uniprot_accession",
-            "protein_name",
-            "symbol",
-            "taxid",
-            "taxname",
-            "interaction_count",
-            "pathway_count",
-            "total_count",
-            "compounds",
-            "n_compounds",
-            "n_pathways",
-            "pathways",
-            "pathway_names",
-            "pathway_compounds",
-            "source",
-        ]], width="stretch")
+        start = time.perf_counter()
+
+        ui["summary_box"].dataframe(
+            final_summary[
+                [
+                    "uniprot_accession",
+                    "protein_name",
+                    "symbol",
+                    "taxid",
+                    "taxname",
+                    "interaction_count",
+                    "pathway_count",
+                    "total_count",
+                    "compounds",
+                    "n_compounds",
+                    "n_pathways",
+                    "pathways",
+                    "pathway_names",
+                    "pathway_compounds",
+                    "source",
+                ]
+            ],
+            width="stretch"
+        )
+
+        log_step("Render summary dataframe", start)
         ui["progress_bar"].progress(85, text="Protein summary completed.")
 
+    start = time.perf_counter()
+
     go_results = build_go_enrichment(final_summary)
+
+    log_step("build_go_enrichment", start)
 
     if ui:
         ui["status_box"].success("Analysis completed!")
         ui["progress_bar"].progress(100, text="Done")
 
+    log_step("TOTAL run_full_pipeline", total_start)
     return {
         "compound_names": compound_names,
         "compound_results": compound_results,

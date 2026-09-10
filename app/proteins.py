@@ -4,6 +4,7 @@ import pandas as pd
 from Bio import Entrez
 import requests
 import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 UNIPROT_URL = "https://rest.uniprot.org"
 
@@ -401,13 +402,22 @@ def get_uniprot_taxonomy(accessions):
 
     return taxonomy_map
 
-def fetch_goterms(df, aspects = None):
-    """Given a DataFrame with UniProt accessions, retrieves the corresponding GO terms for each protein by querying QuickGO API."""
+def fetch_goterms(df, aspects=None):
+    """Given a DataFrame with UniProt accessions, retrieves the corresponding
+    GO terms for each protein using the QuickGO annotation API in parallel batches.
+    """
     if df is None or df.empty or "uniprot_accession" not in df.columns:
-        return pd.DataFrame(columns=["uniprot_accession", "go_id", "aspect"])
-    
-    accessions = df["uniprot_accession"].dropna().astype(str).str.strip()
-    accessions = accessions[accessions != ""].unique().tolist() 
+        return pd.DataFrame(
+            columns=["uniprot_accession", "go_id", "aspect"]
+        )
+
+    accessions = (
+        df["uniprot_accession"]
+        .dropna()
+        .astype(str)
+        .str.strip()
+    )
+    accessions = accessions[accessions != ""].unique().tolist()
 
     if aspects is None:
         aspects = [
@@ -423,62 +433,124 @@ def fetch_goterms(df, aspects = None):
     }
 
     aspects = [a.strip() for a in aspects if str(a).strip()]
+
     invalid = [a for a in aspects if a not in check_aspects]
     if invalid:
         raise ValueError(
-            "Invalid aspects"
-            f"Allowed aspects are: {check_aspects}"
+            f"Invalid aspects. Allowed aspects are: {check_aspects}"
         )
 
     url = "https://www.ebi.ac.uk/QuickGO/services/annotation/search"
     headers = {"Accept": "application/json"}
 
-    rows = []
-    limit = 200
-    
-    # I have to access more than one page (pagination)
-    with requests.Session() as session:
-        for acc in accessions:
-            page = 1
+    batch_size = 100
+    max_workers = 4
 
-            # For pages to add each loop
+    batches = [
+        accessions[i:i + batch_size]
+        for i in range(0, len(accessions), batch_size)
+    ]
+
+    def fetch_batch(batch_number, batch):
+        batch_start = time.perf_counter()
+        rows = []
+        batch_pages = 0
+
+        with requests.Session() as session:
+
+            parameters = {
+                "geneProductId": ",".join(
+                    f"UniProtKB:{acc}" for acc in batch
+                ),
+                "aspect": ",".join(aspects),
+                "limit": 200,
+                "page": 1,
+            }
+
             while True:
-                parameters = {
-                    "geneProductId": f"UniProtKB:{acc}",
-                    "aspect": ",".join(aspects),
-                    "limit":limit,
-                    "page": page,
-                }
-                request = session.get(url, params=parameters, headers=headers, timeout=60)
-                request.raise_for_status()
-                result_json = request.json()
 
+                request_start = time.perf_counter()
+
+                request = session.get(
+                    url,
+                    params=parameters,
+                    headers=headers,
+                    timeout=60,
+                )
+                request.raise_for_status()
+
+                request_time = time.perf_counter() - request_start
+
+                result_json = request.json()
                 results = result_json.get("results", [])
+
+                batch_pages += 1
+
                 if not results:
                     break
 
                 for row in results:
+                    gene_product = row.get("geneProductId")
+
+                    if gene_product and ":" in gene_product:
+                        acc = gene_product.split(":", 1)[1]
+                    else:
+                        continue
+
                     rows.append({
                         "uniprot_accession": acc,
                         "go_id": row.get("goId"),
                         "aspect": row.get("goAspect"),
                     })
-                
+
                 page_info = result_json.get("pageInfo", {}) or {}
-                current_page = page_info.get("current", page)
+
+                current_page = page_info.get(
+                    "current",
+                    parameters["page"]
+                )
+
                 total_pages = page_info.get("total")
 
                 if total_pages is not None:
                     if current_page >= total_pages:
                         break
-                    else: 
-                        if len(results) < limit:
-                            break
-                page +=1
+                elif len(results) < parameters["limit"]:
+                    break
 
-    return pd.DataFrame(rows,
-                        columns=["uniprot_accession", "go_id", "aspect"],
-                        )
+                parameters["page"] = current_page + 1
+
+        elapsed = time.perf_counter() - batch_start
+
+        print(
+            f"[TIMING] QuickGO batch {batch_number}: "
+            f"{elapsed:.2f} s | "
+            f"{len(batch)} accessions | "
+            f"{batch_pages} pages"
+        )
+
+        return rows
+
+    rows = []
+
+    with ThreadPoolExecutor(max_workers=max_workers) as executor:
+
+        futures = [
+            executor.submit(fetch_batch, batch_number, batch)
+            for batch_number, batch in enumerate(batches, start=1)
+        ]
+
+        for future in as_completed(futures):
+            rows.extend(future.result())
+
+    return pd.DataFrame(
+        rows,
+        columns=[
+            "uniprot_accession",
+            "go_id",
+            "aspect",
+        ],
+    )
 
 
 def fetch_gonames(go_ids):

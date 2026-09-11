@@ -21,7 +21,27 @@ TAXONOMY_OPTIONS = {
     "Cavia porcellus (guinea pig)": "10141",
 }
 
-st.title("Drug Discovery Analysis")
+st.markdown("""
+<style>
+/* Text inputs and text areas */
+.stTextInput input,
+.stTextArea textarea {
+    background-color: #F1F3F6 !important;
+}
+
+/* Multiselect */
+.stMultiSelect [data-baseweb="select"] > div {
+    background-color: #F1F3F6 !important;
+}
+
+/* Selectbox */
+.stSelectbox [data-baseweb="select"] > div {
+    background-color: #F1F3F6 !important;
+}
+</style>
+""", unsafe_allow_html=True)
+
+st.title("Target Discovery Analysis")
 st.markdown(
     """
     Enter one or more **SMILES codes** to prepare the analysis. 

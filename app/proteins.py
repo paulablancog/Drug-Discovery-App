@@ -4,6 +4,7 @@ import pandas as pd
 from Bio import Entrez
 import requests
 import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 UNIPROT_URL = "https://rest.uniprot.org"
 
@@ -48,7 +49,7 @@ def retrieve_targets_1(compound_name, rows, selected_tax_ids=None):
 
     return df_geneids
 
-def translate_geneid_to_protein(email, df_geneids, compound_name, batch_size=200):
+def translate_geneid_to_protein(email, df_geneids, compound_name, batch_size=500):
     Entrez.email = email
     Entrez.max_tries = 5
     Entrez.sleep_between_tries = 20
@@ -92,8 +93,8 @@ def translate_geneid_to_protein(email, df_geneids, compound_name, batch_size=200
                 "description": description,
                 "symbol": symbol,
             })
-            #small pause
-            time.sleep(0.2)
+        #small pause
+        time.sleep(0.2)
 
     return pd.DataFrame(protein_list,
                         columns=["compound", "geneid","symbol","description"],
@@ -152,41 +153,39 @@ def wait_for_job(jobId, repeats = 2):
 
 
 def download_results(jobId):
-    """Given a jobID, downloads the results of the translation process, including paginated results, and returns a mapping of geneid to uniprot accessions."""
-    url = f"{UNIPROT_URL}/idmapping/results/{jobId}"
-    params = {"format": "json"}
+    """Download all UniProt ID-mapping results in a single streamed request."""
+
+    url = f"{UNIPROT_URL}/idmapping/stream/{jobId}"
+
+    response = requests.get(
+        url,
+        params={"format": "json"},
+        timeout=120,
+    )
+    response.raise_for_status()
+
+    data = response.json()
+
     out = {}
 
-    while url:
-        req = requests.get(url, params, timeout=60)
-        req.raise_for_status()
-        json = req.json()
-    # Now let's download the resulting table with the accession code
-        for row in json.get("results", []):
-            geneid=str(row.get("from")).strip()
-            accession = row.get("to")
+    for row in data.get("results", []):
+        geneid = str(row.get("from", "")).strip()
+        accession = row.get("to")
 
-            # Si el codigo no va es por esto
-            if isinstance(accession, dict):
-                accession = str(accession.get("primaryAccession", "").strip())
+        if isinstance(accession, dict):
+            accession = str(
+                accession.get("primaryAccession", "")
+            ).strip()
+        else:
             accession = str(accession or "").strip()
 
-            if not geneid or not accession:
-                continue
+        if not geneid or not accession:
+            continue
 
-            out.setdefault(geneid,[])
-            if accession not in out[geneid]:
-                out[geneid].append(accession)
+        out.setdefault(geneid, [])
 
-        params = None
-
-        link = req.headers.get("Link")
-        next_url = None
-        if link:
-            m = re.search(r'<([^>]+)>;\s*rel="next"', link)
-            if m:
-                next_url = m.group(1)
-        url = next_url
+        if accession not in out[geneid]:
+            out[geneid].append(accession)
 
     return out
 
@@ -226,10 +225,17 @@ def map_genes_to_uniprot(df_geneids):
     from_db = get_idmapping_db("GeneID")
     to_db = get_idmapping_db("UniProtKB")
 
+    start = time.perf_counter()
     jobId = input_idmapping_dbs(from_db, to_db, geneids)
-    wait_for_job(jobId)
+    print(f"[TIMING] UniProt submit: {time.perf_counter() - start:.2f} s")
 
+    start = time.perf_counter()
+    wait_for_job(jobId)
+    print(f"[TIMING] UniProt wait_for_job: {time.perf_counter() - start:.2f} s")
+
+    start = time.perf_counter()
     results = download_results(jobId)
+    print(f"[TIMING] UniProt download_results: {time.perf_counter() - start:.2f} s")
 
     rows = []
     for gene in geneids:
@@ -396,13 +402,22 @@ def get_uniprot_taxonomy(accessions):
 
     return taxonomy_map
 
-def fetch_goterms(df, aspects = None):
-    """Given a DataFrame with UniProt accessions, retrieves the corresponding GO terms for each protein by querying QuickGO API."""
+def fetch_goterms(df, aspects=None):
+    """Given a DataFrame with UniProt accessions, retrieves the corresponding
+    GO terms for each protein using the QuickGO annotation API in parallel batches.
+    """
     if df is None or df.empty or "uniprot_accession" not in df.columns:
-        return pd.DataFrame(columns=["uniprot_accession", "go_id", "aspect"])
-    
-    accessions = df["uniprot_accession"].dropna().astype(str).str.strip()
-    accessions = accessions[accessions != ""].unique().tolist() 
+        return pd.DataFrame(
+            columns=["uniprot_accession", "go_id", "aspect"]
+        )
+
+    accessions = (
+        df["uniprot_accession"]
+        .dropna()
+        .astype(str)
+        .str.strip()
+    )
+    accessions = accessions[accessions != ""].unique().tolist()
 
     if aspects is None:
         aspects = [
@@ -418,62 +433,124 @@ def fetch_goterms(df, aspects = None):
     }
 
     aspects = [a.strip() for a in aspects if str(a).strip()]
+
     invalid = [a for a in aspects if a not in check_aspects]
     if invalid:
         raise ValueError(
-            "Invalid aspects"
-            f"Allowed aspects are: {check_aspects}"
+            f"Invalid aspects. Allowed aspects are: {check_aspects}"
         )
 
     url = "https://www.ebi.ac.uk/QuickGO/services/annotation/search"
     headers = {"Accept": "application/json"}
 
-    rows = []
-    limit = 200
-    
-    # I have to access more than one page (pagination)
-    with requests.Session() as session:
-        for acc in accessions:
-            page = 1
+    batch_size = 100
+    max_workers = 4
 
-            # For pages to add each loop
+    batches = [
+        accessions[i:i + batch_size]
+        for i in range(0, len(accessions), batch_size)
+    ]
+
+    def fetch_batch(batch_number, batch):
+        batch_start = time.perf_counter()
+        rows = []
+        batch_pages = 0
+
+        with requests.Session() as session:
+
+            parameters = {
+                "geneProductId": ",".join(
+                    f"UniProtKB:{acc}" for acc in batch
+                ),
+                "aspect": ",".join(aspects),
+                "limit": 200,
+                "page": 1,
+            }
+
             while True:
-                parameters = {
-                    "geneProductId": f"UniProtKB:{acc}",
-                    "aspect": ",".join(aspects),
-                    "limit":limit,
-                    "page": page,
-                }
-                request = session.get(url, params=parameters, headers=headers, timeout=60)
-                request.raise_for_status()
-                result_json = request.json()
 
+                request_start = time.perf_counter()
+
+                request = session.get(
+                    url,
+                    params=parameters,
+                    headers=headers,
+                    timeout=60,
+                )
+                request.raise_for_status()
+
+                request_time = time.perf_counter() - request_start
+
+                result_json = request.json()
                 results = result_json.get("results", [])
+
+                batch_pages += 1
+
                 if not results:
                     break
 
                 for row in results:
+                    gene_product = row.get("geneProductId")
+
+                    if gene_product and ":" in gene_product:
+                        acc = gene_product.split(":", 1)[1]
+                    else:
+                        continue
+
                     rows.append({
                         "uniprot_accession": acc,
                         "go_id": row.get("goId"),
                         "aspect": row.get("goAspect"),
                     })
-                
+
                 page_info = result_json.get("pageInfo", {}) or {}
-                current_page = page_info.get("current", page)
+
+                current_page = page_info.get(
+                    "current",
+                    parameters["page"]
+                )
+
                 total_pages = page_info.get("total")
 
                 if total_pages is not None:
                     if current_page >= total_pages:
                         break
-                    else: 
-                        if len(results) < limit:
-                            break
-                page +=1
+                elif len(results) < parameters["limit"]:
+                    break
 
-    return pd.DataFrame(rows,
-                        columns=["uniprot_accession", "go_id", "aspect"],
-                        )
+                parameters["page"] = current_page + 1
+
+        elapsed = time.perf_counter() - batch_start
+
+        print(
+            f"[TIMING] QuickGO batch {batch_number}: "
+            f"{elapsed:.2f} s | "
+            f"{len(batch)} accessions | "
+            f"{batch_pages} pages"
+        )
+
+        return rows
+
+    rows = []
+
+    with ThreadPoolExecutor(max_workers=max_workers) as executor:
+
+        futures = [
+            executor.submit(fetch_batch, batch_number, batch)
+            for batch_number, batch in enumerate(batches, start=1)
+        ]
+
+        for future in as_completed(futures):
+            rows.extend(future.result())
+
+    return pd.DataFrame(
+        rows,
+        columns=[
+            "uniprot_accession",
+            "go_id",
+            "aspect",
+        ],
+    )
 
 
 def fetch_gonames(go_ids):

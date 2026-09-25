@@ -250,6 +250,10 @@ def run_analysis():
     smiles_codes = st.session_state.get("submitted_smiles", [])
     email = st.session_state.get("submitted_email", "")
     selected_tax_ids = st.session_state.get("selected_tax_ids", ["9606"])
+    compound_results = st.session_state.get(
+        "compound_results",
+        pd.DataFrame()
+    ).copy()
     
     if not selected_tax_ids:
         st.session_state["run_error"] = "Please select at least one protein taxonomy before running the analysis."
@@ -272,16 +276,25 @@ def run_analysis():
         return
     try:
         with st.spinner("Running analysis... This may take a few minutes..."):
-            results = run_full_pipeline(smiles_codes, email, selected_tax_ids=selected_tax_ids, ui = {
-                "status_box": status_box,
-                "progress_bar": progress_bar,
-                "compound_box": compound_box,
-                "interactions_box": interactions_box,
-                "pathway_box": pathway_box,
-                "summary_box": summary_box
+            identified_compounds = st.session_state.get(
+                "identified_compounds",
+                {}
+            )
 
-            },
-        )
+            results = run_full_pipeline(
+                smiles_codes,
+                email,
+                selected_tax_ids=selected_tax_ids,
+                identified_compounds=identified_compounds,
+                ui={
+                    "status_box": status_box,
+                    "progress_bar": progress_bar,
+                    "compound_box": compound_box,
+                    "interactions_box": interactions_box,
+                    "pathway_box": pathway_box,
+                    "summary_box": summary_box,
+                },
+            )
 
         st.session_state["results"] = results
         # So the DataFrame stays synchronized after analysis
@@ -669,7 +682,13 @@ if submitted_smiles and not st.session_state.get("email_error_active", False):
     
 
     if st.session_state.get("compound_results_source") != tuple(submitted_smiles):
-        st.session_state["compound_results"] = app.chem.identify_compounds(submitted_smiles)
+        compound_results, identified_compounds = app.chem.identify_compounds(
+            submitted_smiles,
+            return_compounds=True
+        )
+
+        st.session_state["compound_results"] = compound_results
+        st.session_state["identified_compounds"] = identified_compounds
         # This is an indicator to know whether the SMILES changed and the results need to be updated
         st.session_state["compound_results_source"] = tuple(submitted_smiles)
 

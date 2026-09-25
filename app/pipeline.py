@@ -26,8 +26,12 @@ def timed_call(name, func, *args, **kwargs):
         )
         raise
 
-def fetch_pubchem_compound(smiles_code, email, selected_tax_ids=None):
-
+def fetch_pubchem_compound(
+    smiles_code,
+    email,
+    selected_tax_ids=None,
+    compound=None,
+):
     total_start = time.perf_counter()
 
     def log_stage(name, start):
@@ -37,14 +41,11 @@ def fetch_pubchem_compound(smiles_code, email, selected_tax_ids=None):
     # ---------------------------------------------------------
     # 1. Retrieve compound
     # ---------------------------------------------------------
-    start = time.perf_counter()
-
-    compound = app.chem.compound_retrieval(smiles_code)
-
-    log_stage("compound_retrieval", start)
-
     if compound is None:
-        raise ValueError("No compound found. Check the SMILES code")
+        raise ValueError(
+            f"Compound for {smiles_code} was not found in the "
+            "initial PubChem identification step."
+        )
     # ---------------------------------------------------------
     # 2. Compound information + display name
     # ---------------------------------------------------------
@@ -974,8 +975,14 @@ def build_go_enrichment(final_summary):
     }
 
 
-def run_full_pipeline(smiles_codes, email, selected_tax_ids=None, ui = None):
-    """Runs the full pipeline of fetching compound information, chemical-target and pathways information, 
+def run_full_pipeline(
+    smiles_codes,
+    email,
+    selected_tax_ids=None,
+    identified_compounds=None,
+    ui=None,
+):
+    """Runs the full pipeline of fetching compound information, chemical-target and pathways information,
     building summaries and GO enrichment for a list of SMILES codes with UI updates and taxonomic filtering."""
     compound_names = []
     all_compounds = []
@@ -994,8 +1001,17 @@ def run_full_pipeline(smiles_codes, email, selected_tax_ids=None, ui = None):
 
     for i, smiles in enumerate(smiles_codes, start=1):
         try:
-            compound, compound_info, compound_name, df_proteins, df_pathways = fetch_pubchem_compound(smiles, email, selected_tax_ids=selected_tax_ids)
-            
+            compound = identified_compounds.get(smiles)
+
+            if compound is None:
+                raise ValueError("Compound was not identified in the initial PubChem identification step.")
+
+            compound, compound_info, compound_name, df_proteins, df_pathways = fetch_pubchem_compound(
+                smiles,
+                email,
+                selected_tax_ids=selected_tax_ids,
+                compound=compound,
+            )
             compound_names.append(compound_name)
             proteins.append(df_proteins)
             pathways.append(df_pathways)

@@ -181,15 +181,17 @@ def compound_display_name(compound):
 
     return "compound"
 
-def identify_compounds(smiles_list):
+
+def identify_compounds(smiles_list, return_compounds=False):
     """For a list of SMILES code, show the identified compound name"""
     rows = []
+    compounds = {}
 
     for smiles in smiles_list:
         smiles = str(smiles).strip()
         if not smiles:
             continue
-        
+
         canonical_smiles, smiles_error = validate_smiles(smiles)
 
         if smiles_error:
@@ -205,10 +207,11 @@ def identify_compounds(smiles_list):
 
         try:
             compound = compound_retrieval(smiles)
+
             if compound is None:
                 rows.append({
-                    "smiles": smiles, 
-                    "compound_name": "Not identified", 
+                    "smiles": smiles,
+                    "compound_name": "Not identified",
                     "cid": None,
                     "molecular_formula": None,
                     "molecular_weight": None,
@@ -220,24 +223,32 @@ def identify_compounds(smiles_list):
             compound_info = compound_information(compound)
 
             rows.append({
-                "smiles": smiles, 
-                "compound_name": compound_name, 
+                "smiles": smiles,
+                "compound_name": compound_name,
                 "cid": compound_info.get("cid"),
                 "molecular_formula": compound_info.get("molecular_formula"),
                 "molecular_weight": compound_info.get("molecular_weight"),
                 "status": "Identified",
-                })
-            
+            })
+
+            compounds[smiles] = compound
+
         except Exception as ex:
             rows.append({
-                    "smiles": smiles, 
-                    "compound_name": "Not identified", 
-                    "cid": None,
-                    "molecular_formula": None,
-                    "molecular_weight": None,
-                    "status": f"Error: {ex}",
-                })
-            
-    return pd.DataFrame(rows, columns=[
-        "smiles", "compound_name", "cid", "molecular_formula", "molecular_weight", "status",
+                "smiles": smiles,
+                "compound_name": "Not identified",
+                "cid": None,
+                "molecular_formula": None,
+                "molecular_weight": None,
+                "status": f"Error: {ex}",
+            })
+
+    df = pd.DataFrame(rows, columns=[
+        "smiles", "compound_name", "cid",
+        "molecular_formula", "molecular_weight", "status",
     ])
+
+    if return_compounds:
+        return df, compounds
+
+    return df

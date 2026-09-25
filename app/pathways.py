@@ -29,149 +29,457 @@ def retrieve_pathways(compound, rows, compound_name, selected_tax_ids=None):
     """Checks whether pathway rows exist, and if they do, retrieves the proteins from each pathway."""
     if not rows:
         return empty_pathway_df()
-    
-    # Send rows that contain Pathway table JSON information 
+
+    # Send rows that contain Pathway table JSON information
     df_proteinspathway = retrieve_proteins_from_pathway(compound, rows, compound_name, selected_tax_ids=selected_tax_ids)
 
     if df_proteinspathway is None or df_proteinspathway.empty:
         return empty_pathway_df()
-    
+
     return df_proteinspathway
 
 
-def retrieve_proteins_from_pathway(compound, rows, compound_name, selected_tax_ids=None):
-    """Given the rows of Pathway section, retrieves the proteins in each pathway and returns a df with the information of the proteins, pathways and compound"""
-    
+def retrieve_proteins_from_pathway(
+    compound,
+    rows,
+    compound_name,
+    selected_tax_ids=None,
+):
+    """Given pathway rows, retrieves the proteins associated with each pathway."""
+
     dfs = []
 
     for row in rows:
         if not isinstance(row, dict):
             continue
 
-        pathway_id = row.get("pathwayid") or ""
-        pwacc = row.get("pwacc") or ""
+        raw_pwacc = row.get("pwacc") or ""
+        pwacc = str(raw_pwacc).replace("\\:", ":").strip()
         pathway_name = row.get("name") or ""
+        geneids = row.get("geneids") or ""
 
-        if not pathway_id or not pwacc:
+        print("[Pathway DEBUG] pwacc:", repr(pwacc))
+        print("[Pathway DEBUG] pathway:", pathway_name)
+        print("[Pathway DEBUG] geneids:", repr(geneids))
+
+        if not pwacc:
             continue
 
-        # The table we really want, give me the protein table for this pathway ID
-        url_proteins = pcget_pathway_protein_url(pathway_id)
-        proteins_table_json = app.utils.get_json(url_proteins)
-        
-        if proteins_table_json is None:
-            continue
-    
-        # If protein table is downloaded, convert it into a clean DataFrame
-        compound_cid = getattr(compound, "cid", None)
+        # ---------------------------------------------------------
+        # Reactome / PharmGKB:
+        # retrieve protein accessions directly from the pathway
+        # ---------------------------------------------------------
+        if pwacc.startswith(("Reactome:", "PharmGKB:")):
 
-        df_targetlist = retrieve_pathway_proteins(pwacc, pathway_name, compound_name, compound_cid, proteins_table_json, selected_tax_ids=selected_tax_ids)
+            url_proteins = pcget_pathway_protein_url(pwacc)
+
+            print("[Pathway DEBUG] protein URL:", url_proteins)
+
+            pathway_json = app.utils.get_json(url_proteins)
+
+            print(
+                "[Pathway DEBUG] protein response type:",
+                type(pathway_json),
+            )
+
+            if pathway_json is None:
+                print("[Pathway DEBUG] protein response is None")
+                continue
+
+            df_targetlist = retrieve_pathway_proteins(
+                pwacc,
+                pathway_name,
+                compound_name,
+                getattr(compound, "cid", None),
+                pathway_json,
+                selected_tax_ids=selected_tax_ids,
+            )
+
+        # ---------------------------------------------------------
+        # WikiPathways:
+        # retrieve Gene IDs from the pathway
+        # ---------------------------------------------------------
+        elif pwacc.startswith("WikiPathways:"):
+
+            url_genes = pcget_pathway_gene_url(pwacc)
+
+            print("[Pathway DEBUG] gene URL:", url_genes)
+
+            pathway_json = app.utils.get_json(url_genes)
+
+            print(
+                "[Pathway DEBUG] gene response type:",
+                type(pathway_json),
+            )
+
+            if pathway_json is None:
+                print("[Pathway DEBUG] gene response is None")
+                continue
+
+            df_targetlist = retrieve_pathway_proteins_from_genes(
+                pwacc,
+                pathway_name,
+                compound_name,
+                getattr(compound, "cid", None),
+                pathway_json,
+                selected_tax_ids=selected_tax_ids,
+            )
+
+        else:
+            print(
+                "[Pathway DEBUG] Unsupported pathway source:",
+                pwacc.split(":", 1)[0],
+            )
+            continue
 
         if df_targetlist is not None and not df_targetlist.empty:
             dfs.append(df_targetlist)
-                  
+
     if not dfs:
         return empty_pathway_df()
-    
+
     df = pd.concat(dfs, ignore_index=True)
-    df = df.drop_duplicates(subset=["uniprot_accession", "protein_name", "symbol", "pathway", "compound", "cid", "taxid", "taxname"], keep="first").reset_index(drop=True)
-    return df
 
-
-
-def pcget_pathway_protein_url(pathwayid, start=1, limit = 10000000):
-    """Creates the URL to get the Protein Section from a specific Pathway"""
-    return(f"{app.utils.URL_BASE}/assay/pcget.cgi?task=pathway_protein&pathwayid={pathwayid}&start={start}&limit={limit}&infmt=json&outfmt=json")
-
-
-def retrieve_pathway_proteins(pwacc, pathway_name, compound_name, compound_cid, pathway_json, selected_tax_ids=None):
-    """Retrieves proteins from a pathway JSON response"""
-    # Retrieve the Proteins in pathway json
-    if pathway_json is None:
-        return empty_pathway_df()
-  
-    # Find protein names & id
-    rows = pathway_json.get("SDQOutputSet", [{}])[0].get("rows", []) or {}
-    status = pathway_json.get("SDQOutputSet", [{}])[0].get("status", {}) or {}
-    status_code = status.get("code", 0)
-
-    if str(status_code) != "0":
-        return empty_pathway_df()
-    
-    if not isinstance(rows, list):
-        rows = []
-
-    # Extracts protein information one by one
-    target_list = []
-
-    for row in rows:
-        if isinstance(row,dict): 
-            acc_id = row.get("acc") or ""
-            protname = row.get("protname")  or ""
-            if acc_id:
-                target_list.append({"uniprot_accession": acc_id, 
-                                       "protein_name": protname,
-                                       "pathway": pwacc,
-                                       "pathway_name": pathway_name,
-                                       "compound": compound_name,
-                                       "cid": compound_cid})
-    df = pd.DataFrame(target_list)
-
-    if df.empty:
-        return empty_pathway_df()
-    
-    accessions = (df["uniprot_accession"].dropna().astype(str).str.strip().unique().tolist())
-    accessions = [acc for acc in accessions if acc]
-
-    df_uniprot_info = pd.DataFrame(
-        columns=[
+    df = df.drop_duplicates(
+        subset=[
             "uniprot_accession",
             "protein_name",
             "symbol",
+            "pathway",
+            "compound",
+            "cid",
             "taxid",
             "taxname",
-        ]
+        ],
+        keep="first",
+    ).reset_index(drop=True)
+
+    return df
+
+def pcget_pathway_gene_url(pwacc):
+    """Creates the PubChem PUG REST URL to retrieve Gene IDs for a pathway."""
+
+    return (
+        f"{app.utils.URL_BASE}/rest/pug/pathway/pwacc/"
+        f"{pwacc}/geneids/JSON"
     )
 
-    if accessions:
-        df_uniprot_info = app.proteins.map_uniprot_to_info(accessions)
+
+def pcget_pathway_protein_url(pwacc):
+    """Creates the PubChem PUG REST URL to retrieve protein accessions for a pathway."""
+
+    return (
+        f"{app.utils.URL_BASE}/rest/pug/pathway/pwacc/"
+        f"{pwacc}/accessions/JSON"
+    )
+
+
+def build_pathway_protein_dataframe(
+    pwacc,
+    pathway_name,
+    compound_name,
+    compound_cid,
+    accessions,
+    selected_tax_ids=None,
+):
+    """Build pathway-protein DataFrame and enrich proteins with UniProt metadata."""
+
+    if not accessions:
+        return empty_pathway_df()
+
+    # Create pathway-protein rows
+    target_list = [
+        {
+            "uniprot_accession": acc,
+            "protein_name": "",
+            "pathway": pwacc,
+            "pathway_name": pathway_name,
+            "compound": compound_name,
+            "cid": compound_cid,
+        }
+        for acc in accessions
+    ]
+
+    df = pd.DataFrame(target_list)
+
+    # Retrieve UniProt metadata
+    df_uniprot_info = app.proteins.map_uniprot_to_info(accessions)
+
+    if df_uniprot_info is not None and not df_uniprot_info.empty:
+
         df_uniprot_info = df_uniprot_info.rename(
             columns={
                 "protein_name": "uniprot_protein_name",
                 "mapped_symbol": "symbol",
             }
         )
-        df = df.merge(df_uniprot_info, on= "uniprot_accession", how = "left")
+
+        df = df.merge(
+            df_uniprot_info,
+            on="uniprot_accession",
+            how="left",
+        )
 
     else:
+
         df["uniprot_protein_name"] = ""
         df["symbol"] = ""
         df["taxid"] = ""
         df["taxname"] = ""
 
+    # Prefer the original protein name if available,
+    # otherwise use the UniProt protein name.
     df["protein_name"] = df.apply(
-        lambda row: str(row.get("protein_name", "")).strip()
-        if pd.notna(row.get("protein_name")) and str(row.get("protein_name")).strip()
-        else str(row.get("uniprot_protein_name", "")).strip(),
-        axis = 1
+        lambda row:
+            str(row.get("protein_name", "")).strip()
+            if (
+                pd.notna(row.get("protein_name"))
+                and str(row.get("protein_name")).strip()
+            )
+            else str(row.get("uniprot_protein_name", "")).strip(),
+        axis=1,
     )
 
     for col in ["symbol", "taxid", "taxname"]:
+
         if col not in df.columns:
             df[col] = ""
-        df[col] = df[col].fillna("").astype(str).str.strip()
-    
-    df = df.drop(columns=["uniprot_protein_name"], errors = "ignore")
 
+        df[col] = (
+            df[col]
+            .fillna("")
+            .astype(str)
+            .str.strip()
+        )
 
-    selected_tax_ids = app.interactions.normalize_taxonomy_ids(selected_tax_ids)
+    df = df.drop(
+        columns=["uniprot_protein_name"],
+        errors="ignore",
+    )
+
+    # Apply taxonomy filter
+    selected_tax_ids = app.interactions.normalize_taxonomy_ids(
+        selected_tax_ids
+    )
+
     if selected_tax_ids:
-        df = df[df["taxid"].astype(str).str.strip().isin(selected_tax_ids)].copy()
-    
+        df = df[
+            df["taxid"]
+            .astype(str)
+            .str.strip()
+            .isin(selected_tax_ids)
+        ].copy()
 
     return df[
         [
-            "uniprot_accession", "protein_name", "symbol", "pathway", "pathway_name", "compound", "cid", "taxid", "taxname"]].reset_index(drop=True)
+            "uniprot_accession",
+            "protein_name",
+            "symbol",
+            "pathway",
+            "pathway_name",
+            "compound",
+            "cid",
+            "taxid",
+            "taxname",
+        ]
+    ].reset_index(drop=True)
+
+
+def retrieve_pathway_proteins_from_genes(
+    pwacc,
+    pathway_name,
+    compound_name,
+    compound_cid,
+    pathway_json,
+    selected_tax_ids=None,
+):
+    """Retrieve UniProt proteins associated with WikiPathways Gene IDs."""
+
+    if pathway_json is None:
+        return empty_pathway_df()
+
+    geneids = []
+
+    if isinstance(pathway_json, dict):
+
+        information_list = pathway_json.get("InformationList", {})
+
+        if isinstance(information_list, dict):
+
+            information = information_list.get("Information", [])
+
+            if isinstance(information, list):
+
+                for item in information:
+
+                    if not isinstance(item, dict):
+                        continue
+
+                    ids = item.get("GeneID", [])
+
+                    if isinstance(ids, list):
+                        geneids.extend(ids)
+
+                    elif ids is not None:
+                        geneids.append(ids)
+
+    geneids = (
+        pd.Series(geneids, dtype="string")
+        .dropna()
+        .astype(str)
+        .str.strip()
+        .loc[lambda x: x != ""]
+        .unique()
+        .tolist()
+    )
+
+    print(
+        "[Pathway DEBUG] Gene IDs found:",
+        len(geneids),
+    )
+
+    print(
+        "[Pathway DEBUG] Gene IDs:",
+        geneids[:20],
+    )
+
+    if not geneids:
+        print("[Pathway DEBUG] NO GENE IDS FOUND")
+        return empty_pathway_df()
+
+    # -------------------------------------------------------------
+    # Map NCBI Gene IDs to UniProt accessions
+    # -------------------------------------------------------------
+    df_geneids = pd.DataFrame({"geneid": geneids})
+
+    df_mapped = app.proteins.map_genes_to_uniprot(df_geneids)
+
+    print(
+        "[Pathway DEBUG] GeneID → UniProt mapping rows:",
+        len(df_mapped),
+    )
+
+    if df_mapped is None or df_mapped.empty:
+        print("[Pathway DEBUG] NO UNIPROT ACCESSIONS FOUND FOR GENE IDS")
+        return empty_pathway_df()
+
+    accessions = (
+        df_mapped["uniprot_accession"]
+        .dropna()
+        .astype(str)
+        .str.strip()
+        .loc[lambda x: x != ""]
+        .unique()
+        .tolist()
+    )
+
+    print(
+        "[Pathway DEBUG] UniProt accessions from Gene IDs:",
+        len(accessions),
+    )
+    print("[Pathway DEBUG] accessions:", accessions[:20])
+
+    if not accessions:
+        print("[Pathway DEBUG] NO UNIPROT ACCESSIONS FOUND FOR GENE IDS")
+        return empty_pathway_df()
+
+    print(
+        "[Pathway DEBUG] UniProt accessions from Gene IDs:",
+        len(accessions),
+    )
+
+    print(
+        "[Pathway DEBUG] accessions:",
+        accessions[:20],
+    )
+
+    if not accessions:
+        print(
+            "[Pathway DEBUG] NO UNIPROT ACCESSIONS FOUND FOR GENE IDS"
+        )
+        return empty_pathway_df()
+
+    return build_pathway_protein_dataframe(
+        pwacc,
+        pathway_name,
+        compound_name,
+        compound_cid,
+        accessions,
+        selected_tax_ids,
+    )
+
+
+def retrieve_pathway_proteins(
+    pwacc,
+    pathway_name,
+    compound_name,
+    compound_cid,
+    pathway_json,
+    selected_tax_ids=None,
+):
+    """Extract UniProt protein accessions from a PubChem pathway response."""
+
+    if pathway_json is None:
+        return empty_pathway_df()
+
+    accessions = []
+
+    if isinstance(pathway_json, dict):
+
+        information_list = pathway_json.get("InformationList", {})
+
+        if isinstance(information_list, dict):
+
+            information = information_list.get("Information", [])
+
+            if isinstance(information, list):
+
+                for item in information:
+
+                    if not isinstance(item, dict):
+                        continue
+
+                    accs = item.get("ProteinAccession", [])
+
+                    if isinstance(accs, list):
+                        accessions.extend(accs)
+
+                    elif isinstance(accs, str):
+                        accessions.append(accs)
+
+    accessions = (
+        pd.Series(accessions, dtype="string")
+        .dropna()
+        .astype(str)
+        .str.strip()
+        .loc[lambda x: x != ""]
+        .unique()
+        .tolist()
+    )
+
+    print(
+        "[Pathway DEBUG] UniProt accessions found:",
+        len(accessions),
+    )
+
+    print(
+        "[Pathway DEBUG] accessions:",
+        accessions[:20],
+    )
+
+    if not accessions:
+        print("[Pathway DEBUG] NO PROTEIN ACCESSIONS FOUND")
+        return empty_pathway_df()
+
+    return build_pathway_protein_dataframe(
+        pwacc,
+        pathway_name,
+        compound_name,
+        compound_cid,
+        accessions,
+        selected_tax_ids,
+    )
+
 
 def group_pathways(df_pathways):
     """Groups pathway proteins so each pathway is only present once"""
